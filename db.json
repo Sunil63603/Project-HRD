@@ -1,0 +1,76 @@
+{
+  "jobs": [
+    {
+      "id": "cfaf",
+      "companyName": "SJC INSTITUTE",
+      "jobDescription": "SDE",
+      "eligibility": "AIML",
+      "applyLink": "https://usmaaportfolio.netlify.app/"
+    },
+    {
+      "id": "dd19",
+      "companyName": "TCS",
+      "jobDescription": "SDE",
+      "eligibility": "CSE ISE",
+      "applyLink": "https://usmaaportfolio.netlify.app/"
+    },
+    {
+      "id": "be2b",
+      "companyName": "NTT Data",
+      "jobDescription": "SDE",
+      "eligibility": "CSE ISE",
+      "applyLink": "https://usmaaportfolio.netlify.app/"
+    },
+    {
+      "id": "fcd6",
+      "companyName": "Accenture",
+      "jobDescription": "SDE",
+      "eligibility": "CSE",
+      "applyLink": "https://usmaaportfolio.netlify.app/"
+    }
+  ],
+  "messages": [
+    {
+      "id": "6b3e",
+      "sender": "HR",
+      "text": "Accenture",
+      "date": "2/11/2024",
+      "time": "12:43 pm"
+    },
+    {
+      "id": "fcb3",
+      "sender": "HR",
+      "text": "TCS",
+      "date": "2/11/2024",
+      "time": "12:44 pm"
+    },
+    {
+      "id": "9584",
+      "sender": "1SJ21CS166",
+      "text": "Yantakulu",
+      "date": "2/11/2024",
+      "time": "12:44 pm"
+    },
+    {
+      "id": "d214",
+      "sender": "HR",
+      "text": "Yantakulu will not come to college",
+      "date": "2/11/2024",
+      "time": "12:49 pm"
+    },
+    {
+      "id": "4bb8",
+      "sender": "HR",
+      "text": "To ensure that the messages fit within the .message-display box without overflowing, you can adjust the CSS as follows:  Set word-wrap to break-word so long words or URLs don't overflow. Add a max-height to .message-display if needed, along with overflow-y: auto to make sure content scrolls within the box rather than expanding it. Set the width of .message-bubble to a percentage (e.g., 70%) instead of max-width, ensuring that each message bubble has a consistent width.",
+      "date": "2/11/2024",
+      "time": "12:56 pm"
+    },
+    {
+      "id": "1323",
+      "sender": "HR",
+      "text": "hi HR",
+      "date": "7/11/2024",
+      "time": "10:25 am"
+    }
+  ]
+}

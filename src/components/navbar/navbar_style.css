@@ -1,0 +1,48 @@
+/* Navbar.css */
+
+/* Use a standard font family for the entire navbar */
+.navbar {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between title and list */
+  align-items: center; /* Center items vertically */
+  padding: 15px 30px; /* More padding for a better look */
+  background-color: #007bff; /* Bootstrap primary color */
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  border-radius: 6px;
+}
+
+.navbar-title {
+  margin: 0; /* Remove default margin */
+  font-size: 1.8rem; /* Larger font size for the title */
+  font-weight: bold; /* Bold title */
+}
+
+.navbar-list {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Use flexbox for layout */
+  gap: 30px; /* Space between items */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.navbar-item {
+  transition: transform 0.2s; /* Smooth transition on hover */
+}
+
+.navbar-link {
+  color: #fff; /* Text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 1rem; /* Font size for links */
+  padding: 10px 15px; /* Padding around links for better click area */
+  border-radius: 5px; /* Rounded corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Apply smooth transition */
+}
+
+.navbar-link:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
