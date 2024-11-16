@@ -1,0 +1,84 @@
+/* Styling for the search bar and header */
+.headerProfile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-bottom: 2px solid #ff85b2;
+}
+
+.logo-container h1 {
+  font-size: 2.5rem;
+  color: #ff007f; /* Bright pink for logo */
+  font-weight: bold;
+}
+
+/* Search container styling */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ff85b2;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-button {
+  background-color: #ff007f;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #e6006f;
+}
+
+/* Student list styling */
+.student-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.student-card {
+  background-color: #ffffff;
+  border: 1px solid #ff85b2;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 15px;
+  width: 650px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.student-card:hover {
+  transform: translateY(-5px);
+}
+
+.student-card p {
+  margin: 10px 0;
+
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Error styling */
+.error {
+  color: red;
+  text-align: center;
+  margin-bottom: 20px;
+}
