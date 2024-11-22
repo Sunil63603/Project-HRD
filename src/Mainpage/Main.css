@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Container Styling */
+.container {
+  text-align: center;
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #333;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); /* Warm gradient background */
+  min-height: 100vh;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Positioning for the Top-Left "C O H O R T" Text */
+.left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff6f61; /* Bold coral color */
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Header Styling for Right-Aligned Buttons */
+.header {
+  background-color: #ffffff;
+  padding: 8px 20px;
+  display: flex;
+  gap: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15); /* Deeper shadow for dimension */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  justify-content: flex-end;
+}
+
+/* Button Styling */
+.headerButton {
+  background-color: #ff6f61; /* Coral color to match "C O H O R T" */
+  color: #ffffff;
+  padding: 12px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.headerButton:hover {
+  background-color: #ff8a75; /* Brighter shade on hover */
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.headerButton:active {
+  transform: translateY(0);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.title {
+  font-size: 3.5rem;
+  color: #3b82f6; /* Bright blue color for main title */
+  margin: 10px 0;
+  font-weight: 700;
+  padding: 10px;
+  line-height: 1.2;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow for text depth */
+}
+
+/* Subtitle Styling */
+.subtitle {
+  font-size: 1.75rem;
+  color: #ff6f61; /* Matches buttons and "C O H O R T" */
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .title {
+      font-size: 2.5rem;
+  }
+  
+  .subtitle {
+      font-size: 1.25rem;
+  }
+
+  .header {
+      top: 15px;
+      right: 15px;
+      padding: 10px 20px;
+  }
+
+  .headerButton {
+      padding: 10px 25px;
+      font-size: 14px;
+  }
+}

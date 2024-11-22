@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "age": 30
+    },
+    {
+      "id": "2",
+      "name": "Jane Doe",
+      "age": 28
+    },
+    {
+      "id": "0f07",
+      "name": "viki",
+      "email": "vksvikas41@gmail.com",
+      "password": "890789687"
+    },
+    {
+      "id": "e862",
+      "name": "shesh",
+      "email": "shesh@gmail.com",
+      "password": "shesh@123"
+    },
+    {
+      "id": "f88b",
+      "name": "vikrant",
+      "email": "vikrant@123",
+      "password": "vikrant@123"
+    },
+    {
+      "id": "ee9b",
+      "name": "sunil",
+      "email": "suni@gmail.com",
+      "password": "sunilinus"
+    },
+    {
+      "id": "df17",
+      "name": "shashi kumar",
+      "email": "shashi@gmail.com",
+      "password": "123321"
+    },
+    {
+      "id": "4a75",
+      "name": "nithin",
+      "email": "nith@gmail.com",
+      "password": "nithi2123"
+    },
+    {
+      "id": "f32d",
+      "name": "usman",
+      "email": "pasha@gmail.com",
+      "password": "usu@123"
+    }
+  ]
+}
