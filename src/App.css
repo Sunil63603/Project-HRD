@@ -92,3 +92,166 @@ main {
   border-radius: 3px;
   width: 300px;
 }
+
+
+/* App Container */
+.App {
+  font-family: Arial, sans-serif;
+}
+
+/* Top Bar */
+.top-bar {
+  background-color: #6c2c82;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Navbar */
+/* Navbar */
+.navbar {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the logo horizontally */
+  align-items: center; /* Center items vertically */
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.navbar .nav-links li {
+  display: inline;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+} */
+
+/* Header Section */
+.header {
+  /* background-image: url("your-image-path-here.jpg"); */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  /* background-image: url("C:\Users\THRISHAN\Desktop\hrd\Images\sjcit.jpg"); */
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.header-content {
+  background-color: black;
+  padding: 20px;
+  border-radius: 25px;
+
+  /* flex-direction: column; */
+}
+
+.header-content h1 {
+  font-size: 48px;
+}
+
+.header-content p {
+  font-size: 28px;
+  margin: 20px 0;
+  align-items: center;
+}
+
+.header-buttons {
+  margin-top: 20px;
+}
+
+.apply-btn,
+.readmore-btn {
+  background-color: #6c2c82;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.readmore-btn {
+  background-color: #999;
+}
+
+/* Info Sections */
+.info-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+}
+
+.info-box {
+  width: 30%;
+  height: 200px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.programs {
+  background-color: #4688f1;
+}
+
+.affordability {
+  background-color: #ff4742;
+}
+
+.certification {
+  background-color: #ffa500;
+}
+
+/* Navbar Links */
+.nav-links {
+  display: flex; /* Align links in a row */
+  gap: 20px; /* Add space between the links */
+  list-style: none; /* Remove the dots (bullets) */
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+}
+
+.nav-links li {
+  display: inline-block; /* Display the list items inline */
+}
+
+.nav-links a {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Set text color */
+  font-weight: 500; /* Make font slightly bold */
+}
+
+.nav-links a:hover {
+  color: #80dd6d; /* Change color on hover */
+}
