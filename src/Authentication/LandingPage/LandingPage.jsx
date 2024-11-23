@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Main.css';
 
-function Main() {
+function LandingPage() {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]); // State to store fetched users
 
   const handlelog = () => {
     navigate('/login'); // Navigates to the login page
-  };
-
-  const handlesign = () => {
-    navigate('/signup'); // Navigates to the signup page
   };
 
   // Fetch users from JSON Server
@@ -58,4 +53,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default LandingPage;

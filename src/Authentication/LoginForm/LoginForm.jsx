@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css';
+import './LoginForm.css';
 
-function Login() {
+function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -68,4 +68,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginForm;

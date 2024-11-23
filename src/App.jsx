@@ -1,19 +1,17 @@
 // App.js
+import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import LoginForm from './Log/LoginForm';
-import Main from './Mainpage/Main';
-import Login from './Log/Login';
+import LandingPage from './Authentication/LandingPage/LandingPage'
+import LoginForm from './Authentication/LoginForm/LoginForm';
 
 function App() {
-
   return (
     <Router>
       <div>
         <Routes> 
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginForm />} />
-          <Route path="/login1" element={<Login />} />
         </Routes>
       </div>
     </Router>
