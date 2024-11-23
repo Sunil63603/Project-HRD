@@ -5,10 +5,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './Authentication/LandingPage/LandingPage'
 import LoginForm from './Authentication/LoginForm/LoginForm';
 
-import Navbar from "./components/navbar/Navbar";
-import CreateJobPosting from "./components/create_job_posting/CreateJobPosting";
-import CompaniesList from "./components/Companies/companiesList";
-import MessagingContainer from "./components/messages/MessagingContainer/MessagingContainer";
+import Navbar from "./HR_Page/navbar/Navbar";
+import CreateJobPosting from "./HR_Page/create_job_posting/CreateJobPosting";
+import CompaniesList from "./HR_Page/companies/CompaniesList";
+import MessagingContainer from "./HR_Page/messages/MessagingContainer/MessagingContainer";
 
 function App() {
   return (
