@@ -1,5 +1,5 @@
 {
-  "name": "project-sjc",
+  "name": "project_hrd",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -24,6 +24,10 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.11.0",
-    "vite": "^5.4.10"
+    "vite": "^5.4.10",
+    "axios": "^1.7.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
   }
 }
