@@ -1,0 +1,125 @@
+.topFixedBar {
+  position: fixed; /* Fixes the topFixedbar to the top even while scrolling */
+  top: 0;
+  left:0;
+  width: 100%; /* Makes the topFixedBar span the full width */
+  background-color: #d0c9c9; /* topFixedBar background color */
+  color:#4d64cd;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;/* Adjusts items within the topFixedBar*/
+  align-items: center;
+  /* this z-index should be greater than any z-index value so,that topFixedBar will stay on top of all.*/
+  z-index: 1000; /* Ensures the topFixedBar stays on top of other content */
+  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  /* Subtle shadow for the topFixedBar */
+  box-sizing: border-box; 
+}
+
+/* Left Side: Profile Icon and Project Name */
+.topFixedBar-left {
+  display: flex;
+  align-items: center;
+  padding:1%;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Make the icon round */
+  margin-right: 30px;
+}
+
+.project-name {
+  margin: 0;
+}
+
+/* search bar at the center of the topFixedBar */
+.topSearchBar {
+  width: 40%;
+  padding: 1% 1%; /* Increased padding for better spacing */
+  font-size: 1.2rem; /* Using `rem` units for better accessibility */
+  border-radius: 25px;
+  border: 1px solid #ccc; /* Subtle border to mimic modern search bars */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  outline: none;
+  transition: box-shadow 0.3s ease, border 0.3s ease; /* Smooth transition for interactions */
+}
+
+.topSearchBar:focus {
+  border: 1px solid #007bff; /* Change border color on focus */
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Enhanced shadow effect on focus */
+}
+
+.topSearchBar:active {
+  outline: none; /* Remove outline on active state */
+}
+
+.topSearchBar::placeholder {
+  color: #888; /* Light grey color for placeholder text */
+  opacity: 0.8; /* Adjust opacity for a subtle placeholder text */
+}
+
+
+/* Right Side: Buttons */
+.topFixedBar-right {
+  display: flex;
+  align-items: center;
+}
+
+.topFixedBar-right button {
+  background-color: #4d64cd;
+  font-weight: bold;
+  color: white;
+  border: none;
+  padding: 20px 25px;
+  margin-left: 25px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.topFixedBar-right button:hover {
+  background-color: #7c8bca;
+}
+
+/* css code to highlight the 'jobs' button to grab student's attention*/
+.jobs-btn {
+  background-color: #1eb942 !important; /* Vibrant green color */
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5); /* Initial glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  outline: none;
+}
+
+/* Hover effect to increase the glow */
+.jobs-btn:hover {
+  box-shadow: 0 0 20px rgba(94, 215, 122, 0.7), 0 0 30px rgba(40, 167, 69, 0.4);
+  transform: scale(1.05); /* Slightly increases size on hover */
+}
+
+/* Animation for a pulsing glow effect */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(30, 205, 71, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(35, 192, 71, 0.8);
+  }
+}
+
+.jobs-btn:focus, .jobs-btn:active {
+  animation: pulseGlow 1.5s infinite; /* Pulsing glow animation on focus or active state */
+  outline: none;
+}
+
+/* css properties related to log-out button */
+.log-out-btn{
+  background-color: rgb(255, 5, 5) !important;
+}

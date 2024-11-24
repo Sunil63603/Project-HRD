@@ -17,6 +17,13 @@ import MessagingContainer from "./HR_Page/messages/MessagingContainer/MessagingC
 // ❌set routes for TMG components.
 import HR_Profiles from "./HR_Page/HR_Profiles/HR_Profiles";
 
+//👇sunil components
+import AppLayout from './Student_Page/AppLayout';//appLayout contains left(profile) and right(jobs,all profiles,updates,message) component. 
+//context which indicates the components that needs to be rendered in the main container. 
+import { VisibilityProvider } from './context/VisibilityContext';
+
+
+
 function App() {
   return (
     <Router>
@@ -35,9 +42,14 @@ function App() {
 
         {/* ❌HR_Profiles should be displayed only when displaying HR_Page*/}
         <HR_Profiles></HR_Profiles>
+
+        <VisibilityProvider>
+          <AppLayout></AppLayout>
+        </VisibilityProvider>
     
     </Router>
-  );
+  )
 }
+
 
 export default App;
