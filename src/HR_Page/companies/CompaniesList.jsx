@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from "react";
 // importing the component JobCard that us used in this componenet.
 import JobCard from "./JobCard";
-import "./companies_list.css"; // Import the CSS file for standard styling
+import "./CompaniesList.css"; // Import the CSS file for standard styling
 
 const CompaniesList = () => {
   // the Previous jobs which are present in the .json file that is fetched and stored in the jobs(state) and then that are used to display in the UI..
@@ -15,7 +15,7 @@ const CompaniesList = () => {
     // Fetch job postings from the server.
     try {
       //the response is the variable that will be having the object which is stored in the .json file...
-      const response = await fetch("http://localhost:5000/jobs", {
+      const response = await fetch("http://localhost:3000/jobs", {
         // GET method will fetch the data which is present in .json file
         method: "GET",
         // the data will be in .json form.

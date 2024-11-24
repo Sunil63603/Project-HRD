@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./navbar_style.css"; // Import the CSS file
+import "./Navbar.css"; // Import the CSS file
 
 const Navbar = () => {
   return (
@@ -25,5 +25,7 @@ const Navbar = () => {
     </nav>
   );
 };
+
+//❌include TMG's profiles search bar into this👆 Navbar
 
 export default Navbar;

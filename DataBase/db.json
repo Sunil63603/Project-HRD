@@ -1,56 +1,81 @@
 {
-  "users": [
+  "registeredStuds": [
     {
       "id": "1",
       "name": "John Doe",
-      "age": 30
+      "age": 30,
+      "designation": "student"
     },
     {
       "id": "2",
       "name": "Jane Doe",
-      "age": 28
+      "age": 28,
+      "designation": "student"
     },
     {
       "id": "0f07",
       "name": "viki",
       "email": "vksvikas41@gmail.com",
-      "password": "890789687"
+      "password": "890789687",
+      "designation": "student"
     },
     {
       "id": "e862",
       "name": "shesh",
       "email": "shesh@gmail.com",
-      "password": "shesh@123"
+      "password": "shesh@123",
+      "designation": "student"
     },
     {
       "id": "f88b",
       "name": "vikrant",
       "email": "vikrant@123",
-      "password": "vikrant@123"
+      "password": "vikrant@123",
+      "designation": "student"
     },
     {
       "id": "ee9b",
       "name": "sunil",
       "email": "suni@gmail.com",
-      "password": "sunilinus"
-    },
-    {
-      "id": "df17",
-      "name": "shashi kumar",
-      "email": "shashi@gmail.com",
-      "password": "123321"
+      "password": "sunilinus",
+      "designation": "student"
     },
     {
       "id": "4a75",
       "name": "nithin",
       "email": "nith@gmail.com",
-      "password": "nithi2123"
+      "password": "nithi2123",
+      "designation": "student"
     },
     {
       "id": "f32d",
       "name": "usman",
       "email": "pasha@gmail.com",
-      "password": "usu@123"
+      "password": "usu@123",
+      "designation": "student"
+    }
+  ],
+  "registeredHRs": [
+    {
+      "id": "df17",
+      "name": "shashi kumar",
+      "email": "shashi@gmail.com",
+      "password": "123321",
+      "designation": "HR"
+    },
+    {
+      "id": "df18",
+      "name": "tilak reddy",
+      "email": "tilak@gmail.com",
+      "password": "123321",
+      "designation": "HR"
+    },
+    {
+      "id": "df19",
+      "name": "mala",
+      "email": "mala@gmail.com",
+      "password": "123321",
+      "designation": "HR"
     }
   ],
   "jobs": [
@@ -127,7 +152,7 @@
       "time": "10:25 am"
     }
   ],
-  "students": [
+  "studentProfiles": [
     { "usn": "1SJ21CS154", "name": "Sunny" },
     { "usn": "1SJ21CS165", "name": "TMG" },
     { "usn": "1SJ21CS166", "name": "Pasha" },

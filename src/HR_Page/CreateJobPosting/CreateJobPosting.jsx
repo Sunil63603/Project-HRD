@@ -1,6 +1,6 @@
 // importing react to use the components based architecture and needed to interpret JSX and in React 17 not needed.
 import React, { useState } from "react";
-import "./create_job_posting.css"; // Import the CSS file
+import "./CreateJobPosting.css"; // Import the CSS file
 
 const CreateJobPosting = () => {
   //State management
@@ -31,9 +31,9 @@ const CreateJobPosting = () => {
       };
       // this is the fetch method to make changes in the DB / .json file
       // the fetch function makes the http request such as the POST, GET, PUT, DELETE
-      // the fetch function sends the request to the end point http://localhost:5000/jobs
+      // the fetch function sends the request to the end point http://localhost:3000/jobs
       // await is to pause the function untill the fetch request is completed (asyncronously).
-      await fetch("http://localhost:5000/jobs", {
+      await fetch("http://localhost:3000/jobs", {
         // POST method is to store in the DB/in the jsonServer
         // POST request is to send the new data to the server in this case jobs
         method: "POST",

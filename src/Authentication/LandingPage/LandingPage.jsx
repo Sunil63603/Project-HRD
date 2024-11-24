@@ -9,6 +9,7 @@ function LandingPage() {
     navigate('/login'); // Navigates to the login page
   };
 
+  // ❌change this logic , because 'users' has been changed to 'registeredStudents' and 'registeredHRs' in db.json
   // Fetch users from JSON Server
   async function fetchUsers() {
     try {
@@ -34,7 +35,9 @@ function LandingPage() {
       <div className="container">
         <h2 className='left'>C O H O R T</h2>
         <header className="header">
-          <button className="headerButton" onClick={handlelog}>Log in</button>
+          {/*❌ write two different functions .One is handle HR login and Another one is handle Student login */}
+          <button className="headerButton" onClick={handlelog}>HR Login</button>
+          <button className="headerButton" onClick={handlelog}>Student Login</button>
         </header>
         <h1 className="title">C O H O R T</h1>
         <h1 className="title">Student's Hub</h1>

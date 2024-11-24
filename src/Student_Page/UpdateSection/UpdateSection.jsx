@@ -1,16 +1,11 @@
-//useContext is used because of VisibilityContext(which determines whether profileSection should be displayed or not)
 //this inturn affect/changes the width of UpdateSection
 //useState is because of notifications array[] which fetches new notifications from Database/db.json
 //useRef is used to clear the setInterval when theres some error because of notifications server.
 import React, { useContext, useState, useEffect, useRef } from "react";
 import "./UpdateSection.css";
 
-//importing contextAPI
-import { VisibilityContext } from "../../context/VisibilityContext"; //based on isProfileVisible,conditionally render the profileSection
-//based on profileSection's visibility update the width of updateSection
 
 function UpdateSection() {
-  const { isProfileVisible } = useContext(VisibilityContext); //based on profile's visibility,change the width of updateSection
 
   //logic related to fetching new notifications from Database/db.json
   const [notifications, setNotifications] = useState([]); //initially array is empty.
