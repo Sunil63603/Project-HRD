@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 // importing the component JobCard that us used in this componenet.
-import JobCard from "./JobCard";
+import JobCard from "./JobCard/JobCard";
 import "./CompaniesList.css"; // Import the CSS file for standard styling
 
 const CompaniesList = () => {
