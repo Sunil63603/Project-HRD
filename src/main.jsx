@@ -2,11 +2,8 @@ import { StrictMode } from "react"; //strict mode is used to find potential erro
 import { createRoot } from "react-dom/client"; //on this root,react components are rendered.
 import App from "./App.jsx"; //index.html ---> main.jsx ---> App.jsx --->AppLayout.jsx
 
-import ProfileSection from "./IndividualProfile.jsx";
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    {/* <App /> */}
-    <ProfileSection />
+    <App />
   </StrictMode>
 );

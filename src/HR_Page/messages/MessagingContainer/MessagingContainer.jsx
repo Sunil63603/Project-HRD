@@ -10,7 +10,7 @@ const MessagingContainer = () => {
   // Function to fetch messages from the JSON server
   const fetchMessages = async () => {
     try {
-      const response = await fetch("http://localhost:5000/messages", {
+      const response = await fetch("http://localhost:3000/messages", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

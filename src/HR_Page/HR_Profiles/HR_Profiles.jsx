@@ -14,7 +14,9 @@ const Profiles = () => {
     const fetchStudents = async () => {
       try {
         // ❌TMG : try to write this using 'fetch' instead of 'axios'
-        const response = await axios.get("http://localhost:3000/students");
+        const response = await axios.get(
+          "http://localhost:3000/studentProfiles"
+        );
         setStudents(response.data);
       } catch (err) {
         setError("Error fetching students data");
