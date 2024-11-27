@@ -39,7 +39,6 @@ function App() {
           element={<MessageContainer />}
         ></Route>
         <Route path="/hr/profile-container" element={<Profiles />}></Route>
-
         {/*❌This below 👇component must be displayed only when HR clicks on any particular student profile ,  Not while searching */}
         {/*❌profiles can be searched in navbar component(ie usman component) */}
         {/* ❌':id' is id of any particular student profile*/}

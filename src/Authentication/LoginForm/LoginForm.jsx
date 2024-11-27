@@ -1,6 +1,6 @@
 //useState is used to store credentials entered by user (ie.email and password).
 //useEffect is used to clear input fields in login form as soon as , form component is mounted.
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, isValidElement } from "react";
 import { useNavigate } from "react-router-dom"; //to display either HR_Page or Student_Page needs to be displayed after login .
 import "./LoginForm.css"; //write styling related to this component in this .css file itself.
 
@@ -18,31 +18,38 @@ function LoginForm() {
   const [password, setPassword] = useState("");
 
   //used to display some component programmatically . But 'Link' is used if user directly decides which component to display.
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //in this case , it is used to render component after successful login.
 
-  // Clear username and password fields when the component mounts
+  // Clear username and password fields when the component mounts.
   useEffect(() => {
     setEmail("");
     setPassword("");
-  }, []);
+  }, []); //empty dependency[] indicates that , this code runs only on initial render .
 
+  let isValidAccount = true; //this variable indicates whether current attempt to login is valid or not
+
+  //this function is called when clicks on the submit button.
   const handleSubmit = async () => {
     try {
-      //fetch value (ie.array from db.json which has key 'role')
+      //fetch value (ie.array from db.json which has key 'role').
       const response = await fetch(`http://localhost:3000/${role}`); //for HRLogin , it will fetch registeredHRs and for StudentLogin , it will fetch registeredStuds.
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error("Network response was not ok"); //if theres some problem with server or fetching.
       }
-      const users = await response.json();
-      const user = users.find(
-        (user) => user.email === email && user.password === password
-      );
+      const validAccounts = await response.json(); //gets all the registered accounts of HRs or Students.
 
-      if (user) {
-        alert("Correct, proceed");
-        // navigate("/dashboard");
-        //❌here navigate to '/hr' if HR login is successful
-        //❌navigate to '/student' if student login is successful
+      isValidAccount = validAccounts.find(
+        (validAccount) =>
+          validAccount.email === email && validAccount.password === password
+      ); //if both email and password are matching , then render page else display incorrect credentials message.
+
+      if (isValidAccount) {
+        if (role === "registeredHRs") {
+          navigate(`/hr`); //if HR Login is successfull , then display HR_Page.
+        } //registeredStuds.
+        else {
+          navigate(`/student`); //if Student Login is successful , then display Student_Page.
+        }
       } else {
         alert("Error: Incorrect username or password.");
       }
@@ -78,6 +85,11 @@ function LoginForm() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
+        {!isValidAccount && (
+          <p className="invalid-message">
+            Invalid credentials. Please try again.
+          </p>
+        )}
         <button className="login-button" onClick={handleSubmit}>
           Submit
         </button>
