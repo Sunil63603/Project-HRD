@@ -3,56 +3,50 @@
     {
       "id": "1",
       "name": "John Doe",
-      "age": 30,
-      "designation": "student"
+      "email": "vksvikas41@gmail.com",
+      "password": "890789687"
     },
     {
       "id": "2",
       "name": "Jane Doe",
-      "age": 28,
-      "designation": "student"
+      "email": "vksvikas41@gmail.com",
+      "password": "890789687"
     },
     {
       "id": "0f07",
       "name": "viki",
       "email": "vksvikas41@gmail.com",
-      "password": "890789687",
-      "designation": "student"
+      "password": "890789687"
     },
     {
       "id": "e862",
       "name": "shesh",
       "email": "shesh@gmail.com",
-      "password": "shesh@123",
-      "designation": "student"
+      "password": "shesh@123"
     },
     {
       "id": "f88b",
       "name": "vikrant",
       "email": "vikrant@123",
-      "password": "vikrant@123",
-      "designation": "student"
+      "password": "vikrant@123"
     },
     {
       "id": "ee9b",
       "name": "sunil",
       "email": "suni@gmail.com",
-      "password": "sunilinus",
-      "designation": "student"
+      "password": "sunilinus"
     },
     {
       "id": "4a75",
       "name": "nithin",
       "email": "nith@gmail.com",
-      "password": "nithi2123",
-      "designation": "student"
+      "password": "nithi2123"
     },
     {
       "id": "f32d",
       "name": "usman",
       "email": "pasha@gmail.com",
-      "password": "usu@123",
-      "designation": "student"
+      "password": "usu@123"
     }
   ],
   "registeredHRs": [
@@ -60,22 +54,19 @@
       "id": "df17",
       "name": "shashi kumar",
       "email": "shashi@gmail.com",
-      "password": "123321",
-      "designation": "HR"
+      "password": "123321"
     },
     {
       "id": "df18",
       "name": "tilak reddy",
       "email": "tilak@gmail.com",
-      "password": "123321",
-      "designation": "HR"
+      "password": "123321"
     },
     {
       "id": "df19",
       "name": "mala",
       "email": "mala@gmail.com",
-      "password": "123321",
-      "designation": "HR"
+      "password": "123321"
     }
   ],
   "jobs": [
@@ -150,56 +141,6 @@
       "text": "hi HR",
       "date": "7/11/2024",
       "time": "10:25 am"
-    }
-  ],
-  "studentProfiles": [
-    { "usn": "1SJ21CS154", "name": "Sunny" },
-    { "usn": "1SJ21CS165", "name": "TMG" },
-    { "usn": "1SJ21CS166", "name": "Pasha" },
-    { "usn": "1SJ21CS180", "name": "Vikki" }
-  ],
-  "notifications": [
-    {
-      "id": 1,
-      "message": "you have a new message1",
-      "date": "2024-10-11",
-      "timeStamp": "10:30 AM"
-    },
-    {
-      "id": 2,
-      "message": "you have a new message2",
-      "date": "2024-10-11",
-      "timeStamp": "10:30 AM"
-    },
-    {
-      "id": 3,
-      "message": "Loreal paris ply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since txxxxxxxxxxxxxxyyyyyyyyyyyyyyyyyyyype and scrambled it to make a type specimen book.",
-      "date": "2024-10-11",
-      "timeStamp": "10:30 AM"
-    },
-    {
-      "id": 4,
-      "message": "Sunny(154) xt of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever sisuusuududiirnfjjjjjjjjjjjjjjjjjjjjjjjjjjjnknown printer took a galley of type and scrambled it to make a type specimen book.",
-      "date": "2024-10-11",
-      "timeStamp": "10:30 AM"
-    },
-    {
-      "id": 5,
-      "message": "Tmg(165)  simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever sigalljjjjsjajjjsjjjjsjdgdhjdjey of type and scrambled it to make a type specimen book.",
-      "date": "2024-10-11",
-      "timeStamp": "10:30 AM"
-    },
-    {
-      "id": 6,
-      "message": "Usman Pasha(166) t of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever sitook a galley of type and scrambled it to make a type specimen book.",
-      "date": "2024-10-11",
-      "timeStamp": "10:30 AM"
-    },
-    {
-      "id": 7,
-      "message": "Vikas(180) y dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever sibled it to make a type specimen book.",
-      "date": "2024-10-11",
-      "timeStamp": "10:30 AM"
     }
   ]
 }

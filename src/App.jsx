@@ -1,18 +1,18 @@
 import "./App.css";
 // import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-//vikas components
+//vikas components.
 import LandingPage from "./Authentication/LandingPage/LandingPage";
 import LoginForm from "./Authentication/LoginForm/LoginForm";
 
-//usman components
+//usman components.
 import Navbar from "./HR_Page/navbar/Navbar";
 import CreateJobPosting from "./HR_Page/CreateJobPosting/CreateJobPosting";
-import Companies from "./HR_Page/Companies/CompaniesList";
+import Companies from "./HR_Page/CompaniesList/CompaniesList";
 import MessageContainer from "./HR_Page/messages/MessagingContainer/MessagingContainer";
 
-//trishan components
+//trishan components.
 //search functionality is in navbar(ie.usman component)
 import Profiles from "./HR_Page/HR_Profiles/HR_Profiles";
 
