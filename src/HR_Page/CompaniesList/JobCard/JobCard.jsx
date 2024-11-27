@@ -1,6 +1,6 @@
 // src/components/JobCard.jsx
 import React from "react";
-import "./CompaniesList.css"; // Import the same CSS for styling
+import "./JobCard.css"; // Import the same CSS for styling
 
 const JobCard = ({ job, onDelete }) => {
   return (

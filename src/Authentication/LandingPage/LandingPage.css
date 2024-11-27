@@ -30,7 +30,7 @@ body {
 /* Button Section */
 .button-container {
   margin: 40px 0;
-  display: flexbox;
+  display: flex;
 }
 
 .login-button {

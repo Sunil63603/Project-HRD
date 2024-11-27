@@ -1,0 +1,55 @@
+/* Styling for individual job cards */
+.job-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+  transition: transform 0.2s; /* Animation for hover effect */
+}
+
+/* Hover effect for job cards */
+.job-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Button container for job card buttons */
+
+/* Styling for the apply button */
+/* .apply-button {
+  background-color: #4caf50; 
+  
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+   Transition for button color
+}
+
+.apply-button:hover {
+  background-color: #45a049; 
+  Darker green on hover
+} */
+
+/* Styling for the delete button */
+.delete-button {
+  display: inline-flex;
+  align-items: center; /* Centers icon and text vertically */
+  background-color: #0073b1; /* LinkedIn's primary blue color */
+  color: #fff; /* White text for contrast */
+  padding: 10px 20px; /* Adds padding for a larger, clickable area */
+  font-size: 1rem; /* Adjusts font size */
+  font-weight: 600; /* Slightly bold for emphasis */
+  border: none; /* Removes default border */
+  border-radius: 25px; /* Rounded corners for a modern look */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.delete-button:hover {
+  background-color: #005580; /* Darker shade on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
+}
