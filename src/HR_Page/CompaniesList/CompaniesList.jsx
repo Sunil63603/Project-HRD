@@ -67,6 +67,7 @@ const CompaniesList = () => {
     } catch (error) {
       console.error("Error deleting job:", error);
     }
+    fetchJobs();
   };
 
   // Fetch jobs when the component mounts
