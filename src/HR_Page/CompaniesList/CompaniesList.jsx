@@ -46,7 +46,7 @@ const CompaniesList = () => {
     try {
       // based on the id the jobs are deleted.
       // if we click the delete Jobs(Companies) btn then that particular job's id passed in this function that particular Job is deleted from the .json file
-      const response = await fetch(`http://localhost:5000/jobs/${id}`, {
+      const response = await fetch(`http://localhost:3000/jobs/${id}`, {
         // Pass the ID in the URL so that particular ID job will get deleted..
         method: "DELETE",
         headers: {
