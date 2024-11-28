@@ -7,7 +7,7 @@ import LandingPage from "./Authentication/LandingPage/LandingPage";
 import LoginForm from "./Authentication/LoginForm/LoginForm";
 
 //usman components.
-import Navbar from "./HR_Page/navbar/Navbar";
+import Navbar from "./HR_Page/HR_Layout/navbar/Navbar";
 import CreateJobPosting from "./HR_Page/CreateJobPosting/CreateJobPosting";
 import Companies from "./HR_Page/CompaniesList/CompaniesList";
 import MessageContainer from "./HR_Page/messages/MessagingContainer/MessagingContainer";
@@ -31,7 +31,7 @@ function App() {
         <Route path="/" element={<LandingPage></LandingPage>}></Route>
         <Route path="/login" element={<LoginForm></LoginForm>}></Route>
 
-        <Route path="/hr" element={<Navbar></Navbar>}></Route>
+        <Route path="/hr" element={<Navbar />}></Route>
         <Route path="/hr/create-job" element={<CreateJobPosting />}></Route>
         <Route path="/hr/companies-list" element={<Companies />}></Route>
         <Route
