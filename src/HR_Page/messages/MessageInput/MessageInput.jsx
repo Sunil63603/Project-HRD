@@ -21,7 +21,7 @@ const MessageInput = ({ onSend }) => {
         onChange={(e) => setMessageText(e.target.value)}
       />
       <button className="send-button" onClick={handleSend}>
-        <span class="arrow"></span>
+        <span className="arrow"></span>
       </button>
     </div>
   );

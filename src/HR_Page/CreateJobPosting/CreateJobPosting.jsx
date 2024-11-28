@@ -14,6 +14,8 @@ const CreateJobPosting = () => {
   // this state will store the apply link which is updated in the form and the method to set the companyname.
   const [applyLink, setApplyLink] = useState("");
 
+  const [additionalDetails, setadditionalDetails] = useState("");
+
   //  when the form is submited this method will be called.
   const handleSubmit = async (e) => {
     // it will prevent the form from submition and reloading.
@@ -28,6 +30,7 @@ const CreateJobPosting = () => {
         jobDescription,
         eligibility,
         applyLink,
+        additionalDetails,
       };
       // this is the fetch method to make changes in the DB / .json file
       // the fetch function makes the http request such as the POST, GET, PUT, DELETE
@@ -50,6 +53,7 @@ const CreateJobPosting = () => {
       setJobDescription("");
       setEligibility("");
       setApplyLink("");
+      setadditionalDetails("");
 
       // alert message
       alert("Job Posting Submitted Successfully!");
@@ -104,6 +108,16 @@ const CreateJobPosting = () => {
           id="applyLink"
           value={applyLink}
           onChange={(e) => setApplyLink(e.target.value)}
+          required
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="additionalDetails">Additional Details</label>
+        <textarea
+          id="additionalDetails"
+          value={additionalDetails}
+          onChange={(e) => setadditionalDetails(e.target.value)}
           required
         />
       </div>

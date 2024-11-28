@@ -5,10 +5,16 @@ import "./JobCard.css"; // Import the same CSS for styling
 const JobCard = ({ job, onDelete }) => {
   return (
     <div className="job-card">
-      <h3>{job.companyName}</h3>
-      <p>{job.jobDescription}</p>
+      <h4>{job.companyName}</h4>
       <p>
-        <strong>Eligibility:</strong> {job.eligibility}
+        <strong>Job Title : {job.jobDescription}</strong>
+      </p>
+      <p>
+        <strong>Eligibility : {job.eligibility}</strong>
+      </p>
+
+      <p>
+        <strong>Additional Details : </strong> {job.additionalDetails}
       </p>
 
       <button className="delete-button" onClick={() => onDelete(job.id)}>

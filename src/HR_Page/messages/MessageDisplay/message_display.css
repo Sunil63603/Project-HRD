@@ -13,9 +13,9 @@
 
 .message-bubble {
   padding: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   border-radius: 12px;
-  width: 60%; /* Consistent width for each message bubble */
+  width: 100%; /* Consistent width for each message bubble */
   font-size: 14px;
   line-height: 1.4;
   word-wrap: break-word; /* Ensures long text breaks within the box */
