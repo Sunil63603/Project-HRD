@@ -26,7 +26,7 @@ const MessagingContainer = () => {
   // Function to post a new message to the JSON server
   const postMessage = async (message) => {
     try {
-      const response = await fetch("http://localhost:5000/messages", {
+      const response = await fetch("http://localhost:3000/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { Link } from "react-router-dom";
-import "./Navbar.css"; // Import the CSS file
+import { Link } from "react-router-dom"; // link is to navigate to the combonent which is described when the user clicks on it and the links/routes/path should be same as described in the App.js
+import "./Navbar.css"; // Import the CSS file which has the styling from this component
 
 const Navbar = () => {
   return (

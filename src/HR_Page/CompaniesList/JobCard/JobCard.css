@@ -1,55 +1,90 @@
-/* Styling for individual job cards */
+/* Latest CSS for row-wise job display */
+/* Ensures each job card is displayed in a single row with uniform spacing */
+.job-listing {
+  display: flex;
+  flex-direction: column; /* Stack job cards vertically */
+  gap: 16px; /* Add space between rows */
+  padding: 16px; /* Adds padding around the container */
+}
+
 .job-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  max-width: 100%; /* Ensure the card occupies full row width */
+  width: 100%; /* Consistent width for all cards */
+  margin: 0 auto; /* Center alignment (optional) */
+}
+
+/* Existing CSS for job cards styling */
+.job-card {
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0; /* Light gray for subtle borders */
+  border-radius: 12px; /* Slightly more rounded corners */
   padding: 16px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
-  transition: transform 0.2s; /* Animation for hover effect */
+  background-color: #ffffff; /* Pure white for a clean look */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Subtle shadow for elevation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
 }
 
-/* Hover effect for job cards */
 .job-card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
+  transform: translateY(-4px); /* Lift effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
 }
 
-/* Button container for job card buttons */
+button {
+  display: inline-flex;
+  align-items: center; /* Aligns icon and text vertically */
+  justify-content: center; /* Centers content */
+  padding: 12px 20px; /* Balanced padding */
+  font-size: 0.9rem; /* Standardized text size */
+  font-weight: 600; /* Medium bold text for readability */
+  border-radius: 25px; /* Consistent rounded corners */
+  border: none; /* Clean button style */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, box-shadow 0.2s ease; /* Smooth transitions */
+}
 
-/* Styling for the apply button */
-/* .apply-button {
-  background-color: #4caf50; 
-  
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-   Transition for button color
+.apply-button {
+  background-color: #4caf50; /* Green to represent positivity */
+  color: #ffffff; /* White text for contrast */
 }
 
 .apply-button:hover {
-  background-color: #45a049; 
-  Darker green on hover
-} */
+  background-color: #45a049; /* Slightly darker green on hover */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12); /* Subtle hover shadow */
+}
 
-/* Styling for the delete button */
 .delete-button {
-  display: inline-flex;
-  align-items: center; /* Centers icon and text vertically */
-  background-color: #0073b1; /* LinkedIn's primary blue color */
-  color: #fff; /* White text for contrast */
-  padding: 10px 20px; /* Adds padding for a larger, clickable area */
-  font-size: 1rem; /* Adjusts font size */
-  font-weight: 600; /* Slightly bold for emphasis */
-  border: none; /* Removes default border */
-  border-radius: 25px; /* Rounded corners for a modern look */
-  cursor: pointer; /* Pointer cursor on hover */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  background-color: #0073b1; /* LinkedIn's blue for familiarity */
+  color: #ffffff; /* White text for readability */
 }
 
 .delete-button:hover {
-  background-color: #005580; /* Darker shade on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
+  background-color: #005580; /* Darker blue for hover */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12); /* Subtle hover shadow */
+}
+
+.button-container {
+  display: flex;
+  gap: 12px; /* Equal spacing between buttons */
+  margin-top: 16px; /* Space above buttons */
+}
+
+.job-card-title {
+  font-size: 1.2rem; /* Larger title text */
+  font-weight: 700; /* Bold for emphasis */
+  color: #333333; /* Dark gray for readability */
+  margin-bottom: 8px; /* Space below title */
+}
+
+.job-card-description {
+  font-size: 0.9rem; /* Standard body text */
+  color: #666666; /* Medium gray for secondary text */
+  line-height: 1.5; /* Comfortable line spacing */
+}
+
+h4 {
+  padding: 10px;
+}
+
+p {
+  padding: 10px;
 }

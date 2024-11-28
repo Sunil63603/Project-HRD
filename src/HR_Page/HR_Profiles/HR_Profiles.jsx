@@ -15,7 +15,7 @@ const Profiles = () => {
       try {
         // ❌TMG : try to write this using 'fetch' instead of 'axios'
         const response = await axios.get(
-          "http://localhost:3000/studentProfiles"
+          "http://localhost:3000/registeredStuds"
         );
         setStudents(response.data);
       } catch (err) {

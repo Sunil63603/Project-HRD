@@ -7,9 +7,9 @@ import LandingPage from "./Authentication/LandingPage/LandingPage";
 import LoginForm from "./Authentication/LoginForm/LoginForm";
 
 //usman components.
-import Navbar from "./HR_Page/navbar/Navbar";
+import HR_Layout from "./HR_Page/HR_Layout/HR_Layout";
 import CreateJobPosting from "./HR_Page/CreateJobPosting/CreateJobPosting";
-import Companies from "./HR_Page/CompaniesList/CompaniesList";
+import CompaniesList from "./HR_Page/CompaniesList/CompaniesList";
 import MessageContainer from "./HR_Page/messages/MessagingContainer/MessagingContainer";
 
 //trishan components.
@@ -31,14 +31,25 @@ function App() {
         <Route path="/" element={<LandingPage></LandingPage>}></Route>
         <Route path="/login" element={<LoginForm></LoginForm>}></Route>
 
-        <Route path="/hr" element={<Navbar></Navbar>}></Route>
+        {/* <Route path="/hr" element={<Navbar />}></Route>
         <Route path="/hr/create-job" element={<CreateJobPosting />}></Route>
         <Route path="/hr/companies-list" element={<Companies />}></Route>
         <Route
           path="/hr/message-container"
           element={<MessageContainer />}
         ></Route>
-        <Route path="/hr/profile-container" element={<Profiles />}></Route>
+        <Route path="/hr/profile-container" element={<Profiles />}></Route> */}
+
+        <Route path="/hr" element={<HR_Layout />}>
+          <Route path="create-job" element={<CreateJobPosting />}></Route>
+          <Route path="companies-list" element={<CompaniesList />}></Route>
+          <Route
+            path="message-container"
+            element={<MessageContainer />}
+          ></Route>
+          <Route path="profile-container" element={<Profiles />}></Route>
+        </Route>
+
         {/*❌This below 👇component must be displayed only when HR clicks on any particular student profile ,  Not while searching */}
         {/*❌profiles can be searched in navbar component(ie usman component) */}
         {/* ❌':id' is id of any particular student profile*/}
