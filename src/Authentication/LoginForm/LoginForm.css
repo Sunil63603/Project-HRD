@@ -60,6 +60,18 @@
   border-color: #3b82f6;
 }
 
+/* if the credentials are invalid. */
+.invalid-input {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+.invalid-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
 /* Button Styling */
 .login-button {
   background-color: #3b82f6;
