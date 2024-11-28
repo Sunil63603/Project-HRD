@@ -1,27 +1,29 @@
 .topFixedBar {
-  position: fixed; /* Fixes the topFixedbar to the top even while scrolling */
+  /* position: fixed;  */
+  /* Fixes the topFixedbar to the top even while scrolling */
   top: 0;
-  left:0;
+  left: 0;
   width: 100%; /* Makes the topFixedBar span the full width */
   background-color: #d0c9c9; /* topFixedBar background color */
-  color:#4d64cd;
+  color: #4d64cd;
   padding: 10px 20px;
+  margin-bottom: 60px;
   display: flex;
-  justify-content: space-between;/* Adjusts items within the topFixedBar*/
+  justify-content: space-between; /* Adjusts items within the topFixedBar*/
   align-items: center;
   /* this z-index should be greater than any z-index value so,that topFixedBar will stay on top of all.*/
   z-index: 1000; /* Ensures the topFixedBar stays on top of other content */
-  
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   /* Subtle shadow for the topFixedBar */
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 /* Left Side: Profile Icon and Project Name */
 .topFixedBar-left {
   display: flex;
   align-items: center;
-  padding:1%;
+  padding: 1%;
 }
 
 .profile-icon {
@@ -60,7 +62,6 @@
   color: #888; /* Light grey color for placeholder text */
   opacity: 0.8; /* Adjust opacity for a subtle placeholder text */
 }
-
 
 /* Right Side: Buttons */
 .topFixedBar-right {
@@ -106,7 +107,8 @@
 
 /* Animation for a pulsing glow effect */
 @keyframes pulseGlow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 10px rgba(30, 205, 71, 0.5);
   }
   50% {
@@ -114,12 +116,13 @@
   }
 }
 
-.jobs-btn:focus, .jobs-btn:active {
+.jobs-btn:focus,
+.jobs-btn:active {
   animation: pulseGlow 1.5s infinite; /* Pulsing glow animation on focus or active state */
   outline: none;
 }
 
 /* css properties related to log-out button */
-.log-out-btn{
+.log-out-btn {
   background-color: rgb(255, 5, 5) !important;
 }

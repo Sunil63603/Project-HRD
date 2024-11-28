@@ -7,7 +7,7 @@ import LandingPage from "./Authentication/LandingPage/LandingPage";
 import LoginForm from "./Authentication/LoginForm/LoginForm";
 
 //usman components.
-import Navbar from "./HR_Page/navbar/Navbar";
+import Navbar from "./HR_Page/Navbar/Navbar";
 import CreateJobPosting from "./HR_Page/CreateJobPosting/CreateJobPosting";
 import Companies from "./HR_Page/CompaniesList/CompaniesList";
 import MessageContainer from "./HR_Page/messages/MessagingContainer/MessagingContainer";
@@ -23,6 +23,7 @@ import JobSection from "./Student_Page/JobSection/JobSection";
 import AllProfileSection from "./Student_Page/AllProfilesSection/AllProfileSection";
 import UpdateSection from "./Student_Page/UpdateSection/UpdateSection";
 import MessageHRDSection from "./Student_Page/MessageHRDSection/MessageHRDSection";
+import Student_Layout from "./Student_Page/Student_Layout/Student_Layout";
 
 function App() {
   return (
@@ -44,28 +45,29 @@ function App() {
         {/* ❌':id' is id of any particular student profile*/}
         {/* <Route path='/hr/profiles/:id' element={<Profile></Profile>}></Route> */}
 
-        <Route path="/student" element={<TopFixedBar></TopFixedBar>}></Route>
-        <Route
-          path="/student/profile"
-          element={<ProfileSection></ProfileSection>}
-        ></Route>
-        <Route path="/student/jobs" element={<JobSection></JobSection>}></Route>
-        <Route
-          path="/student/allprofiles"
-          element={<AllProfileSection></AllProfileSection>}
-        ></Route>
-        <Route
-          path="/student/updates"
-          element={<UpdateSection></UpdateSection>}
-        ></Route>
-        <Route
-          path="/student/messageHRD"
-          element={<MessageHRDSection></MessageHRDSection>}
-        ></Route>
-        {/*❌This below 👇component must be displayed only when student clicks on any particular student profile ,but Not while searching */}
-        {/*❌profiles can be searched in topfixedbar component */}
-        {/* ❌':id' is id of any particular student profile*/}
-        {/* <Route path='/hr/profiles/:id' element={<Profile></Profile>}></Route> */}
+        <Route path="/student" element={<Student_Layout></Student_Layout>}>
+          <Route
+            path="profile"
+            element={<ProfileSection></ProfileSection>}
+          ></Route>
+          <Route path="jobs" element={<JobSection></JobSection>}></Route>
+          <Route
+            path="allprofiles"
+            element={<AllProfileSection></AllProfileSection>}
+          ></Route>
+          <Route
+            path="updates"
+            element={<UpdateSection></UpdateSection>}
+          ></Route>
+          <Route
+            path="messageHRD"
+            element={<MessageHRDSection></MessageHRDSection>}
+          ></Route>
+          {/*❌This below 👇component must be displayed only when student clicks on any particular student profile ,but Not while searching */}
+          {/*❌profiles can be searched in topfixedbar component */}
+          {/* ❌':id' is id of any particular student profile*/}
+          {/* <Route path='/hr/profiles/:id' element={<Profile></Profile>}></Route> */}
+        </Route>
       </Routes>
     </Router>
   );
