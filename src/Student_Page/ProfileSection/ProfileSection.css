@@ -1,14 +1,31 @@
 .profile-section {
-  width: 24%;
+  width: 100%;
   padding: 2%;
   background-color: #f4eeee;
   border-radius: 23px; /*Medium rounded corners*/
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);/* Subtle shadow effect*/
-  box-sizing: border-box; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect*/
+  box-sizing: border-box;
   margin-right: 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.profile-left,
+.profile-right {
+  width: 48%; /* Adjust width to fit side-by-side with spacing */
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for individual containers */
+}
+
+.profile-left {
+  text-align: left; /* Align text to the left */
+}
+
+.profile-right {
+  text-align: left; /* Align text to the left for consistency */
 }
 
 .profile-image {
@@ -126,7 +143,6 @@ a#student-website:hover {
   cursor: pointer;
 }
 
-
 /* Upload Resume Button */
 .upload-resume {
   display: inline-flex;
@@ -159,4 +175,98 @@ a#student-website:hover {
   margin: 5px 0;
   color: blue;
   text-decoration: none;
+}
+
+/* latest CSS code for updated profile section */
+
+/* ProfileSection.css */
+
+.profile-section {
+  width: 80%; /* Increased width */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.profile-name {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.profile-bio {
+  font-size: 1.2em;
+  color: #666;
+}
+
+.profile-projects,
+.profile-skills,
+.profile-achievements {
+  margin-bottom: 30px;
+}
+
+.profile-projects h2,
+.profile-skills h2,
+.profile-achievements h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.project-item {
+  margin-bottom: 20px;
+}
+
+.project-video {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.project-link-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.project-link-btn:hover {
+  background-color: #0056b3;
+}
+
+.skills-list,
+.achievements-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.skills-list li,
+.achievements-list li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
 }
