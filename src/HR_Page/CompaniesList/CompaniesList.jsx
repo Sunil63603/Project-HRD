@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 // importing the component JobCard that us used in this componenet.
 import JobCard from "./JobCard/JobCard";
 import "./CompaniesList.css"; // Import the CSS file for standard styling
+
+// there was a error , in the console (while deleting the companies) so i created a data global variable.
 let data;
 const CompaniesList = () => {
   // the Previous jobs which are present in the .json file that is fetched and stored in the jobs(state) and then that are used to display in the UI..
