@@ -14,8 +14,9 @@ function LoginForm() {
   const role = searchParams.get("role"); // Get the 'role' query parameter , which indicates whether HR/student is trying to login.
 
   //these two states are used to store inputs entered by the user.
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("shashi@gmail.com");
+  const [password, setPassword] = useState("123321");
+  const [isValidAccount, setIsValidAccount] = useState(true); //this variable indicates whether current attempt to login is valid or not
 
   //used to display some component programmatically . But 'Link' is used if user directly decides which component to display.
   const navigate = useNavigate(); //in this case , it is used to render component after successful login.
@@ -25,8 +26,6 @@ function LoginForm() {
     setEmail("");
     setPassword("");
   }, []); //empty dependency[] indicates that , this code runs only on initial render .
-
-  let isValidAccount = true; //this variable indicates whether current attempt to login is valid or not
 
   //this function is called when clicks on the submit button.
   const handleSubmit = async () => {
@@ -38,12 +37,14 @@ function LoginForm() {
       }
       const validAccounts = await response.json(); //gets all the registered accounts of HRs or Students.
 
-      isValidAccount = validAccounts.find(
+      //❌below account or its details are used to display/remder specific account .
+      const account = validAccounts.find(
         (validAccount) =>
           validAccount.email === email && validAccount.password === password
       ); //if both email and password are matching , then render page else display incorrect credentials message.
 
-      if (isValidAccount) {
+      if (account) {
+        //If valid account, navigate to the respective page
         if (role === "registeredHRs") {
           navigate(`/hr`); //if HR Login is successfull , then display HR_Page.
         } //registeredStuds.
@@ -51,7 +52,7 @@ function LoginForm() {
           navigate(`/student`); //if Student Login is successful , then display Student_Page.
         }
       } else {
-        alert("Error: Incorrect username or password.");
+        setIsValidAccount(false); //making this false , will indicate 'invalid credentials in UI'
       }
     } catch (error) {
       console.error("Error verifying user:", error);
@@ -62,14 +63,13 @@ function LoginForm() {
   return (
     <div className="login-container">
       <h2 className="login-title">Login</h2>
-
       <div className="login-form">
         <label className="login-label">
           Email*:
           <input
             type="email"
             required
-            className="login-input"
+            className={`login-input ${!isValidAccount ? "invalid-input" : ""}`}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -80,16 +80,18 @@ function LoginForm() {
           <input
             type="password"
             required
-            className="login-input"
+            className={`login-input ${!isValidAccount ? "invalid-input" : ""}`}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
+
         {!isValidAccount && (
           <p className="invalid-message">
             Invalid credentials. Please try again.
           </p>
         )}
+
         <button className="login-button" onClick={handleSubmit}>
           Submit
         </button>

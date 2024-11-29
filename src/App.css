@@ -93,7 +93,6 @@ main {
   width: 300px;
 }
 
-
 /* App Container */
 .App {
   font-family: Arial, sans-serif;
@@ -254,4 +253,14 @@ main {
 
 .nav-links a:hover {
   color: #80dd6d; /* Change color on hover */
+}
+
+/* latest code for content and topbar div */
+.content-with-topbar {
+  margin-top: 60px; /* Should match the height of TopFixedBar */
+  padding: 20px;
+}
+
+.content {
+  padding: 20px;
 }
