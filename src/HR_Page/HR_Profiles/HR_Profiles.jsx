@@ -1,23 +1,24 @@
-// eslint-disable-next-line no-unused-vars
+
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "./HR_Profiles.css";
+import { useNavigate } from "react-router";
+
 
 const Profiles = () => {
   const [students, setStudents] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredStudents, setFilteredStudents] = useState([]);
   const [error, setError] = useState(null);
 
-  // Fetching students from db.json
+  // Fetching students from db.json using fetch
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        // ❌TMG : try to write this using 'fetch' instead of 'axios'
-        const response = await axios.get(
-          "http://localhost:3000/registeredStuds"
-        );
-        setStudents(response.data);
+        const response = await fetch("http://localhost:3000/registeredStuds");
+        if (!response.ok) {
+          throw new Error("Failed to fetch");
+        }
+        const data = await response.json();
+        setStudents(data);
       } catch (err) {
         setError("Error fetching students data");
         console.error("Error fetching students:", err);
@@ -27,26 +28,15 @@ const Profiles = () => {
     fetchStudents();
   }, []);
 
-  // Function to handle search
-  const handleSearch = () => {
-    if (searchTerm.trim() === "") {
-      setFilteredStudents([]); // Clear the list if search term is empty
-      setError("Please enter a USN to search.");
-      return;
-    }
+  // Filter students based on the search term dynamically
+  const filteredStudents = students.filter((student) =>
+    student.usn.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-    const result = students.filter(
-      (student) => student.usn.toLowerCase() === searchTerm.toLowerCase()
-    );
-
-    if (result.length > 0) {
-      setFilteredStudents(result); // Display the matching student
-      setError(null); // Clear error if a match is found
-    } else {
-      setFilteredStudents([]); // No match found
-      setError("No student found with the given USN.");
-    }
-  };
+  let navigate = useNavigate();
+  const handleClickToMessage=()=>{
+    navigate("/student/profile ");
+  }
 
   return (
     <div className="profiles-container">
@@ -61,22 +51,19 @@ const Profiles = () => {
             placeholder="Search by USN..."
             className="search-box"
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)} // Update search term on input
+            onChange={(e) => setSearchTerm(e.target.value)} // Update search term dynamically
           />
-          <button className="search-button" onClick={handleSearch}>
-            Search
-          </button>
         </div>
       </header>
 
-      {/* Error or Instruction Message */}
+      {/* Error Message */}
       {error && <p className="error">{error}</p>}
 
-      {/* Displaying the searched students */}
-      {filteredStudents.length > 0 && (
-        <div className="student-list">
-          {filteredStudents.map((student, index) => (
-            <div key={index} className="student-card">
+      {/* Displaying the students */}
+      <div className="student-list">
+        {filteredStudents.length > 0 ? (
+          filteredStudents.map((student, index) => (
+            <div key={index} className="student-card" onClick={handleClickToMessage}>
               <p>
                 <strong>USN:</strong> {student.usn}
               </p>
@@ -84,9 +71,11 @@ const Profiles = () => {
                 <strong>Name:</strong> {student.name}
               </p>
             </div>
-          ))}
-        </div>
-      )}
+          ))
+        ) : (
+          <p>No students match your search.</p>
+        )}
+      </div>
     </div>
   );
 };

@@ -6,9 +6,9 @@ import { BoxArrowUpRight } from "react-bootstrap-icons"; //this is used to indic
 import { FileEarmarkPdf, Download } from "react-bootstrap-icons"; // icon Indicating that resume is a pdf,and download icon
 import { CloudUpload } from "react-bootstrap-icons"; // Uploading resume icon.
 // import profileImage from "../src/Assets/Images/photo.jpeg";
-import Photo from "../src/Assets/Images/photo.jpg";
+// import Photo from "../src/Assets/Images/photo.jpg";
 //this is the component ie,displayed at the left side of the container.
-const ProfileSection = () => {
+const IndividualProfile = () => {
   return (
     <div className="profile-section">
       {/* 'component-name' class have common css code which is written in updateSection.css*/}
@@ -103,4 +103,4 @@ const ProfileSection = () => {
   );
 };
 
-export default ProfileSection;
+export default IndividualProfile;
