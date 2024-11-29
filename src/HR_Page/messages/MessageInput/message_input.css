@@ -17,7 +17,7 @@ body {
   bottom: 20px; /* Spacing from the bottom */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Adjust position to center */
-  width: 60%; /* Set width to 60% of the viewport */
+  width: 50%; /* Set width to 60% of the viewport */
 }
 .message-input {
   flex: 1;

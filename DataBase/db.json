@@ -86,13 +86,6 @@
   ],
   "jobs": [
     {
-      "id": "cfaf",
-      "companyName": "SJC INSTITUTE",
-      "jobDescription": "SDE",
-      "eligibility": "AIML",
-      "applyLink": "https://usmaaportfolio.netlify.app/"
-    },
-    {
       "id": "dd19",
       "companyName": "TCS",
       "jobDescription": "SDE",
@@ -112,6 +105,38 @@
       "jobDescription": "freshers",
       "eligibility": "2025 batch",
       "applyLink": "https://sunilpersonalportfolio.netlify.app"
+    },
+    {
+      "id": "de40",
+      "companyName": "Satroos",
+      "jobDescription": "SDE",
+      "eligibility": "CSE",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
+      "additionalDetails": ""
+    },
+    {
+      "id": "8645",
+      "companyName": "S J C Institute of Technology, Chikballpura, Karnataka",
+      "jobDescription": "asdasd",
+      "eligibility": "sadsad",
+      "applyLink": "https://usmaaportfolio.netlify.app/",
+      "additionalDetails": "sunil\nusman\nvikas\ntmg"
+    },
+    {
+      "id": "944a",
+      "companyName": "Google",
+      "jobDescription": "SDE",
+      "eligibility": "CSE ",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
+      "additionalDetails": "NA"
+    },
+    {
+      "id": "f714",
+      "companyName": "Infosys",
+      "jobDescription": "SDE",
+      "eligibility": "CSE",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
+      "additionalDetails": "Conducting the Drive on 10 january.\nThe last Date to apply is 10/12/2024.\nGoodLuck all !!!!!!!!!!!!!!!\nSike Sike Sike "
     }
   ],
   "messages": [
@@ -131,7 +156,7 @@
     },
     {
       "id": "9584",
-      "sender": "1SJ21CS166",
+      "sender": "HR",
       "text": "Yantakulu",
       "date": "2/11/2024",
       "time": "12:44 pm"
@@ -156,6 +181,13 @@
       "text": "hi HR",
       "date": "7/11/2024",
       "time": "10:25 am"
+    },
+    {
+      "id": "0ea4",
+      "sender": "HR",
+      "text": "HI people",
+      "date": "28/11/2024",
+      "time": "07:08 pm"
     }
   ]
 }
