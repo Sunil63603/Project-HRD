@@ -32,7 +32,6 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage></LandingPage>}></Route>
         <Route path="/login" element={<LoginForm></LoginForm>}></Route>
-
         {/* <Route path="/hr" element={<Navbar />}></Route>
         <Route path="/hr/create-job" element={<CreateJobPosting />}></Route>
         <Route path="/hr/companies-list" element={<Companies />}></Route>
@@ -40,8 +39,16 @@ function App() {
           path="/hr/message-container"
           element={<MessageContainer />}
         ></Route>
-        <Route path="/hr/profile-container" element={<Profiles />}></Route> */}
-
+<<<<<<< HEAD
+      / 
+        {/* Individual Student Component 👇 */}
+        <Route
+          path="/hr/IndividualProfile"
+          element={<IndividualProfile />}
+        ></Route>
+        {/* Profile search container */}
+        <Route path="/hr/profile-container" element={<Profiles />}></Route>
+        <Route path="/hr/profile-container" element={<Profiles />}></Route>
         <Route path="/hr" element={<HR_Layout />}>
           <Route path="create-job" element={<CreateJobPosting />}></Route>
           <Route path="companies-list" element={<CompaniesList />}></Route>
@@ -54,13 +61,12 @@ function App() {
 
         {/*❌This below 👇component must be displayed only when HR clicks on any particular student profile ,  Not while searching */}
         <Route
-          path="/hr/IndividualProfile"
+          path="/hr/profile-container/IndividualProfile"
           element={<IndividualProfile />}
         ></Route>
         {/*❌profiles can be searched in navbar component(ie usman component) */}
         {/* ❌':id' is id of any particular student profile*/}
         {/* <Route path='/hr/profiles/:id' element={<Profile></Profile>}></Route> */}
-
         <Route path="/student" element={<Student_Layout></Student_Layout>}>
           <Route
             path="profile"
