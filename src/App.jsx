@@ -15,6 +15,7 @@ import MessageContainer from "./HR_Page/messages/MessagingContainer/MessagingCon
 //trishan components.
 //search functionality is in navbar(ie.usman component)
 import Profiles from "./HR_Page/HR_Profiles/HR_Profiles";
+import IndividualProfile from "./HR_Page/HR_Profiles/IndividualProfile/IndividualProfile"
 
 //sunil components
 import TopFixedBar from "./Student_Page/TopFixedBar/TopFixedBar";
@@ -24,6 +25,7 @@ import AllProfileSection from "./Student_Page/AllProfilesSection/AllProfileSecti
 import UpdateSection from "./Student_Page/UpdateSection/UpdateSection";
 import MessageHRDSection from "./Student_Page/MessageHRDSection/MessageHRDSection";
 
+ 
 function App() {
   return (
     <Router>
@@ -38,7 +40,9 @@ function App() {
           path="/hr/message-container"
           element={<MessageContainer />}
         ></Route>
-        <Route path="/hr/profile-container" element={<Profiles />}></Route>
+       <Route path="/hr/profile-container" element={<Profiles />}></Route>
+        {/* Individual Student Component 👇 */}
+        <Route path="/hr/IndividualProfile" element={<IndividualProfile/>}></Route>
         {/*❌This below 👇component must be displayed only when HR clicks on any particular student profile ,  Not while searching */}
         {/*❌profiles can be searched in navbar component(ie usman component) */}
         {/* ❌':id' is id of any particular student profile*/}
