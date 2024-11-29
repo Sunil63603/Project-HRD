@@ -13,20 +13,12 @@ const Profiles = () => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-<<<<<<< HEAD
         const response = await fetch("http://localhost:3000/registeredStuds");
         if (!response.ok) {
           throw new Error("Failed to fetch");
         }
         const data = await response.json();
         setStudents(data);
-=======
-        // ❌TMG : try to write this using 'fetch' instead of 'axios'
-        const response = await axios.get(
-          "http://localhost:3000/registeredStuds"
-        );
-        setStudents(response.data);
->>>>>>> 3f8185a2e98eec174d6b27935136d3cb532a91d3
       } catch (err) {
         setError("Error fetching students data");
         console.error("Error fetching students:", err);
