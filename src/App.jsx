@@ -15,7 +15,7 @@ import MessageContainer from "./HR_Page/messages/MessagingContainer/MessagingCon
 //trishan components.
 //search functionality is in navbar(ie.usman component)
 import Profiles from "./HR_Page/HR_Profiles/HR_Profiles";
-import IndividualProfile from "./HR_Page/HR_Profiles/IndividualProfile/IndividualProfile"
+import IndividualProfile from "./HR_Page/HR_Profiles/IndividualProfile/IndividualProfile";
 
 //sunil components
 import TopFixedBar from "./Student_Page/TopFixedBar/TopFixedBar";
@@ -26,7 +26,6 @@ import UpdateSection from "./Student_Page/UpdateSection/UpdateSection";
 import MessageHRDSection from "./Student_Page/MessageHRDSection/MessageHRDSection";
 import Student_Layout from "./Student_Page/Student_Layout/Student_Layout";
 
- 
 function App() {
   return (
     <Router>
@@ -41,12 +40,20 @@ function App() {
           path="/hr/message-container"
           element={<MessageContainer />}
         ></Route>
-      / 
-        {/* Individual Student Component 👇 */}
-        <Route path="/hr/IndividualProfile" element={<IndividualProfile/>}></Route>
-        {/* Profile search container */}
-        <Route path="/hr/profile-container" element={<Profiles />}></Route>
+        <Route path="/hr/profile-container" element={<Profiles />}></Route> */}
+
+        <Route path="/hr" element={<HR_Layout />}>
+          <Route path="create-job" element={<CreateJobPosting />}></Route>
+          <Route path="companies-list" element={<CompaniesList />}></Route>
+          <Route
+            path="message-container"
+            element={<MessageContainer />}
+          ></Route>
+          <Route path="profile-container" element={<Profiles />}></Route>
+        </Route>
+
         {/*❌This below 👇component must be displayed only when HR clicks on any particular student profile ,  Not while searching */}
+        <Route path="/hr/IndividualProfile" element={<IndividualProfile/>}></Route>
         {/*❌profiles can be searched in navbar component(ie usman component) */}
         {/* ❌':id' is id of any particular student profile*/}
         {/* <Route path='/hr/profiles/:id' element={<Profile></Profile>}></Route> */}
