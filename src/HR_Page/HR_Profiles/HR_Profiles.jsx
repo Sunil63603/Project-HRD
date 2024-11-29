@@ -2,12 +2,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./HR_Profiles.css";
+import { useNavigate } from "react-router-dom";
 
 const Profiles = () => {
   const [students, setStudents] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredStudents, setFilteredStudents] = useState([]);
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate(); // Initialize navigate function.
 
   // Fetching students from db.json
   useEffect(() => {
@@ -48,6 +51,10 @@ const Profiles = () => {
     }
   };
 
+  const handleClickToMessage = () => {
+    navigate("/hr/IndividualProfile");
+  };
+
   return (
     <div className="profiles-container">
       <header className="headerProfile">
@@ -76,7 +83,11 @@ const Profiles = () => {
       {filteredStudents.length > 0 && (
         <div className="student-list">
           {filteredStudents.map((student, index) => (
-            <div key={index} className="student-card">
+            <div
+              key={index}
+              className="student-card"
+              onClick={handleClickToMessage}
+            >
               <p>
                 <strong>USN:</strong> {student.usn}
               </p>

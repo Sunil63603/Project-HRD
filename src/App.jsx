@@ -15,6 +15,7 @@ import MessageContainer from "./HR_Page/messages/MessagingContainer/MessagingCon
 //trishan components.
 //search functionality is in navbar(ie.usman component)
 import Profiles from "./HR_Page/HR_Profiles/HR_Profiles";
+import IndividualProfile from "./HR_Page/HR_Profiles/IndividualProfile/IndividualProfile";
 
 //sunil components
 import TopFixedBar from "./Student_Page/TopFixedBar/TopFixedBar";
@@ -47,7 +48,16 @@ function App() {
             path="message-container"
             element={<MessageContainer />}
           ></Route>
-          <Route path="profile-container" element={<Profiles />}></Route>
+
+          {/* Trishan Routes */}
+
+          {/* Profile search container */}
+          <Route path="profile-container" element={<Profiles />}>
+            <Route
+              path="hr/profile-container/IndividualProfile"
+              element={<IndividualProfile />}
+            ></Route>
+          </Route>
         </Route>
 
         {/*❌This below 👇component must be displayed only when HR clicks on any particular student profile ,  Not while searching */}

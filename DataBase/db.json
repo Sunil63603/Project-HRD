@@ -11,7 +11,7 @@
       "id": "2",
       "usn": "1SJ21CS151",
       "name": "Jane Doe",
-      "email": "vksvikas41@gmail.com",
+      "email": "  @gmail.com",
       "password": "890789687"
     },
     {
@@ -106,14 +106,6 @@
       "eligibility": "CSE",
       "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
       "additionalDetails": ""
-    },
-    {
-      "id": "8645",
-      "companyName": "S J C Institute of Technology, Chikballpura, Karnataka",
-      "jobDescription": "asdasd",
-      "eligibility": "sadsad",
-      "applyLink": "https://usmaaportfolio.netlify.app/",
-      "additionalDetails": "sunil\nusman\nvikas\ntmg"
     },
     {
       "id": "944a",
