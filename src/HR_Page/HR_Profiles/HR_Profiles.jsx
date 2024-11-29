@@ -35,7 +35,7 @@ const Profiles = () => {
 
   let navigate = useNavigate();
   const handleClickToMessage=()=>{
-    navigate("/student/profile ");
+    navigate("/hr/IndividualProfile ");
   }
 
   return (
