@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 // importing the component JobCard that us used in this componenet.
 import JobCard from "./JobCard/JobCard";
 import "./CompaniesList.css"; // Import the CSS file for standard styling
-
+let data;
 const CompaniesList = () => {
   // the Previous jobs which are present in the .json file that is fetched and stored in the jobs(state) and then that are used to display in the UI..
   const [jobs, setJobs] = useState([]);
@@ -26,7 +26,7 @@ const CompaniesList = () => {
 
       // the data which is fetched it will be in the form of the string..
       // the data which is in the form of the string that is converted into the json form to get the data and then it can be used in the UI, bcz we cannot use the string easily.
-      const data = await response.json();
+      data = await response.json();
 
       // Sort by id in descending order
       // tyo show the data in the form that the latest one  should be first then the older one....usus
