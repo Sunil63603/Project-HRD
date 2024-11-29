@@ -50,18 +50,15 @@ function App() {
             element={<MessageContainer />}
           ></Route>
 
-          {/* Trishan Routes */}
-
           {/* Profile search container */}
-          <Route path="profile-container" element={<Profiles />}>
-            <Route
-              path="hr/profile-container/IndividualProfile"
-              element={<IndividualProfile />}
-            ></Route>
-          </Route>
+          <Route path="profile-container" element={<Profiles />}></Route>
         </Route>
 
         {/*❌This below 👇component must be displayed only when HR clicks on any particular student profile ,  Not while searching */}
+        <Route
+          path="hr/profile-container/IndividualProfile"
+          element={<IndividualProfile />}
+        ></Route>
         {/*❌profiles can be searched in navbar component(ie usman component) */}
         {/* ❌':id' is id of any particular student profile*/}
         {/* <Route path='/hr/profiles/:id' element={<Profile></Profile>}></Route> */}

@@ -1,14 +1,18 @@
-.profile-section {
-  width: 490px;
-  padding: 2%;
-  background-color: #f4eeee;
-  border-radius: 23px; /*Medium rounded corners*/
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect*/
-  box-sizing: border-box;
-  margin-right: 4%;
+.Individual-profile-section {
+  width: 33%;
+    padding: 2%;
+    background-color: #f4eeee;
+    border-radius: 23px;
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    margin-right: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 31%;
 }
 
 .profile-image {
@@ -18,7 +22,7 @@
   object-fit: cover;
   margin-bottom: 20px;
 }
-/* Container for student information */
+Container for student information
 .student-info {
   margin-bottom: 20px;
 }
