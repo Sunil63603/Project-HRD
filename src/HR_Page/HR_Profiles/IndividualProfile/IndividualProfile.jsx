@@ -1,4 +1,3 @@
-
 import React from "react";
 import "./IndividualProfile.css";
 import Photo from "../../../Assets/Images/photo.jpg";

@@ -58,7 +58,7 @@ const Profiles = () => {
       {error && <p className="error">{error}</p>}
 
       {/* Displaying the students */}
-      <div className="ScrollBar">
+      <div className="srollingProfiles">
         <div className="student-list">
           {filteredStudents.length > 0 ? (
             filteredStudents.map((student, index) => (

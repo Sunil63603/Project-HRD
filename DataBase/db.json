@@ -11,14 +11,7 @@
       "id": "2",
       "usn": "1SJ21CS151",
       "name": "Jane Doe",
-      "email": "vksvikas41@gmail.com",
-      "password": "890789687"
-    },
-    {
-      "id": "3",
-      "usn": "1SJ21CS165",
-      "name": "Thrishan",
-      "email": "vksvikas41@gmail.com",
+      "email": "  @gmail.com",
       "password": "890789687"
     },
     {
@@ -86,50 +79,12 @@
   ],
   "jobs": [
     {
-      "id": "fcd6",
-      "companyName": "Accenture",
-      "jobDescription": "SDE",
-      "eligibility": "CSE",
-      "applyLink": "https://usmaaportfolio.netlify.app/"
-    },
-    {
-      "id": "f5d4",
-      "companyName": "NTT data",
-      "jobDescription": "freshers",
-      "eligibility": "2025 batch",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app"
-    },
-    {
-      "id": "de40",
-      "companyName": "Satroos",
+      "id": "8b9a",
+      "companyName": "SJC INSTITUTE",
       "jobDescription": "SDE",
       "eligibility": "CSE",
       "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
-      "additionalDetails": ""
-    },
-    {
-      "id": "8645",
-      "companyName": "S J C Institute of Technology, Chikballpura, Karnataka",
-      "jobDescription": "asdasd",
-      "eligibility": "sadsad",
-      "applyLink": "https://usmaaportfolio.netlify.app/",
-      "additionalDetails": "sunil\nusman\nvikas\ntmg"
-    },
-    {
-      "id": "944a",
-      "companyName": "Google",
-      "jobDescription": "SDE",
-      "eligibility": "CSE ",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
-      "additionalDetails": "NA"
-    },
-    {
-      "id": "54f7",
-      "companyName": "Inaipi",
-      "jobDescription": "DEvops",
-      "eligibility": "CSE/ISE",
-      "applyLink": "http://localhost:5173/hr/create-job",
-      "additionalDetails": "NA"
+      "additionalDetails": "Arriving at 1/12/2024"
     }
   ],
   "messages": [
@@ -183,11 +138,18 @@
       "time": "07:08 pm"
     },
     {
-      "id": "a4fb",
+      "id": "5adf",
       "sender": "HR",
       "text": "hi",
-      "date": "11/29/2024",
-      "time": "12:07 PM"
+      "date": "29/11/2024",
+      "time": "02:35 pm"
+    },
+    {
+      "id": "e6ed",
+      "sender": "HR",
+      "text": "14:56 29/11/2024",
+      "date": "29/11/2024",
+      "time": "02:47 pm"
     }
   ]
 }
