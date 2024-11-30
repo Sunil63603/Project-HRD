@@ -33,11 +33,7 @@ const Profiles = () => {
 
   let navigate = useNavigate();
   const handleClickToMessage = () => {
-<<<<<<< HEAD
-    navigate("/hr/profile-container/IndividualProfile ");
-=======
     navigate("/hr/profile-container/IndividualProfile");
->>>>>>> origin/main
   };
 
   return (

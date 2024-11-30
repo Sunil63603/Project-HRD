@@ -101,6 +101,14 @@
       "eligibility": "CSE ",
       "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
       "additionalDetails": "NA"
+    },
+    {
+      "id": "2472",
+      "companyName": "Sunny Enterprises",
+      "jobDescription": "Two types of Jobs",
+      "eligibility": "Usman Pasha",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "Usman,are you ready to do the job?"
     }
   ],
   "messages": [
@@ -159,6 +167,13 @@
       "text": "message on 29Th nov 9:27am",
       "date": "11/29/2024",
       "time": "09:27 AM"
+    },
+    {
+      "id": "85c6",
+      "sender": "HR",
+      "text": "Sunil is testing this message feature on 30/11/2024 at 9:05 pm ",
+      "date": "11/30/2024",
+      "time": "09:05 PM"
     }
   ],
   "conversations": [
@@ -181,7 +196,8 @@
           "content": "Great! Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
-      ]
+      ],
+      "id": "5e2b"
     },
     {
       "studentId": "124",
@@ -197,7 +213,8 @@
           "content": "I will email it shortly. Thank you!",
           "timestamp": "2024-11-24T09:40:00Z"
         }
-      ]
+      ],
+      "id": "6f04"
     }
   ]
 }
