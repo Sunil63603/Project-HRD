@@ -1,174 +1,18 @@
 .Individual-profile-section {
-  width: 33%;
-    padding: 2%;
-    background-color: #f4eeee;
-    border-radius: 23px;
-    display: flex
-;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
-    margin-right: 50%;
-    justify-content: center;
-    align-items: center;
-    margin-left: 31%;
-}
-
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
-Container for student information
-.student-info {
-  margin-bottom: 20px;
-}
-
-/* Label Styles */
-.info-label {
-  display: block; /* Each label on a new line */
-  font-size: 0.85rem; /* Smaller font size for a label-like appearance */
-  color: #555; /* Subtle grey color */
-  margin-top: 25px;
-  margin-bottom: 1px; /* Space between the label and the element */
-  font-weight: 600; /* Slightly bold for emphasis */
-  text-transform: uppercase; /* Converts text to uppercase for a modern touch */
-}
-
-/* Styles for the student's name */
-.student-name {
-  font-size: 1.5rem; /* Adjust size for emphasis */
-  font-weight: bold;
-  color: #2c3e50; /* Dark color for contrast */
-  margin: 5px 0 15px; /* Adds space around the element */
-}
-
-/* Styles for the USN */
-.student-usn {
-  font-size: 1.2rem;
-  color: #2c3e50;
-  margin: 5px 0 15px;
-}
-
-/* Styles for the website link */
-a#student-website {
-  color: #3498db; /* Bright blue color for links */
-  text-decoration: none; /* Removes underline */
-  font-size: 1.1rem;
-  margin: 5px 0;
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-a#student-website:hover {
-  color: #1a73e8; /* Changes color on hover */
-}
-
-.icon-style {
-  font-size: 1rem; /* Adjust the size of the icon */
-  color: #3498db; /* Set the color */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  margin-right: 5px; /* Add some spacing */
-}
-
-.icon-style:hover {
-  color: #1a73e8; /* Change color on hover */
-}
-
-/* resumes container css properties */
-/* Container for resumes */
-.resumes-container {
-  margin-bottom: 20px;
-}
-
-/* List of resumes */
-.resumes-list {
-  list-style: none; /* Removes default bullet points */
-  padding: 0;
-  margin: 0;
-}
-
-/* Individual resume item */
-.resume-item {
   display: flex;
+  flex-direction: column;
+  height: 431px;
+  justify-content: center;
   align-items: center;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc; /* Adds a border around each resume */
-  border-radius: 5px; /* Rounded corners */
-  background-color: #f9f9f9; /* Light background */
-  transition: box-shadow 0.3s ease;
+  margin-top: -422px;
+  margin-left: 46%;
+  background: lightgray;
+  margin-right: 20px;
 }
 
-.resume-item:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Adds shadow on hover */
+.Profile-name {
+  margin-top: -332px;
 }
 
-/* Resume link */
-.resume-link {
-  margin-left: 10px;
-  color: #0073b1; /* LinkedIn's blue color */
-  text-decoration: none;
-  flex-grow: 1; /* Takes up the available space */
-}
-
-.resume-link:hover {
-  text-decoration: underline; /* Underline on hover */
-}
-
-/* Icons */
-.resume-icon {
-  color: #e74c3c; /* Red color for PDF icon */
-  font-size: 1.5rem;
-}
-
-.download-icon {
-  color: #0073b1;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-/* Upload Resume Button */
-.upload-resume {
-  display: inline-flex;
-  align-items: center; /* Centers icon and text vertically */
-  background-color: #6074cb; /* LinkedIn's primary blue color */
-  color: #fff; /* White text for contrast */
-  padding: 10px 20px; /* Adds padding for a larger, clickable area */
-  font-size: 1rem; /* Adjusts font size */
-  font-weight: 600; /* Slightly bold for emphasis */
-  border: none; /* Removes default border */
-  border-radius: 25px; /* Rounded corners for a modern look */
-  cursor: pointer; /* Pointer cursor on hover */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-}
-
-.upload-resume:hover {
-  background-color: #005580; /* Darker shade on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
-}
-
-/* Icon inside the button */
-.upload-icon {
-  margin-right: 8px; /* Spacing between icon and text */
-  font-size: 1.2rem; /* Adjust icon size */
-}
-
-.contact-details a {
-  display: block;
-  margin: 5px 0;
-  color: blue;
-  text-decoration: none;
-}
-/* //Message button */
-.MessageButton {
-  padding: 10px;
-  width: 100px;
-  border-radius: 50px;
-  color: white;
-  background: #6074cb;
-  margin-left: 300px;
+.Profile-image {
 }

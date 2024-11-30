@@ -77,16 +77,7 @@
       "password": "123321"
     }
   ],
-  "jobs": [
-    {
-      "id": "8b9a",
-      "companyName": "SJC INSTITUTE",
-      "jobDescription": "SDE",
-      "eligibility": "CSE",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
-      "additionalDetails": "Arriving at 1/12/2024"
-    }
-  ],
+  "jobs": [],
   "messages": [
     {
       "id": "6b3e",
