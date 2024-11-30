@@ -11,7 +11,7 @@
       "id": "2",
       "usn": "1SJ21CS151",
       "name": "Jane Doe",
-      "email": "vksvikas41@gmail.com",
+      "email": "  @gmail.com",
       "password": "890789687"
     },
     {
@@ -79,29 +79,8 @@
   ],
   "jobs": [
     {
-      "id": "dd19",
-      "companyName": "TCS",
-      "jobDescription": "SDE",
-      "eligibility": "CSE ISE",
-      "applyLink": "https://usmaaportfolio.netlify.app/"
-    },
-    {
-      "id": "fcd6",
-      "companyName": "Accenture",
-      "jobDescription": "SDE",
-      "eligibility": "CSE",
-      "applyLink": "https://usmaaportfolio.netlify.app/"
-    },
-    {
-      "id": "f5d4",
-      "companyName": "NTT data",
-      "jobDescription": "freshers",
-      "eligibility": "2025 batch",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app"
-    },
-    {
-      "id": "de40",
-      "companyName": "Satroos",
+      "id": "8b9a",
+      "companyName": "SJC INSTITUTE",
       "jobDescription": "SDE",
       "eligibility": "CSE",
       "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
@@ -122,14 +101,6 @@
       "eligibility": "CSE ",
       "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
       "additionalDetails": "NA"
-    },
-    {
-      "id": "f714",
-      "companyName": "Infosys",
-      "jobDescription": "SDE",
-      "eligibility": "CSE",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
-      "additionalDetails": "Conducting the Drive on 10 january.\nThe last Date to apply is 10/12/2024.\nGoodLuck all !!!!!!!!!!!!!!!\nSike Sike Sike "
     }
   ],
   "messages": [
@@ -181,6 +152,52 @@
       "text": "HI people",
       "date": "28/11/2024",
       "time": "07:08 pm"
+    },
+    {
+      "id": "600f",
+      "sender": "HR",
+      "text": "message on 29Th nov 9:27am",
+      "date": "11/29/2024",
+      "time": "09:27 AM"
+    }
+  ],
+  "conversations": [
+    {
+      "studentId": "123",
+      "studentName": "John Doe",
+      "messages": [
+        {
+          "sender": "HR",
+          "content": "Hello John, please update your portfolio.",
+          "timestamp": "2024-11-24T10:00:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Sure, I will update it by today.",
+          "timestamp": "2024-11-24T10:05:00Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Great! Let me know once it's done.",
+          "timestamp": "2024-11-24T10:10:00Z"
+        }
+      ]
+    },
+    {
+      "studentId": "124",
+      "studentName": "Jane Smith",
+      "messages": [
+        {
+          "sender": "HR",
+          "content": "Hi Jane, please share your project demo video.",
+          "timestamp": "2024-11-24T09:30:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "I will email it shortly. Thank you!",
+          "timestamp": "2024-11-24T09:40:00Z"
+        }
+      ]
     }
   ]
 }

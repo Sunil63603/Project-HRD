@@ -1,16 +1,17 @@
-// eslint-disable-next-line no-unused-vars
 import React from "react";
 import "./IndividualProfile.css";
+import Photo from "../../../Assets/Images/photo.jpg";
 
 import { BoxArrowUpRight } from "react-bootstrap-icons"; //this is used to indicate that portfolio website is a link
 import { FileEarmarkPdf, Download } from "react-bootstrap-icons"; // icon Indicating that resume is a pdf,and download icon
 import { CloudUpload } from "react-bootstrap-icons"; // Uploading resume icon.
 // import profileImage from "../src/Assets/Images/photo.jpeg";
-import Photo from "../src/Assets/Images/photo.jpg";
+// import Photo from "../src/Assets/Images/photo.jpg";
 //this is the component ie,displayed at the left side of the container.
-const ProfileSection = () => {
+
+const IndividualProfile = () => {
   return (
-    <div className="profile-section">
+    <div className="Individual-profile-section">
       {/* 'component-name' class have common css code which is written in updateSection.css*/}
       {/* ❌actually it should be written in global css file(so move .component-name css to global css file)*/}
       <h2 className="component-name">Profile</h2>
@@ -103,4 +104,4 @@ const ProfileSection = () => {
   );
 };
 
-export default ProfileSection;
+export default IndividualProfile;
