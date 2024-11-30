@@ -11,14 +11,7 @@
       "id": "2",
       "usn": "1SJ21CS151",
       "name": "Jane Doe",
-      "email": "vksvikas41@gmail.com",
-      "password": "890789687"
-    },
-    {
-      "id": "3",
-      "usn": "1SJ21CS165",
-      "name": "Thrishan",
-      "email": "vksvikas41@gmail.com",
+      "email": "  @gmail.com",
       "password": "890789687"
     },
     {
@@ -86,29 +79,8 @@
   ],
   "jobs": [
     {
-      "id": "dd19",
-      "companyName": "TCS",
-      "jobDescription": "SDE",
-      "eligibility": "CSE ISE",
-      "applyLink": "https://usmaaportfolio.netlify.app/"
-    },
-    {
-      "id": "fcd6",
-      "companyName": "Accenture",
-      "jobDescription": "SDE",
-      "eligibility": "CSE",
-      "applyLink": "https://usmaaportfolio.netlify.app/"
-    },
-    {
-      "id": "f5d4",
-      "companyName": "NTT data",
-      "jobDescription": "freshers",
-      "eligibility": "2025 batch",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app"
-    },
-    {
-      "id": "de40",
-      "companyName": "Satroos",
+      "id": "8b9a",
+      "companyName": "SJC INSTITUTE",
       "jobDescription": "SDE",
       "eligibility": "CSE",
       "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
