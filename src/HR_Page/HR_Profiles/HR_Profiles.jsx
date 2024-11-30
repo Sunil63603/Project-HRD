@@ -1,8 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import "./HR_Profiles.css";
 import { useNavigate } from "react-router";
-
 
 const Profiles = () => {
   const [students, setStudents] = useState([]);
@@ -34,9 +32,9 @@ const Profiles = () => {
   );
 
   let navigate = useNavigate();
-  const handleClickToMessage=()=>{
+  const handleClickToMessage = () => {
     navigate("/hr/IndividualProfile ");
-  }
+  };
 
   return (
     <div className="profiles-container">
@@ -60,21 +58,27 @@ const Profiles = () => {
       {error && <p className="error">{error}</p>}
 
       {/* Displaying the students */}
-      <div className="student-list">
-        {filteredStudents.length > 0 ? (
-          filteredStudents.map((student, index) => (
-            <div key={index} className="student-card" onClick={handleClickToMessage}>
-              <p>
-                <strong>USN:</strong> {student.usn}
-              </p>
-              <p>
-                <strong>Name:</strong> {student.name}
-              </p>
-            </div>
-          ))
-        ) : (
-          <p>No students match your search.</p>
-        )}
+      <div className="ScrollBar">
+        <div className="student-list">
+          {filteredStudents.length > 0 ? (
+            filteredStudents.map((student, index) => (
+              <div
+                key={index}
+                className="student-card"
+                onClick={handleClickToMessage}
+              >
+                <p>
+                  <strong>USN:</strong> {student.usn}
+                </p>
+                <p>
+                  <strong>Name:</strong> {student.name}
+                </p>
+              </div>
+            ))
+          ) : (
+            <p>No students match your search.</p>
+          )}
+        </div>
       </div>
     </div>
   );
