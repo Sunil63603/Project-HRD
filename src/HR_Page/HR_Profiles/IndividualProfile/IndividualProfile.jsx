@@ -8,6 +8,7 @@ import { CloudUpload } from "react-bootstrap-icons"; // Uploading resume icon.
 // import profileImage from "../src/Assets/Images/photo.jpeg";
 // import Photo from "../src/Assets/Images/photo.jpg";
 //this is the component ie,displayed at the left side of the container.
+
 const IndividualProfile = () => {
   return (
     <div className="Individual-profile-section">

@@ -2,28 +2,29 @@
 .update-section {
   flex: 2; /* Normal width when ProfileSection is visible */
   padding: 20px;
-  width:1150px;
+  width: 1150px;
   border-radius: 20px;
   background-color: #f1ebeb; /* Light grey background for the right section */
   overflow-y: auto; /* Enable scrolling if content overflows */
   max-height: 100vh; /* Optional: Control the height */
   border-left: 1px solid #ddd; /* Adds a subtle border to separate from other sections */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);/* Subtle shadow effect*/
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect*/
 }
 
 .update-section.full-width {
   flex: 1; /* Full width when ProfileSection is hidden */
-  width: 100%;
+  width: 70%;
+  padding: 20px;
+  margin: 19rem;
+  margin-top: 3rem;
 }
 
-.update-section
-{
-    -webkit-overflow-scrolling: touch;
+.update-section {
+  -webkit-overflow-scrolling: touch;
 }
 
-.update-section::-webkit-scrollbar 
-{
-    display: none; /* Hide the scrollbar for Webkit */
+.update-section::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar for Webkit */
 }
 
 /* Heading Styles */
@@ -42,16 +43,16 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 50px; 
+  width: 50px;
   /*Short line under the heading*/
   height: 4px;
-   /* Thickness of the underline */
+  /* Thickness of the underline */
   background-color: #3498db;
-   /* Accent color */
-  border-radius: 2px; 
+  /* Accent color */
+  border-radius: 2px;
   /* Slightly rounded edges */
   transition: width 0.3s ease;
-   /* Smooth transition for hover effect */
+  /* Smooth transition for hover effect */
 }
 
 .component-name:hover::after {
@@ -89,7 +90,7 @@
 /* Notification message text styling */
 .notification-item p {
   margin: 0;
-  font-weight:500;
+  font-weight: 500;
   font-size: 1.5rem;
   color: #ffffff;
   line-height: 1.5;
@@ -126,5 +127,3 @@
   border-top: 1px solid #e0e0e0; /* Subtle divider line */
   margin-top: 15px;
 }
-
-
