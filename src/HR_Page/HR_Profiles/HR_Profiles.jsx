@@ -1,8 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import "./HR_Profiles.css";
 import { useNavigate } from "react-router";
-
 
 const Profiles = () => {
   const [students, setStudents] = useState([]);
@@ -34,9 +32,9 @@ const Profiles = () => {
   );
 
   let navigate = useNavigate();
-  const handleClickToMessage=()=>{
-    navigate("/hr/IndividualProfile ");
-  }
+  const handleClickToMessage = () => {
+    navigate("/hr/profile-container/IndividualProfile");
+  };
 
   return (
     <div className="profiles-container">
@@ -63,7 +61,11 @@ const Profiles = () => {
       <div className="student-list">
         {filteredStudents.length > 0 ? (
           filteredStudents.map((student, index) => (
-            <div key={index} className="student-card" onClick={handleClickToMessage}>
+            <div
+              key={index}
+              className="student-card"
+              onClick={handleClickToMessage}
+            >
               <p>
                 <strong>USN:</strong> {student.usn}
               </p>

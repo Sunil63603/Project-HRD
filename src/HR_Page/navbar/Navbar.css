@@ -3,10 +3,9 @@
 /* Use a standard font family for the entire navbar */
 .navbar {
   display: flex; /* Use flexbox for layout */
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
-  
+
   justify-content: space-between; /* Space between title and list */
   align-items: center; /* Center items vertically */
   padding: 15px 30px; /* More padding for a better look */
