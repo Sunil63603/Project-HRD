@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./CreateJobPosting.css"; // Import the CSS file
 
 // import Required for 3rd party Toast Notifications
-import PopUpToast from "../../Components/Alert_Message/Alert";
+import PopUpToast from "../../Components/PopUpToast/PopUpToast";
 
 const CreateJobPosting = () => {
   //State management
@@ -18,13 +18,6 @@ const CreateJobPosting = () => {
   const [applyLink, setApplyLink] = useState("");
 
   const [additionalDetails, setadditionalDetails] = useState("");
-
-  // Alert states
-
-  const [showPopup, setshowPopup] = useState(false);
-  const [messagetoSend, setmessagetoSend] = useState("");
-  const [successMessage, setsuccessMessage] = useState("");
-  let alertTimeout;
 
   //  when the form is submited this method will be called.
   const handleSubmit = async (e) => {

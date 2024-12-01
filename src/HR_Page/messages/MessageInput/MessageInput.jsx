@@ -2,7 +2,7 @@ import "./message_input.css";
 import React, { useState } from "react";
 
 // Toast Notification
-import PopUpToast from "../../../Components/Alert_Message/Alert";
+import PopUpToast from "../../../Components/PopUpToast/PopUpToast";
 
 const MessageInput = ({ onSend }) => {
   const [messageText, setMessageText] = useState("");

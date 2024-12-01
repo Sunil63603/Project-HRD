@@ -346,6 +346,14 @@
       "eligibility": "CSE",
       "applyLink": "https://usmaaportfolio.netlify.app/",
       "additionalDetails": "Ssadd"
+    },
+    {
+      "id": "6f02",
+      "companyName": "NTT data",
+      "jobDescription": "NTT Data selected one batch as per requirement",
+      "eligibility": "Students with more than 0 backlogs only",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "No additional information"
     }
   ],
   "GroupMessages": [
@@ -430,6 +438,20 @@
       "text": "messaged on 5:46pm",
       "date": "1/12/2024",
       "time": "05:46 pm"
+    },
+    {
+      "id": "d6d9",
+      "sender": "HR",
+      "text": "hello MF",
+      "date": "12/1/2024",
+      "time": "07:44 PM"
+    },
+    {
+      "id": "4cd7",
+      "sender": "HR",
+      "text": "Hello usman PC",
+      "date": "12/1/2024",
+      "time": "07:48 PM"
     }
   ]
 }
