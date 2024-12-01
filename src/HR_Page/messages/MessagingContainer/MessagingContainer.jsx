@@ -5,7 +5,7 @@ import MessageDisplay from "../MessageDisplay/MessageDisplay";
 import MessageInput from "../MessageInput/MessageInput";
 
 // import Required for 3rd party Toast Notifications
-import PopUpToast from "../../../Components/Alert_Message/Alert";
+import PopUpToast from "../../../Components/PopUpToast/PopUpToast";
 
 const MessagingContainer = () => {
   const [messages, setMessages] = useState([]);

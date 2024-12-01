@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SearchProvider } from "./context/SearchContext";
 
 // import Required for 3rd party Toast Notifications
-import { ToastRootContainer } from "./Components/Alert_Message/Alert";
+import { ToastRootContainer } from "./Components/PopUpToast/PopUpToast";
 
 //vikas components.
 import LandingPage from "./Authentication/LandingPage/LandingPage";
