@@ -4,9 +4,7 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import "./UpdateSection.css";
 
-
 function UpdateSection() {
-
   //logic related to fetching new notifications from Database/db.json
   const [notifications, setNotifications] = useState([]); //initially array is empty.
   const intervalIdRef = useRef(null); //useState updates asynchronously which caused some problem , so useRef()
@@ -28,7 +26,7 @@ function UpdateSection() {
   useEffect(() => {
     //function to fetch notifications from Database/db.json using json-server.
     const fetchNotifications = () => {
-      fetch("http://localhost:3000/notifications") //fetching from 'json-server'
+      fetch("http://localhost:3000/GroupMessages") //fetching from 'json-server'
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -48,7 +46,7 @@ function UpdateSection() {
     };
 
     // Polling every 5 seconds
-    const interval = setInterval(fetchNotifications, 10000);
+    const interval = setInterval(fetchNotifications, 100000);
     intervalIdRef.current = interval; // Store interval ID in the ref
     //this statement helps to clear interval(stop fetching) when there's some error while fetching notifications
     //affects performance . WebSockets are used in real-time conversation/messaging applications
@@ -60,23 +58,18 @@ function UpdateSection() {
   // ❌update this in future to display media along with text in notifications
   return (
     <>
-      <div
-        className={
-          isProfileVisible ? "update-section" : "update-section full-width"
-        }
-      >
+      <div className="update-section full-width">
         <h2 className="component-name">Updates/Notifications</h2>
         <ul className="notifications-list">
           {/* notifications[] is array which contains each and every notification */}
           {notifications.map((notification) => {
             const isExpanded = expandedNotifications[notification.id]; //❌why are getting 'id',understand this statement clearly
-            const shouldTruncate =
-              notification.message.length > 70 && !isExpanded; //message is a 'string'
+            const shouldTruncate = notification.text.length > 70 && !isExpanded; //message is a 'string'
 
             //display message is a variable which contains message to be displayed after truncating logic(if message length is more,then show more... will be displayed,else no show more button)
             const displayMessage = shouldTruncate
-              ? `${notification.message.slice(0, 70)}...`
-              : notification.message;
+              ? `${notification.text.slice(0, 70)}...`
+              : notification.text;
 
             return (
               // 'id' is unique , so it is used as key.
@@ -84,11 +77,11 @@ function UpdateSection() {
                 {/* message,date,time,show less/show more button are displayed*/}
                 <p>{displayMessage}</p>
                 <p className="timeStamp">
-                  {notification.date} | {notification.timeStamp}
+                  {notification.date} | {notification.time}
                 </p>
 
                 {/* Can i use shouldTruncate variable instead of logic in below line */}
-                {notification.message.length > 70 && ( //if message is larger that 70 characters , then display show more button
+                {notification.text.length > 70 && ( //if message is larger that 70 characters , then display show more button
                   // ❌className for button is not descriptive in this case(sometimes its show more , other times it is show less)
                   <button
                     className="show-more-btn"

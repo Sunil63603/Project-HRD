@@ -4,13 +4,16 @@ import "./messaging_container.css";
 import MessageDisplay from "../MessageDisplay/MessageDisplay";
 import MessageInput from "../MessageInput/MessageInput";
 
+// import Required for 3rd party Toast Notifications
+import PopUpToast from "../../../Components/Alert_Message/Alert";
+
 const MessagingContainer = () => {
   const [messages, setMessages] = useState([]);
 
   // Function to fetch messages from the JSON server
   const fetchMessages = async () => {
     try {
-      const response = await fetch("http://localhost:3000/messages", {
+      const response = await fetch("http://localhost:3000/GroupMessages", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -26,7 +29,7 @@ const MessagingContainer = () => {
   // Function to post a new message to the JSON server
   const postMessage = async (message) => {
     try {
-      const response = await fetch("http://localhost:3000/messages", {
+      const response = await fetch("http://localhost:3000/GroupMessages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,8 +38,13 @@ const MessagingContainer = () => {
       });
       const data = await response.json();
       setMessages((prevMessages) => [...prevMessages, data]); // Add the new message to the state
+
+      // Success Toast Notificaion
+      PopUpToast.success("Message Sent Successsully!");
     } catch (error) {
       console.error("Error posting message:", error);
+      // Error Toast Notificaion
+      PopUpToast.warning("There is some Error while sending Message!");
     }
   };
 
