@@ -5,45 +5,96 @@ import "./MessageHRDSection.css"; //Add your styling for messageHRD.
 import { useState, useEffect } from "react";
 
 const MessageHRDSection = () => {
-  const studentId = "123";
-  const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState("");
+  //i should get USN of the student from 'URL'(ie.as search params or anything like that)
+  //may be like this (/student/:id=1SJ21CS154)
+  const studentUSN = "1SJ21CS151"; //this variable is only for testing purpose
+  const [conversations, setConversations] = useState([]);
+  const [newConversation, setNewConversation] = useState("");
 
-  // Fetch messages for the student
-  useEffect(() => {
-    fetch(`http://localhost:3000/conversations?studentId=${studentId}`)
-      .then((response) => response.json())
-      .then((data) => {
-        const studentConversation = data[0]; // Assuming one conversation per studentId
-        setMessages(studentConversation?.messages || []);
-      })
-      .catch((error) => console.error("Error fetching messages:", error));
-  }, [studentId]);
+  //here write logic to find index of student(1SJ21CS151) inside registeredStuds[].
+  //then use that index to fetch conversations of current student
+  const getConversationsByUSN = async (studentUSN) => {
+    try {
+      // Fetch the registeredStuds array from the mock API
+      const response = await fetch("http://localhost:3000/registeredStuds");
+      const students = await response.json();
+
+      // Find the student by USN
+      const student = students.find((stud) => stud.usn === studentUSN);
+
+      // If the student exists, return their conversations
+      if (student) {
+        return student.conversations;
+      } else {
+        console.error("Student not found with USN:", usn);
+        return [];
+      }
+    } catch (error) {
+      console.error("Error fetching conversations:", error);
+      return [];
+    }
+  };
+
+  getConversationsByUSN(studentUSN).then((conversations) => {
+    setConversations(conversations);
+  });
 
   // Handle sending a new message
   const handleSendMessage = () => {
-    if (newMessage.trim() === "") return;
+    if (newConversation.trim() === "") return;
 
-    const newMessageObject = {
+    const newConversationObject = {
       sender: "student",
-      content: newMessage,
+      content: newConversation,
       timestamp: new Date().toISOString(),
     };
 
     // Update locally
-    setMessages((prevMessages) => [...prevMessages, newMessageObject]);
-    setNewMessage("");
+    setConversations((prevMessages) => [
+      ...prevMessages,
+      newConversationObject,
+    ]);
+    setNewConversation("");
 
-    // Update db.json
-    fetch(`http://localhost:3000/conversations?studentId=${studentId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        messages: [...messages, newMessageObject],
-      }),
-    }).catch((error) => console.error("Error updating messages:", error));
+    updateConversationsByUSN(studentUSN, newConversationObject);
+  };
+
+  //logic to update db.json with new message entered by student
+  const updateConversationsByUSN = async (
+    studentUSN,
+    newConversationObject
+  ) => {
+    try {
+      // Fetch the entire registeredStuds array
+      const response = await fetch("http://localhost:3000/registeredStuds");
+      const students = await response.json();
+
+      // Find the student by USN
+      const student = students.find((student) => student.usn === studentUSN);
+
+      if (!student) {
+        console.error("Student not found");
+        return;
+      }
+
+      //update the conversations array for specific student
+      const updatedStudent = {
+        ...student,
+        conversations: [...student.conversations, newConversationObject],
+      };
+
+      // Update the entire registeredStuds array in db.json
+      await fetch(`http://localhost:3000/registeredStuds/${student.id}`, {
+        method: "PUT", // Replace the entire array
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedStudent),
+      });
+      console.log("Messages updated successfully.");
+    } catch (error) {
+      console.error("Error updating messages:", error);
+    }
   };
 
   return (
@@ -51,7 +102,7 @@ const MessageHRDSection = () => {
       <div className="chat-header">Chat with HR</div>
 
       <div className="messages-container">
-        {messages.map((msg, index) => (
+        {conversations.map((msg, index) => (
           <div
             key={index}
             className={`message ${
@@ -70,8 +121,8 @@ const MessageHRDSection = () => {
         <input
           type="text"
           placeholder="Type your message..."
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
+          value={newConversation}
+          onChange={(e) => setNewConversation(e.target.value)}
           className="message-input"
         />
         <button onClick={handleSendMessage} className="send-button">

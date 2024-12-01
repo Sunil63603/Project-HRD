@@ -26,7 +26,7 @@ function UpdateSection() {
   useEffect(() => {
     //function to fetch notifications from Database/db.json using json-server.
     const fetchNotifications = () => {
-      fetch("http://localhost:3000/messages") //fetching from 'json-server'
+      fetch("http://localhost:3000/GroupMessages") //fetching from 'json-server'
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -46,7 +46,7 @@ function UpdateSection() {
     };
 
     // Polling every 5 seconds
-    const interval = setInterval(fetchNotifications, 1000);
+    const interval = setInterval(fetchNotifications, 100000);
     intervalIdRef.current = interval; // Store interval ID in the ref
     //this statement helps to clear interval(stop fetching) when there's some error while fetching notifications
     //affects performance . WebSockets are used in real-time conversation/messaging applications

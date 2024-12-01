@@ -34,23 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage></LandingPage>}></Route>
           <Route path="/login" element={<LoginForm></LoginForm>}></Route>
-          {/* <Route path="/hr" element={<Navbar />}></Route>
-        <Route path="/hr/create-job" element={<CreateJobPosting />}></Route>
-        <Route path="/hr/companies-list" element={<Companies />}></Route>
-        <Route
-          path="/hr/message-container"
-          element={<MessageContainer />}
-        ></Route>
-<<<<<<< HEAD
-      / 
-        {/* Individual Student Component 👇 */}
-          <Route
-            path="/hr/IndividualProfile"
-            element={<IndividualProfile />}
-          ></Route>
-          {/* Profile search container */}
-          <Route path="/hr/profile-container" element={<Profiles />}></Route>
-          <Route path="/hr/profile-container" element={<Profiles />}></Route>
+
           <Route path="/hr" element={<HR_Layout />}>
             <Route path="create-job" element={<CreateJobPosting />}></Route>
             <Route path="companies-list" element={<CompaniesList />}></Route>
@@ -59,16 +43,12 @@ function App() {
               element={<MessageContainer />}
             ></Route>
             <Route path="profile-container" element={<Profiles />}></Route>
+            <Route
+              path="profile-container/IndividualProfile"
+              element={<IndividualProfile />}
+            ></Route>
           </Route>
 
-          {/*❌This below 👇component must be displayed only when HR clicks on any particular student profile ,  Not while searching */}
-          <Route
-            path="/hr/profile-container/IndividualProfile"
-            element={<IndividualProfile />}
-          ></Route>
-          {/*❌profiles can be searched in navbar component(ie usman component) */}
-          {/* ❌':id' is id of any particular student profile*/}
-          {/* <Route path='/hr/profiles/:id' element={<Profile></Profile>}></Route> */}
           <Route path="/student" element={<Student_Layout></Student_Layout>}>
             <Route
               path="profile"
@@ -83,14 +63,14 @@ function App() {
               path="updates"
               element={<UpdateSection></UpdateSection>}
             ></Route>
-            <Route
+            {/* 👇❌This is commented out because there is some issue (many API requests are getting fired off) */}
+            {/* <Route
               path="messageHRD"
               element={<MessageHRDSection></MessageHRDSection>}
-            ></Route>
+            ></Route> */}
             {/*❌This below 👇component must be displayed only when student clicks on any particular student profile ,but Not while searching */}
             {/*❌profiles can be searched in topfixedbar component */}
             {/* ❌':id' is id of any particular student profile*/}
-            {/* <Route path='/hr/profiles/:id' element={<Profile></Profile>}></Route> */}
           </Route>
         </Routes>
       </Router>

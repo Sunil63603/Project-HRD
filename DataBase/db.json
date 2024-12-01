@@ -1,186 +1,12 @@
 {
   "registeredStuds": [
     {
-      "id": "1",
+      "id:": "1SJ21CS150",
       "usn": "1SJ21CS150",
       "name": "John Doe",
       "email": "vksvikas41@gmail.com",
-      "password": "890789687"
-    },
-    {
-      "id": "2",
-      "usn": "1SJ21CS151",
-      "name": "Jane Doe",
-      "email": "  @gmail.com",
-      "password": "890789687"
-    },
-    {
-      "id": "0f07",
-      "usn": "1SJ21CS180",
-      "name": "viki",
-      "email": "vksvikas41@gmail.com",
-      "password": "890789687"
-    },
-    {
-      "id": "e862",
-      "usn": "1SJ21CS419",
-      "name": "shesh",
-      "email": "shesh@gmail.com",
-      "password": "shesh@123"
-    },
-    {
-      "id": "f88b",
-      "usn": "1SJ21CS200",
-      "name": "vikrant",
-      "email": "vikrant@123",
-      "password": "vikrant@123"
-    },
-    {
-      "id": "ee9b",
-      "usn": "1SJ21CS154",
-      "name": "sunil",
-      "email": "suni@gmail.com",
-      "password": "sunilinus"
-    },
-    {
-      "id": "4a75",
-      "usn": "1SJ21CS090",
-      "name": "nithin",
-      "email": "nith@gmail.com",
-      "password": "nithi2123"
-    },
-    {
-      "id": "f32d",
-      "usn": "1SJ21CS166",
-      "name": "usman",
-      "email": "pasha@gmail.com",
-      "password": "usu@123"
-    }
-  ],
-  "registeredHRs": [
-    {
-      "id": "df17",
-      "name": "shashi kumar",
-      "email": "shashi@gmail.com",
-      "password": "123321"
-    },
-    {
-      "id": "df18",
-      "name": "tilak reddy",
-      "email": "tilak@gmail.com",
-      "password": "123321"
-    },
-    {
-      "id": "df19",
-      "name": "mala",
-      "email": "mala@gmail.com",
-      "password": "123321"
-    }
-  ],
-  "jobs": [
-    {
-      "id": "8b9a",
-      "companyName": "SJC INSTITUTE",
-      "jobDescription": "SDE",
-      "eligibility": "CSE",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
-      "additionalDetails": ""
-    },
-    {
-      "id": "8645",
-      "companyName": "S J C Institute of Technology, Chikballpura, Karnataka",
-      "jobDescription": "asdasd",
-      "eligibility": "sadsad",
-      "applyLink": "https://usmaaportfolio.netlify.app/",
-      "additionalDetails": "sunil\nusman\nvikas\ntmg"
-    },
-    {
-      "id": "944a",
-      "companyName": "Google",
-      "jobDescription": "SDE",
-      "eligibility": "CSE ",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
-      "additionalDetails": "NA"
-    },
-    {
-      "id": "2472",
-      "companyName": "Sunny Enterprises",
-      "jobDescription": "Two types of Jobs",
-      "eligibility": "Usman Pasha",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Usman,are you ready to do the job?"
-    }
-  ],
-  "messages": [
-    {
-      "id": "6b3e",
-      "sender": "HR",
-      "text": "Accenture",
-      "date": "2/11/2024",
-      "time": "12:43 pm"
-    },
-    {
-      "id": "fcb3",
-      "sender": "HR",
-      "text": "TCS",
-      "date": "2/11/2024",
-      "time": "12:44 pm"
-    },
-    {
-      "id": "9584",
-      "sender": "HR",
-      "text": "Yantakulu",
-      "date": "2/11/2024",
-      "time": "12:44 pm"
-    },
-    {
-      "id": "d214",
-      "sender": "HR",
-      "text": "Yantakulu will not come to college",
-      "date": "2/11/2024",
-      "time": "12:49 pm"
-    },
-    {
-      "id": "4bb8",
-      "sender": "HR",
-      "text": "To ensure that the messages fit within the .message-display box without overflowing, you can adjust the CSS as follows:  Set word-wrap to break-word so long words or URLs don't overflow. Add a max-height to .message-display if needed, along with overflow-y: auto to make sure content scrolls within the box rather than expanding it. Set the width of .message-bubble to a percentage (e.g., 70%) instead of max-width, ensuring that each message bubble has a consistent width.",
-      "date": "2/11/2024",
-      "time": "12:56 pm"
-    },
-    {
-      "id": "1323",
-      "sender": "HR",
-      "text": "hi HR",
-      "date": "7/11/2024",
-      "time": "10:25 am"
-    },
-    {
-      "id": "0ea4",
-      "sender": "HR",
-      "text": "HI people",
-      "date": "28/11/2024",
-      "time": "07:08 pm"
-    },
-    {
-      "id": "600f",
-      "sender": "HR",
-      "text": "message on 29Th nov 9:27am",
-      "date": "11/29/2024",
-      "time": "09:27 AM"
-    },
-    {
-      "id": "85c6",
-      "sender": "HR",
-      "text": "Sunil is testing this message feature on 30/11/2024 at 9:05 pm ",
-      "date": "11/30/2024",
-      "time": "09:05 PM"
-    }
-  ],
-  "conversations": [
-    {
-      "studentId": "123",
-      "studentName": "John Doe",
-      "messages": [
+      "password": "890789687",
+      "conversations": [
         {
           "sender": "HR",
           "content": "Hello John, please update your portfolio.",
@@ -196,13 +22,15 @@
           "content": "Great! Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
-      ],
-      "id": "5e2b"
+      ]
     },
     {
-      "studentId": "124",
-      "studentName": "Jane Smith",
-      "messages": [
+      "id": "1SJ21CS151",
+      "usn": "1SJ21CS151",
+      "name": "Jane Doe",
+      "email": "  @gmail.com",
+      "password": "890789687",
+      "conversations": [
         {
           "sender": "HR",
           "content": "Hi Jane, please share your project demo video.",
@@ -212,9 +40,272 @@
           "sender": "student",
           "content": "I will email it shortly. Thank you!",
           "timestamp": "2024-11-24T09:40:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Hello MF",
+          "timestamp": "2024-12-01T08:20:30.325Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Hello sunil",
+          "timestamp": "2024-11-24T09:30:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Hi shashi sir",
+          "timestamp": "2024-12-01T08:23:08.882Z"
+        },
+        {
+          "sender": "student",
+          "content": "hi",
+          "timestamp": "2024-12-01T08:23:45.655Z"
         }
-      ],
-      "id": "6f04"
+      ]
+    },
+    {
+      "usn": "1SJ21CS180",
+      "name": "viki",
+      "email": "vksvikas41@gmail.com",
+      "password": "890789687",
+      "conversations": [
+        {
+          "sender": "HR",
+          "content": "Hello John, please update your portfolio.",
+          "timestamp": "2024-11-24T10:00:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Sure, I will update it by today.",
+          "timestamp": "2024-11-24T10:05:00Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Great! Let me know once it's done.",
+          "timestamp": "2024-11-24T10:10:00Z"
+        }
+      ]
+    },
+    {
+      "usn": "1SJ21CS419",
+      "name": "shesh",
+      "email": "shesh@gmail.com",
+      "password": "shesh@123",
+      "conversations": [
+        {
+          "sender": "HR",
+          "content": "Hello John, please update your portfolio.",
+          "timestamp": "2024-11-24T10:00:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Sure, I will update it by today.",
+          "timestamp": "2024-11-24T10:05:00Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Great! Let me know once it's done.",
+          "timestamp": "2024-11-24T10:10:00Z"
+        }
+      ]
+    },
+    {
+      "usn": "1SJ21CS200",
+      "name": "vikrant",
+      "email": "vikrant@123",
+      "password": "vikrant@123",
+      "conversations": [
+        {
+          "sender": "HR",
+          "content": "Hello John, please update your portfolio.",
+          "timestamp": "2024-11-24T10:00:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Sure, I will update it by today.",
+          "timestamp": "2024-11-24T10:05:00Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Great! Let me know once it's done.",
+          "timestamp": "2024-11-24T10:10:00Z"
+        }
+      ]
+    },
+    {
+      "usn": "1SJ21CS154",
+      "name": "sunil",
+      "email": "suni@gmail.com",
+      "password": "sunilinus",
+      "conversations": [
+        {
+          "sender": "HR",
+          "content": "Hello John, please update your portfolio.",
+          "timestamp": "2024-11-24T10:00:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Sure, I will update it by today.",
+          "timestamp": "2024-11-24T10:05:00Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Great! Let me know once it's done.",
+          "timestamp": "2024-11-24T10:10:00Z"
+        }
+      ]
+    },
+    {
+      "usn": "1SJ21CS090",
+      "name": "nithin",
+      "email": "nith@gmail.com",
+      "password": "nithi2123",
+      "conversations": [
+        {
+          "sender": "HR",
+          "content": "Hello John, please update your portfolio.",
+          "timestamp": "2024-11-24T10:00:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Sure, I will update it by today.",
+          "timestamp": "2024-11-24T10:05:00Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Great! Let me know once it's done.",
+          "timestamp": "2024-11-24T10:10:00Z"
+        }
+      ]
+    },
+    {
+      "usn": "1SJ21CS166",
+      "name": "usman",
+      "email": "pasha@gmail.com",
+      "password": "usu@123",
+      "conversations": [
+        {
+          "sender": "HR",
+          "content": "Hello John, please update your portfolio.",
+          "timestamp": "2024-11-24T10:00:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Sure, I will update it by today.",
+          "timestamp": "2024-11-24T10:05:00Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Great! Let me know once it's done.",
+          "timestamp": "2024-11-24T10:10:00Z"
+        }
+      ]
+    }
+  ],
+  "registeredHRs": [
+    {
+      "name": "shashi kumar",
+      "email": "shashi@gmail.com",
+      "password": "123321",
+      "conversations": [
+        {
+          "sender": "HR",
+          "content": "Hello John, please update your portfolio.",
+          "timestamp": "2024-11-24T10:00:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Sure, I will update it by today.",
+          "timestamp": "2024-11-24T10:05:00Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Great! Let me know once it's done.",
+          "timestamp": "2024-11-24T10:10:00Z"
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "8645",
+      "companyName": "S J C Institute of Technology, Chikballpura, Karnataka",
+      "jobDescription": "asdasd",
+      "eligibility": "sadsad",
+      "applyLink": "https://usmaaportfolio.netlify.app/",
+      "additionalDetails": "sunil\nusman\nvikas\ntmg"
+    },
+    {
+      "id": "2472",
+      "companyName": "Sunny Enterprises",
+      "jobDescription": "Two types of Jobs",
+      "eligibility": "Usman Pasha",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "Usman,are you ready to do the job?"
+    },
+    {
+      "id": "57ea",
+      "companyName": "Sansha technologies",
+      "jobDescription": "Must be good in WIX and Canva tools and should be familiar with AI tools ",
+      "eligibility": "Civil and Mechanical",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "Nan Thund , no need to work , i will provide the salary"
+    }
+  ],
+  "GroupMessages": [
+    {
+      "id": "6b3e",
+      "text": "Accenture",
+      "date": "2/11/2024",
+      "time": "12:43 pm"
+    },
+    {
+      "id": "fcb3",
+      "text": "TCS",
+      "date": "2/11/2024",
+      "time": "12:44 pm"
+    },
+    {
+      "id": "9584",
+      "text": "Yantakulu",
+      "date": "2/11/2024",
+      "time": "12:44 pm"
+    },
+    {
+      "id": "d214",
+      "text": "Yantakulu will not come to college",
+      "date": "2/11/2024",
+      "time": "12:49 pm"
+    },
+    {
+      "id": "4bb8",
+      "text": "To ensure that the messages fit within the .message-display box without overflowing, you can adjust the CSS as follows:  Set word-wrap to break-word so long words or URLs don't overflow. Add a max-height to .message-display if needed, along with overflow-y: auto to make sure content scrolls within the box rather than expanding it. Set the width of .message-bubble to a percentage (e.g., 70%) instead of max-width, ensuring that each message bubble has a consistent width.",
+      "date": "2/11/2024",
+      "time": "12:56 pm"
+    },
+    {
+      "id": "1323",
+      "text": "hi HR",
+      "date": "7/11/2024",
+      "time": "10:25 am"
+    },
+    {
+      "id": "0ea4",
+      "text": "HI people",
+      "date": "28/11/2024",
+      "time": "07:08 pm"
+    },
+    {
+      "id": "600f",
+      "text": "message on 29Th nov 9:27am",
+      "date": "11/29/2024",
+      "time": "09:27 AM"
+    },
+    {
+      "id": "85c6",
+      "text": "Sunil is testing this message feature on 30/11/2024 at 9:05 pm ",
+      "date": "11/30/2024",
+      "time": "09:05 PM"
     }
   ]
 }

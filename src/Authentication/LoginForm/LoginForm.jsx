@@ -46,10 +46,10 @@ function LoginForm() {
       if (account) {
         //If valid account, navigate to the respective page
         if (role === "registeredHRs") {
-          navigate(`/hr`); //if HR Login is successfull , then display HR_Page.
+          navigate(`/hr/create-job`); //if HR Login is successfull , then display HR_Page.
         } //registeredStuds.
         else {
-          navigate(`/student`); //if Student Login is successful , then display Student_Page.
+          navigate(`/student/updates`); //if Student Login is successful , then display Student_Page.
         }
       } else {
         setIsValidAccount(false); //making this false , will indicate 'invalid credentials in UI'
