@@ -7,7 +7,7 @@ const MessageDisplay = ({ messages }) => {
       {messages.map((message, index) => (
         <div key={index} className={`message-bubble hr-message`}>
           <div className="message-header">
-            <span className="sender-name">{message.sender}</span>
+            <span className="sender-name">{"HR"}</span>
             <span className="message-date-time">
               {message.date} {message.time}
             </span>

@@ -1,5 +1,5 @@
 .message-display {
-  padding: 15px;
+  padding: 35px;
   max-height: 420px; /* Keeps the box fixed at 300px in height */
   overflow-y: auto; /* Enables scrolling if content overflows */
   background-color: #f9f9f9;
