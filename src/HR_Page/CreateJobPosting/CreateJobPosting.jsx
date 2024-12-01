@@ -19,13 +19,6 @@ const CreateJobPosting = () => {
 
   const [additionalDetails, setadditionalDetails] = useState("");
 
-  // Alert states
-
-  const [showPopup, setshowPopup] = useState(false);
-  const [messagetoSend, setmessagetoSend] = useState("");
-  const [successMessage, setsuccessMessage] = useState("");
-  let alertTimeout;
-
   //  when the form is submited this method will be called.
   const handleSubmit = async (e) => {
     // it will prevent the form from submition and reloading.
