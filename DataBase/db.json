@@ -77,7 +77,24 @@
       "password": "123321"
     }
   ],
-  "jobs": [],
+  "jobs": [
+    {
+      "id": "2472",
+      "companyName": "Sunny Enterprises",
+      "jobDescription": "Two types of Jobs",
+      "eligibility": "Usman Pasha",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "Usman,are you ready to do the job?"
+    },
+    {
+      "id": "37bd",
+      "companyName": "Infosys",
+      "jobDescription": "Web dev",
+      "eligibility": "BE",
+      "applyLink": "http://localhost:5173/create-job",
+      "additionalDetails": "75k"
+    }
+  ],
   "messages": [
     {
       "id": "6b3e",
@@ -129,18 +146,66 @@
       "time": "07:08 pm"
     },
     {
-      "id": "5adf",
+      "id": "600f",
       "sender": "HR",
-      "text": "hi",
-      "date": "29/11/2024",
-      "time": "02:35 pm"
+      "text": "message on 29Th nov 9:27am",
+      "date": "11/29/2024",
+      "time": "09:27 AM"
     },
     {
-      "id": "e6ed",
+      "id": "85c6",
       "sender": "HR",
-      "text": "14:56 29/11/2024",
-      "date": "29/11/2024",
-      "time": "02:47 pm"
+      "text": "Sunil is testing this message feature on 30/11/2024 at 9:05 pm ",
+      "date": "11/30/2024",
+      "time": "09:05 PM"
+    },
+    {
+      "id": "732b",
+      "sender": "HR",
+      "text": "hi i am tmg",
+      "date": "12/1/2024",
+      "time": "08:06 PM"
+    }
+  ],
+  "conversations": [
+    {
+      "studentId": "123",
+      "studentName": "John Doe",
+      "messages": [
+        {
+          "sender": "HR",
+          "content": "Hello John, please update your portfolio.",
+          "timestamp": "2024-11-24T10:00:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Sure, I will update it by today.",
+          "timestamp": "2024-11-24T10:05:00Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Great! Let me know once it's done.",
+          "timestamp": "2024-11-24T10:10:00Z"
+        }
+      ],
+      "id": "5e2b"
+    },
+    {
+      "studentId": "124",
+      "studentName": "Jane Smith",
+      "messages": [
+        {
+          "sender": "HR",
+          "content": "Hi Jane, please share your project demo video.",
+          "timestamp": "2024-11-24T09:30:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "I will email it shortly. Thank you!",
+          "timestamp": "2024-11-24T09:40:00Z"
+        }
+      ],
+      "id": "6f04"
     }
   ]
 }

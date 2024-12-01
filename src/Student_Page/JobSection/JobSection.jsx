@@ -1,11 +1,9 @@
 //this component is rendered when user clicks on jobs button which is present in the topFixedBar.
-
 import React from "react";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./JobSection.css"; //Add your styling for Jobs.
 
 const JobSection = () => {
-
   const [jobs, setJobs] = useState([]);
 
   // Fetch job postings from JSON server.
@@ -45,15 +43,21 @@ const JobSection = () => {
   }, [jobs]);
 
   return (
-    <div className="jobs-section">
+    <div className="companies-list">
       <h2 className="component-name">Jobs/Oppurtunities</h2>
       <div className="job-list">
         {jobs.map((job) => (
           <div className="job-card" key={job.id}>
-            <h3>{job.companyName}</h3>
-            <p>{job.jobDescription}</p>
+            <h4>{job.companyName}</h4>
             <p>
-              <strong>Eligibility:</strong> {job.eligibility}
+              <strong>Job Title : {job.jobDescription}</strong>
+            </p>
+            <p>
+              <strong>Eligibility : {job.eligibility}</strong>
+            </p>
+
+            <p>
+              <strong>Additional Details : </strong> {job.additionalDetails}
             </p>
 
             <button className="apply-button" onClick={() => {}}>

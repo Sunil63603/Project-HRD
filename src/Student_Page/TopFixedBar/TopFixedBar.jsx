@@ -1,4 +1,6 @@
 import React from "react";
+import { useContext } from "react";
+import { SearchContext } from "../../context/SearchContext";
 import "./TopFixedBar.css";
 
 //is used to display component , when user clicks on button
@@ -8,7 +10,14 @@ import { PersonCircle } from "react-bootstrap-icons"; // Import the profile icon
 //clicking in this 'PersonCircle' will toggle profile's visibility
 
 const TopFixedBar = () => {
+  const { searchTerm, setSearchTerm } = useContext(SearchContext);
   const navigate = useNavigate(); //initialize navigation function.
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      navigate("allprofiles"); //open all profiles as soon as user press 'enter' key
+    }
+  };
 
   return (
     <nav className="topFixedBar">
@@ -20,9 +29,17 @@ const TopFixedBar = () => {
         />
         <h1 className="project-name">COHORT</h1>
       </div>
-
       {/* Search bar at the center */}
-      <input className="topSearchBar" placeholder="Search Name/USN"></input>
+      {/* whenever user searches some profile using this input , a component of profile should be displayed. Clicking on that should open entire page */}
+      {/* This 'input' should have been inside AllProfiles section,But because of aesthetics , i have placed it here */}
+      {/* As soon as user starts typing characters,Allprofiles component should be */}
+      <input
+        className="topSearchBar"
+        placeholder="Search by USN.."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)} //update search term dynamically.
+        onKeyDown={handleKeyDown} // Trigger functionality on Enter key press
+      ></input>
 
       {/* Update Side: Buttons */}
       <div className="topFixedBar-right">

@@ -1,6 +1,13 @@
 .Individual-profile-section {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
+  height: 431px;
+  justify-content: center;
+  align-items: center;
+  margin-top: -422px;
+  margin-left: 46%;
+  background: lightgray;
+  margin-right: 20px; */
   height: 431px;
   justify-content: center;
   align-items: center;
@@ -11,8 +18,94 @@
 }
 
 .Profile-name {
-  margin-top: -332px;
+  margin-top: -116px;
+  display: flex;
+  justify-content: center;
 }
 
 .Profile-image {
+  width: 111px;
+  border-radius: 77px;
+  margin-left: 64px;
+}
+.photo {
+  display: flex;
+}
+.name-usn-photo {
+  display: flex;
+
+  flex-direction: row;
+}
+.label-info {
+  padding: 14px;
+  margin-left: 41px;
+  color: #8b3434;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.name,
+.usn {
+  margin-left: 151px;
+  margin-top: -48px;
+}
+.resume-box:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.resume-box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-left: 193px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.3s ease;
+  margin-right: -251px;
+  margin-top: -55px;
+}
+
+.resume-link-address:hover {
+  text-decoration: underline;
+}
+.resume-link-address {
+  margin-left: 10px;
+  color: #0073b1;
+  text-decoration: none;
+  flex-grow: 1;
+}
+.resume-icons {
+  color: #e74c3c;
+  font-size: 1.5rem;
+}
+
+.download-icons {
+  color: #0073b1;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.Contacts {
+  margin-left: 6px;
+  margin-top: 44px;
+  font-size: 24px;
+}
+
+.icon {
+  width: 32px;
+  border-radius: 63px;
+  height: 34px;
+}
+.icons-list {
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+  margin-left: 17px;
+}
+.message-bttn {
+  margin-left: 415px;
+  color: white;
+  background-color: #27b0dd;
 }
