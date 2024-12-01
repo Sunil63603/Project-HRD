@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const MessageHRDSection = () => {
   //i should get USN of the student from 'URL'(ie.as search params or anything like that)
   //may be like this (/student/:id=1SJ21CS154)
-  const studentUSN = "1SJ21CS151"; //this variable is only for testing purpose
+  const studentUSN = "1SJ21CS151"; // this variable is only for testing purpose
   const [conversations, setConversations] = useState([]);
   const [newConversation, setNewConversation] = useState("");
 

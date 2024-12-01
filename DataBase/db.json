@@ -22,7 +22,8 @@
           "content": "Great! Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
-      ]
+      ],
+      "id": "df36"
     },
     {
       "id": "1SJ21CS151",
@@ -84,7 +85,8 @@
           "content": "Great! Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
-      ]
+      ],
+      "id": "267a"
     },
     {
       "usn": "1SJ21CS419",
@@ -107,7 +109,8 @@
           "content": "Great! Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
-      ]
+      ],
+      "id": "3dab"
     },
     {
       "usn": "1SJ21CS200",
@@ -130,7 +133,8 @@
           "content": "Great! Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
-      ]
+      ],
+      "id": "d8f0"
     },
     {
       "usn": "1SJ21CS154",
@@ -153,7 +157,8 @@
           "content": "Great! Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
-      ]
+      ],
+      "id": "5f20"
     },
     {
       "usn": "1SJ21CS090",
@@ -176,7 +181,8 @@
           "content": "Great! Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
-      ]
+      ],
+      "id": "d653"
     },
     {
       "usn": "1SJ21CS166",
@@ -199,7 +205,8 @@
           "content": "Great! Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
-      ]
+      ],
+      "id": "5d1e"
     }
   ],
   "registeredHRs": [
@@ -223,7 +230,8 @@
           "content": "Great! Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
-      ]
+      ],
+      "id": "5faf"
     }
   ],
   "jobs": [
@@ -250,6 +258,94 @@
       "eligibility": "Civil and Mechanical",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "Nan Thund , no need to work , i will provide the salary"
+    },
+    {
+      "id": "54df",
+      "companyName": "sendil",
+      "jobDescription": "sde",
+      "eligibility": "cse",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
+      "additionalDetails": "NA"
+    },
+    {
+      "id": "0c7f",
+      "companyName": "sendil",
+      "jobDescription": "ui",
+      "eligibility": "jhfk",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
+      "additionalDetails": "NA"
+    },
+    {
+      "id": "d9c3",
+      "companyName": "aSA",
+      "jobDescription": "asaS",
+      "eligibility": "Asas",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
+      "additionalDetails": "qewr"
+    },
+    {
+      "id": "379c",
+      "companyName": "aSA",
+      "jobDescription": "as",
+      "eligibility": "sa",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
+      "additionalDetails": "sa"
+    },
+    {
+      "id": "3011",
+      "companyName": "aSA",
+      "jobDescription": "sa",
+      "eligibility": "sa",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
+      "additionalDetails": "sa"
+    },
+    {
+      "id": "4ebc",
+      "companyName": "Intern",
+      "jobDescription": "abc",
+      "eligibility": "abc",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
+      "additionalDetails": "NA"
+    },
+    {
+      "id": "0529",
+      "companyName": "no referral",
+      "jobDescription": "sa",
+      "eligibility": "sa",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
+      "additionalDetails": "as"
+    },
+    {
+      "id": "5f9e",
+      "companyName": "sa",
+      "jobDescription": "sa",
+      "eligibility": "sa",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
+      "additionalDetails": "as"
+    },
+    {
+      "id": "f22f",
+      "companyName": "asas",
+      "jobDescription": "asasas`",
+      "eligibility": "sdasd",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
+      "additionalDetails": "sasdsad"
+    },
+    {
+      "id": "8295",
+      "companyName": "asdad",
+      "jobDescription": "asda",
+      "eligibility": "asdasd",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
+      "additionalDetails": "asd"
+    },
+    {
+      "id": "a93a",
+      "companyName": "NaPeru Sendil",
+      "jobDescription": "CSE",
+      "eligibility": "CSE",
+      "applyLink": "https://usmaaportfolio.netlify.app/",
+      "additionalDetails": "Ssadd"
     }
   ],
   "GroupMessages": [
@@ -306,6 +402,34 @@
       "text": "Sunil is testing this message feature on 30/11/2024 at 9:05 pm ",
       "date": "11/30/2024",
       "time": "09:05 PM"
+    },
+    {
+      "id": "756b",
+      "sender": "HR",
+      "text": "usman testing this message on 1/12/2024 at 3:19",
+      "date": "1/12/2024",
+      "time": "03:19 pm"
+    },
+    {
+      "id": "5a0f",
+      "sender": "HR",
+      "text": "usman Testing on 1/12/2024",
+      "date": "1/12/2024",
+      "time": "05:23 pm"
+    },
+    {
+      "id": "b7ea",
+      "sender": "HR",
+      "text": "hi on 5 : 40",
+      "date": "1/12/2024",
+      "time": "05:43 pm"
+    },
+    {
+      "id": "ee43",
+      "sender": "HR",
+      "text": "messaged on 5:46pm",
+      "date": "1/12/2024",
+      "time": "05:46 pm"
     }
   ]
 }

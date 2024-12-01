@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import "./CreateJobPosting.css"; // Import the CSS file
 
+// import Required for 3rd party Toast Notifications
+import PopUpToast from "../../Components/Alert_Message/Alert";
+
 const CreateJobPosting = () => {
   //State management
   // [variable , method to set the variable]
@@ -15,6 +18,13 @@ const CreateJobPosting = () => {
   const [applyLink, setApplyLink] = useState("");
 
   const [additionalDetails, setadditionalDetails] = useState("");
+
+  // Alert states
+
+  const [showPopup, setshowPopup] = useState(false);
+  const [messagetoSend, setmessagetoSend] = useState("");
+  const [successMessage, setsuccessMessage] = useState("");
+  let alertTimeout;
 
   //  when the form is submited this method will be called.
   const handleSubmit = async (e) => {
@@ -55,12 +65,14 @@ const CreateJobPosting = () => {
       setApplyLink("");
       setadditionalDetails("");
 
-      // alert message
-      alert("Job Posting Submitted Successfully!");
+      // Toast PopUp or alert message
+      PopUpToast.success("Job posted successfully!");
     } catch (error) {
       // Handle any errors
-      console.error("Error posting data:", error);
-      alert(
+      // console.error("Error posting data:", error);
+
+      // Toast PopUp or alert message
+      PopUpToast.warning(
         "There was an error submitting the form! Please check your server."
       );
     }
@@ -69,7 +81,6 @@ const CreateJobPosting = () => {
   return (
     <form className="job-posting-form" onSubmit={handleSubmit}>
       <h2>Create Job Posting</h2>
-
       <div className="form-group">
         <label htmlFor="companyName">Company Name</label>
         <input
@@ -80,7 +91,6 @@ const CreateJobPosting = () => {
           required
         />
       </div>
-
       <div className="form-group">
         <label htmlFor="jobDescription">Job Description</label>
         <textarea
@@ -90,7 +100,6 @@ const CreateJobPosting = () => {
           required
         />
       </div>
-
       <div className="form-group">
         <label htmlFor="eligibility">Eligibility</label>
         <textarea
@@ -100,7 +109,6 @@ const CreateJobPosting = () => {
           required
         />
       </div>
-
       <div className="form-group">
         <label htmlFor="applyLink">Apply Link</label>
         <input
@@ -111,7 +119,6 @@ const CreateJobPosting = () => {
           required
         />
       </div>
-
       <div className="form-group">
         <label htmlFor="additionalDetails">Additional Details</label>
         <textarea
@@ -121,7 +128,6 @@ const CreateJobPosting = () => {
           required
         />
       </div>
-
       <button type="submit" className="submit-button">
         Submit
       </button>

@@ -3,6 +3,9 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SearchProvider } from "./context/SearchContext";
 
+// import Required for 3rd party Toast Notifications
+import { ToastRootContainer } from "./Components/Alert_Message/Alert";
+
 //vikas components.
 import LandingPage from "./Authentication/LandingPage/LandingPage";
 import LoginForm from "./Authentication/LoginForm/LoginForm";
@@ -30,6 +33,8 @@ import Student_Layout from "./Student_Page/Student_Layout/Student_Layout";
 function App() {
   return (
     <SearchProvider>
+      {/* below (<ToastRootContainer />) Component should be included to render the Tooast Notifcation in the UI */}
+      <ToastRootContainer />
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage></LandingPage>}></Route>
