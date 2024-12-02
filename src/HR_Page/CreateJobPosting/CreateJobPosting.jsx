@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./CreateJobPosting.css"; // Import the CSS file
 
 // import Required for 3rd party Toast Notifications
-import PopUpToast from "../../Components/PopUpToast/PopUpToast";
+import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 
 const CreateJobPosting = () => {
   //State management

@@ -15,7 +15,11 @@ const ProfileSection = () => {
           {/* ❌actually it should be written in global css file(so move .component-name css to global css file)*/}
           <h2 className="component-name">Profile</h2>
           {/* refer UpdateSection.css for the 'component-name' */}
-          <img src="/locket logo.png" alt="Profile" className="profile-image" />
+          <img
+            src="Project_SJC/src/Assets/Images/locket logo.png"
+            alt="Profile"
+            className="profile-image"
+          />
           {/*❌change profile image in future*/}
 
           {/* refer ProfileSection.css for these styles*/}

@@ -236,14 +236,6 @@
   ],
   "jobs": [
     {
-      "id": "8645",
-      "companyName": "S J C Institute of Technology, Chikballpura, Karnataka",
-      "jobDescription": "asdasd",
-      "eligibility": "sadsad",
-      "applyLink": "https://usmaaportfolio.netlify.app/",
-      "additionalDetails": "sunil\nusman\nvikas\ntmg"
-    },
-    {
       "id": "2472",
       "companyName": "Sunny Enterprises",
       "jobDescription": "Two types of Jobs",
@@ -260,100 +252,28 @@
       "additionalDetails": "Nan Thund , no need to work , i will provide the salary"
     },
     {
-      "id": "54df",
-      "companyName": "sendil",
-      "jobDescription": "sde",
-      "eligibility": "cse",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
-      "additionalDetails": "NA"
-    },
-    {
-      "id": "0c7f",
-      "companyName": "sendil",
-      "jobDescription": "ui",
-      "eligibility": "jhfk",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
-      "additionalDetails": "NA"
-    },
-    {
-      "id": "d9c3",
-      "companyName": "aSA",
-      "jobDescription": "asaS",
-      "eligibility": "Asas",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
-      "additionalDetails": "qewr"
-    },
-    {
-      "id": "379c",
-      "companyName": "aSA",
-      "jobDescription": "as",
-      "eligibility": "sa",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
-      "additionalDetails": "sa"
-    },
-    {
-      "id": "3011",
-      "companyName": "aSA",
-      "jobDescription": "sa",
-      "eligibility": "sa",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
-      "additionalDetails": "sa"
-    },
-    {
-      "id": "4ebc",
-      "companyName": "Intern",
-      "jobDescription": "abc",
-      "eligibility": "abc",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
-      "additionalDetails": "NA"
-    },
-    {
-      "id": "0529",
-      "companyName": "no referral",
-      "jobDescription": "sa",
-      "eligibility": "sa",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
-      "additionalDetails": "as"
-    },
-    {
-      "id": "5f9e",
-      "companyName": "sa",
-      "jobDescription": "sa",
-      "eligibility": "sa",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
-      "additionalDetails": "as"
-    },
-    {
-      "id": "f22f",
-      "companyName": "asas",
-      "jobDescription": "asasas`",
-      "eligibility": "sdasd",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
-      "additionalDetails": "sasdsad"
-    },
-    {
-      "id": "8295",
-      "companyName": "asdad",
-      "jobDescription": "asda",
-      "eligibility": "asdasd",
-      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
-      "additionalDetails": "asd"
-    },
-    {
-      "id": "a93a",
-      "companyName": "NaPeru Sendil",
-      "jobDescription": "CSE",
-      "eligibility": "CSE",
-      "applyLink": "https://usmaaportfolio.netlify.app/",
-      "additionalDetails": "Ssadd"
-    },
-    {
-      "id": "6f02",
-      "companyName": "NTT data",
-      "jobDescription": "NTT Data selected one batch as per requirement",
-      "eligibility": "Students with more than 0 backlogs only",
+      "id": "a581",
+      "companyName": "Telstra Technologies Pvt Ltd",
+      "jobDescription": "Company is visiting in the month of december",
+      "eligibility": "Student with minimum 1 backlog is eligible",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "No additional information"
+      "additionalDetails": "Focus on efforts, not on results . "
+    },
+    {
+      "id": "aa9f",
+      "companyName": "Technodyne",
+      "jobDescription": "This company is coming in december",
+      "eligibility": "CSE",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "Be prepared and do some research on this"
+    },
+    {
+      "id": "d6c0",
+      "companyName": "khyath techmedia",
+      "jobDescription": "Company is visiting SJCIT in december ",
+      "eligibility": "CSE",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "Enjoy Pandago"
     }
   ],
   "GroupMessages": [
@@ -452,6 +372,27 @@
       "text": "Hello usman PC",
       "date": "12/1/2024",
       "time": "07:48 PM"
+    },
+    {
+      "id": "0163",
+      "sender": "HR",
+      "text": "testing HR message feature on dec 2nd at 8:42am",
+      "date": "12/2/2024",
+      "time": "08:43 AM"
+    },
+    {
+      "id": "03dd",
+      "sender": "HR",
+      "text": "testing HR message feature on dec 2nd at 11:50am",
+      "date": "12/2/2024",
+      "time": "11:50 AM"
+    },
+    {
+      "id": "417a",
+      "sender": "HR",
+      "text": "testing HR message feature on dec 2nd at 12:05pm",
+      "date": "12/2/2024",
+      "time": "12:06 PM"
     }
   ]
 }
