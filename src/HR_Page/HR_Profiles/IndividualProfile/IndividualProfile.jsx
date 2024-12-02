@@ -13,6 +13,21 @@ import { CloudUpload } from "react-bootstrap-icons"; // Uploading resume icon.
 //this is the component ie,displayed at the left side of the container.
 
 const IndividualProfile = () => {
+  //whats app functionality
+  const handleWhatsAppClick = (number) => {
+    window.open(`https://wa.me/${number}`, "_blank");
+  };
+
+  //gmail functionality
+  const handleEmailClick = (email) => {
+    window.location.href = `mailto:${email}`;
+  };
+
+  //linkedin functionality
+  const handleLinkedInClick = (profileUrl) => {
+    window.open(profileUrl, "_blank");
+  };
+
   return (
     <div className="Individual-profile-section">
       {/* 'component-name' class have common css code which is written in updateSection.css*/}
@@ -59,38 +74,25 @@ const IndividualProfile = () => {
         </div>
       </div>
       <p className="Contacts">Contacts:</p>
-      {/* <div className="contact-details">
-        <a href="mailto:s60667843@gmail.com">Email</a>
-        <a href="https://wa.me/8197759383">WhatsApp</a>
-        <a href="https://linkedin.com/in/sunil63603">LinkedIn</a>
-      </div> */}
+
       <div className="icons-list">
-        <img src={gmail} className="icon"></img>
-        <img src={linkedin} className="icon"></img>
-        <img src={whatsapp} className="icon"></img>
+        <img
+          src={gmail}
+          className="icon"
+          onClick={() => handleEmailClick(thrishugowda2003.com)}
+        ></img>
+        <img
+          src={linkedin}
+          className="icon"
+          onClick={() => handleLinkedInClick(profile.linkedinProfile)}
+        ></img>
+        <img
+          src={whatsapp}
+          className="icon"
+          onClick={() => handleWhatsAppClick(9980482825)}
+        ></img>
         <button className="message-bttn">Message</button>
       </div>
-      {/* personal portfolio link*/}
-      {/* <label className="info-label" htmlFor="student-website">
-        Website
-      </label>
-      <a
-        href="https://sunilpersonalportfolio.netlify.app"
-        target="_blank"
-        rel="noopener noreferrer"
-        id="student-website"
-      > */}
-      {/* {" "} is kind of placeholder for BoxArrowUpRight icon */}
-      {/* Sunil Portfolio{" "}
-        <BoxArrowUpRight className="icon-style"></BoxArrowUpRight> */}
-      {/* BoxArrowUpRight icon indicates 'link'*/}
-      {/* </a> */}
-      {/* {/* // <div className="contact-details">
-      //   <a href="mailto:s60667843@gmail.com">Email</a>
-      //   <a href="https://wa.me/8197759383">WhatsApp</a>
-      //   <a href="https://linkedin.com/in/sunil63603">LinkedIn</a>
-      // </div>
-      // <button className="MessageButton">Message</button> */}
     </div>
   );
 };
