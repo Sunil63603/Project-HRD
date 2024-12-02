@@ -16,41 +16,71 @@
   background: lightgray;
   margin-right: 20px;
 }
-
-.Profile-name {
-  margin-top: -116px;
-  display: flex;
-  justify-content: center;
+Container for student information .student-info {
+  margin-bottom: 20px;
 }
 
-.Profile-image {
-  width: 111px;
-  border-radius: 77px;
-  margin-left: 64px;
+/* Label Styles */
+.info-label {
+  display: block; /* Each label on a new line */
+  font-size: 0.85rem; /* Smaller font size for a label-like appearance */
+  color: #555; /* Subtle grey color */
+  margin-top: 25px;
+  margin-bottom: 1px; /* Space between the label and the element */
+  font-weight: 600; /* Slightly bold for emphasis */
+  text-transform: uppercase; /* Converts text to uppercase for a modern touch */
 }
-.photo {
-  display: flex;
-}
-.name-usn-photo {
-  display: flex;
 
-  flex-direction: row;
+/* Styles for the student's name */
+.student-name {
+  font-size: 1.5rem; /* Adjust size for emphasis */
+  font-weight: bold;
+  color: #2c3e50; /* Dark color for contrast */
+  margin: 5px 0 15px; /* Adds space around the element */
 }
-.label-info {
-  padding: 14px;
-  margin-left: 41px;
-  color: #8b3434;
-  font-size: 25px;
-  text-transform: uppercase;
-  font-weight: 300;
+
+/* Styles for the USN */
+.student-usn {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 5px 0 15px;
 }
-.name,
-.usn {
-  margin-left: 151px;
-  margin-top: -48px;
+
+/* Styles for the website link */
+a#student-website {
+  color: #3498db; /* Bright blue color for links */
+  text-decoration: none; /* Removes underline */
+  font-size: 1.1rem;
+  margin: 5px 0;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
-.resume-box:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+a#student-website:hover {
+  color: #1a73e8; /* Changes color on hover */
+}
+
+.icon-style {
+  font-size: 1rem; /* Adjust the size of the icon */
+  color: #3498db; /* Set the color */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  margin-right: 5px; /* Add some spacing */
+}
+
+.icon-style:hover {
+  color: #1a73e8; /* Change color on hover */
+}
+
+/* resumes container css properties */
+/* Container for resumes */
+.resumes-container {
+  margin-bottom: 20px;
+}
+
+/* List of resumes */
+.resumes-list {
+  list-style: none; /* Removes default bullet points */
+  padding: 0;
+  margin: 0;
 }
 
 .resume-box {

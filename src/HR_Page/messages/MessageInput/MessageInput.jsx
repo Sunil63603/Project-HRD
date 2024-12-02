@@ -1,11 +1,21 @@
-import "./message_input.css";
+import "./MessageInput.css";
 import React, { useState } from "react";
+
+// Toast Notification
+import PopUpToast from "../../../Global Components/PopUpToast/PopUpToast";
 
 const MessageInput = ({ onSend }) => {
   const [messageText, setMessageText] = useState("");
 
   const handleSend = () => {
-    if (messageText.trim()) {
+    setMessageText(messageText.trim());
+
+    if (messageText == "") {
+      PopUpToast.warning("Please enter a valid message!");
+      return;
+    }
+
+    if (messageText) {
       onSend(messageText);
       setMessageText("");
     }

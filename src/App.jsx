@@ -1,7 +1,11 @@
 import "./App.css";
 // import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { LogOutProvider } from "./context/LogOutContext";
 import { SearchProvider } from "./context/SearchContext";
+
+// import Required for 3rd party Toast Notifications
+import { ToastRootContainer } from "./Global Components/PopUpToast/PopUpToast";
 
 //vikas components.
 import LandingPage from "./Authentication/LandingPage/LandingPage";
@@ -23,6 +27,7 @@ import TopFixedBar from "./Student_Page/TopFixedBar/TopFixedBar";
 import ProfileSection from "./Student_Page/ProfileSection/ProfileSection";
 import JobSection from "./Student_Page/JobSection/JobSection";
 import AllProfileSection from "./Student_Page/AllProfilesSection/AllProfileSection";
+import FriendProfile from "./Student_Page/AllProfilesSection/FriendProfile/FriendProfile";
 import UpdateSection from "./Student_Page/UpdateSection/UpdateSection";
 import MessageHRDSection from "./Student_Page/MessageHRDSection/MessageHRDSection";
 import Student_Layout from "./Student_Page/Student_Layout/Student_Layout";
@@ -44,11 +49,13 @@ function App() {
 <<<<<<< HEAD
       / 
         {/* Individual Student Component 👇 */}
-          {/* <Route
+          <Route
             path="/hr/IndividualProfile"
             element={<IndividualProfile />}
-          ></Route> */}
-
+          ></Route>
+          {/* Profile search container */}
+          <Route path="/hr/profile-container" element={<Profiles />}></Route>
+          <Route path="/hr/profile-container" element={<Profiles />}></Route>
           <Route path="/hr" element={<HR_Layout />}>
             <Route path="create-job" element={<CreateJobPosting />}></Route>
             <Route path="companies-list" element={<CompaniesList />}></Route>
@@ -84,15 +91,13 @@ function App() {
             <Route
               path="messageHRD"
               element={<MessageHRDSection></MessageHRDSection>}
-            ></Route>
-            {/*❌This below 👇component must be displayed only when student clicks on any particular student profile ,but Not while searching */}
-            {/*❌profiles can be searched in topfixedbar component */}
-            {/* ❌':id' is id of any particular student profile*/}
-            {/* <Route path='/hr/profiles/:id' element={<Profile></Profile>}></Route> */}
-          </Route>
-        </Routes>
-      </Router>
-    </SearchProvider>
+            ></Route> */}
+              </Route>
+            </Routes>
+          </Router>
+        </LogOutProvider>
+      </SearchProvider>
+    </>
   );
 }
 

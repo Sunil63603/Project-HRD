@@ -5,12 +5,14 @@
   flex-direction: column; /* Stack job cards vertically */
   gap: 16px; /* Add space between rows */
   padding: 16px; /* Adds padding around the container */
+  margin-top: 60px; /* Adjust based on your navbar height */
 }
 
 .job-card {
   max-width: 100%; /* Ensure the card occupies full row width */
   width: 100%; /* Consistent width for all cards */
   margin: 0 auto; /* Center alignment (optional) */
+  z-index: 1; /* Ensure it stays below navbar */
 }
 
 /* Existing CSS for job cards styling */
