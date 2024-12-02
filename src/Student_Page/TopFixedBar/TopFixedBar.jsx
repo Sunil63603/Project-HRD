@@ -1,5 +1,6 @@
 import React from "react";
 import { useContext } from "react";
+import { useLogOut } from "../../context/LogOutContext";
 import { SearchContext } from "../../context/SearchContext";
 import "./TopFixedBar.css";
 
@@ -10,6 +11,7 @@ import { PersonCircle } from "react-bootstrap-icons"; // Import the profile icon
 //clicking in this 'PersonCircle' will toggle profile's visibility
 
 const TopFixedBar = () => {
+  const { showLogOutContainer } = useLogOut(); //Accessing the context functions
   const { searchTerm, setSearchTerm } = useContext(SearchContext);
   const navigate = useNavigate(); //initialize navigation function.
 
@@ -64,12 +66,12 @@ const TopFixedBar = () => {
         >
           Message HRD
         </button>
-        <button className="log-out-btn">Log Out</button>
+        <button className="log-out-btn" onClick={showLogOutContainer}>
+          Log Out
+        </button>
       </div>
     </nav>
   );
 };
 
 export default TopFixedBar;
-
-//❌👆change above logic because now we have used routers

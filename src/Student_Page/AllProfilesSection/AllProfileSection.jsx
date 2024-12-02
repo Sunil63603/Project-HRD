@@ -36,8 +36,9 @@ const AllProfileSection = () => {
   );
 
   let navigate = useNavigate();
-  const handleClickToMessage = () => {
-    navigate(""); //when student wants to message some friend
+
+  const handleViewProfile = () => {
+    navigate("/student/allprofiles/friendprofile"); //when student wants to message some friend
   };
 
   return (
@@ -51,7 +52,7 @@ const AllProfileSection = () => {
             <div
               key={index}
               className="student-card"
-              onClick={handleClickToMessage}
+              onClick={handleViewProfile}
               // onClick , open entire profile (not handling message)
             >
               <p>

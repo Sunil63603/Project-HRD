@@ -1,5 +1,5 @@
 import React from "react";
-import "./message_display.css";
+import "./MessageDisplay.css";
 
 const MessageDisplay = ({ messages }) => {
   return (

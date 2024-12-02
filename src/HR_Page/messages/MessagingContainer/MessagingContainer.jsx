@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./messaging_container.css";
+import "./MessagingContainer.css";
 
 import MessageDisplay from "../MessageDisplay/MessageDisplay";
 import MessageInput from "../MessageInput/MessageInput";
 
 // import Required for 3rd party Toast Notifications
-import PopUpToast from "../../../Components/PopUpToast/PopUpToast";
+import PopUpToast from "../../../Global Components/PopUpToast/PopUpToast";
 
 const MessagingContainer = () => {
   const [messages, setMessages] = useState([]);
