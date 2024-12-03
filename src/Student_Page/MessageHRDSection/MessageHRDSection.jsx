@@ -5,7 +5,7 @@ import "./MessageHRDSection.css"; //Add your styling for messageHRD.
 import { useState, useEffect } from "react";
 
 const MessageHRDSection = () => {
-  //i should get USN of the student from 'URL'(ie.as search params or anything like that)
+  //❌i should get USN of the student from 'URL'(ie.as search params or anything like that)
   //may be like this (/student/:id=1SJ21CS154)
   const studentUSN = "1SJ21CS151"; // this variable is only for testing purpose
   const [conversations, setConversations] = useState([]);
@@ -35,9 +35,12 @@ const MessageHRDSection = () => {
     }
   };
 
-  getConversationsByUSN(studentUSN).then((conversations) => {
-    setConversations(conversations);
-  });
+  // fetch conversations by USN only when the component mounts.
+  useEffect(() => {
+    getConversationsByUSN(studentUSN).then((conversations) => {
+      setConversations(conversations);
+    });
+  }, [studentUSN]);
 
   // Handle sending a new message
   const handleSendMessage = () => {

@@ -61,6 +61,11 @@
           "sender": "student",
           "content": "hi",
           "timestamp": "2024-12-01T08:23:45.655Z"
+        },
+        {
+          "sender": "student",
+          "content": "Testing this messageHRDSection on dec 3rd at 11:30am",
+          "timestamp": "2024-12-03T05:59:57.396Z"
         }
       ]
     },
@@ -400,6 +405,13 @@
       "text": "testing HR message feature on dec 2nd at 02:55pm",
       "date": "12/2/2024",
       "time": "02:55 PM"
+    },
+    {
+      "id": "0f9e",
+      "sender": "HR",
+      "text": "hi , my name is sunil",
+      "date": "12/3/2024",
+      "time": "11:24 AM"
     }
   ]
 }
