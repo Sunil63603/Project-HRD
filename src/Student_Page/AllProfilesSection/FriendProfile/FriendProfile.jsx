@@ -93,6 +93,12 @@ function FriendProfile() {
             <a href="https://wa.me/8197759383">WhatsApp</a>
             <a href="https://linkedin.com/in/sunil63603">LinkedIn</a>
           </div>
+
+          <div>
+            <button className="message-friend" onClick={() => {}}>
+              Message
+            </button>
+          </div>
         </div>
         <div className="profile-right">
           <li>

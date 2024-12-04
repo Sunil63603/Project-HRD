@@ -37,35 +37,12 @@
   position: relative;
 }
 
-/* heading of the component ie.updates,jobs,profile..etc */
-/* ❌theres some problem in this , try to correct it */
-.component-name::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -8px;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 4px;
-  background-color: #3498db;
-  border-radius: 2px;
-  transition: width 0.3s ease;
-  /*Short line under the heading*/
-  /* Thickness of the underline */
-  /* Accent color */
-  /* Slightly rounded edges */
-  /* Smooth transition for hover effect */
-}
-
-.component-name:hover::after {
-  width: 100%; /* Extends the underline on hover */
-}
-
 .profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  border-radius: 30%;
   object-fit: cover;
+  margin-top: 70px;
   margin-bottom: 20px;
 }
 /* Container for student information */

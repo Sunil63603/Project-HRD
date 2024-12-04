@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProfileSection.css";
+import { useState, useEffect } from "react";
 
 import { BoxArrowUpRight } from "react-bootstrap-icons"; //this is used to indicate that portfolio website is a link
 import { FileEarmarkPdf, Download } from "react-bootstrap-icons"; // icon Indicating that resume is a pdf,and download icon
@@ -7,6 +8,29 @@ import { CloudUpload } from "react-bootstrap-icons"; // Uploading resume icon.
 
 //this is the component ie,displayed at the left side of the container.
 const ProfileSection = () => {
+  const [studentObj, setStudentObj] = useState({});
+
+  // ❌❌❌Based on this studentUSN , fetch details from 'db.json' and display details related to students.
+  const studentUSN = "1SJ21CS154";
+
+  //call this function , inside useEffect.
+  const getStudentObj = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/registeredStuds`);
+      const students = await response.json();
+      const student = students.find((stud) => stud.USN === studentUSN);
+      setStudentObj(student);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    (async () => {
+      await getStudentObj(studentUSN); //IIFE is used to make this function synchronous . Because JSX should be rendered only after details are fetched .
+    })();
+  }, [studentUSN]);
+
   return (
     <>
       <div className="profile-section">
@@ -16,11 +40,10 @@ const ProfileSection = () => {
           <h2 className="component-name">Profile</h2>
           {/* refer UpdateSection.css for the 'component-name' */}
           <img
-            src="Project_SJC/src/Assets/Images/locket logo.png"
+            src={studentObj.profileImg}
             alt="Profile"
             className="profile-image"
           />
-          {/*❌change profile image in future*/}
 
           {/* refer ProfileSection.css for these styles*/}
           <label className="info-label" htmlFor="student-name">
