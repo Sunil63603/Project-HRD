@@ -36,29 +36,6 @@
   text-align: center;
 }
 
-/* heading of the component ie.updates,jobs,profile..etc */
-/* ❌theres some problem in this , try to correct it */
-.component-name::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50px;
-  /*Short line under the heading*/
-  height: 4px;
-  /* Thickness of the underline */
-  background-color: #3498db;
-  /* Accent color */
-  border-radius: 2px;
-  /* Slightly rounded edges */
-  transition: width 0.3s ease;
-  /* Smooth transition for hover effect */
-}
-
-.component-name:hover::after {
-  width: 100%; /* Extends the underline on hover */
-}
-
 /* css related to displaying notifications in UpdateSection*/
 /* Container for the notifications list */
 .notifications-list {

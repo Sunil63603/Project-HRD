@@ -14,7 +14,7 @@ function LoginForm() {
   const role = searchParams.get("role"); // Get the 'role' query parameter , which indicates whether HR/student is trying to login.
 
   //these two states are used to store inputs entered by the user.
-  const [email, setEmail] = useState("shashi@gmail.com");
+  const [email, setemail] = useState("shashi@gmail.com");
   const [password, setPassword] = useState("123321");
   const [isValidAccount, setIsValidAccount] = useState(true); //this variable indicates whether current attempt to login is valid or not
 
@@ -23,7 +23,7 @@ function LoginForm() {
 
   // Clear username and password fields when the component mounts.
   useEffect(() => {
-    setEmail("");
+    setemail("");
     setPassword("");
   }, []); //empty dependency[] indicates that , this code runs only on initial render .
 
@@ -65,13 +65,13 @@ function LoginForm() {
       <h2 className="login-title">Login</h2>
       <div className="login-form">
         <label className="login-label">
-          Email*:
+          email*:
           <input
             type="email"
             required
             className={`login-input ${!isValidAccount ? "invalid-input" : ""}`}
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setemail(e.target.value)}
           />
         </label>
 

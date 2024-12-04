@@ -32,7 +32,7 @@ const AllProfileSection = () => {
 
   // Filter students based on the search term dynamically
   const filteredStudents = students.filter((student) =>
-    student.usn.toLowerCase().includes(searchTerm.toLowerCase())
+    student.USN.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   let navigate = useNavigate();
