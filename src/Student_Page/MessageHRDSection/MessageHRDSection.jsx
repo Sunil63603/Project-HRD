@@ -3,6 +3,7 @@
 import React from "react";
 import "./MessageHRDSection.css"; //Add your styling for messageHRD.
 import { useState, useEffect } from "react";
+import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 
 const MessageHRDSection = () => {
   //❌i should get USN of the student from 'URL'(ie.as search params or anything like that)
@@ -20,13 +21,13 @@ const MessageHRDSection = () => {
       const students = await response.json();
 
       // Find the student by USN
-      const student = students.find((stud) => stud.usn === studentUSN);
+      const student = students.find((stud) => stud.USN === studentUSN);
 
       // If the student exists, return their conversations
       if (student) {
-        return student.conversations;
+        return student.conversationsWithHR;
       } else {
-        console.error("Student not found with USN:", usn);
+        console.error("Student not found with USN:", studentUSN);
         return [];
       }
     } catch (error) {
@@ -44,7 +45,10 @@ const MessageHRDSection = () => {
 
   // Handle sending a new message
   const handleSendMessage = () => {
-    if (newConversation.trim() === "") return;
+    if (newConversation.trim() === "") {
+      PopUpToast.warning("Please enter a valid message!");
+      return;
+    }
 
     const newConversationObject = {
       sender: "student",
@@ -73,7 +77,7 @@ const MessageHRDSection = () => {
       const students = await response.json();
 
       // Find the student by USN
-      const student = students.find((student) => student.usn === studentUSN);
+      const student = students.find((student) => student.USN === studentUSN);
 
       if (!student) {
         console.error("Student not found");
@@ -94,6 +98,9 @@ const MessageHRDSection = () => {
         },
         body: JSON.stringify(updatedStudent),
       });
+
+      // Success Toast Notificaion
+      PopUpToast.success("Message Sent Successsully!");
       console.log("Messages updated successfully.");
     } catch (error) {
       console.error("Error updating messages:", error);
@@ -102,7 +109,7 @@ const MessageHRDSection = () => {
 
   return (
     <div className="chat-container">
-      <div className="chat-header">Chat with HR</div>
+      <div className="chat-header">Message HRD</div>
 
       <div className="messages-container">
         {conversations.map((msg, index) => (

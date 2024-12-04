@@ -82,7 +82,6 @@ function App() {
                   path="updates"
                   element={<UpdateSection></UpdateSection>}
                 ></Route>
-                {/* 👇❌This is commented out because there is some issue (many API requests are getting fired off) */}
                 <Route
                   path="messageHRD"
                   element={<MessageHRDSection></MessageHRDSection>}

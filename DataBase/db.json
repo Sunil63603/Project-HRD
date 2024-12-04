@@ -1,12 +1,11 @@
 {
   "registeredStuds": [
     {
-      "id:": "1SJ21CS150",
-      "usn": "1SJ21CS150",
+      "USN": "1SJ21CS150",
       "name": "John Doe",
       "email": "vksvikas41@gmail.com",
       "password": "890789687",
-      "conversations": [
+      "conversationsWithHR": [
         {
           "sender": "HR",
           "content": "Hello John, please update your portfolio.",
@@ -23,15 +22,23 @@
           "timestamp": "2024-11-24T10:10:00Z"
         }
       ],
+      "friendConversations": {
+        "1SJ21CS151": [
+          {
+            "sender": "1SJ21CS150",
+            "content": "Hey Jane, how are you?",
+            "timestamp": "2024-11-24T12:00:00Z"
+          }
+        ]
+      },
       "id": "df36"
     },
     {
-      "id": "1SJ21CS151",
-      "usn": "1SJ21CS151",
+      "USN": "1SJ21CS151",
       "name": "Jane Doe",
       "email": "  @gmail.com",
       "password": "890789687",
-      "conversations": [
+      "conversationsWithHR": [
         {
           "sender": "HR",
           "content": "Hi Jane, please share your project demo video.",
@@ -66,15 +73,25 @@
           "sender": "student",
           "content": "Testing this messageHRDSection on dec 3rd at 11:30am",
           "timestamp": "2024-12-03T05:59:57.396Z"
+        },
+        {
+          "sender": "student",
+          "content": "// Success Toast Notificaion       PopUpToast.success(\"Message Sent Successsully!\");",
+          "timestamp": "2024-12-03T06:20:58.539Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Sunny,tested HR messaging.",
+          "timestamp": "2024-11-24T09:30:00Z"
         }
       ]
     },
     {
-      "usn": "1SJ21CS180",
+      "USN": "1SJ21CS180",
       "name": "viki",
       "email": "vksvikas41@gmail.com",
       "password": "890789687",
-      "conversations": [
+      "conversationsWithHR": [
         {
           "sender": "HR",
           "content": "Hello John, please update your portfolio.",
@@ -94,11 +111,11 @@
       "id": "267a"
     },
     {
-      "usn": "1SJ21CS419",
+      "USN": "1SJ21CS419",
       "name": "shesh",
       "email": "shesh@gmail.com",
       "password": "shesh@123",
-      "conversations": [
+      "conversationsWithHR": [
         {
           "sender": "HR",
           "content": "Hello John, please update your portfolio.",
@@ -118,11 +135,11 @@
       "id": "3dab"
     },
     {
-      "usn": "1SJ21CS200",
+      "USN": "1SJ21CS200",
       "name": "vikrant",
       "email": "vikrant@123",
       "password": "vikrant@123",
-      "conversations": [
+      "conversationsWithHR": [
         {
           "sender": "HR",
           "content": "Hello John, please update your portfolio.",
@@ -142,14 +159,57 @@
       "id": "d8f0"
     },
     {
-      "usn": "1SJ21CS154",
-      "name": "sunil",
-      "email": "suni@gmail.com",
+      "USN": "1SJ21CS154",
+      "profileImg": "https://drive.google.com/uc?id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
+      "website": "https://sunilpersonalportfolio.netlify.app/",
+      "name": "Sunil",
+      "email": "s60667843@gmail.com",
       "password": "sunilinus",
-      "conversations": [
+      "resumes": [
+        "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
+        "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
+      ],
+      "socialContacts": {
+        "linkedIn": "https://www.linkedin.com/in/Sunil63603/",
+        "gitHub": "https://github.com/Sunil63603",
+        "mail": "s60667843@gmail.com",
+        "whatsapp": "https://wa.me/8197759383"
+      },
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "Projects": [
+        {
+          "title": "Recipe Search Application",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
+          "deployLink": " https://escr.netlify.app/"
+        },
+        {
+          "title": "Tour Planner/Tracker Application",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/Sunil63603/WorldWise.git",
+          "deployLink": "https://sunil-worldwise.netlify.app/"
+        },
+        {
+          "title": "COHORT(Project HRD)",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "deployLink": ""
+        }
+      ],
+      "phoneNumber": "8197759383",
+      "companiesAppliedTo": [
+        "Contriver",
+        "NTT Data",
+        "Qspider",
+        "Accenture",
+        "Pentagon Space",
+        "HMNS",
+        "Sansha Technologies"
+      ],
+      "conversationsWithHR": [
         {
           "sender": "HR",
-          "content": "Hello John, please update your portfolio.",
+          "content": "Hello Sunil, please update your portfolio.",
           "timestamp": "2024-11-24T10:00:00Z"
         },
         {
@@ -159,18 +219,39 @@
         },
         {
           "sender": "HR",
-          "content": "Great! Let me know once it's done.",
+          "content": "Great!Sunny Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
       ],
+      "friendConversations": {
+        "1SJ21CS151": [
+          {
+            "sender": "1SJ21CS154",
+            "content": "Eno Jane , hengidhiya , Jane thuppa nekkdha?",
+            "timestamp": "2024-11-24T12:00:00Z"
+          }
+        ],
+        "1SJ21CS166": [
+          {
+            "sender": "1SJ21CS166",
+            "content": "Anna sike , sike .",
+            "timestamp": "2024-11-24T12:00:00Z"
+          },
+          {
+            "sender": "1SJ21CS154",
+            "content": "Jengisko",
+            "timestamp": "2024-11-24T12:05:00Z"
+          }
+        ]
+      },
       "id": "5f20"
     },
     {
-      "usn": "1SJ21CS090",
+      "USN": "1SJ21CS090",
       "name": "nithin",
       "email": "nith@gmail.com",
       "password": "nithi2123",
-      "conversations": [
+      "conversationsWithHR": [
         {
           "sender": "HR",
           "content": "Hello John, please update your portfolio.",
@@ -190,11 +271,11 @@
       "id": "d653"
     },
     {
-      "usn": "1SJ21CS166",
+      "USN": "1SJ21CS166",
       "name": "usman",
       "email": "pasha@gmail.com",
       "password": "usu@123",
-      "conversations": [
+      "conversationsWithHR": [
         {
           "sender": "HR",
           "content": "Hello John, please update your portfolio.",
@@ -219,7 +300,7 @@
       "name": "shashi kumar",
       "email": "shashi@gmail.com",
       "password": "123321",
-      "conversations": [
+      "conversationsWithHR": [
         {
           "sender": "HR",
           "content": "Hello John, please update your portfolio.",
