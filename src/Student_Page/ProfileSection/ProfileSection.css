@@ -26,6 +26,8 @@
 
 .profile-right {
   text-align: left; /* Align text to the left for consistency */
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .component-name {
@@ -38,11 +40,11 @@
 }
 
 .profile-image {
-  width: 350px;
-  height: 350px;
+  width: 150px;
+  height: 150px;
   border-radius: 30%;
-  object-fit: cover;
-  margin-top: 70px;
+  object-fit: contain;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 /* Container for student information */

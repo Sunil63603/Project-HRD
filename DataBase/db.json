@@ -2,7 +2,7 @@
   "registeredStuds": [
     {
       "USN": "1SJ21CS154",
-      "profileImg": "https://drive.google.com/uc?id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
+      "profileImg": "https://drive.google.com/uc?export=view&id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
       "website": "https://sunilpersonalportfolio.netlify.app/",
       "name": "Sunil",
       "email": "s60667843@gmail.com",
@@ -28,7 +28,7 @@
         {
           "title": "Tour Planner/Tracker Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/WorldWise.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/WorldWise.git",
           "deployLink": "https://sunil-worldwise.netlify.app/"
         },
         {
@@ -55,6 +55,11 @@
           "timestamp": "2024-11-24T10:00:00Z"
         },
         {
+          "sender": "HR",
+          "content": "I am fine",
+          "timestamp": "2024-11-24T10:00:00Z"
+        },
+        {
           "sender": "student",
           "content": "Sure, I will update it by today.",
           "timestamp": "2024-11-24T10:05:00Z"
@@ -63,6 +68,26 @@
           "sender": "HR",
           "content": "Great!Sunny Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "ok",
+          "timestamp": "2024-12-04T14:45:43.708Z"
+        },
+        {
+          "sender": "student",
+          "content": "Hi TMG did you build messaging interface for HR ?",
+          "timestamp": "2024-12-05T04:18:33.906Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Hi bro , How are you sunil",
+          "timestamp": "2024-11-24T10:10:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Hello MF",
+          "timestamp": "2024-12-05T04:45:45.836Z"
         }
       ],
       "friendConversations": {
@@ -90,7 +115,7 @@
     },
     {
       "USN": "1SJ21CS165",
-      "profileImg": "https://drive.google.com/uc?id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
+      "profileImg": "https://drive.google.com/uc?export=view&id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
       "website": "https://sunilpersonalportfolio.netlify.app/",
       "name": "Thrishan",
       "email": "s60667843@gmail.com",
@@ -380,14 +405,6 @@
   ],
   "jobs": [
     {
-      "id": "2472",
-      "companyName": "Sunny Enterprises",
-      "jobDescription": "Two types of Jobs",
-      "eligibility": "Usman Pasha",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Usman,are you ready to do the job?"
-    },
-    {
       "id": "57ea",
       "companyName": "Sansha technologies",
       "jobDescription": "Must be good in WIX and Canva tools and should be familiar with AI tools ",
@@ -551,6 +568,13 @@
       "text": "hi , my name is sunil",
       "date": "12/3/2024",
       "time": "11:24 AM"
+    },
+    {
+      "id": "7fd2",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 4th december at 11:30AM",
+      "date": "12/4/2024",
+      "time": "11:30 AM"
     }
   ]
 }
