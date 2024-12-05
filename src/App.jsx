@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LogOutProvider } from "./context/LogOutContext";
 import { SearchProvider } from "./context/SearchContext";
-import { PopUpToastProvider } from "./context/PopUpToast";
+import { PopUpToastProvider } from "./context/PopUpToastContext";
 
 // import Required for 3rd party Toast Notifications
 import { ToastRootContainer } from "./Global Components/PopUpToast/PopUpToast";
@@ -29,7 +29,7 @@ import ProfileSection from "./Student_Page/ProfileSection/ProfileSection";
 import JobSection from "./Student_Page/JobSection/JobSection";
 import AllProfileSection from "./Student_Page/AllProfilesSection/AllProfileSection";
 import FriendProfile from "./Student_Page/AllProfilesSection/FriendProfile/FriendProfile";
-import UpdateSection from "./Student_Page/UpdateSection/UpdateSection";
+import GroupMessages from "./Student_Page/GroupMessages/GroupMessages";
 import MessageHRDSection from "./Student_Page/MessageHRDSection/MessageHRDSection";
 import Student_Layout from "./Student_Page/Student_Layout/Student_Layout";
 
@@ -90,8 +90,8 @@ function App() {
                     element={<FriendProfile></FriendProfile>}
                   ></Route>
                   <Route
-                    path="updates"
-                    element={<UpdateSection></UpdateSection>}
+                    path="groupMessages"
+                    element={<GroupMessages></GroupMessages>}
                   ></Route>
                   <Route
                     path="messageHRD"

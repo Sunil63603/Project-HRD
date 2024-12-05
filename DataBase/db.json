@@ -17,7 +17,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -130,7 +137,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -218,7 +232,14 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -306,7 +327,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -435,6 +463,30 @@
       "eligibility": "CSE",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "Enjoy Pandago"
+    },
+    {
+      "id": "d6c1",
+      "companyName": "katharnak techmedia",
+      "jobDescription": "Company is visiting SJCIT in december.(No way chance ee illa) ",
+      "eligibility": "CSE",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "Enjoy Pandago"
+    },
+    {
+      "id": "4da8",
+      "companyName": "No name for company",
+      "jobDescription": "No Job description",
+      "eligibility": "everyone is eligible . ",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "We will not select anyone"
+    },
+    {
+      "id": "ab95",
+      "companyName": "Rcb",
+      "jobDescription": "EE sala cup namde",
+      "eligibility": "all seasons eligible , No ban .",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "aar sala sotthru rcb ne , arvatth sala sotthru RCB ne saarrrr..."
     }
   ],
   "GroupMessages": [

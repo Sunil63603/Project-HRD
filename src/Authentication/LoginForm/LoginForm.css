@@ -138,6 +138,7 @@
 
 .login-input:focus {
   border-color: #3b82f6;
+  border-radius: 30px;
 }
 
 /* Circular Submit Button */

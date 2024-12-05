@@ -60,9 +60,9 @@ const TopFixedBar = () => {
         </button>
         <button
           className="updates-btn"
-          onClick={() => navigate("/student/updates")}
+          onClick={() => navigate("/student/groupMessages")}
         >
-          Updates
+          Group-Messages
         </button>
         <button
           className="message-hrd-btn"

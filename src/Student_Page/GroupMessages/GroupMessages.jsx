@@ -2,9 +2,9 @@
 //useState is because of notifications array[] which fetches new notifications from Database/db.json
 //useRef is used to clear the setInterval when theres some error because of notifications server.
 import React, { useContext, useState, useEffect, useRef } from "react";
-import "./UpdateSection.css";
+import "./GroupMessages.css";
 
-function UpdateSection() {
+function GroupMessages() {
   //logic related to fetching new notifications from Database/db.json
   const [notifications, setNotifications] = useState([]); //initially array is empty.
   const intervalIdRef = useRef(null); //useState updates asynchronously which caused some problem , so useRef()
@@ -62,7 +62,7 @@ function UpdateSection() {
   return (
     <>
       <div className="update-section full-width">
-        <h2 className="component-name">Updates/Notifications</h2>
+        <h2 className="component-name">Group-Messages</h2>
         <ul className="notifications-list">
           {/* notifications[] is array which contains each and every notification */}
           {notifications.map((notification) => {
@@ -105,4 +105,4 @@ function UpdateSection() {
   );
 }
 
-export default UpdateSection;
+export default GroupMessages;

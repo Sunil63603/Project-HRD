@@ -10,20 +10,22 @@ export const PopUpToastProvider = ({ children }) => {
   //becomes true when HR posts a new JOB.
   // ❌Once student gets notified , i think student should make it false,else notification keeps coming❌
 
-  const handleJobAlert = (boolean) => setNewJobAlert(boolean); //HR will set it to true ,
+  const handleJobAlert = (prev) => setNewJobAlert(!prev); //HR will set it to true ,
   //and may be student will set it to false.
 
   return (
-    <PopUpToastProvider
+    <PopUpToastContext.Provider
       value={{
         newJobAlert,
-        setNewJobAlert,
+        handleJobAlert,
       }}
     >
       {children}
-    </PopUpToastProvider>
+    </PopUpToastContext.Provider>
   );
 };
 
 //create a custom hook to use the context
 export const usePopUpToast = () => useContext(PopUpToastContext);
+
+//❌❌The logic of notifying students for new job alert is not working as expected❌❌

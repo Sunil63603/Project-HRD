@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import "./CreateJobPosting.css"; // Import the CSS file
 
 //PopUpToastContext is used to notify student when HR creates a JOB posting
-import { usePopUpToast } from "../../context/PopUpToast";
+import { usePopUpToast } from "../../context/PopUpToastContext";
 
 // import Required for 3rd party Toast Notifications
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 
 const CreateJobPosting = () => {
-  const { setNewJobAlert } = usePopUpToast();
+  const { handleJobAlert } = usePopUpToast();
 
   //State management
   // [variable , method to set the variable]
@@ -65,7 +65,10 @@ const CreateJobPosting = () => {
 
       // Toast PopUp or alert message
       PopUpToast.success("Job posted successfully!");
-      setNewJobAlert(true); //this is used to notify student as well.
+
+      //❌❌This logic is not working❌❌
+      handleJobAlert(); //this is used to notify student.
+      //this function call will set 'newJobAlert' to true in PopUpToastContext
     } catch (error) {
       // Handle any errors
       // console.error("Error posting data:", error);
