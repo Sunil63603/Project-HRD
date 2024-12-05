@@ -3,6 +3,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./JobSection.css"; //Add your styling for Jobs.
 
+import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
+import { usePopUpToast } from "../../context/PopUpToast";
+
 const JobSection = () => {
   const [jobs, setJobs] = useState([]);
 

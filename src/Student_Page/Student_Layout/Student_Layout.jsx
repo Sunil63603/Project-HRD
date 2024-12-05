@@ -6,9 +6,10 @@ function Student_Layout() {
   return (
     <>
       <TopFixedBar></TopFixedBar>
-      {/* Always include this;visibility is handled via context */}
+      {/* Always include this;visibility is handled via LogOutContext */}
       <LogOutComponent></LogOutComponent>
       <Outlet></Outlet>
+      {/* Irrespective of the component , student should be notified new job posting (so PopUpToast library) is used in global level */}
     </>
   );
 }
