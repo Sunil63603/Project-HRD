@@ -84,7 +84,8 @@
           "content": "Sunny,tested HR messaging.",
           "timestamp": "2024-11-24T09:30:00Z"
         }
-      ]
+      ],
+      "id": "0cd4"
     },
     {
       "USN": "1SJ21CS180",
@@ -175,7 +176,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -287,7 +295,14 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -386,22 +401,6 @@
   ],
   "jobs": [
     {
-      "id": "2472",
-      "companyName": "Sunny Enterprises",
-      "jobDescription": "Two types of Jobs",
-      "eligibility": "Usman Pasha",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Usman,are you ready to do the job?"
-    },
-    {
-      "id": "57ea",
-      "companyName": "Sansha technologies",
-      "jobDescription": "Must be good in WIX and Canva tools and should be familiar with AI tools ",
-      "eligibility": "Civil and Mechanical",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Nan Thund , no need to work , i will provide the salary"
-    },
-    {
       "id": "a581",
       "companyName": "Telstra Technologies Pvt Ltd",
       "jobDescription": "Company is visiting in the month of december",
@@ -418,12 +417,20 @@
       "additionalDetails": "Be prepared and do some research on this"
     },
     {
-      "id": "d6c0",
-      "companyName": "khyath techmedia",
-      "jobDescription": "Company is visiting SJCIT in december ",
+      "id": "e1d4",
+      "companyName": "SJC INSTITUTE",
+      "jobDescription": "SDE",
       "eligibility": "CSE",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Enjoy Pandago"
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
+      "additionalDetails": "NA"
+    },
+    {
+      "id": "90e6",
+      "companyName": "no referral",
+      "jobDescription": "SDE",
+      "eligibility": "CSE  ISE",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
+      "additionalDetails": "The film managed to outshine SS Rajamouli's epic RRR and became the new King of Box Office. Pushpa 2 collected a whopping Rs 175 crore at the box office on Thursday. It beat RRR by a good margin according to Sacknilk.com.\n\nAs per Sacnilk.com, at 11 pm on Thursday, Pushpa 2 had collected about Rs 160 crore India net on its first day in all languages. And this was the collection on a weekday. Ram Charan and Jr NTR's RRR had collected Rs 133 crore on Day 1.\n\nAlso Read: Pushpa 2: The Rule Review: Allu Arjun, Rashmika Mandanna's Actioner Is Less Fire, More Flower\n\nThe movie is going to gross within a range of Rs 85 + crore in Telugu states and it also includes the paid previews on December 4.\n\nIn neighbouring Karnataka, Pushpa 2 is expected to gross in the range of Rs 15 crores and between Rs 9-10 crores gross in Tamil Nadu, Rs 6-7 crores gross in Kerala."
     }
   ],
   "GroupMessages": [
@@ -440,123 +447,10 @@
       "time": "12:44 pm"
     },
     {
-      "id": "9584",
-      "text": "Yantakulu",
-      "date": "2/11/2024",
-      "time": "12:44 pm"
-    },
-    {
       "id": "d214",
       "text": "Yantakulu will not come to college",
       "date": "2/11/2024",
       "time": "12:49 pm"
-    },
-    {
-      "id": "4bb8",
-      "text": "To ensure that the messages fit within the .message-display box without overflowing, you can adjust the CSS as follows:  Set word-wrap to break-word so long words or URLs don't overflow. Add a max-height to .message-display if needed, along with overflow-y: auto to make sure content scrolls within the box rather than expanding it. Set the width of .message-bubble to a percentage (e.g., 70%) instead of max-width, ensuring that each message bubble has a consistent width.",
-      "date": "2/11/2024",
-      "time": "12:56 pm"
-    },
-    {
-      "id": "1323",
-      "text": "hi HR",
-      "date": "7/11/2024",
-      "time": "10:25 am"
-    },
-    {
-      "id": "0ea4",
-      "text": "HI people",
-      "date": "28/11/2024",
-      "time": "07:08 pm"
-    },
-    {
-      "id": "600f",
-      "text": "message on 29Th nov 9:27am",
-      "date": "11/29/2024",
-      "time": "09:27 AM"
-    },
-    {
-      "id": "85c6",
-      "text": "Sunil is testing this message feature on 30/11/2024 at 9:05 pm ",
-      "date": "11/30/2024",
-      "time": "09:05 PM"
-    },
-    {
-      "id": "756b",
-      "sender": "HR",
-      "text": "usman testing this message on 1/12/2024 at 3:19",
-      "date": "1/12/2024",
-      "time": "03:19 pm"
-    },
-    {
-      "id": "5a0f",
-      "sender": "HR",
-      "text": "usman Testing on 1/12/2024",
-      "date": "1/12/2024",
-      "time": "05:23 pm"
-    },
-    {
-      "id": "b7ea",
-      "sender": "HR",
-      "text": "hi on 5 : 40",
-      "date": "1/12/2024",
-      "time": "05:43 pm"
-    },
-    {
-      "id": "ee43",
-      "sender": "HR",
-      "text": "messaged on 5:46pm",
-      "date": "1/12/2024",
-      "time": "05:46 pm"
-    },
-    {
-      "id": "d6d9",
-      "sender": "HR",
-      "text": "hello MF",
-      "date": "12/1/2024",
-      "time": "07:44 PM"
-    },
-    {
-      "id": "4cd7",
-      "sender": "HR",
-      "text": "Hello usman PC",
-      "date": "12/1/2024",
-      "time": "07:48 PM"
-    },
-    {
-      "id": "0163",
-      "sender": "HR",
-      "text": "testing HR message feature on dec 2nd at 8:42am",
-      "date": "12/2/2024",
-      "time": "08:43 AM"
-    },
-    {
-      "id": "03dd",
-      "sender": "HR",
-      "text": "testing HR message feature on dec 2nd at 11:50am",
-      "date": "12/2/2024",
-      "time": "11:50 AM"
-    },
-    {
-      "id": "417a",
-      "sender": "HR",
-      "text": "testing HR message feature on dec 2nd at 12:05pm",
-      "date": "12/2/2024",
-      "time": "12:06 PM"
-    },
-    {
-      "id": "4026",
-      "sender": "HR",
-      "text": "testing HR message feature on dec 2nd at 02:55pm",
-      "date": "12/2/2024",
-      "time": "02:55 PM"
-    },
-    {
-      "id": "0f9e",
-      "sender": "HR",
-      "text": "hi , my name is sunil",
-      "date": "12/3/2024",
-      "time": "11:24 AM"
     }
   ]
 }
