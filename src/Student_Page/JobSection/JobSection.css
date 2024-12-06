@@ -7,16 +7,13 @@
   overflow-y: auto; /* Enable scrolling if content overflows */
   max-height: 100vh; /* Optional: Control the height */
   border-left: 1px solid #ddd; /* Adds a subtle border to separate from other sections */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);/* Subtle shadow effect*/
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect*/
 }
 
 .jobs-section.full-width {
   flex: 1; /* Full width when ProfileSection is hidden */
   width: 100%;
 }
-
-
-
 
 /* Grid layout for the job cards */
 .job-list {
@@ -47,19 +44,20 @@
 
 /* Styling for the apply button */
 .apply-button {
-  background-color: #4caf50; 
-  
+  background-color: #4caf50;
+  text-decoration: none;
+
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.2s;
-   /* Transition for button color */
+  /* Transition for button color */
 }
 
 .apply-button:hover {
-  background-color: #45a049; 
+  background-color: #45a049;
   /* Darker green on hover */
 }
 

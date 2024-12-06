@@ -64,7 +64,6 @@ const CompaniesList = () => {
       const sortedJobs = data.reverse();
 
       // if we delete the Jobs that particular job is deleted from the .json file but that particular job is not deleted form the jobs array (state) so to delete that job from the state we use the filter method to update that particular Jobs state.
-
       setJobs(sortedJobs.filter((job) => job.id !== id));
     } catch (error) {
       console.error("Error deleting job:", error);

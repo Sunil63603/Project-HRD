@@ -2,7 +2,7 @@
   "registeredStuds": [
     {
       "USN": "1SJ21CS154",
-      "profileImg": "https://drive.google.com/uc?id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
+      "profileImg": "https://drive.google.com/uc?export=view&id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
       "website": "https://sunilpersonalportfolio.netlify.app/",
       "name": "Sunil",
       "email": "s60667843@gmail.com",
@@ -17,7 +17,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -28,7 +35,7 @@
         {
           "title": "Tour Planner/Tracker Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/WorldWise.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/WorldWise.git",
           "deployLink": "https://sunil-worldwise.netlify.app/"
         },
         {
@@ -55,6 +62,11 @@
           "timestamp": "2024-11-24T10:00:00Z"
         },
         {
+          "sender": "HR",
+          "content": "I am fine",
+          "timestamp": "2024-11-24T10:00:00Z"
+        },
+        {
           "sender": "student",
           "content": "Sure, I will update it by today.",
           "timestamp": "2024-11-24T10:05:00Z"
@@ -63,6 +75,26 @@
           "sender": "HR",
           "content": "Great!Sunny Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "ok",
+          "timestamp": "2024-12-04T14:45:43.708Z"
+        },
+        {
+          "sender": "student",
+          "content": "Hi TMG did you build messaging interface for HR ?",
+          "timestamp": "2024-12-05T04:18:33.906Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Hi bro , How are you sunil",
+          "timestamp": "2024-11-24T10:10:00Z"
+        },
+        {
+          "sender": "student",
+          "content": "Hello MF",
+          "timestamp": "2024-12-05T04:45:45.836Z"
         }
       ],
       "friendConversations": {
@@ -90,7 +122,7 @@
     },
     {
       "USN": "1SJ21CS165",
-      "profileImg": "https://drive.google.com/uc?id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
+      "profileImg": "https://drive.google.com/uc?export=view&id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
       "website": "https://sunilpersonalportfolio.netlify.app/",
       "name": "Thrishan",
       "email": "s60667843@gmail.com",
@@ -105,7 +137,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -193,7 +232,14 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -281,7 +327,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -380,14 +433,6 @@
   ],
   "jobs": [
     {
-      "id": "2472",
-      "companyName": "Sunny Enterprises",
-      "jobDescription": "Two types of Jobs",
-      "eligibility": "Usman Pasha",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Usman,are you ready to do the job?"
-    },
-    {
       "id": "57ea",
       "companyName": "Sansha technologies",
       "jobDescription": "Must be good in WIX and Canva tools and should be familiar with AI tools ",
@@ -418,6 +463,30 @@
       "eligibility": "CSE",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "Enjoy Pandago"
+    },
+    {
+      "id": "d6c1",
+      "companyName": "katharnak techmedia",
+      "jobDescription": "Company is visiting SJCIT in december.(No way chance ee illa) ",
+      "eligibility": "CSE",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "Enjoy Pandago"
+    },
+    {
+      "id": "4da8",
+      "companyName": "No name for company",
+      "jobDescription": "No Job description",
+      "eligibility": "everyone is eligible . ",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "We will not select anyone"
+    },
+    {
+      "id": "ab95",
+      "companyName": "Rcb",
+      "jobDescription": "EE sala cup namde",
+      "eligibility": "all seasons eligible , No ban .",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "aar sala sotthru rcb ne , arvatth sala sotthru RCB ne saarrrr..."
     }
   ],
   "GroupMessages": [
@@ -551,6 +620,13 @@
       "text": "hi , my name is sunil",
       "date": "12/3/2024",
       "time": "11:24 AM"
+    },
+    {
+      "id": "7fd2",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 4th december at 11:30AM",
+      "date": "12/4/2024",
+      "time": "11:30 AM"
     }
   ]
 }

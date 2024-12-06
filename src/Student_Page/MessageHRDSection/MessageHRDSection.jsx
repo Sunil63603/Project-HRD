@@ -8,7 +8,7 @@ import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 const MessageHRDSection = () => {
   //❌i should get USN of the student from 'URL'(ie.as search params or anything like that)
   //may be like this (/student/:id=1SJ21CS154)
-  const studentUSN = "1SJ21CS151"; // this variable is only for testing purpose
+  const studentUSN = "1SJ21CS154"; // this variable is only for testing purpose
   const [conversations, setConversations] = useState([]);
   const [newConversation, setNewConversation] = useState("");
 
@@ -38,9 +38,20 @@ const MessageHRDSection = () => {
 
   // fetch conversations by USN only when the component mounts.
   useEffect(() => {
+    // Fetch messages initially
     getConversationsByUSN(studentUSN).then((conversations) => {
       setConversations(conversations);
     });
+
+    // Start polling
+    const intervalId = setInterval(() => {
+      getConversationsByUSN(studentUSN).then((conversations) => {
+        setConversations(conversations);
+      });
+    }, 100000); // Fetch jobs every 'x' seconds
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
   }, [studentUSN]);
 
   // Handle sending a new message
@@ -84,10 +95,13 @@ const MessageHRDSection = () => {
         return;
       }
 
-      //update the conversations array for specific student
+      //update the conversationswithHR array for specific student
       const updatedStudent = {
         ...student,
-        conversations: [...student.conversations, newConversationObject],
+        conversationsWithHR: [
+          ...student.conversationsWithHR,
+          newConversationObject,
+        ],
       };
 
       // Update the entire registeredStuds array in db.json

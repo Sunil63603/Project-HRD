@@ -2,9 +2,9 @@
 //useState is because of notifications array[] which fetches new notifications from Database/db.json
 //useRef is used to clear the setInterval when theres some error because of notifications server.
 import React, { useContext, useState, useEffect, useRef } from "react";
-import "./UpdateSection.css";
+import "./GroupMessages.css";
 
-function UpdateSection() {
+function GroupMessages() {
   //logic related to fetching new notifications from Database/db.json
   const [notifications, setNotifications] = useState([]); //initially array is empty.
   const intervalIdRef = useRef(null); //useState updates asynchronously which caused some problem , so useRef()
@@ -23,27 +23,30 @@ function UpdateSection() {
     }));
   };
 
+  //function to fetch notifications from Database/db.json using json-server.
+  const fetchNotifications = () => {
+    fetch("http://localhost:3000/GroupMessages") //fetching from 'json-server'
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setNotifications(data);
+        // Log notifications to console
+        console.log("Fetched Notifications:", data);
+        //❌clear this line once the notifications are successfully displayed on the screen.
+      })
+      .catch((error) => {
+        console.error("Error fetching notifications:", error);
+        clearInterval(intervalIdRef.current); // Stop polling if there's an error while fetching notifications
+      });
+  };
+
   useEffect(() => {
-    //function to fetch notifications from Database/db.json using json-server.
-    const fetchNotifications = () => {
-      fetch("http://localhost:3000/GroupMessages") //fetching from 'json-server'
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setNotifications(data);
-          // Log notifications to console
-          console.log("Fetched Notifications:", data);
-          //❌clear this line once the notifications are successfully displayed on the screen.
-        })
-        .catch((error) => {
-          console.error("Error fetching notifications:", error);
-          clearInterval(intervalIdRef.current); // Stop polling if there's an error while fetching notifications
-        });
-    };
+    //initially fetch notifications , then after some interval keep fetching notifications
+    fetchNotifications();
 
     // Polling every 5 seconds
     const interval = setInterval(fetchNotifications, 100000);
@@ -59,7 +62,7 @@ function UpdateSection() {
   return (
     <>
       <div className="update-section full-width">
-        <h2 className="component-name">Updates/Notifications</h2>
+        <h2 className="component-name">Group-Messages</h2>
         <ul className="notifications-list">
           {/* notifications[] is array which contains each and every notification */}
           {notifications.map((notification) => {
@@ -75,7 +78,7 @@ function UpdateSection() {
               // 'id' is unique , so it is used as key.
               <li key={notification.id} className="notification-item">
                 {/* message,date,time,show less/show more button are displayed*/}
-                <p>{displayMessage}</p>
+                <p className="display-message">{displayMessage}</p>
                 <p className="timeStamp">
                   {notification.date} | {notification.time}
                 </p>
@@ -87,7 +90,7 @@ function UpdateSection() {
                     className="show-more-btn"
                     onClick={() => toggleExpand(notification.id)}
                   >
-                    {isExpanded ? " ...show less" : "show more... "}
+                    {isExpanded ? " show less..." : "...show more "}
                     {/* if already expanded , then display show less button else show more button*/}
                   </button>
                 )}
@@ -102,4 +105,4 @@ function UpdateSection() {
   );
 }
 
-export default UpdateSection;
+export default GroupMessages;

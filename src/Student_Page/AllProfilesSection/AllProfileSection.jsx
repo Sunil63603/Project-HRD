@@ -56,7 +56,7 @@ const AllProfileSection = () => {
               // onClick , open entire profile (not handling message)
             >
               <p>
-                <strong>USN:</strong> {student.usn}
+                <strong>USN:</strong> {student.USN}
               </p>
               <p>
                 <strong>Name:</strong> {student.name}

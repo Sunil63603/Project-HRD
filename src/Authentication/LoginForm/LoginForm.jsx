@@ -3,6 +3,8 @@
 import React, { useState, useEffect, isValidElement } from "react";
 import { useNavigate } from "react-router-dom"; //to display either HR_Page or Student_Page needs to be displayed after login .
 import "./LoginForm.css"; //write styling related to this component in this .css file itself.
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 //searchParams is used to indicate whether HR Login button / student Login button was clicked.
 //in simple words to know , who clicked the Login button.
@@ -14,8 +16,9 @@ function LoginForm() {
   const role = searchParams.get("role"); // Get the 'role' query parameter , which indicates whether HR/student is trying to login.
 
   //these two states are used to store inputs entered by the user.
-  const [email, setemail] = useState("shashi@gmail.com");
-  const [password, setPassword] = useState("123321");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isValidAccount, setIsValidAccount] = useState(true); //this variable indicates whether current attempt to login is valid or not
 
   //used to display some component programmatically . But 'Link' is used if user directly decides which component to display.
@@ -23,9 +26,13 @@ function LoginForm() {
 
   // Clear username and password fields when the component mounts.
   useEffect(() => {
-    setemail("");
+    setEmail("");
     setPassword("");
   }, []); //empty dependency[] indicates that , this code runs only on initial render .
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible((prev) => !prev);
+  };
 
   //this function is called when clicks on the submit button.
   const handleSubmit = async () => {
@@ -37,7 +44,7 @@ function LoginForm() {
       }
       const validAccounts = await response.json(); //gets all the registered accounts of HRs or Students.
 
-      //❌below account or its details are used to display/remder specific account .
+      //❌below account or its details are used to display/render specific account .
       const account = validAccounts.find(
         (validAccount) =>
           validAccount.email === email && validAccount.password === password
@@ -49,7 +56,7 @@ function LoginForm() {
           navigate(`/hr/create-job`); //if HR Login is successfull , then display HR_Page.
         } //registeredStuds.
         else {
-          navigate(`/student/updates`); //if Student Login is successful , then display Student_Page.
+          navigate(`/student/groupMessages`); //if Student Login is successful , then display Student_Page.
         }
       } else {
         setIsValidAccount(false); //making this false , will indicate 'invalid credentials in UI'
@@ -71,19 +78,36 @@ function LoginForm() {
             required
             className={`login-input ${!isValidAccount ? "invalid-input" : ""}`}
             value={email}
-            onChange={(e) => setemail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
 
         <label className="login-label">
           Password*:
-          <input
-            type="password"
-            required
-            className={`login-input ${!isValidAccount ? "invalid-input" : ""}`}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div style={{ position: "relative" }}>
+            <input
+              type={isPasswordVisible ? "text" : "password"}
+              required
+              className={`login-input ${
+                !isValidAccount ? "invalid-input" : ""
+              }`}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ paddingRight: "40px" }}
+            />
+            <span
+              onClick={togglePasswordVisibility}
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                cursor: "pointer",
+              }}
+            >
+              <FontAwesomeIcon icon={isPasswordVisible ? faEye : faEyeSlash} />
+            </span>
+          </div>
         </label>
 
         {!isValidAccount && (
