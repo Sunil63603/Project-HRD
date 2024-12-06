@@ -16,8 +16,8 @@ function LoginForm() {
   const role = searchParams.get("role"); // Get the 'role' query parameter , which indicates whether HR/student is trying to login.
 
   //these two states are used to store inputs entered by the user.
-  const [email, setEmail] = useState("shashi@gmail.com");
-  const [password, setPassword] = useState("123321");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isValidAccount, setIsValidAccount] = useState(true); //this variable indicates whether current attempt to login is valid or not
 
@@ -44,7 +44,7 @@ function LoginForm() {
       }
       const validAccounts = await response.json(); //gets all the registered accounts of HRs or Students.
 
-      //❌below account or its details are used to display/remder specific account .
+      //❌below account or its details are used to display/render specific account .
       const account = validAccounts.find(
         (validAccount) =>
           validAccount.email === email && validAccount.password === password

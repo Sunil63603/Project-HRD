@@ -61,13 +61,14 @@
   width: 100%; /* Extends the underline on hover */
 }
 
-.profile-image {
+/* .profile-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
-}
+} */
+
 /* Container for student information */
 .student-info {
   margin-bottom: 20px;

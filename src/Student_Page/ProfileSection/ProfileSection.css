@@ -40,13 +40,15 @@
 }
 
 .profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 30%;
+  width: 20px;
+  height: 20px;
+  border-radius: 10%;
   object-fit: contain;
   margin-top: 10px;
   margin-bottom: 20px;
+  padding: 10rem;
 }
+
 /* Container for student information */
 .student-info {
   margin-bottom: 20px;
