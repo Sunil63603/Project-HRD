@@ -29,6 +29,7 @@ import ProfileSection from "./Student_Page/ProfileSection/ProfileSection";
 import JobSection from "./Student_Page/JobSection/JobSection";
 import AllProfileSection from "./Student_Page/AllProfilesSection/AllProfileSection";
 import FriendProfile from "./Student_Page/AllProfilesSection/FriendProfile/FriendProfile";
+import MessageFriend from "./Student_Page/MessageFriend/MessageFriend";
 import GroupMessages from "./Student_Page/GroupMessages/GroupMessages";
 import MessageHRDSection from "./Student_Page/MessageHRDSection/MessageHRDSection";
 import Student_Layout from "./Student_Page/Student_Layout/Student_Layout";
@@ -88,6 +89,10 @@ function App() {
                   <Route
                     path="allprofiles/friendprofile"
                     element={<FriendProfile></FriendProfile>}
+                  ></Route>
+                  <Route
+                    path="allprofiles/friendprofile/messageFriend"
+                    element={<MessageFriend></MessageFriend>}
                   ></Route>
                   <Route
                     path="groupMessages"

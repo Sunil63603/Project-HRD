@@ -3,9 +3,11 @@ import { BoxArrowUpRight } from "react-bootstrap-icons"; //this is used to indic
 import { FileEarmarkPdf, Download } from "react-bootstrap-icons"; // icon Indicating that resume is a pdf,and download icon
 import { CloudUpload } from "react-bootstrap-icons"; // Uploading resume icon.
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function FriendProfile() {
   const [studentObj, setStudentObj] = useState();
+  const navigate = useNavigate();
 
   // ❌❌❌Based on this studentUSN , fetch details from 'db.json' and display details related to students.
   const studentUSN = "1SJ21CS166";
@@ -105,7 +107,12 @@ function FriendProfile() {
               <a href="https://linkedin.com/in/sunil63603">LinkedIn</a>
             </div>
             <div>
-              <button className="message-friend" onClick={() => {}}>
+              <button
+                className="message-friend"
+                onClick={() => {
+                  navigate("messageFriend");
+                }}
+              >
                 Message
               </button>
             </div>
