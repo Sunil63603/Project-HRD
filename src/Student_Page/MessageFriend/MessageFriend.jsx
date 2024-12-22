@@ -17,7 +17,7 @@ const MessageFriend = () => {
 
   //these two variables👇are used for testing purposes only . Later these two USNs will come from URL.
   const studentUSN = "1SJ21CS154"; //USN of current student profile.
-  const friendUSN = "1SJ21CS180"; // USN of friend . Conversations of current student and friend with these USNs should be rendered on screen.
+  const friendUSN = "1SJ21CS166"; // USN of friend . Conversations of current student and friend with these USNs should be rendered on screen.
 
   //'conversations' store previous conversations , 'newConversation' will store new message entered by current student before pushing it to db.json
   const [conversations, setConversations] = useState([]); //array of previous messages

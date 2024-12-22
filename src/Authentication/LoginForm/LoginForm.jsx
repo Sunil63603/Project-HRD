@@ -24,11 +24,12 @@ function LoginForm() {
   //used to display some component programmatically . But 'Link' is used if user directly decides which component to display.
   const navigate = useNavigate(); //in this case , it is used to render component after successful login.
 
-  // Clear username and password fields when the component mounts.
-  useEffect(() => {
-    setEmail("");
-    setPassword("");
-  }, []); //empty dependency[] indicates that , this code runs only on initial render .
+  //❌❌Is this useEffect really necessary❌❌
+  // // Clear username and password fields when the component mounts.
+  // useEffect(() => {
+  //   setEmail("");
+  //   setPassword("");
+  // }, []); //empty dependency[] indicates that , this code runs only on initial render .
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prev) => !prev);
@@ -53,7 +54,7 @@ function LoginForm() {
       if (account) {
         //If valid account, navigate to the respective page
         if (role === "registeredHRs") {
-          navigate(`/hr/create-job`); //if HR Login is successfull , then display HR_Page.
+          navigate(`/hr/create-job`); //if HR Login is successful , then display HR_Page.
         } //registeredStuds.
         else {
           navigate(`/student/groupMessages`); //if Student Login is successful , then display Student_Page.
@@ -70,9 +71,16 @@ function LoginForm() {
   return (
     <div className="login-container">
       <h2 className="login-title">Login</h2>
-      <div className="login-form">
-        <label className="login-label">
-          email*:
+      <form
+        onKeyDown={(e) => {
+          // e.preventDefault();
+          if (e.key === "Enter") {
+            handleSubmit(); // Trigger the login function.
+          }
+        }}
+      >
+        <div className="login-form">
+          <label className="login-label">email*:</label>
           <input
             type="email"
             required
@@ -80,10 +88,8 @@ function LoginForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </label>
 
-        <label className="login-label">
-          Password*:
+          <label className="login-label">Password*:</label>
           <div style={{ position: "relative" }}>
             <input
               type={isPasswordVisible ? "text" : "password"}
@@ -108,18 +114,24 @@ function LoginForm() {
               <FontAwesomeIcon icon={isPasswordVisible ? faEye : faEyeSlash} />
             </span>
           </div>
-        </label>
 
-        {!isValidAccount && (
-          <p className="invalid-message">
-            Invalid credentials. Please try again.
-          </p>
-        )}
+          {!isValidAccount && (
+            <p className="invalid-message">
+              Invalid credentials. Please try again.
+            </p>
+          )}
 
-        <button className="login-button" onClick={handleSubmit}>
-          Submit
-        </button>
-      </div>
+          <button
+            className="login-button"
+            onClick={(e) => {
+              e.preventDefault();
+              handleSubmit();
+            }}
+          >
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

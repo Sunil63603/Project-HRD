@@ -95,6 +95,11 @@
           "sender": "student",
           "content": "Hello MF",
           "timestamp": "2024-12-05T04:45:45.836Z"
+        },
+        {
+          "sender": "student",
+          "content": "hello shashi sir",
+          "timestamp": "2024-12-22T13:33:11.761Z"
         }
       ],
       "id": "154"
@@ -404,6 +409,11 @@
           "sender": "1SJ21CS154",
           "content": "emra pusman",
           "timestamp": "2024-12-07T15:50:21.821Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "heyy TMG",
+          "timestamp": "2024-12-22T13:28:24.232Z"
         }
       ]
     },
@@ -461,44 +471,20 @@
       "additionalDetails": "Nan Thund , no need to work , i will provide the salary"
     },
     {
-      "id": "a581",
-      "companyName": "Telstra Technologies Pvt Ltd",
-      "jobDescription": "Company is visiting in the month of december",
-      "eligibility": "Student with minimum 1 backlog is eligible",
+      "id": "7f3d",
+      "companyName": "Tech Mahindra Singh Dhoni",
+      "jobDescription": "On the way",
+      "eligibility": "No one is eligible",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Focus on efforts, not on results . "
+      "additionalDetails": "Swimming Pool Campus  \n"
     },
     {
-      "id": "aa9f",
-      "companyName": "Technodyne",
-      "jobDescription": "This company is coming in december",
-      "eligibility": "CSE",
+      "id": "4765",
+      "companyName": "DeltaX on 23-12-2024",
+      "jobDescription": "3 job roles . Product Analyst and Digital Marketing\n",
+      "eligibility": "Candidates with atleast one backlog are eligible",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Be prepared and do some research on this"
-    },
-    {
-      "id": "d6c1",
-      "companyName": "katharnak techmedia",
-      "jobDescription": "Company is visiting SJCIT in december.(No way chance ee illa) ",
-      "eligibility": "CSE",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Enjoy Pandago"
-    },
-    {
-      "id": "4da8",
-      "companyName": "No name for company",
-      "jobDescription": "No Job description",
-      "eligibility": "everyone is eligible . ",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "We will not select anyone"
-    },
-    {
-      "id": "ab95",
-      "companyName": "Rcb",
-      "jobDescription": "EE sala cup namde",
-      "eligibility": "all seasons eligible , No ban .",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "aar sala sotthru rcb ne , arvatth sala sotthru RCB ne saarrrr..."
+      "additionalDetails": "N/A"
     }
   ],
   "GroupMessages": [
@@ -639,6 +625,90 @@
       "text": "Sunil is testing this messaging feature on 4th december at 11:30AM",
       "date": "12/4/2024",
       "time": "11:30 AM"
+    },
+    {
+      "id": "1d3a",
+      "sender": "HR",
+      "text": "This is how it works",
+      "date": "12/11/2024",
+      "time": "07:59 PM"
+    },
+    {
+      "id": "536f",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 13th december at 12:30pm",
+      "date": "12/12/2024",
+      "time": "12:30 PM"
+    },
+    {
+      "id": "c63b",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 12th december at 12:38pm",
+      "date": "12/12/2024",
+      "time": "12:38 PM"
+    },
+    {
+      "id": "7a21",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 12th december at 12:39pm",
+      "date": "12/12/2024",
+      "time": "12:41 PM"
+    },
+    {
+      "id": "4bbb",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 12th december at 13:12pm",
+      "date": "12/12/2024",
+      "time": "01:12 PM"
+    },
+    {
+      "id": "56ef",
+      "sender": "HR",
+      "text": "ghghhjj",
+      "date": "12/12/2024",
+      "time": "02:32 PM"
+    },
+    {
+      "id": "645e",
+      "sender": "HR",
+      "text": "hsjsjs",
+      "date": "12/12/2024",
+      "time": "02:34 PM"
+    },
+    {
+      "id": "caf2",
+      "sender": "HR",
+      "text": "hshdjjfret45t3y64545fhcyy",
+      "date": "12/12/2024",
+      "time": "02:35 PM"
+    },
+    {
+      "id": "9040",
+      "sender": "HR",
+      "text": "sunny",
+      "date": "12/12/2024",
+      "time": "02:36 PM"
+    },
+    {
+      "id": "fb07",
+      "sender": "HR",
+      "text": "usman pasha",
+      "date": "12/12/2024",
+      "time": "02:41 PM"
+    },
+    {
+      "id": "1c86",
+      "sender": "HR",
+      "text": "hello MF , messaging on 22nd dec 2024 (sunday)",
+      "date": "12/22/2024",
+      "time": "06:56 PM"
+    },
+    {
+      "id": "1022",
+      "sender": "HR",
+      "text": "how are you",
+      "date": "12/22/2024",
+      "time": "06:56 PM"
     }
   ]
 }
