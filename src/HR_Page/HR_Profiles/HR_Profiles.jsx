@@ -8,7 +8,7 @@ const Profiles = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [error, setError] = useState(null);
 
-  const [selectedStrudent, setSelectedStrudent] = useState();
+  const [selectedStudent, setSelectedStudent] = useState({});
   const [showStudentProfile, setShowStudentProfile] = useState(false);
 
   // Fetching students from db.json using fetch
@@ -32,13 +32,17 @@ const Profiles = () => {
 
   // Filter students based on the search term dynamically
   const filteredStudents = students.filter((student) =>
-    student.usn.toLowerCase().includes(searchTerm.toLowerCase())
+    student.USN.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  // console.log(selectedStudent);
 
   let navigate = useNavigate();
   const handleClickToMessage = (student) => {
-    setShowStudentProfile(student);
+    setSelectedStudent(student);
     setShowStudentProfile(true);
+    console.log(selectedStudent);
+
     // navigate("/IndividualProfile");
   };
 
@@ -71,10 +75,10 @@ const Profiles = () => {
               <div
                 key={index}
                 className="student-card"
-                onClick={handleClickToMessage}
+                onClick={() => handleClickToMessage(student)}
               >
                 <p>
-                  <strong>USN:</strong> {student.usn}
+                  <strong>USN:</strong> {student.USN}
                 </p>
                 <p>
                   <strong>Name:</strong> {student.name}
@@ -88,7 +92,9 @@ const Profiles = () => {
       </div>
 
       {/* show student profile */}
-      {showStudentProfile && <IndividualProfile />}
+      {showStudentProfile && (
+        <IndividualProfile selectedStudent={selectedStudent} />
+      )}
     </div>
   );
 };

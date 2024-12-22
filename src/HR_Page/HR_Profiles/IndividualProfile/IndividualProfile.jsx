@@ -12,7 +12,7 @@ import { CloudUpload } from "react-bootstrap-icons"; // Uploading resume icon.
 // import Photo from "../src/Assets/Images/photo.jpg";
 //this is the component ie,displayed at the left side of the container.
 
-const IndividualProfile = () => {
+const IndividualProfile = ({ selectedStudent }) => {
   //whats app functionality
   const handleWhatsAppClick = (number) => {
     window.open(`https://wa.me/${number}`, "_blank");
@@ -47,13 +47,13 @@ const IndividualProfile = () => {
             Name :
           </label>
           <h2 id="name" className="name">
-            Name
+            {selectedStudent.name}
           </h2>
           <label for="usn" className="label-info">
             USN :
           </label>
           <h2 id="usn" className="usn">
-            USN
+            {selectedStudent.USN}
           </h2>
           <label for="resume-box" className="label-info">
             Resume:
@@ -79,7 +79,7 @@ const IndividualProfile = () => {
         <img
           src={gmail}
           className="icon"
-          onClick={() => handleEmailClick(thrishugowda2003.com)}
+          onClick={() => handleEmailClick(selectedStudent.email)}
         ></img>
         <img
           src={linkedin}

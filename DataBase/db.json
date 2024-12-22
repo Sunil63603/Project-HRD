@@ -1,15 +1,62 @@
 {
   "registeredStuds": [
     {
-      "id:": "1SJ21CS150",
-      "usn": "1SJ21CS150",
-      "name": "John Doe",
-      "email": "vksvikas41@gmail.com",
-      "password": "890789687",
-      "conversations": [
+      "USN": "1SJ21CS154",
+      "profileImg": "https://drive.google.com/uc?export=view&id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
+      "website": "https://sunilpersonalportfolio.netlify.app/",
+      "name": "Sunil",
+      "email": "s60667843@gmail.com",
+      "password": "sunilinus",
+      "resumes": [
+        "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
+        "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
+      ],
+      "socialContacts": {
+        "linkedIn": "https://www.linkedin.com/in/Sunil63603/",
+        "gitHub": "https://github.com/Sunil63603",
+        "mail": "s60667843@gmail.com",
+        "whatsapp": "https://wa.me/8197759383"
+      },
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "Projects": [
+        {
+          "title": "Recipe Search Application",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
+          "deployLink": " https://escr.netlify.app/"
+        },
+        {
+          "title": "Tour Planner/Tracker Application",
+          "videoLink": "",
+          "GitHub_Repo": "https://github.com/Sunil63603/WorldWise.git",
+          "deployLink": "https://sunil-worldwise.netlify.app/"
+        },
+        {
+          "title": "COHORT(Project HRD)",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "deployLink": ""
+        }
+      ],
+      "phoneNumber": "8197759383",
+      "companiesAppliedTo": [
+        "Contriver",
+        "NTT Data",
+        "Qspider",
+        "Accenture",
+        "Pentagon Space",
+        "HMNS",
+        "Sansha Technologies"
+      ],
+      "conversationsWithHR": [
         {
           "sender": "HR",
-          "content": "Hello John, please update your portfolio.",
+          "content": "Hello Sunil, please update your portfolio.",
+          "timestamp": "2024-11-24T10:00:00Z"
+        },
+        {
+          "sender": "HR",
+          "content": "I am fine",
           "timestamp": "2024-11-24T10:00:00Z"
         },
         {
@@ -19,132 +66,84 @@
         },
         {
           "sender": "HR",
-          "content": "Great! Let me know once it's done.",
+          "content": "Great!Sunny Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
-        }
-      ],
-      "id": "df36"
-    },
-    {
-      "id": "1SJ21CS151",
-      "usn": "1SJ21CS151",
-      "name": "Jane Doe",
-      "email": "  @gmail.com",
-      "password": "890789687",
-      "conversations": [
-        {
-          "sender": "HR",
-          "content": "Hi Jane, please share your project demo video.",
-          "timestamp": "2024-11-24T09:30:00Z"
         },
         {
           "sender": "student",
-          "content": "I will email it shortly. Thank you!",
-          "timestamp": "2024-11-24T09:40:00Z"
+          "content": "ok",
+          "timestamp": "2024-12-04T14:45:43.708Z"
+        },
+        {
+          "sender": "student",
+          "content": "Hi TMG did you build messaging interface for HR ?",
+          "timestamp": "2024-12-05T04:18:33.906Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Hi bro , How are you sunil",
+          "timestamp": "2024-11-24T10:10:00Z"
         },
         {
           "sender": "student",
           "content": "Hello MF",
-          "timestamp": "2024-12-01T08:20:30.325Z"
-        },
-        {
-          "sender": "HR",
-          "content": "Hello sunil",
-          "timestamp": "2024-11-24T09:30:00Z"
-        },
-        {
-          "sender": "student",
-          "content": "Hi shashi sir",
-          "timestamp": "2024-12-01T08:23:08.882Z"
-        },
-        {
-          "sender": "student",
-          "content": "hi",
-          "timestamp": "2024-12-01T08:23:45.655Z"
-        }
-      ]
-    },
-    {
-      "usn": "1SJ21CS180",
-      "name": "viki",
-      "email": "vksvikas41@gmail.com",
-      "password": "890789687",
-      "conversations": [
-        {
-          "sender": "HR",
-          "content": "Hello John, please update your portfolio.",
-          "timestamp": "2024-11-24T10:00:00Z"
-        },
-        {
-          "sender": "student",
-          "content": "Sure, I will update it by today.",
-          "timestamp": "2024-11-24T10:05:00Z"
-        },
-        {
-          "sender": "HR",
-          "content": "Great! Let me know once it's done.",
-          "timestamp": "2024-11-24T10:10:00Z"
+          "timestamp": "2024-12-05T04:45:45.836Z"
         }
       ],
-      "id": "267a"
+      "id": "154"
     },
     {
-      "usn": "1SJ21CS419",
-      "name": "shesh",
-      "email": "shesh@gmail.com",
-      "password": "shesh@123",
-      "conversations": [
-        {
-          "sender": "HR",
-          "content": "Hello John, please update your portfolio.",
-          "timestamp": "2024-11-24T10:00:00Z"
-        },
-        {
-          "sender": "student",
-          "content": "Sure, I will update it by today.",
-          "timestamp": "2024-11-24T10:05:00Z"
-        },
-        {
-          "sender": "HR",
-          "content": "Great! Let me know once it's done.",
-          "timestamp": "2024-11-24T10:10:00Z"
-        }
-      ],
-      "id": "3dab"
-    },
-    {
-      "usn": "1SJ21CS200",
-      "name": "vikrant",
-      "email": "vikrant@123",
-      "password": "vikrant@123",
-      "conversations": [
-        {
-          "sender": "HR",
-          "content": "Hello John, please update your portfolio.",
-          "timestamp": "2024-11-24T10:00:00Z"
-        },
-        {
-          "sender": "student",
-          "content": "Sure, I will update it by today.",
-          "timestamp": "2024-11-24T10:05:00Z"
-        },
-        {
-          "sender": "HR",
-          "content": "Great! Let me know once it's done.",
-          "timestamp": "2024-11-24T10:10:00Z"
-        }
-      ],
-      "id": "d8f0"
-    },
-    {
-      "usn": "1SJ21CS154",
-      "name": "sunil",
-      "email": "suni@gmail.com",
+      "USN": "1SJ21CS165",
+      "profileImg": "https://drive.google.com/uc?export=view&id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
+      "website": "https://sunilpersonalportfolio.netlify.app/",
+      "name": "Thrishan",
+      "email": "s60667843@gmail.com",
       "password": "sunilinus",
-      "conversations": [
+      "resumes": [
+        "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
+        "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
+      ],
+      "socialContacts": {
+        "linkedIn": "https://www.linkedin.com/in/Sunil63603/",
+        "gitHub": "https://github.com/Sunil63603",
+        "mail": "s60667843@gmail.com",
+        "whatsapp": "https://wa.me/8197759383"
+      },
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "Projects": [
+        {
+          "title": "Recipe Search Application",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
+          "deployLink": " https://escr.netlify.app/"
+        },
+        {
+          "title": "Tour Planner/Tracker Application",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/Sunil63603/WorldWise.git",
+          "deployLink": "https://sunil-worldwise.netlify.app/"
+        },
+        {
+          "title": "COHORT(Project HRD)",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "deployLink": ""
+        }
+      ],
+      "phoneNumber": "8197759383",
+      "companiesAppliedTo": [
+        "Contriver",
+        "NTT Data",
+        "Qspider",
+        "Accenture",
+        "Pentagon Space",
+        "HMNS",
+        "Sansha Technologies"
+      ],
+      "conversationsWithHR": [
         {
           "sender": "HR",
-          "content": "Hello John, please update your portfolio.",
+          "content": "Hello Sunil, please update your portfolio.",
           "timestamp": "2024-11-24T10:00:00Z"
         },
         {
@@ -154,21 +153,64 @@
         },
         {
           "sender": "HR",
-          "content": "Great! Let me know once it's done.",
+          "content": "Great!Sunny Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
       ],
-      "id": "5f20"
+      "id": "165"
     },
     {
-      "usn": "1SJ21CS090",
-      "name": "nithin",
-      "email": "nith@gmail.com",
-      "password": "nithi2123",
-      "conversations": [
+      "USN": "1SJ21CS166",
+      "profileImg": "https://drive.google.com/file/d/1qMK9qeA95tBU-GSzrmYkvURaMte4RwFV/view?usp=sharing",
+      "website": "https://usmaaportfolio.netlify.app/",
+      "name": "Usman Pasha",
+      "email": "pashau293@gmail.com",
+      "password": "usman",
+      "resumes": [
+        "https://drive.google.com/file/d/1C9vKFOhHoZi9c4Xeu29SpP78ZUQlIxHw/view?usp=sharing",
+        "https://drive.google.com/file/d/1-EQbF-ClcaEYUb67WaT3d-lGih4Q597e/view?usp=sharing"
+      ],
+      "socialContacts": {
+        "linkedIn": "https://www.linkedin.com/in/usman-pasha-u9742/",
+        "gitHub": "https://github.com/UsmanPasha141",
+        "mail": "pashau293@gmail.com",
+        "whatsapp": "https://wa.me/9742782575"
+      },
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "Projects": [
+        {
+          "title": "Recipe Search Application",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/UsmanPasha141/forkify_2.git",
+          "deployLink": " https://escr.netlify.app/"
+        },
+        {
+          "title": "NewsTak Application",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/UsmanPasha141/NewsTak-React.git",
+          "deployLink": ""
+        },
+        {
+          "title": "COHORT(Project HRD)",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "deployLink": ""
+        }
+      ],
+      "phoneNumber": "8197759383",
+      "companiesAppliedTo": [
+        "Contriver",
+        "NTT Data",
+        "Qspider",
+        "Accenture",
+        "Pentagon Space",
+        "HMNS",
+        "Sansha Technologies"
+      ],
+      "conversationsWithHR": [
         {
           "sender": "HR",
-          "content": "Hello John, please update your portfolio.",
+          "content": "Hello Usman, please update your portfolio.",
           "timestamp": "2024-11-24T10:00:00Z"
         },
         {
@@ -178,21 +220,64 @@
         },
         {
           "sender": "HR",
-          "content": "Great! Let me know once it's done.",
+          "content": "Great!Usman Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
       ],
-      "id": "d653"
+      "id": "166"
     },
     {
-      "usn": "1SJ21CS166",
-      "name": "usman",
-      "email": "pasha@gmail.com",
-      "password": "usu@123",
-      "conversations": [
+      "USN": "1SJ21CS180",
+      "profileImg": "https://drive.google.com/uc?id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
+      "website": "https://sunilpersonalportfolio.netlify.app/",
+      "name": "Vikas",
+      "email": "s60667843@gmail.com",
+      "password": "sunilinus",
+      "resumes": [
+        "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
+        "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
+      ],
+      "socialContacts": {
+        "linkedIn": "https://www.linkedin.com/in/Sunil63603/",
+        "gitHub": "https://github.com/Sunil63603",
+        "mail": "s60667843@gmail.com",
+        "whatsapp": "https://wa.me/8197759383"
+      },
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "Projects": [
+        {
+          "title": "Recipe Search Application",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
+          "deployLink": " https://escr.netlify.app/"
+        },
+        {
+          "title": "Tour Planner/Tracker Application",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/Sunil63603/WorldWise.git",
+          "deployLink": "https://sunil-worldwise.netlify.app/"
+        },
+        {
+          "title": "COHORT(Project HRD)",
+          "videoLink": "",
+          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "deployLink": ""
+        }
+      ],
+      "phoneNumber": "8197759383",
+      "companiesAppliedTo": [
+        "Contriver",
+        "NTT Data",
+        "Qspider",
+        "Accenture",
+        "Pentagon Space",
+        "HMNS",
+        "Sansha Technologies"
+      ],
+      "conversationsWithHR": [
         {
           "sender": "HR",
-          "content": "Hello John, please update your portfolio.",
+          "content": "Hello Sunil, please update your portfolio.",
           "timestamp": "2024-11-24T10:00:00Z"
         },
         {
@@ -202,11 +287,11 @@
         },
         {
           "sender": "HR",
-          "content": "Great! Let me know once it's done.",
+          "content": "Great!Sunny Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
       ],
-      "id": "5d1e"
+      "id": "180"
     }
   ],
   "registeredHRs": [
@@ -214,7 +299,7 @@
       "name": "shashi kumar",
       "email": "shashi@gmail.com",
       "password": "123321",
-      "conversations": [
+      "conversationsWithHR": [
         {
           "sender": "HR",
           "content": "Hello John, please update your portfolio.",
@@ -234,15 +319,102 @@
       "id": "5faf"
     }
   ],
-  "jobs": [
+  "friendConversations": [
     {
-      "id": "2472",
-      "companyName": "Sunny Enterprises",
-      "jobDescription": "Two types of Jobs",
-      "eligibility": "Usman Pasha",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Usman,are you ready to do the job?"
+      "id": "1",
+      "participants": ["1SJ21CS154", "1SJ21CS166"],
+      "messages": [
+        {
+          "sender": "1SJ21CS154",
+          "content": "en Pasha, heng idhiya ?",
+          "timestamp": "2024-11-24T12:00:00Z"
+        },
+        {
+          "sender": "1SJ21CS166",
+          "content": "Anna , sike . I am fine anna",
+          "timestamp": "2024-11-24T12:05:00Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "Hey Usman! How are you doing?",
+          "timestamp": "2024-12-07T15:47:52.990Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hello MF",
+          "timestamp": "2024-12-07T15:49:09.627Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hello MF",
+          "timestamp": "2024-12-07T15:49:12.502Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hello MF",
+          "timestamp": "2024-12-07T15:49:44.592Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hello MF",
+          "timestamp": "2024-12-07T15:49:51.229Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hi bro",
+          "timestamp": "2024-12-07T15:50:03.046Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hi bro",
+          "timestamp": "2024-12-07T15:50:06.021Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "emra pusman",
+          "timestamp": "2024-12-07T15:50:21.821Z"
+        }
+      ]
     },
+    {
+      "id": "2",
+      "participants": ["1SJ21CS165", "1SJ21CS180"],
+      "messages": [
+        {
+          "sender": "1SJ21CS165",
+          "content": "Hello! vikki , i am TMG",
+          "timestamp": "2024-11-24T13:00:00Z"
+        },
+        {
+          "sender": "1SJ21CS180",
+          "content": "Hello!TMG , i am fine . How are you",
+          "timestamp": "2024-11-24T13:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "1733656081722",
+      "participants": ["1SJ21CS154", "1SJ21CS180"],
+      "messages": [
+        {
+          "sender": "1SJ21CS154",
+          "content": "hi Vikas ",
+          "timestamp": "2024-12-08T11:08:01.722Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hello MF",
+          "timestamp": "2024-12-10T15:33:57.344Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "how are you",
+          "timestamp": "2024-12-10T15:34:05.568Z"
+        }
+      ]
+    }
+  ],
+  "jobs": [
     {
       "id": "57ea",
       "companyName": "Sansha technologies",
@@ -268,26 +440,31 @@
       "additionalDetails": "Be prepared and do some research on this"
     },
     {
-      "id": "d6c0",
-      "companyName": "khyath techmedia",
-      "jobDescription": "Company is visiting SJCIT in december ",
+      "id": "d6c1",
+      "companyName": "katharnak techmedia",
+      "jobDescription": "Company is visiting SJCIT in december.(No way chance ee illa) ",
       "eligibility": "CSE",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "Enjoy Pandago"
+    },
+    {
+      "id": "4da8",
+      "companyName": "No name for company",
+      "jobDescription": "No Job description",
+      "eligibility": "everyone is eligible . ",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "We will not select anyone"
+    },
+    {
+      "id": "ab95",
+      "companyName": "Rcb",
+      "jobDescription": "EE sala cup namde",
+      "eligibility": "all seasons eligible , No ban .",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "aar sala sotthru rcb ne , arvatth sala sotthru RCB ne saarrrr..."
     }
   ],
   "GroupMessages": [
-    },
-    {
-      "id": "37bd",
-      "companyName": "Infosys",
-      "jobDescription": "Web dev",
-      "eligibility": "BE",
-      "applyLink": "http://localhost:5173/create-job",
-      "additionalDetails": "75k"
-    }
-  ],
-  "messages": [
     {
       "id": "6b3e",
       "text": "Accenture",
@@ -406,52 +583,32 @@
       "time": "12:06 PM"
     },
     {
-      "id": "732b",
+      "id": "4026",
       "sender": "HR",
-      "text": "hi i am tmg",
-      "date": "12/1/2024",
-      "time": "08:06 PM"
-    }
-  ],
-  "conversations": [
-    {
-      "studentId": "123",
-      "studentName": "John Doe",
-      "messages": [
-        {
-          "sender": "HR",
-          "content": "Hello John, please update your portfolio.",
-          "timestamp": "2024-11-24T10:00:00Z"
-        },
-        {
-          "sender": "student",
-          "content": "Sure, I will update it by today.",
-          "timestamp": "2024-11-24T10:05:00Z"
-        },
-        {
-          "sender": "HR",
-          "content": "Great! Let me know once it's done.",
-          "timestamp": "2024-11-24T10:10:00Z"
-        }
-      ],
-      "id": "5e2b"
+      "text": "testing HR message feature on dec 2nd at 02:55pm",
+      "date": "12/2/2024",
+      "time": "02:55 PM"
     },
     {
-      "studentId": "124",
-      "studentName": "Jane Smith",
-      "messages": [
-        {
-          "sender": "HR",
-          "content": "Hi Jane, please share your project demo video.",
-          "timestamp": "2024-11-24T09:30:00Z"
-        },
-        {
-          "sender": "student",
-          "content": "I will email it shortly. Thank you!",
-          "timestamp": "2024-11-24T09:40:00Z"
-        }
-      ],
-      "id": "6f04"
+      "id": "0f9e",
+      "sender": "HR",
+      "text": "hi , my name is sunil",
+      "date": "12/3/2024",
+      "time": "11:24 AM"
+    },
+    {
+      "id": "7fd2",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 4th december at 11:30AM",
+      "date": "12/4/2024",
+      "time": "11:30 AM"
+    },
+    {
+      "id": "b3f6",
+      "sender": "HR",
+      "text": "tmg",
+      "date": "12/22/2024",
+      "time": "12:12 PM"
     }
   ]
 }

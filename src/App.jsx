@@ -34,12 +34,14 @@ import Student_Layout from "./Student_Page/Student_Layout/Student_Layout";
 
 function App() {
   return (
-    <SearchProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<LandingPage></LandingPage>}></Route>
-          <Route path="/login" element={<LoginForm></LoginForm>}></Route>
-          {/* <Route path="/hr" element={<Navbar />}></Route>
+    <>
+      <SearchProvider>
+        <LogOutProvider>
+          <Router>
+            <Routes>
+              <Route path="/" element={<LandingPage></LandingPage>}></Route>
+              <Route path="/login" element={<LoginForm></LoginForm>}></Route>
+              {/* <Route path="/hr" element={<Navbar />}></Route>
         <Route path="/hr/create-job" element={<CreateJobPosting />}></Route>
         <Route path="/hr/companies-list" element={<Companies />}></Route>
         <Route
@@ -49,49 +51,53 @@ function App() {
 <<<<<<< HEAD
       / 
         {/* Individual Student Component 👇 */}
-          <Route
-            path="/hr/IndividualProfile"
-            element={<IndividualProfile />}
-          ></Route>
-          {/* Profile search container */}
-          <Route path="/hr/profile-container" element={<Profiles />}></Route>
-          <Route path="/hr/profile-container" element={<Profiles />}></Route>
-          <Route path="/hr" element={<HR_Layout />}>
-            <Route path="create-job" element={<CreateJobPosting />}></Route>
-            <Route path="companies-list" element={<CompaniesList />}></Route>
-            <Route
-              path="message-container"
-              element={<MessageContainer />}
-            ></Route>
-            <Route path="profile-container" element={<Profiles />}></Route>
-          </Route>
+              <Route
+                path="/hr/IndividualProfile"
+                element={<IndividualProfile />}
+              ></Route>
 
-          {/*❌This below 👇component must be displayed only when HR clicks on any particular student profile ,  Not while searching */}
-          <Route
-            path="/hr/profile-container/IndividualProfile"
-            element={<IndividualProfile />}
-          ></Route>
-          {/*❌profiles can be searched in navbar component(ie usman component) */}
-          {/* ❌':id' is id of any particular student profile*/}
-          {/* <Route path='/hr/profiles/:id' element={<Profile></Profile>}></Route> */}
-          <Route path="/student" element={<Student_Layout></Student_Layout>}>
-            <Route
-              path="profile"
-              element={<ProfileSection></ProfileSection>}
-            ></Route>
-            <Route path="jobs" element={<JobSection></JobSection>}></Route>
-            <Route
-              path="allprofiles"
-              element={<AllProfileSection></AllProfileSection>}
-            ></Route>
-            <Route
-              path="updates"
-              element={<UpdateSection></UpdateSection>}
-            ></Route>
-            <Route
-              path="messageHRD"
-              element={<MessageHRDSection></MessageHRDSection>}
-            ></Route> */}
+              <Route path="/hr" element={<HR_Layout />}>
+                <Route path="create-job" element={<CreateJobPosting />}></Route>
+                <Route
+                  path="companies-list"
+                  element={<CompaniesList />}
+                ></Route>
+                <Route
+                  path="message-container"
+                  element={<MessageContainer />}
+                ></Route>
+                <Route path="profile-container" element={<Profiles />}></Route>
+              </Route>
+
+              {/*❌This below 👇component must be displayed only when HR clicks on any particular student profile ,  Not while searching */}
+              <Route
+                path="/hr/profile-container/IndividualProfile"
+                element={<IndividualProfile />}
+              ></Route>
+              {/*❌profiles can be searched in navbar component(ie usman component) */}
+              {/* ❌':id' is id of any particular student profile*/}
+              {/* <Route path='/hr/profiles/:id' element={<Profile></Profile>}></Route> */}
+              <Route
+                path="/student"
+                element={<Student_Layout></Student_Layout>}
+              >
+                <Route
+                  path="profile"
+                  element={<ProfileSection></ProfileSection>}
+                ></Route>
+                <Route path="jobs" element={<JobSection></JobSection>}></Route>
+                <Route
+                  path="allprofiles"
+                  element={<AllProfileSection></AllProfileSection>}
+                ></Route>
+                <Route
+                  path="updates"
+                  element={<UpdateSection></UpdateSection>}
+                ></Route>
+                <Route
+                  path="messageHRD"
+                  element={<MessageHRDSection></MessageHRDSection>}
+                ></Route>
               </Route>
             </Routes>
           </Router>
