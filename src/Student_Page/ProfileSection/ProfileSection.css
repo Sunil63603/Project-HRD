@@ -9,6 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-top: 100px;
 }
 
 .profile-left,
@@ -26,6 +27,8 @@
 
 .profile-right {
   text-align: left; /* Align text to the left for consistency */
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .component-name {
@@ -38,13 +41,15 @@
 }
 
 .profile-image {
-  width: 350px;
-  height: 350px;
-  border-radius: 30%;
-  object-fit: cover;
-  margin-top: 70px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10%;
+  object-fit: contain;
+  margin-top: 10px;
   margin-bottom: 20px;
+  padding: 10rem;
 }
+
 /* Container for student information */
 .student-info {
   margin-bottom: 20px;
