@@ -61,13 +61,14 @@
   width: 100%; /* Extends the underline on hover */
 }
 
-.profile-image {
+/* .profile-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
-}
+} */
+
 /* Container for student information */
 .student-info {
   margin-bottom: 20px;
@@ -187,6 +188,36 @@ a#student-website:hover {
   margin: 5px 0;
   color: blue;
   text-decoration: none;
+}
+
+.message-friend {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #007bff; /* Primary blue color */
+  border: none;
+  border-radius: 25px; /* Rounded edges for a pill-like shape */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.message-friend:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.message-friend:active {
+  background-color: #003f8c; /* Even darker blue when clicked */
+  transform: translateY(0); /* Reset lift effect */
+}
+
+.message-friend:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Highlight outline */
 }
 
 /* latest CSS code for updated profile section */

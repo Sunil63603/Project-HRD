@@ -3,8 +3,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./JobSection.css"; //Add your styling for Jobs.
 
+import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
+import { usePopUpToast } from "../../context/PopUpToastContext";
+
 const JobSection = () => {
   const [jobs, setJobs] = useState([]);
+
+  const { newJobAlert, handleJobAlert } = usePopUpToast();
 
   // Fetch job postings from JSON server.
   const fetchJobs = async () => {
@@ -28,9 +33,14 @@ const JobSection = () => {
       // tyo show the data in the form that the latest one  should be first then the older one....usus
       const sortedJobs = data.reverse();
 
-      // set the Jobs.
-      // if new jobs are added then the new jobs are added in the state Jobs.
-      setJobs(sortedJobs);
+      if (JSON.stringify(sortedJobs) !== JSON.stringify(jobs)) {
+        // set the Jobs.
+        // if new jobs are added then the new jobs are added in the state Jobs.
+        setJobs(sortedJobs);
+      }
+
+      //❌❌This logic is not working❌❌
+      if (newJobAlert === true) PopUpToast.success("New Job Alert");
     } catch (error) {
       // Handle's the error.
       console.error("Error fetching jobs:", error);
@@ -39,7 +49,16 @@ const JobSection = () => {
 
   // Fetch jobs when the component mounts
   useEffect(() => {
+    //fetch jobs initially
     fetchJobs();
+
+    //polling mechanism
+    const intervalId = setInterval(() => {
+      fetchJobs();
+    }, 100000); //polling for every 'x' seconds
+
+    //cleanup interval on component unmount
+    return () => clearInterval(intervalId);
   }, [jobs]);
 
   return (
@@ -60,9 +79,9 @@ const JobSection = () => {
               <strong>Additional Details : </strong> {job.additionalDetails}
             </p>
 
-            <button className="apply-button" onClick={() => {}}>
+            <a className="apply-button" href={job.applyLink} target="_blank">
               Apply
-            </button>
+            </a>
 
             {/* students should not be able to delete it. */}
             {/* <button className="delete-button" onClick={() => onDelete(job.id)}>

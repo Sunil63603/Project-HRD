@@ -32,7 +32,7 @@ const AllProfileSection = () => {
 
   // Filter students based on the search term dynamically
   const filteredStudents = students.filter((student) =>
-    student.usn.toLowerCase().includes(searchTerm.toLowerCase())
+    student.USN.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   let navigate = useNavigate();
@@ -56,7 +56,7 @@ const AllProfileSection = () => {
               // onClick , open entire profile (not handling message)
             >
               <p>
-                <strong>USN:</strong> {student.usn}
+                <strong>USN:</strong> {student.USN}
               </p>
               <p>
                 <strong>Name:</strong> {student.name}
