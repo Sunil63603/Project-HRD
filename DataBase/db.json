@@ -485,6 +485,14 @@
       "eligibility": "Candidates with atleast one backlog are eligible",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "N/A"
+    },
+    {
+      "id": "67c0",
+      "companyName": "Garage and Mechanic Services Pvt Ltd ",
+      "jobDescription": "should be able to repair all kinds of vehicles(ie.1,2,3,4 wheelers and so on)",
+      "eligibility": "CSE student who loves black oil stains on his face and base",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "0.35 CTC"
     }
   ],
   "GroupMessages": [
@@ -709,6 +717,13 @@
       "text": "how are you",
       "date": "12/22/2024",
       "time": "06:56 PM"
+    },
+    {
+      "id": "c929",
+      "sender": "HR",
+      "text": "valid message",
+      "date": "12/22/2024",
+      "time": "07:15 PM"
     }
   ]
 }
