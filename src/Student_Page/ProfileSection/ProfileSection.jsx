@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 import { BoxArrowUpRight } from "react-bootstrap-icons"; //this is used to indicate that portfolio website is a link
 import { FileEarmarkPdf, Download } from "react-bootstrap-icons"; // icon Indicating that resume is a pdf,and download icon
-import { CloudUpload } from "react-bootstrap-icons"; // Uploading resume icon.
 
 //this is the component ie,displayed at the left side of the container.
 const ProfileSection = () => {

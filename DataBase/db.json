@@ -17,14 +17,7 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -97,27 +90,6 @@
           "timestamp": "2024-12-05T04:45:45.836Z"
         }
       ],
-      "friendConversations": {
-        "1SJ21CS151": [
-          {
-            "sender": "1SJ21CS154",
-            "content": "Eno Jane , hengidhiya , Jane thuppa nekkdha?",
-            "timestamp": "2024-11-24T12:00:00Z"
-          }
-        ],
-        "1SJ21CS166": [
-          {
-            "sender": "1SJ21CS166",
-            "content": "Anna sike , sike .",
-            "timestamp": "2024-11-24T12:00:00Z"
-          },
-          {
-            "sender": "1SJ21CS154",
-            "content": "Jengisko",
-            "timestamp": "2024-11-24T12:05:00Z"
-          }
-        ]
-      },
       "id": "154"
     },
     {
@@ -137,14 +109,7 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -192,27 +157,6 @@
           "timestamp": "2024-11-24T10:10:00Z"
         }
       ],
-      "friendConversations": {
-        "1SJ21CS151": [
-          {
-            "sender": "1SJ21CS154",
-            "content": "Eno Jane , hengidhiya , Jane thuppa nekkdha?",
-            "timestamp": "2024-11-24T12:00:00Z"
-          }
-        ],
-        "1SJ21CS166": [
-          {
-            "sender": "1SJ21CS166",
-            "content": "Anna sike , sike .",
-            "timestamp": "2024-11-24T12:00:00Z"
-          },
-          {
-            "sender": "1SJ21CS154",
-            "content": "Jengisko",
-            "timestamp": "2024-11-24T12:05:00Z"
-          }
-        ]
-      },
       "id": "165"
     },
     {
@@ -232,14 +176,7 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -287,27 +224,6 @@
           "timestamp": "2024-11-24T10:10:00Z"
         }
       ],
-      "friendConversations": {
-        "1SJ21CS150": [
-          {
-            "sender": "1SJ21CS166",
-            "content": "Eno Jane , hengidhiya , Jane thuppa nekkdha?",
-            "timestamp": "2024-11-24T12:00:00Z"
-          }
-        ],
-        "1SJ21CS154": [
-          {
-            "sender": "1SJ21CS166",
-            "content": "Anna sike , sike .",
-            "timestamp": "2024-11-24T12:00:00Z"
-          },
-          {
-            "sender": "1SJ21CS154",
-            "content": "Jengisko",
-            "timestamp": "2024-11-24T12:05:00Z"
-          }
-        ]
-      },
       "id": "166"
     },
     {
@@ -327,14 +243,7 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -382,27 +291,6 @@
           "timestamp": "2024-11-24T10:10:00Z"
         }
       ],
-      "friendConversations": {
-        "1SJ21CS151": [
-          {
-            "sender": "1SJ21CS154",
-            "content": "Eno Jane , hengidhiya , Jane thuppa nekkdha?",
-            "timestamp": "2024-11-24T12:00:00Z"
-          }
-        ],
-        "1SJ21CS166": [
-          {
-            "sender": "1SJ21CS166",
-            "content": "Anna sike , sike .",
-            "timestamp": "2024-11-24T12:00:00Z"
-          },
-          {
-            "sender": "1SJ21CS154",
-            "content": "Jengisko",
-            "timestamp": "2024-11-24T12:05:00Z"
-          }
-        ]
-      },
       "id": "180"
     }
   ],
@@ -431,6 +319,101 @@
       "id": "5faf"
     }
   ],
+  "friendConversations": [
+    {
+      "id": "1",
+      "participants": ["1SJ21CS154", "1SJ21CS166"],
+      "messages": [
+        {
+          "sender": "1SJ21CS154",
+          "content": "en Pasha, heng idhiya ?",
+          "timestamp": "2024-11-24T12:00:00Z"
+        },
+        {
+          "sender": "1SJ21CS166",
+          "content": "Anna , sike . I am fine anna",
+          "timestamp": "2024-11-24T12:05:00Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "Hey Usman! How are you doing?",
+          "timestamp": "2024-12-07T15:47:52.990Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hello MF",
+          "timestamp": "2024-12-07T15:49:09.627Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hello MF",
+          "timestamp": "2024-12-07T15:49:12.502Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hello MF",
+          "timestamp": "2024-12-07T15:49:44.592Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hello MF",
+          "timestamp": "2024-12-07T15:49:51.229Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hi bro",
+          "timestamp": "2024-12-07T15:50:03.046Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hi bro",
+          "timestamp": "2024-12-07T15:50:06.021Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "emra pusman",
+          "timestamp": "2024-12-07T15:50:21.821Z"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "participants": ["1SJ21CS165", "1SJ21CS180"],
+      "messages": [
+        {
+          "sender": "1SJ21CS165",
+          "content": "Hello! vikki , i am TMG",
+          "timestamp": "2024-11-24T13:00:00Z"
+        },
+        {
+          "sender": "1SJ21CS180",
+          "content": "Hello!TMG , i am fine . How are you",
+          "timestamp": "2024-11-24T13:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "1733656081722",
+      "participants": ["1SJ21CS154", "1SJ21CS180"],
+      "messages": [
+        {
+          "sender": "1SJ21CS154",
+          "content": "hi Vikas ",
+          "timestamp": "2024-12-08T11:08:01.722Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "hello MF",
+          "timestamp": "2024-12-10T15:33:57.344Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "how are you",
+          "timestamp": "2024-12-10T15:34:05.568Z"
+        }
+      ]
+    }
+  ],
   "jobs": [
     {
       "id": "57ea",
@@ -455,6 +438,22 @@
       "eligibility": "CSE",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "Be prepared and do some research on this"
+    },
+    {
+      "id": "d6c1",
+      "companyName": "katharnak techmedia",
+      "jobDescription": "Company is visiting SJCIT in december.(No way chance ee illa) ",
+      "eligibility": "CSE",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "Enjoy Pandago"
+    },
+    {
+      "id": "4da8",
+      "companyName": "No name for company",
+      "jobDescription": "No Job description",
+      "eligibility": "everyone is eligible . ",
+      "applyLink": "https://sunilpersonalportfolio.netlify.app",
+      "additionalDetails": "We will not select anyone"
     },
     {
       "id": "ab95",

@@ -1,11 +1,11 @@
 .profile-section {
-  width: 100%;
-  padding: 2%;
+  width: 60%;
   background-color: #f4eeee;
   border-radius: 23px; /*Medium rounded corners*/
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect*/
   box-sizing: border-box;
   margin-right: 4%;
+  margin-left: 4%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -23,6 +23,8 @@
 
 .profile-left {
   text-align: left; /* Align text to the left */
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .profile-right {
@@ -47,7 +49,7 @@
   object-fit: contain;
   margin-top: 10px;
   margin-bottom: 20px;
-  padding: 10rem;
+  padding: 5rem;
 }
 
 /* Container for student information */
