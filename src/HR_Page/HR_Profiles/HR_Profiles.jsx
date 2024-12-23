@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./HR_Profiles.css";
 import { useNavigate } from "react-router";
+import IndividualProfile from "./IndividualProfile/IndividualProfile";
 
 const Profiles = () => {
   const [students, setStudents] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [error, setError] = useState(null);
+
+  const [selectedStudent, setSelectedStudent] = useState({});
+  const [showStudentProfile, setShowStudentProfile] = useState(false);
 
   // Fetching students from db.json using fetch
   useEffect(() => {
@@ -28,12 +32,18 @@ const Profiles = () => {
 
   // Filter students based on the search term dynamically
   const filteredStudents = students.filter((student) =>
-    student.usn.toLowerCase().includes(searchTerm.toLowerCase())
+    student.USN.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // console.log(selectedStudent);
+
   let navigate = useNavigate();
-  const handleClickToMessage = () => {
-    navigate("/hr/profile-container/IndividualProfile");
+  const handleClickToMessage = (student) => {
+    setSelectedStudent(student);
+    setShowStudentProfile(true);
+    console.log(selectedStudent);
+
+    // navigate("/IndividualProfile");
   };
 
   return (
@@ -58,28 +68,154 @@ const Profiles = () => {
       {error && <p className="error">{error}</p>}
 
       {/* Displaying the students */}
-      <div className="student-list">
-        {filteredStudents.length > 0 ? (
-          filteredStudents.map((student, index) => (
-            <div
-              key={index}
-              className="student-card"
-              onClick={handleClickToMessage}
-            >
-              <p>
-                <strong>USN:</strong> {student.usn}
-              </p>
-              <p>
-                <strong>Name:</strong> {student.name}
-              </p>
-            </div>
-          ))
-        ) : (
-          <p>No students match your search.</p>
-        )}
+      <div className="srollingProfiles">
+        <div className="student-list">
+          {filteredStudents.length > 0 ? (
+            filteredStudents.map((student, index) => (
+              <div
+                key={index}
+                className="student-card"
+                onClick={() => handleClickToMessage(student)}
+              >
+                <p>
+                  <strong>USN:</strong> {student.USN}
+                </p>
+                <p>
+                  <strong>Name:</strong> {student.name}
+                </p>
+              </div>
+            ))
+          ) : (
+            <p>No students match your search.</p>
+          )}
+        </div>
       </div>
+
+      {/* show student profile */}
+      {showStudentProfile && (
+        <IndividualProfile selectedStudent={selectedStudent} />
+      )}
     </div>
   );
 };
 
 export default Profiles;
+
+// import React, { useState } from "react";
+// import "./HR_Profiles.css";
+
+// const profiles = [
+//   {
+//     usn: "1SJ21CS150",
+//     name: "John Doe",
+//     photo: "https://via.placeholder.com/100",
+//     contact: "#",
+//     whatsapp: "#",
+//     linkedin: "#",
+//   },
+//   {
+//     usn: "1SJ21CS151",
+//     name: "Jane Doe",
+//     photo: "https://via.placeholder.com/100",
+//     contact: "#",
+//     whatsapp: "#",
+//     linkedin: "#",
+//   },
+//   {
+//     usn: "1SJ21CS180",
+//     name: "Viki",
+//     photo: "https://via.placeholder.com/100",
+//     contact: "#",
+//     whatsapp: "#",
+//     linkedin: "#",
+//   },
+//   {
+//     usn: "1SJ21CS150",
+//     name: "John Doe",
+//     photo: "https://via.placeholder.com/100",
+//     contact: "#",
+//     whatsapp: "#",
+//     linkedin: "#",
+//   },
+//   {
+//     usn: "1SJ21CS150",
+//     name: "John Doe",
+//     photo: "https://via.placeholder.com/100",
+//     contact: "#",
+//     whatsapp: "#",
+//     linkedin: "#",
+//   },
+//   {
+//     usn: "1SJ21CS150",
+//     name: "John Doe",
+//     photo: "https://via.placeholder.com/100",
+//     contact: "#",
+//     whatsapp: "#",
+//     linkedin: "#",
+//   },
+//   // Add more profiles as needed
+// ];
+
+// function App() {
+//   const [selectedProfile, setSelectedProfile] = useState(null);
+
+//   return (
+//     <div className="container">
+//       <div className="profile-list">
+//         <h2>Profiles</h2>
+//         {profiles.map((profile, index) => (
+//           <div
+//             key={index}
+//             className="profile-card"
+//             onClick={() => setSelectedProfile(profile)}
+//           >
+//             <p>USN: {profile.usn}</p>
+//             <p>Name: {profile.name}</p>
+//           </div>
+//         ))}
+//       </div>
+//       <div className="profile-details">
+//         {selectedProfile ? (
+//           <div className="details-box">
+//             <img
+//               src={selectedProfile.photo}
+//               alt="Profile"
+//               className="profile-photo"
+//             />
+//             <div className="profile-info">
+//               <p>USN: {selectedProfile.usn}</p>
+//               <p>Name: {selectedProfile.name}</p>
+//               <div className="profile-icons">
+//                 <a
+//                   href={selectedProfile.contact}
+//                   target="_blank"
+//                   rel="noreferrer"
+//                 >
+//                   <i className="fas fa-phone"></i>
+//                 </a>
+//                 <a
+//                   href={selectedProfile.whatsapp}
+//                   target="_blank"
+//                   rel="noreferrer"
+//                 >
+//                   <i className="fab fa-whatsapp"></i>
+//                 </a>
+//                 <a
+//                   href={selectedProfile.linkedin}
+//                   target="_blank"
+//                   rel="noreferrer"
+//                 >
+//                   <i className="fab fa-linkedin"></i>
+//                 </a>
+//               </div>
+//             </div>
+//           </div>
+//         ) : (
+//           <p>Select a profile to view details</p>
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
