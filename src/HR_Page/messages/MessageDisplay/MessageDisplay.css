@@ -10,15 +10,16 @@
   flex-direction: column;
   gap: 8px;
 }
-
+/* Ensure message-bubble is positioned relative */
 .message-bubble {
+  position: relative; /* Allows the dropdown to position itself relative to this element */
   padding: 10px;
   margin-bottom: 8px;
   border-radius: 12px;
-  width: 100%; /* Consistent width for each message bubble */
+  width: 100%;
   font-size: 14px;
   line-height: 1.4;
-  word-wrap: break-word; /* Ensures long text breaks within the box */
+  word-wrap: break-word;
 }
 
 /* HR messages aligned to the right */
@@ -59,4 +60,35 @@
   line-height: 1.5;
   color: #333;
   white-space: pre-wrap; /* Ensures line breaks are respected */
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute; /* Positions dropdown relative to the message-bubble */
+  top: 100%; /* Positions below the message */
+  right: 10px; /* Aligns the dropdown to the right edge */
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10; /* Ensures it appears above other elements */
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.dropdown-item {
+  background: none;
+  border: none;
+  padding: 8px 8px;
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+  color: #000;
 }
