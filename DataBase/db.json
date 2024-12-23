@@ -17,7 +17,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -119,7 +126,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -186,7 +200,14 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -253,7 +274,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -332,7 +360,10 @@
   "friendConversations": [
     {
       "id": "1",
-      "participants": ["1SJ21CS154", "1SJ21CS166"],
+      "participants": [
+        "1SJ21CS154",
+        "1SJ21CS166"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -393,7 +424,10 @@
     },
     {
       "id": "2",
-      "participants": ["1SJ21CS165", "1SJ21CS180"],
+      "participants": [
+        "1SJ21CS165",
+        "1SJ21CS180"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS165",
@@ -409,7 +443,10 @@
     },
     {
       "id": "1733656081722",
-      "participants": ["1SJ21CS154", "1SJ21CS180"],
+      "participants": [
+        "1SJ21CS154",
+        "1SJ21CS180"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -472,89 +509,6 @@
     }
   ],
   "GroupMessages": [
-    {
-      "id": "6b3e",
-      "text": "Accenture",
-      "date": "2/11/2024",
-      "time": "12:43 pm"
-    },
-    {
-      "id": "fcb3",
-      "text": "TCS",
-      "date": "2/11/2024",
-      "time": "12:44 pm"
-    },
-    {
-      "id": "d214",
-      "text": "Yantakulu will not come to college",
-      "date": "2/11/2024",
-      "time": "12:49 pm"
-    },
-    {
-      "id": "4bb8",
-      "text": "To ensure that the messages fit within the .message-display box without overflowing, you can adjust the CSS as follows:  Set word-wrap to break-word so long words or URLs don't overflow. Add a max-height to .message-display if needed, along with overflow-y: auto to make sure content scrolls within the box rather than expanding it. Set the width of .message-bubble to a percentage (e.g., 70%) instead of max-width, ensuring that each message bubble has a consistent width.",
-      "date": "2/11/2024",
-      "time": "12:56 pm"
-    },
-    {
-      "id": "1323",
-      "text": "hi HR",
-      "date": "7/11/2024",
-      "time": "10:25 am"
-    },
-    {
-      "id": "0ea4",
-      "text": "HI people",
-      "date": "28/11/2024",
-      "time": "07:08 pm"
-    },
-    {
-      "id": "600f",
-      "text": "message on 29Th nov 9:27am",
-      "date": "11/29/2024",
-      "time": "09:27 AM"
-    },
-    {
-      "id": "85c6",
-      "text": "Sunil is testing this message feature on 30/11/2024 at 9:05 pm ",
-      "date": "11/30/2024",
-      "time": "09:05 PM"
-    },
-    {
-      "id": "756b",
-      "sender": "HR",
-      "text": "usman testing this message on 1/12/2024 at 3:19",
-      "date": "1/12/2024",
-      "time": "03:19 pm"
-    },
-    {
-      "id": "5a0f",
-      "sender": "HR",
-      "text": "usman Testing on 1/12/2024",
-      "date": "1/12/2024",
-      "time": "05:23 pm"
-    },
-    {
-      "id": "b7ea",
-      "sender": "HR",
-      "text": "hi on 5 : 40",
-      "date": "1/12/2024",
-      "time": "05:43 pm"
-    },
-    {
-      "id": "ee43",
-      "sender": "HR",
-      "text": "messaged on 5:46pm",
-      "date": "1/12/2024",
-      "time": "05:46 pm"
-    },
-    {
-      "id": "d6d9",
-      "sender": "HR",
-      "text": "hello MF",
-      "date": "12/1/2024",
-      "time": "07:44 PM"
-    },
     {
       "id": "4cd7",
       "sender": "HR",
