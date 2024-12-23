@@ -17,14 +17,7 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -95,6 +88,16 @@
           "sender": "student",
           "content": "Hello MF",
           "timestamp": "2024-12-05T04:45:45.836Z"
+        },
+        {
+          "sender": "student",
+          "content": "hello shashi sir",
+          "timestamp": "2024-12-22T13:33:11.761Z"
+        },
+        {
+          "sender": "student",
+          "content": "hi bro , which is the company coming tomorrow",
+          "timestamp": "2024-12-23T11:06:02.167Z"
         }
       ],
       "id": "154"
@@ -116,14 +119,7 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -190,14 +186,7 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -264,14 +253,7 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -350,10 +332,7 @@
   "friendConversations": [
     {
       "id": "1",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS166"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS166"],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -404,15 +383,17 @@
           "sender": "1SJ21CS154",
           "content": "emra pusman",
           "timestamp": "2024-12-07T15:50:21.821Z"
+        },
+        {
+          "sender": "1SJ21CS154",
+          "content": "heyy TMG",
+          "timestamp": "2024-12-22T13:28:24.232Z"
         }
       ]
     },
     {
       "id": "2",
-      "participants": [
-        "1SJ21CS165",
-        "1SJ21CS180"
-      ],
+      "participants": ["1SJ21CS165", "1SJ21CS180"],
       "messages": [
         {
           "sender": "1SJ21CS165",
@@ -428,10 +409,7 @@
     },
     {
       "id": "1733656081722",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS180"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS180"],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -461,136 +439,39 @@
       "additionalDetails": "Nan Thund , no need to work , i will provide the salary"
     },
     {
-      "id": "a581",
-      "companyName": "Telstra Technologies Pvt Ltd",
-      "jobDescription": "Company is visiting in the month of december",
-      "eligibility": "Student with minimum 1 backlog is eligible",
+      "id": "7f3d",
+      "companyName": "Tech Mahindra Singh Dhoni",
+      "jobDescription": "On the way",
+      "eligibility": "No one is eligible",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Focus on efforts, not on results . "
+      "additionalDetails": "Swimming Pool Campus  \n"
     },
     {
-      "id": "aa9f",
-      "companyName": "Technodyne",
-      "jobDescription": "This company is coming in december",
-      "eligibility": "CSE",
+      "id": "4765",
+      "companyName": "DeltaX on 23-12-2024",
+      "jobDescription": "3 job roles . Product Analyst and Digital Marketing\n",
+      "eligibility": "Candidates with atleast one backlog are eligible",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Be prepared and do some research on this"
+      "additionalDetails": "N/A"
     },
     {
-      "id": "d6c1",
-      "companyName": "katharnak techmedia",
-      "jobDescription": "Company is visiting SJCIT in december.(No way chance ee illa) ",
-      "eligibility": "CSE",
+      "id": "67c0",
+      "companyName": "Garage and Mechanic Services Pvt Ltd ",
+      "jobDescription": "should be able to repair all kinds of vehicles(ie.1,2,3,4 wheelers and so on)",
+      "eligibility": "CSE student who loves black oil stains on his face and base",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Enjoy Pandago"
+      "additionalDetails": "0.35 CTC"
     },
     {
-      "id": "4da8",
-      "companyName": "No name for company",
-      "jobDescription": "No Job description",
-      "eligibility": "everyone is eligible . ",
+      "id": "8769",
+      "companyName": "Enaviya Information Technologies",
+      "jobDescription": "Internship . 10k/month",
+      "eligibility": "Students with atleast one backlog",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "We will not select anyone"
-    },
-    {
-      "id": "ab95",
-      "companyName": "Rcb",
-      "jobDescription": "EE sala cup namde",
-      "eligibility": "all seasons eligible , No ban .",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "aar sala sotthru rcb ne , arvatth sala sotthru RCB ne saarrrr..."
+      "additionalDetails": "1.\t60 % in 10th & 12th or Diploma.\n2.\t9.00 CGPA in engineering.\n3.\tNo Active Backlogs.\n4.\tShould be graduating in the year 2025.\n"
     }
   ],
   "GroupMessages": [
-    {
-      "id": "6b3e",
-      "text": "Accenture",
-      "date": "2/11/2024",
-      "time": "12:43 pm"
-    },
-    {
-      "id": "fcb3",
-      "text": "TCS",
-      "date": "2/11/2024",
-      "time": "12:44 pm"
-    },
-    {
-      "id": "9584",
-      "text": "Yantakulu",
-      "date": "2/11/2024",
-      "time": "12:44 pm"
-    },
-    {
-      "id": "d214",
-      "text": "Yantakulu will not come to college",
-      "date": "2/11/2024",
-      "time": "12:49 pm"
-    },
-    {
-      "id": "4bb8",
-      "text": "To ensure that the messages fit within the .message-display box without overflowing, you can adjust the CSS as follows:  Set word-wrap to break-word so long words or URLs don't overflow. Add a max-height to .message-display if needed, along with overflow-y: auto to make sure content scrolls within the box rather than expanding it. Set the width of .message-bubble to a percentage (e.g., 70%) instead of max-width, ensuring that each message bubble has a consistent width.",
-      "date": "2/11/2024",
-      "time": "12:56 pm"
-    },
-    {
-      "id": "1323",
-      "text": "hi HR",
-      "date": "7/11/2024",
-      "time": "10:25 am"
-    },
-    {
-      "id": "0ea4",
-      "text": "HI people",
-      "date": "28/11/2024",
-      "time": "07:08 pm"
-    },
-    {
-      "id": "600f",
-      "text": "message on 29Th nov 9:27am",
-      "date": "11/29/2024",
-      "time": "09:27 AM"
-    },
-    {
-      "id": "85c6",
-      "text": "Sunil is testing this message feature on 30/11/2024 at 9:05 pm ",
-      "date": "11/30/2024",
-      "time": "09:05 PM"
-    },
-    {
-      "id": "756b",
-      "sender": "HR",
-      "text": "usman testing this message on 1/12/2024 at 3:19",
-      "date": "1/12/2024",
-      "time": "03:19 pm"
-    },
-    {
-      "id": "5a0f",
-      "sender": "HR",
-      "text": "usman Testing on 1/12/2024",
-      "date": "1/12/2024",
-      "time": "05:23 pm"
-    },
-    {
-      "id": "b7ea",
-      "sender": "HR",
-      "text": "hi on 5 : 40",
-      "date": "1/12/2024",
-      "time": "05:43 pm"
-    },
-    {
-      "id": "ee43",
-      "sender": "HR",
-      "text": "messaged on 5:46pm",
-      "date": "1/12/2024",
-      "time": "05:46 pm"
-    },
-    {
-      "id": "d6d9",
-      "sender": "HR",
-      "text": "hello MF",
-      "date": "12/1/2024",
-      "time": "07:44 PM"
-    },
     {
       "id": "4cd7",
       "sender": "HR",
@@ -627,18 +508,116 @@
       "time": "02:55 PM"
     },
     {
-      "id": "0f9e",
-      "sender": "HR",
-      "text": "hi , my name is sunil",
-      "date": "12/3/2024",
-      "time": "11:24 AM"
-    },
-    {
       "id": "7fd2",
       "sender": "HR",
       "text": "Sunil is testing this messaging feature on 4th december at 11:30AM",
       "date": "12/4/2024",
       "time": "11:30 AM"
+    },
+    {
+      "id": "1d3a",
+      "sender": "HR",
+      "text": "This is how it works",
+      "date": "12/11/2024",
+      "time": "07:59 PM"
+    },
+    {
+      "id": "536f",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 13th december at 12:30pm",
+      "date": "12/12/2024",
+      "time": "12:30 PM"
+    },
+    {
+      "id": "c63b",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 12th december at 12:38pm",
+      "date": "12/12/2024",
+      "time": "12:38 PM"
+    },
+    {
+      "id": "7a21",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 12th december at 12:39pm",
+      "date": "12/12/2024",
+      "time": "12:41 PM"
+    },
+    {
+      "id": "4bbb",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 12th december at 13:12pm",
+      "date": "12/12/2024",
+      "time": "01:12 PM"
+    },
+    {
+      "id": "56ef",
+      "sender": "HR",
+      "text": "ghghhjj",
+      "date": "12/12/2024",
+      "time": "02:32 PM"
+    },
+    {
+      "id": "645e",
+      "sender": "HR",
+      "text": "hsjsjs",
+      "date": "12/12/2024",
+      "time": "02:34 PM"
+    },
+    {
+      "id": "caf2",
+      "sender": "HR",
+      "text": "hshdjjfret45t3y64545fhcyy",
+      "date": "12/12/2024",
+      "time": "02:35 PM"
+    },
+    {
+      "id": "9040",
+      "sender": "HR",
+      "text": "sunny",
+      "date": "12/12/2024",
+      "time": "02:36 PM"
+    },
+    {
+      "id": "fb07",
+      "sender": "HR",
+      "text": "usman pasha",
+      "date": "12/12/2024",
+      "time": "02:41 PM"
+    },
+    {
+      "id": "1c86",
+      "sender": "HR",
+      "text": "hello MF , messaging on 22nd dec 2024 (sunday)",
+      "date": "12/22/2024",
+      "time": "06:56 PM"
+    },
+    {
+      "id": "1022",
+      "sender": "HR",
+      "text": "how are you",
+      "date": "12/22/2024",
+      "time": "06:56 PM"
+    },
+    {
+      "id": "c929",
+      "sender": "HR",
+      "text": "valid message",
+      "date": "12/22/2024",
+      "time": "07:15 PM"
+    },
+    {
+      "id": "eec0",
+      "sender": "HR",
+      "text": "message sent at 23-12-2024 ",
+      "date": "12/23/2024",
+      "time": "04:34 PM"
+    },
+    {
+      "id": "b059",
+      "sender": "HR",
+      "text": "hi",
+      "date": "12/23/2024",
+      "time": "04:34 PM"
     }
   ]
 }
