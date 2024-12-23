@@ -1,11 +1,11 @@
 .profile-section {
-  width: 100%;
-  padding: 2%;
+  width: 60%;
   background-color: #f4eeee;
   border-radius: 23px; /*Medium rounded corners*/
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect*/
   box-sizing: border-box;
   margin-right: 4%;
+  margin-left: 4%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -22,10 +22,14 @@
 
 .profile-left {
   text-align: left; /* Align text to the left */
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .profile-right {
   text-align: left; /* Align text to the left for consistency */
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .component-name {
@@ -37,37 +41,16 @@
   position: relative;
 }
 
-/* heading of the component ie.updates,jobs,profile..etc */
-/* ❌theres some problem in this , try to correct it */
-.component-name::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -8px;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 4px;
-  background-color: #3498db;
-  border-radius: 2px;
-  transition: width 0.3s ease;
-  /*Short line under the heading*/
-  /* Thickness of the underline */
-  /* Accent color */
-  /* Slightly rounded edges */
-  /* Smooth transition for hover effect */
-}
-
-.component-name:hover::after {
-  width: 100%; /* Extends the underline on hover */
-}
-
 .profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 20px;
+  height: 20px;
+  border-radius: 10%;
+  object-fit: contain;
+  margin-top: 10px;
   margin-bottom: 20px;
+  padding: 5rem;
 }
+
 /* Container for student information */
 .student-info {
   margin-bottom: 20px;

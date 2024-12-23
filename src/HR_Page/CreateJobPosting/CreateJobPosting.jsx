@@ -2,10 +2,15 @@
 import React, { useState } from "react";
 import "./CreateJobPosting.css"; // Import the CSS file
 
+//PopUpToastContext is used to notify student when HR creates a JOB posting
+import { usePopUpToast } from "../../context/PopUpToastContext";
+
 // import Required for 3rd party Toast Notifications
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 
 const CreateJobPosting = () => {
+  const { handleJobAlert } = usePopUpToast();
+
   //State management
   // [variable , method to set the variable]
   // this state will store the companyname which is updated in the form and the method to set the companyname.
@@ -20,14 +25,16 @@ const CreateJobPosting = () => {
   const [additionalDetails, setadditionalDetails] = useState("");
 
   //  when the form is submited this method will be called.
-  const handleSubmit = async (e) => {
-    // it will prevent the form from submition and reloading.
-    e.preventDefault();
-
+  const handleSubmit = async () => {
     // try catch block.
     try {
+      if (companyName === "" || jobDescription === "" || applyLink === "") {
+        PopUpToast.warning("Fill the required fields");
+        return;
+      }
+
       // Submit data to the JSON server at /jobs endpoint
-      // if the input is filled by the student the text is uploded to the respentive states and then we will store the one object (formData) and then stored in the DB/json Server file.
+      // if the input is filled by the HR, the text is uploded to the respentive states and then we will store the one object (formData) and then stored in the DB/json Server file.
       const formData = {
         companyName,
         jobDescription,
@@ -60,6 +67,10 @@ const CreateJobPosting = () => {
 
       // Toast PopUp or alert message
       PopUpToast.success("Job posted successfully!");
+
+      //❌❌This logic is not working❌❌
+      handleJobAlert(); //this is used to notify student.
+      //this function call will set 'newJobAlert' to true in PopUpToastContext
     } catch (error) {
       // Handle any errors
       // console.error("Error posting data:", error);
@@ -72,7 +83,15 @@ const CreateJobPosting = () => {
   };
 
   return (
-    <form className="job-posting-form" onSubmit={handleSubmit}>
+    <form
+      className="job-posting-form"
+      onKeyDown={(e) => {
+        // e.preventDefault();
+        if (e.key === "Enter") {
+          handleSubmit();
+        }
+      }}
+    >
       <h2>Create Job Posting</h2>
       <div className="form-group">
         <label htmlFor="companyName">Company Name</label>
@@ -80,7 +99,9 @@ const CreateJobPosting = () => {
           type="text"
           id="companyName"
           value={companyName}
-          onChange={(e) => setCompanyName(e.target.value)}
+          onChange={(e) => {
+            setCompanyName(e.target.value);
+          }}
           required
         />
       </div>
@@ -121,7 +142,12 @@ const CreateJobPosting = () => {
           required
         />
       </div>
-      <button type="submit" className="submit-button">
+      <button
+        className="submit-button"
+        onClick={(e) => {
+          handleSubmit();
+        }}
+      >
         Submit
       </button>
     </form>

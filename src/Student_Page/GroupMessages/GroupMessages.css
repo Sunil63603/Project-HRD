@@ -13,10 +13,12 @@
 
 .update-section.full-width {
   flex: 1; /* Full width when ProfileSection is hidden */
-  width: 70%;
-  padding: 20px;
-  margin: 19rem;
+  width: 83rem;
+  padding: 2rem;
+  margin: 10rem;
   margin-top: 3rem;
+  height: 70vh;
+  overflow-y: scroll; /* Enable scrolling if content overflows */
 }
 
 .update-section {
@@ -36,29 +38,6 @@
   text-align: center;
 }
 
-/* heading of the component ie.updates,jobs,profile..etc */
-/* ❌theres some problem in this , try to correct it */
-.component-name::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50px;
-  /*Short line under the heading*/
-  height: 4px;
-  /* Thickness of the underline */
-  background-color: #3498db;
-  /* Accent color */
-  border-radius: 2px;
-  /* Slightly rounded edges */
-  transition: width 0.3s ease;
-  /* Smooth transition for hover effect */
-}
-
-.component-name:hover::after {
-  width: 100%; /* Extends the underline on hover */
-}
-
 /* css related to displaying notifications in UpdateSection*/
 /* Container for the notifications list */
 .notifications-list {
@@ -72,9 +51,9 @@
 
 /* Individual notification item */
 .notification-item {
-  background-color: #6074cb; /* Soft background color */
+  background-color: #bec1d2; /* Soft background color */
   border-radius: 10px; /* Rounded corners */
-  padding: 15px; /* Inner padding */
+  padding: 0.01rem; /* Inner padding */
   box-shadow: 0 2px 8px rgba(175, 216, 239, 0.1); /* Subtle shadow */
   position: relative; /* For child elements alignment */
   overflow: hidden;
@@ -83,6 +62,7 @@
 
 /* Hover effect for each notification */
 .notification-item:hover {
+  background-color: #ccced7;
   transform: translateY(-2px); /* Slight lift on hover */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
@@ -92,14 +72,14 @@
   margin: 0;
   font-weight: 500;
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #312d2d;
   line-height: 1.5;
 }
 
 /* Styling for date and timestamp */
 .notification-item .timeStamp {
   font-size: 0.85rem;
-  color: #ffffff;
+  color: #393838;
   margin-top: 8px;
   text-align: right; /* Align timestamp to the right */
 }

@@ -35,11 +35,15 @@ const TopFixedBar = () => {
       {/* whenever user searches some profile using this input , a component of profile should be displayed. Clicking on that should open entire page */}
       {/* This 'input' should have been inside AllProfiles section,But because of aesthetics , i have placed it here */}
       {/* As soon as user starts typing characters,Allprofiles component should be */}
+
       <input
         className="topSearchBar"
         placeholder="Search by USN.."
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)} //update search term dynamically.
+        onChange={(e) => {
+          navigate("allprofiles");
+          setSearchTerm(e.target.value);
+        }} //update search term dynamically.
         onKeyDown={handleKeyDown} // Trigger functionality on Enter key press
       ></input>
 
@@ -56,9 +60,9 @@ const TopFixedBar = () => {
         </button>
         <button
           className="updates-btn"
-          onClick={() => navigate("/student/updates")}
+          onClick={() => navigate("/student/groupMessages")}
         >
-          Updates
+          Group-Messages
         </button>
         <button
           className="message-hrd-btn"
