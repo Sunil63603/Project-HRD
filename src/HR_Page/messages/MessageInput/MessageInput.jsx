@@ -22,7 +22,14 @@ const MessageInput = ({ onSend }) => {
   };
 
   return (
-    <div className="message-input-container">
+    <div
+      className="message-input-container"
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          handleSend();
+        }
+      }}
+    >
       <input
         type="text"
         className="message-input"
@@ -30,7 +37,13 @@ const MessageInput = ({ onSend }) => {
         value={messageText}
         onChange={(e) => setMessageText(e.target.value)}
       />
-      <button className="send-button" onClick={handleSend}>
+      <button
+        className="send-button"
+        onClick={(e) => {
+          // e.preventDefault();
+          handleSend();
+        }}
+      >
         <span className="arrow"></span>
       </button>
     </div>
