@@ -17,7 +17,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -109,7 +116,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -176,7 +190,14 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -243,7 +264,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -322,7 +350,10 @@
   "friendConversations": [
     {
       "id": "1",
-      "participants": ["1SJ21CS154", "1SJ21CS166"],
+      "participants": [
+        "1SJ21CS154",
+        "1SJ21CS166"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -378,7 +409,10 @@
     },
     {
       "id": "2",
-      "participants": ["1SJ21CS165", "1SJ21CS180"],
+      "participants": [
+        "1SJ21CS165",
+        "1SJ21CS180"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS165",
@@ -394,7 +428,10 @@
     },
     {
       "id": "1733656081722",
-      "participants": ["1SJ21CS154", "1SJ21CS180"],
+      "participants": [
+        "1SJ21CS154",
+        "1SJ21CS180"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -448,20 +485,36 @@
       "additionalDetails": "Enjoy Pandago"
     },
     {
-      "id": "4da8",
-      "companyName": "No name for company",
-      "jobDescription": "No Job description",
-      "eligibility": "everyone is eligible . ",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "We will not select anyone"
-    },
-    {
       "id": "ab95",
       "companyName": "Rcb",
       "jobDescription": "EE sala cup namde",
       "eligibility": "all seasons eligible , No ban .",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "aar sala sotthru rcb ne , arvatth sala sotthru RCB ne saarrrr..."
+    },
+    {
+      "id": "95c8",
+      "companyName": "Viki Solutions",
+      "jobDescription": "Back End Dev",
+      "eligibility": "CSE",
+      "applyLink": "https://usmaaportfolio.netlify.app/",
+      "additionalDetails": "The Brinks Hotel bombing occurred in Saigon on December 24, 1964, during the Vietnam War. Two Viet Cong operatives detonated a car bomb under the hotel, which housed United States Army officers. The explosion killed two Americans and injured approximately 60 other people. The Viet Cong commanders had two objectives: to demonstrate their ability to strike in South Vietnam should the United States decide to launch air raids against North Vietnam, and to show the South Vietnamese that the Americans could not be relied upon for protection. The bombing prompted debate within United States president Lyndon B. Johnson's administration. Most of his advisers favored retaliatory bombing of North Vietnam and the introduction of American combat troops, while Johnson preferred the existing strategy of training the Army of the Republic of Vietnam to protect South Vietnam from the Viet Cong. In the end, Johnson decided not to take retaliatory action. (Full article...)"
+    },
+    {
+      "id": "01cb",
+      "companyName": "DigiGlobe Solutions",
+      "jobDescription": "SDE",
+      "eligibility": "",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
+      "additionalDetails": "Developed personal portfolio as a part of Internship.\nDeveloped simple user interface which enhances user experience.\nImplemented Resume Download functionality and a contact form, where form data can be received as mail.\nResponsive for both desktop and mobile."
+    },
+    {
+      "id": "a748",
+      "companyName": "DigiGlobe Solutions",
+      "jobDescription": "anklhd;",
+      "eligibility": "aerospace",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6",
+      "additionalDetails": "dsahiod"
     }
   ],
   "GroupMessages": [
@@ -494,12 +547,6 @@
       "text": "hi HR",
       "date": "7/11/2024",
       "time": "10:25 am"
-    },
-    {
-      "id": "0ea4",
-      "text": "HI people",
-      "date": "28/11/2024",
-      "time": "07:08 pm"
     },
     {
       "id": "600f",
@@ -596,6 +643,13 @@
       "text": "yantruda yantruda yantruda yantruda yantruda yantruda ",
       "date": "12/12/2024",
       "time": "03:41 pm"
+    },
+    {
+      "id": "20e7",
+      "sender": "HR",
+      "text": "Hi am vikas robot ",
+      "date": "12/24/2024",
+      "time": "10:36 AM"
     }
   ]
 }
