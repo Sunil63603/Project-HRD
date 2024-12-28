@@ -7,6 +7,7 @@
       "name": "Sunil",
       "email": "s60667843@gmail.com",
       "password": "sunilinus",
+      "mobile": "8197759383",
       "resumes": [
         "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
         "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
@@ -22,7 +23,7 @@
         {
           "title": "Recipe Search Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
           "deployLink": " https://escr.netlify.app/"
         },
         {
@@ -34,7 +35,7 @@
         {
           "title": "COHORT(Project HRD)",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/Project-HRD.git",
           "deployLink": ""
         }
       ],
@@ -55,49 +56,24 @@
           "timestamp": "2024-11-24T10:00:00Z"
         },
         {
-          "sender": "HR",
-          "content": "I am fine",
-          "timestamp": "2024-11-24T10:00:00Z"
+          "sender": "student",
+          "content": "sure sir",
+          "timestamp": "2024-12-24T08:24:44.146Z"
         },
         {
           "sender": "student",
-          "content": "Sure, I will update it by today.",
-          "timestamp": "2024-11-24T10:05:00Z"
-        },
-        {
-          "sender": "HR",
-          "content": "Great!Sunny Let me know once it's done.",
-          "timestamp": "2024-11-24T10:10:00Z"
-        },
-        {
-          "sender": "student",
-          "content": "ok",
-          "timestamp": "2024-12-04T14:45:43.708Z"
-        },
-        {
-          "sender": "student",
-          "content": "Hi TMG did you build messaging interface for HR ?",
-          "timestamp": "2024-12-05T04:18:33.906Z"
+          "content": "what about resume?",
+          "timestamp": "2024-12-24T08:24:53.894Z"
         },
         {
           "sender": "HR",
-          "content": "Hi bro , How are you sunil",
-          "timestamp": "2024-11-24T10:10:00Z"
+          "content": "your resume's ATS score is low,please update that as well",
+          "timestamp": "2024-12-24T08:24:53.894Z"
         },
         {
           "sender": "student",
-          "content": "Hello MF",
-          "timestamp": "2024-12-05T04:45:45.836Z"
-        },
-        {
-          "sender": "student",
-          "content": "hello shashi sir",
-          "timestamp": "2024-12-22T13:33:11.761Z"
-        },
-        {
-          "sender": "student",
-          "content": "hi bro , which is the company coming tomorrow",
-          "timestamp": "2024-12-23T11:06:02.167Z"
+          "content": "ok sir , Tq",
+          "timestamp": "2024-12-28T13:08:16.943Z"
         }
       ],
       "id": "154"
@@ -124,19 +100,19 @@
         {
           "title": "Recipe Search Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
           "deployLink": " https://escr.netlify.app/"
         },
         {
           "title": "Tour Planner/Tracker Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/WorldWise.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/WorldWise.git",
           "deployLink": "https://sunil-worldwise.netlify.app/"
         },
         {
           "title": "COHORT(Project HRD)",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/Project-HRD.git",
           "deployLink": ""
         }
       ],
@@ -191,19 +167,19 @@
         {
           "title": "Recipe Search Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/UsmanPasha141/forkify_2.git",
+          "GitHub_Repo": "https://github.com/UsmanPasha141/forkify_2.git",
           "deployLink": " https://escr.netlify.app/"
         },
         {
           "title": "NewsTak Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/UsmanPasha141/NewsTak-React.git",
+          "GitHub_Repo": "https://github.com/UsmanPasha141/NewsTak-React.git",
           "deployLink": ""
         },
         {
           "title": "COHORT(Project HRD)",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/Project-HRD.git",
           "deployLink": ""
         }
       ],
@@ -258,19 +234,19 @@
         {
           "title": "Recipe Search Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
           "deployLink": " https://escr.netlify.app/"
         },
         {
           "title": "Tour Planner/Tracker Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/WorldWise.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/WorldWise.git",
           "deployLink": "https://sunil-worldwise.netlify.app/"
         },
         {
           "title": "COHORT(Project HRD)",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/Project-HRD.git",
           "deployLink": ""
         }
       ],
@@ -383,11 +359,6 @@
           "sender": "1SJ21CS154",
           "content": "emra pusman",
           "timestamp": "2024-12-07T15:50:21.821Z"
-        },
-        {
-          "sender": "1SJ21CS154",
-          "content": "heyy TMG",
-          "timestamp": "2024-12-22T13:28:24.232Z"
         }
       ]
     },
@@ -427,24 +398,27 @@
           "timestamp": "2024-12-10T15:34:05.568Z"
         }
       ]
+    },
+    {
+      "id": "1734969900623",
+      "participants": ["1SJ21CS154", "1SJ21CS165"],
+      "messages": [
+        {
+          "sender": "1SJ21CS154",
+          "content": "hello TMG",
+          "timestamp": "2024-12-23T16:05:00.622Z"
+        }
+      ]
     }
   ],
   "jobs": [
-    {
-      "id": "57ea",
-      "companyName": "Sansha technologies",
-      "jobDescription": "Must be good in WIX and Canva tools and should be familiar with AI tools ",
-      "eligibility": "Civil and Mechanical",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Nan Thund , no need to work , i will provide the salary"
-    },
     {
       "id": "7f3d",
       "companyName": "Tech Mahindra Singh Dhoni",
       "jobDescription": "On the way",
       "eligibility": "No one is eligible",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Swimming Pool Campus  \n"
+      "additionalDetails": "Swimming Pool Campus"
     },
     {
       "id": "4765",
@@ -461,45 +435,9 @@
       "eligibility": "CSE student who loves black oil stains on his face and base",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "0.35 CTC"
-    },
-    {
-      "id": "8769",
-      "companyName": "Enaviya Information Technologies",
-      "jobDescription": "Internship . 10k/month",
-      "eligibility": "Students with atleast one backlog",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "1.\t60 % in 10th & 12th or Diploma.\n2.\t9.00 CGPA in engineering.\n3.\tNo Active Backlogs.\n4.\tShould be graduating in the year 2025.\n"
     }
   ],
   "GroupMessages": [
-    {
-      "id": "4cd7",
-      "sender": "HR",
-      "text": "Hello usman PC",
-      "date": "12/1/2024",
-      "time": "07:48 PM"
-    },
-    {
-      "id": "0163",
-      "sender": "HR",
-      "text": "testing HR message feature on dec 2nd at 8:42am",
-      "date": "12/2/2024",
-      "time": "08:43 AM"
-    },
-    {
-      "id": "03dd",
-      "sender": "HR",
-      "text": "testing HR message feature on dec 2nd at 11:50am",
-      "date": "12/2/2024",
-      "time": "11:50 AM"
-    },
-    {
-      "id": "417a",
-      "sender": "HR",
-      "text": "testing HR message feature on dec 2nd at 12:05pm",
-      "date": "12/2/2024",
-      "time": "12:06 PM"
-    },
     {
       "id": "4026",
       "sender": "HR",
@@ -618,6 +556,13 @@
       "text": "hi",
       "date": "12/23/2024",
       "time": "04:34 PM"
+    },
+    {
+      "id": "bd78",
+      "sender": "HR",
+      "text": "hello MF",
+      "date": "12/23/2024",
+      "time": "04:53 PM"
     }
   ]
 }

@@ -77,6 +77,7 @@ const CompaniesList = () => {
   useEffect(() => {
     fetchJobs();
   }, []);
+  //here no need to use setInterval because , when HR posts a job and if he visits 'companies' component to ensure latest job is posted , then it will be updated . because visiting this components triggers component mount.
 
   return (
     <div className="companies-list">

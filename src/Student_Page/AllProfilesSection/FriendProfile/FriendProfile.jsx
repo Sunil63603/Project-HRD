@@ -4,19 +4,23 @@ import { FileEarmarkPdf, Download } from "react-bootstrap-icons"; // icon Indica
 import { CloudUpload } from "react-bootstrap-icons"; // Uploading resume icon.
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function FriendProfile() {
   const [studentObj, setStudentObj] = useState();
   const navigate = useNavigate();
 
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
   // ❌❌❌Based on this studentUSN , fetch details from 'db.json' and display details related to students.
-  const studentUSN = "1SJ21CS166";
+  const friendUSN = queryParams.get("frndUSN");
 
   //call this function , inside useEffect.
   const getStudentObj = () => {
     return fetch(`http://localhost:3000/registeredStuds`)
       .then((response) => response.json())
-      .then((students) => students.find((stud) => stud.USN === studentUSN))
+      .then((students) => students.find((friend) => friend.USN === friendUSN))
       .catch((error) => {
         console.error(error);
         return null;
@@ -27,7 +31,7 @@ function FriendProfile() {
     getStudentObj()
       .then((student) => setStudentObj(student))
       .catch((error) => console.error(error));
-  }, [studentUSN]);
+  }, [friendUSN]);
 
   return (
     <>
@@ -105,12 +109,23 @@ function FriendProfile() {
               <a href="mailto:s60667843@gmail.com">Email</a>
               <a href="https://wa.me/8197759383">WhatsApp</a>
               <a href="https://linkedin.com/in/sunil63603">LinkedIn</a>
+
+              <label className="info-label" htmlFor="student-mobile">
+                Mobile
+              </label>
+              <a
+                href="tel:+91 8197759383"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                +91 8197759383
+              </a>
             </div>
             <div>
               <button
                 className="message-friend"
                 onClick={() => {
-                  navigate("messageFriend");
+                  navigate(`messageFriend?frndUSN=${friendUSN}`);
                 }}
               >
                 Message

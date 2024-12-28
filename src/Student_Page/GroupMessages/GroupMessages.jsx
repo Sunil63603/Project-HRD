@@ -4,7 +4,12 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import "./GroupMessages.css";
 
+import { useGlobalContext } from "../../context/GlobalContext";
+
 function GroupMessages() {
+  //this global variable is used in polling approach ie.fetching
+  const { pollingInterval } = useGlobalContext();
+
   //logic related to fetching new notifications from Database/db.json
   const [notifications, setNotifications] = useState([]); //initially array is empty.
   const intervalIdRef = useRef(null); //useState updates asynchronously which caused some problem , so useRef()
@@ -49,7 +54,7 @@ function GroupMessages() {
     fetchNotifications();
 
     // Polling every 5 seconds
-    const interval = setInterval(fetchNotifications, 100000);
+    const interval = setInterval(fetchNotifications, pollingInterval);
     intervalIdRef.current = interval; // Store interval ID in the ref
     //this statement helps to clear interval(stop fetching) when there's some error while fetching notifications
     //affects performance . WebSockets are used in real-time conversation/messaging applications

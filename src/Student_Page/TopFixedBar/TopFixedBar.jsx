@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import { useLogOut } from "../../context/LogOutContext";
 import { SearchContext } from "../../context/SearchContext";
@@ -11,9 +11,16 @@ import { PersonCircle } from "react-bootstrap-icons"; // Import the profile icon
 //clicking in this 'PersonCircle' will toggle profile's visibility
 
 const TopFixedBar = () => {
+  const [activeButton, setActiveButton] = useState("updates"); //this state indicates button which was clicked.
+
   const { showLogOutContainer } = useLogOut(); //Accessing the context functions
   const { searchTerm, setSearchTerm } = useContext(SearchContext);
   const navigate = useNavigate(); //initialize navigation function.
+
+  const handleButtonClick = (path, buttonName) => {
+    setActiveButton(buttonName);
+    navigate(path);
+  };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -26,8 +33,10 @@ const TopFixedBar = () => {
       <div className="topFixedBar-left">
         {/* Left Side: Profile Icon and Project Name */}
         <PersonCircle
-          className="profile-icon"
-          onClick={() => navigate("/student/profile")}
+          className={`profile-icon ${
+            activeButton === "profile" ? "active" : ""
+          }`}
+          onClick={() => handleButtonClick("/student/profile", "profile")}
         />
         <h1 className="project-name">COHORT</h1>
       </div>
@@ -49,24 +58,35 @@ const TopFixedBar = () => {
 
       {/* Update Side: Buttons */}
       <div className="topFixedBar-right">
-        <button className="jobs-btn" onClick={() => navigate("/student/jobs")}>
+        <button
+          className={`jobs-btn ${activeButton === "jobs" ? "active" : ""}`}
+          onClick={() => handleButtonClick("/student/jobs", "jobs")}
+        >
           Jobs
         </button>
         <button
-          className="profiles-btn"
-          onClick={() => navigate("/student/allprofiles")}
+          className={`profiles-btn ${
+            activeButton === "profiles" ? "active" : ""
+          }`}
+          onClick={() => handleButtonClick("/student/allprofiles", "profiles")}
         >
           All Profiles
         </button>
         <button
-          className="updates-btn"
-          onClick={() => navigate("/student/groupMessages")}
+          className={`updates-btn ${
+            activeButton === "updates" ? "active" : ""
+          }`}
+          onClick={() => handleButtonClick("/student/groupMessages", "updates")}
         >
           Group-Messages
         </button>
         <button
-          className="message-hrd-btn"
-          onClick={() => navigate("/student/messageHRD")}
+          className={`message-hrd-btn ${
+            activeButton === "message-hrd" ? "active" : ""
+          }`}
+          onClick={() =>
+            handleButtonClick("/student/messageHRD", "message-hrd")
+          }
         >
           Message HRD
         </button>
