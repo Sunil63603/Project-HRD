@@ -5,11 +5,13 @@ import "./JobSection.css"; //Add your styling for Jobs.
 
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 import { usePopUpToast } from "../../context/PopUpToastContext";
+import { useGlobalContext } from "../../context/GlobalContext";
 
 const JobSection = () => {
   const [jobs, setJobs] = useState([]);
 
   const { newJobAlert, handleJobAlert } = usePopUpToast();
+  const { pollingInterval } = useGlobalContext();
 
   // Fetch job postings from JSON server.
   const fetchJobs = async () => {
@@ -55,7 +57,7 @@ const JobSection = () => {
     //polling mechanism
     const intervalId = setInterval(() => {
       fetchJobs();
-    }, 100000); //polling for every 'x' seconds
+    }, pollingInterval); //polling for every 'x' seconds
 
     //cleanup interval on component unmount
     return () => clearInterval(intervalId);

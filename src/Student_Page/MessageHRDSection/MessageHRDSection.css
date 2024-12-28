@@ -21,6 +21,35 @@
   font-weight: bold;
 }
 
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.icon {
+  margin: 0 10px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.icon:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.phone-icon {
+  color: #25d366; /* WhatsApp green */
+}
+
+.mail-icon {
+  color: #ea4335; /* Gmail red */
+}
+
+.whatsapp-icon {
+  color: #25d366; /* WhatsApp green */
+}
+
 /* Messages container */
 .messages-container {
   flex: 1;

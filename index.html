@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/src/Assets/Images/title.jpg" />
     <!-- ❌Store COHORT logo in Assets and then use COHORT logo here -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>COHORT</title>
@@ -12,17 +12,20 @@
     <script type="module" src="/src/main.jsx"></script>
 
     <!-- ❌try to hide this chatBot API key as environment variables -->
-    <script>
+    <script type="module">
+      import { CHATBOT_ID } from "/src/config.js";
+
       window.embeddedChatbotConfig = {
-        chatbotId: "3u7GNn_3S1PTpBWBNV0j8",
+        chatbotId: CHATBOT_ID,
         domain: "www.chatbase.co",
       };
+
+      const script = document.createElement("script");
+      script.src = "https://www.chatbase.co/embed.min.js";
+      script.setAttribute("chatbotId", CHATBOT_ID);
+      script.setAttribute("domain", "www.chatbase.co");
+      script.defer = true;
+      document.head.appendChild(script);
     </script>
-    <script
-      src="https://www.chatbase.co/embed.min.js"
-      chatbotId="3u7GNn_3S1PTpBWBNV0j8"
-      domain="www.chatbase.co"
-      defer
-    ></script>
   </body>
 </html>
