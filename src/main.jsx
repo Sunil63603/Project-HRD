@@ -4,6 +4,8 @@ import { createRoot } from "react-dom/client"; //on this root,react components a
 import App from "./App.jsx";
 // import "./index.css";
 
+const chatbotId = import.meta.env.CHATBOT_ID;
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />

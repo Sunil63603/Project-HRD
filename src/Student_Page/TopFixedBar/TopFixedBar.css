@@ -85,6 +85,12 @@
   background-color: #7c8bca;
 }
 
+.topFixedBar-right button.active {
+  background-color: #0f1011; /* Highlight color */
+  color: white;
+  border: 1px solid #1d1e1f;
+}
+
 /* css code to highlight the 'jobs' button to grab student's attention*/
 .jobs-btn {
   background-color: #1eb942 !important; /* Vibrant green color */

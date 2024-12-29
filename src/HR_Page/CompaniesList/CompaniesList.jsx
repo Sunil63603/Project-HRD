@@ -6,11 +6,11 @@ import React, { useEffect, useState } from "react";
 import JobCard from "./JobCard/JobCard";
 import "./CompaniesList.css"; // Import the CSS file for standard styling
 
-// there was a error , in the console (while deleting the companies) so i created a data global variable.
-let data;
 const CompaniesList = () => {
   // the Previous jobs which are present in the .json file that is fetched and stored in the jobs(state) and then that are used to display in the UI..
   const [jobs, setJobs] = useState([]);
+
+  const [data, setData] = useState([]); // Data fetched from the server
 
   // Fetch job postings from JSON server.
   const fetchJobs = async () => {
@@ -28,11 +28,14 @@ const CompaniesList = () => {
 
       // the data which is fetched it will be in the form of the string..
       // the data which is in the form of the string that is converted into the json form to get the data and then it can be used in the UI, bcz we cannot use the string easily.
-      data = await response.json();
+
+      const res = await response.json();
 
       // Sort by id in descending order
-      // tyo show the data in the form that the latest one  should be first then the older one....usus
-      const sortedJobs = data.reverse();
+      // to show the data in the form that the latest one  should be first then the older one....usus
+
+      const sortedJobs = res.reverse(); // Sort by id in descending order
+      setData(sortedJobs);
 
       // set the Jobs.
       // if new jobs are added then the new jobs are added in the state Jobs.
@@ -60,11 +63,10 @@ const CompaniesList = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      // Sort by id in descending order
-      const sortedJobs = data.reverse();
-
       // if we delete the Jobs that particular job is deleted from the .json file but that particular job is not deleted form the jobs array (state) so to delete that job from the state we use the filter method to update that particular Jobs state.
-      setJobs(sortedJobs.filter((job) => job.id !== id));
+      const updatedJobs = jobs.filter((job) => job.id !== id);
+      setJobs(updatedJobs);
+      setData(updatedJobs);
     } catch (error) {
       console.error("Error deleting job:", error);
     }
@@ -74,7 +76,8 @@ const CompaniesList = () => {
   // Fetch jobs when the component mounts
   useEffect(() => {
     fetchJobs();
-  }, [jobs]);
+  }, []);
+  //here no need to use setInterval because , when HR posts a job and if he visits 'companies' component to ensure latest job is posted , then it will be updated . because visiting this components triggers component mount.
 
   return (
     <div className="companies-list">

@@ -101,11 +101,10 @@
 .icons-list {
   display: flex;
   flex-direction: row;
-  gap: 13px;
   margin-left: 17px;
 }
 .message-bttn {
-  margin-left: 415px;
+  margin-left: 381px;
   color: white;
   background-color: #27b0dd;
 }

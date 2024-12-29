@@ -11,13 +11,23 @@ import { useState, useEffect } from "react";
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 //popUpToast is used to indicate when message is sent successfully.
 
+import { useGlobalContext } from "../../context/GlobalContext";
+
+import { useLocation } from "react-router-dom";
+
 const MessageFriend = () => {
+  const { pollingInterval } = useGlobalContext();
+
   //❌❌❌i should get USN of both current student and Friend from 'URL'(ie.as search params or anything like that).
   //may be something like this (/student/1SJ21CS154/friendProfile/:id=1SJ21CS166).
 
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
   //these two variables👇are used for testing purposes only . Later these two USNs will come from URL.
   const studentUSN = "1SJ21CS154"; //USN of current student profile.
-  const friendUSN = "1SJ21CS180"; // USN of friend . Conversations of current student and friend with these USNs should be rendered on screen.
+  const friendUSN = queryParams.get("frndUSN"); // USN of friend . Conversations of current student and friend with these USNs should be rendered on screen.
+  console.log(friendUSN);
 
   //'conversations' store previous conversations , 'newConversation' will store new message entered by current student before pushing it to db.json
   const [conversations, setConversations] = useState([]); //array of previous messages
@@ -26,7 +36,10 @@ const MessageFriend = () => {
   useEffect(() => {
     fetchConversationsWithFriend(); //fetch messages initially
 
-    const intervalId = setInterval(fetchConversationsWithFriend, 1000); //for every 'x' number of seconds , conversations are being fetched.
+    const intervalId = setInterval(
+      fetchConversationsWithFriend,
+      pollingInterval
+    ); //for every 'x' number of seconds , conversations are being fetched.
     return () => {
       clearInterval(intervalId);
     };

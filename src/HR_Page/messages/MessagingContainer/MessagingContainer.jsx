@@ -76,7 +76,7 @@ const MessagingContainer = () => {
 
   return (
     <div className="messaging-container">
-      <MessageDisplay messages={messages} />
+      <MessageDisplay messages={messages} fetchMessages={fetchMessages} />
       <MessageInput onSend={handleSendMessage} />
     </div>
   );

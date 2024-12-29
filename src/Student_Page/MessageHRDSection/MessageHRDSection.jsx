@@ -1,11 +1,16 @@
 //this component is rendered when user clicks on messageHRD button which is present in the topFixedBar.
 
 import React from "react";
+import { FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import "./MessageHRDSection.css"; //Add your styling for messageHRD.
 import { useState, useEffect } from "react";
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 
+import { useGlobalContext } from "../../context/GlobalContext";
+
 const MessageHRDSection = () => {
+  const { pollingInterval } = useGlobalContext();
+
   //❌i should get USN of the student from 'URL'(ie.as search params or anything like that)
   //may be like this (/student/:id=1SJ21CS154)
   const studentUSN = "1SJ21CS154"; // this variable is only for testing purpose
@@ -48,7 +53,7 @@ const MessageHRDSection = () => {
       getConversationsByUSN(studentUSN).then((conversations) => {
         setConversations(conversations);
       });
-    }, 100000); // Fetch jobs every 'x' seconds
+    }, pollingInterval); // Fetch jobs every 'x' seconds
 
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
@@ -124,6 +129,28 @@ const MessageHRDSection = () => {
   return (
     <div className="chat-container">
       <div className="chat-header">Message HRD</div>
+
+      <div className="contact-icons">
+        <a
+          href="https://wa.me/8197759383"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaWhatsapp className="icon whatsapp-icon" />
+        </a>
+
+        <a href="tel:+91 8197759383" target="_blank" rel="noopener noreferrer">
+          <FaPhone className="icon phone-icon" />
+        </a>
+
+        <a
+          href="mailto:s60667843@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaEnvelope className="icon mail-icon" />
+        </a>
+      </div>
 
       <div className="messages-container">
         {conversations.map((msg, index) => (

@@ -115,6 +115,17 @@ const ProfileSection = () => {
               <a href="mailto:s60667843@gmail.com">Email</a>
               <a href="https://wa.me/8197759383">WhatsApp</a>
               <a href="https://linkedin.com/in/sunil63603">LinkedIn</a>
+
+              <label className="info-label" htmlFor="student-mobile">
+                Mobile
+              </label>
+              <a
+                href="tel:+91 8197759383"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                +91 8197759383
+              </a>
             </div>
           </div>
 

@@ -7,6 +7,7 @@
       "name": "Sunil",
       "email": "s60667843@gmail.com",
       "password": "sunilinus",
+      "mobile": "8197759383",
       "resumes": [
         "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
         "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
@@ -17,19 +18,12 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
           "deployLink": " https://escr.netlify.app/"
         },
         {
@@ -41,7 +35,7 @@
         {
           "title": "COHORT(Project HRD)",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/Project-HRD.git",
           "deployLink": ""
         }
       ],
@@ -62,44 +56,24 @@
           "timestamp": "2024-11-24T10:00:00Z"
         },
         {
-          "sender": "HR",
-          "content": "I am fine",
-          "timestamp": "2024-11-24T10:00:00Z"
+          "sender": "student",
+          "content": "sure sir",
+          "timestamp": "2024-12-24T08:24:44.146Z"
         },
         {
           "sender": "student",
-          "content": "Sure, I will update it by today.",
-          "timestamp": "2024-11-24T10:05:00Z"
-        },
-        {
-          "sender": "HR",
-          "content": "Great!Sunny Let me know once it's done.",
-          "timestamp": "2024-11-24T10:10:00Z"
-        },
-        {
-          "sender": "student",
-          "content": "ok",
-          "timestamp": "2024-12-04T14:45:43.708Z"
-        },
-        {
-          "sender": "student",
-          "content": "Hi TMG did you build messaging interface for HR ?",
-          "timestamp": "2024-12-05T04:18:33.906Z"
+          "content": "what about resume?",
+          "timestamp": "2024-12-24T08:24:53.894Z"
         },
         {
           "sender": "HR",
-          "content": "Hi bro , How are you sunil",
-          "timestamp": "2024-11-24T10:10:00Z"
+          "content": "your resume's ATS score is low,please update that as well",
+          "timestamp": "2024-12-24T08:24:53.894Z"
         },
         {
           "sender": "student",
-          "content": "Hello MF",
-          "timestamp": "2024-12-05T04:45:45.836Z"
-        },
-        {
-          "sender": "student",
-          "content": "hi",
-          "timestamp": "2024-12-22T09:11:39.155Z"
+          "content": "ok sir , Tq",
+          "timestamp": "2024-12-28T13:08:16.943Z"
         }
       ],
       "id": "154"
@@ -108,48 +82,41 @@
       "USN": "1SJ21CS165",
       "profileImg": "https://drive.google.com/uc?export=view&id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
       "website": "https://sunilpersonalportfolio.netlify.app/",
-      "name": "Thrishan",
-      "email": "s60667843@gmail.com",
-      "password": "sunilinus",
+      "name": "Thrishan M Gowda",
+      "email": "thrishugowda2003@gmail.com",
+      "password": "tmg123",
       "resumes": [
         "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
         "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
       ],
       "socialContacts": {
-        "linkedIn": "https://www.linkedin.com/in/Sunil63603/",
-        "gitHub": "https://github.com/Sunil63603",
-        "mail": "s60667843@gmail.com",
-        "whatsapp": "https://wa.me/8197759383"
+        "linkedIn": "https://www.linkedin.com/in/thrishan-m-gowda-742632284/",
+        "gitHub": "https://github.com/Thrishangowda",
+        "mail": "thrishugowda2003@gmail.com",
+        "whatsapp": "https://wa.me/8310558268"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
+          "GitHub_Repo": "https://github.com/Thrishangowda/forkify.git",
           "deployLink": " https://escr.netlify.app/"
         },
         {
-          "title": "Tour Planner/Tracker Application",
+          "title": "Eat-n-Split",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/WorldWise.git",
-          "deployLink": "https://sunil-worldwise.netlify.app/"
+          "GitHub_Repo": "https://github.com/Thrishangowda/Eat-n-split.git",
+          "deployLink": ""
         },
         {
           "title": "COHORT(Project HRD)",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/Project-HRD.git",
           "deployLink": ""
         }
       ],
-      "phoneNumber": "8197759383",
+      "phoneNumber": "8310558268",
       "companiesAppliedTo": [
         "Contriver",
         "NTT Data",
@@ -162,7 +129,7 @@
       "conversationsWithHR": [
         {
           "sender": "HR",
-          "content": "Hello Sunil, please update your portfolio.",
+          "content": "Hello tmg, please update your portfolio.",
           "timestamp": "2024-11-24T10:00:00Z"
         },
         {
@@ -172,7 +139,7 @@
         },
         {
           "sender": "HR",
-          "content": "Great!Sunny Let me know once it's done.",
+          "content": "Great!tmg Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
       ],
@@ -195,31 +162,24 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/UsmanPasha141/forkify_2.git",
+          "GitHub_Repo": "https://github.com/UsmanPasha141/forkify_2.git",
           "deployLink": " https://escr.netlify.app/"
         },
         {
           "title": "NewsTak Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/UsmanPasha141/NewsTak-React.git",
+          "GitHub_Repo": "https://github.com/UsmanPasha141/NewsTak-React.git",
           "deployLink": ""
         },
         {
           "title": "COHORT(Project HRD)",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/Project-HRD.git",
           "deployLink": ""
         }
       ],
@@ -269,31 +229,24 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
           "deployLink": " https://escr.netlify.app/"
         },
         {
           "title": "Tour Planner/Tracker Application",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/WorldWise.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/WorldWise.git",
           "deployLink": "https://sunil-worldwise.netlify.app/"
         },
         {
           "title": "COHORT(Project HRD)",
           "videoLink": "",
-          "GitHub Repo": "https://github.com/Sunil63603/Project-HRD.git",
+          "GitHub_Repo": "https://github.com/Sunil63603/Project-HRD.git",
           "deployLink": ""
         }
       ],
@@ -355,10 +308,7 @@
   "friendConversations": [
     {
       "id": "1",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS166"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS166"],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -414,10 +364,7 @@
     },
     {
       "id": "2",
-      "participants": [
-        "1SJ21CS165",
-        "1SJ21CS180"
-      ],
+      "participants": ["1SJ21CS165", "1SJ21CS180"],
       "messages": [
         {
           "sender": "1SJ21CS165",
@@ -433,10 +380,7 @@
     },
     {
       "id": "1733656081722",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS180"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS180"],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -454,165 +398,52 @@
           "timestamp": "2024-12-10T15:34:05.568Z"
         }
       ]
+    },
+    {
+      "id": "1734969900623",
+      "participants": ["1SJ21CS154", "1SJ21CS165"],
+      "messages": [
+        {
+          "sender": "1SJ21CS154",
+          "content": "hello TMG",
+          "timestamp": "2024-12-23T16:05:00.622Z"
+        }
+      ]
     }
   ],
   "jobs": [
     {
-      "id": "a581",
-      "companyName": "Telstra Technologies Pvt Ltd",
-      "jobDescription": "Company is visiting in the month of december",
-      "eligibility": "Student with minimum 1 backlog is eligible",
+      "id": "7f3d",
+      "companyName": "Tech Mahindra Singh Dhoni",
+      "jobDescription": "On the way",
+      "eligibility": "No one is eligible",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Focus on efforts, not on results . "
+      "additionalDetails": "Swimming Pool Campus"
     },
     {
-      "id": "4da8",
-      "companyName": "No name for company",
-      "jobDescription": "No Job description",
-      "eligibility": "everyone is eligible . ",
+      "id": "4765",
+      "companyName": "DeltaX on 23-12-2024",
+      "jobDescription": "3 job roles . Product Analyst and Digital Marketing\n",
+      "eligibility": "Candidates with atleast one backlog are eligible",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "We will not select anyone"
+      "additionalDetails": "N/A"
     },
     {
-      "id": "ab95",
-      "companyName": "Rcb",
-      "jobDescription": "EE sala cup namde",
-      "eligibility": "all seasons eligible , No ban .",
+      "id": "67c0",
+      "companyName": "Garage and Mechanic Services Pvt Ltd ",
+      "jobDescription": "should be able to repair all kinds of vehicles(ie.1,2,3,4 wheelers and so on)",
+      "eligibility": "CSE student who loves black oil stains on his face and base",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "aar sala sotthru rcb ne , arvatth sala sotthru RCB ne saarrrr..."
+      "additionalDetails": "0.35 CTC"
     }
   ],
   "GroupMessages": [
-    {
-      "id": "6b3e",
-      "text": "Accenture",
-      "date": "2/11/2024",
-      "time": "12:43 pm"
-    },
-    {
-      "id": "fcb3",
-      "text": "TCS",
-      "date": "2/11/2024",
-      "time": "12:44 pm"
-    },
-    {
-      "id": "9584",
-      "text": "Yantakulu",
-      "date": "2/11/2024",
-      "time": "12:44 pm"
-    },
-    {
-      "id": "d214",
-      "text": "Yantakulu will not come to college",
-      "date": "2/11/2024",
-      "time": "12:49 pm"
-    },
-    {
-      "id": "4bb8",
-      "text": "To ensure that the messages fit within the .message-display box without overflowing, you can adjust the CSS as follows:  Set word-wrap to break-word so long words or URLs don't overflow. Add a max-height to .message-display if needed, along with overflow-y: auto to make sure content scrolls within the box rather than expanding it. Set the width of .message-bubble to a percentage (e.g., 70%) instead of max-width, ensuring that each message bubble has a consistent width.",
-      "date": "2/11/2024",
-      "time": "12:56 pm"
-    },
-    {
-      "id": "1323",
-      "text": "hi HR",
-      "date": "7/11/2024",
-      "time": "10:25 am"
-    },
-    {
-      "id": "0ea4",
-      "text": "HI people",
-      "date": "28/11/2024",
-      "time": "07:08 pm"
-    },
-    {
-      "id": "600f",
-      "text": "message on 29Th nov 9:27am",
-      "date": "11/29/2024",
-      "time": "09:27 AM"
-    },
-    {
-      "id": "85c6",
-      "text": "Sunil is testing this message feature on 30/11/2024 at 9:05 pm ",
-      "date": "11/30/2024",
-      "time": "09:05 PM"
-    },
-    {
-      "id": "756b",
-      "sender": "HR",
-      "text": "usman testing this message on 1/12/2024 at 3:19",
-      "date": "1/12/2024",
-      "time": "03:19 pm"
-    },
-    {
-      "id": "5a0f",
-      "sender": "HR",
-      "text": "usman Testing on 1/12/2024",
-      "date": "1/12/2024",
-      "time": "05:23 pm"
-    },
-    {
-      "id": "b7ea",
-      "sender": "HR",
-      "text": "hi on 5 : 40",
-      "date": "1/12/2024",
-      "time": "05:43 pm"
-    },
-    {
-      "id": "ee43",
-      "sender": "HR",
-      "text": "messaged on 5:46pm",
-      "date": "1/12/2024",
-      "time": "05:46 pm"
-    },
-    {
-      "id": "d6d9",
-      "sender": "HR",
-      "text": "hello MF",
-      "date": "12/1/2024",
-      "time": "07:44 PM"
-    },
-    {
-      "id": "4cd7",
-      "sender": "HR",
-      "text": "Hello usman PC",
-      "date": "12/1/2024",
-      "time": "07:48 PM"
-    },
-    {
-      "id": "0163",
-      "sender": "HR",
-      "text": "testing HR message feature on dec 2nd at 8:42am",
-      "date": "12/2/2024",
-      "time": "08:43 AM"
-    },
-    {
-      "id": "03dd",
-      "sender": "HR",
-      "text": "testing HR message feature on dec 2nd at 11:50am",
-      "date": "12/2/2024",
-      "time": "11:50 AM"
-    },
-    {
-      "id": "417a",
-      "sender": "HR",
-      "text": "testing HR message feature on dec 2nd at 12:05pm",
-      "date": "12/2/2024",
-      "time": "12:06 PM"
-    },
     {
       "id": "4026",
       "sender": "HR",
       "text": "testing HR message feature on dec 2nd at 02:55pm",
       "date": "12/2/2024",
       "time": "02:55 PM"
-    },
-    {
-      "id": "0f9e",
-      "sender": "HR",
-      "text": "hi , my name is sunil",
-      "date": "12/3/2024",
-      "time": "11:24 AM"
     },
     {
       "id": "7fd2",
@@ -622,11 +453,116 @@
       "time": "11:30 AM"
     },
     {
-      "id": "e1ce",
+      "id": "1d3a",
       "sender": "HR",
-      "text": "hi from tmg",
+      "text": "This is how it works",
+      "date": "12/11/2024",
+      "time": "07:59 PM"
+    },
+    {
+      "id": "536f",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 13th december at 12:30pm",
+      "date": "12/12/2024",
+      "time": "12:30 PM"
+    },
+    {
+      "id": "c63b",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 12th december at 12:38pm",
+      "date": "12/12/2024",
+      "time": "12:38 PM"
+    },
+    {
+      "id": "7a21",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 12th december at 12:39pm",
+      "date": "12/12/2024",
+      "time": "12:41 PM"
+    },
+    {
+      "id": "4bbb",
+      "sender": "HR",
+      "text": "Sunil is testing this messaging feature on 12th december at 13:12pm",
+      "date": "12/12/2024",
+      "time": "01:12 PM"
+    },
+    {
+      "id": "56ef",
+      "sender": "HR",
+      "text": "ghghhjj",
+      "date": "12/12/2024",
+      "time": "02:32 PM"
+    },
+    {
+      "id": "645e",
+      "sender": "HR",
+      "text": "hsjsjs",
+      "date": "12/12/2024",
+      "time": "02:34 PM"
+    },
+    {
+      "id": "caf2",
+      "sender": "HR",
+      "text": "hshdjjfret45t3y64545fhcyy",
+      "date": "12/12/2024",
+      "time": "02:35 PM"
+    },
+    {
+      "id": "9040",
+      "sender": "HR",
+      "text": "sunny",
+      "date": "12/12/2024",
+      "time": "02:36 PM"
+    },
+    {
+      "id": "fb07",
+      "sender": "HR",
+      "text": "usman pasha",
+      "date": "12/12/2024",
+      "time": "02:41 PM"
+    },
+    {
+      "id": "1c86",
+      "sender": "HR",
+      "text": "hello MF , messaging on 22nd dec 2024 (sunday)",
       "date": "12/22/2024",
-      "time": "02:30 PM"
+      "time": "06:56 PM"
+    },
+    {
+      "id": "1022",
+      "sender": "HR",
+      "text": "how are you",
+      "date": "12/22/2024",
+      "time": "06:56 PM"
+    },
+    {
+      "id": "c929",
+      "sender": "HR",
+      "text": "valid message",
+      "date": "12/22/2024",
+      "time": "07:15 PM"
+    },
+    {
+      "id": "eec0",
+      "sender": "HR",
+      "text": "message sent at 23-12-2024 ",
+      "date": "12/23/2024",
+      "time": "04:34 PM"
+    },
+    {
+      "id": "b059",
+      "sender": "HR",
+      "text": "hi",
+      "date": "12/23/2024",
+      "time": "04:34 PM"
+    },
+    {
+      "id": "bd78",
+      "sender": "HR",
+      "text": "hello MF",
+      "date": "12/23/2024",
+      "time": "04:53 PM"
     }
   ]
 }
