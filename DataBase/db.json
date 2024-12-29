@@ -95,6 +95,11 @@
           "sender": "student",
           "content": "Hello MF",
           "timestamp": "2024-12-05T04:45:45.836Z"
+        },
+        {
+          "sender": "student",
+          "content": "hi",
+          "timestamp": "2024-12-22T09:11:39.155Z"
         }
       ],
       "id": "154"
@@ -453,36 +458,12 @@
   ],
   "jobs": [
     {
-      "id": "57ea",
-      "companyName": "Sansha technologies",
-      "jobDescription": "Must be good in WIX and Canva tools and should be familiar with AI tools ",
-      "eligibility": "Civil and Mechanical",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Nan Thund , no need to work , i will provide the salary"
-    },
-    {
       "id": "a581",
       "companyName": "Telstra Technologies Pvt Ltd",
       "jobDescription": "Company is visiting in the month of december",
       "eligibility": "Student with minimum 1 backlog is eligible",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "Focus on efforts, not on results . "
-    },
-    {
-      "id": "aa9f",
-      "companyName": "Technodyne",
-      "jobDescription": "This company is coming in december",
-      "eligibility": "CSE",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Be prepared and do some research on this"
-    },
-    {
-      "id": "d6c1",
-      "companyName": "katharnak techmedia",
-      "jobDescription": "Company is visiting SJCIT in december.(No way chance ee illa) ",
-      "eligibility": "CSE",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Enjoy Pandago"
     },
     {
       "id": "4da8",
