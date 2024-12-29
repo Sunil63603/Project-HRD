@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   margin-top: -422px;
-  margin-left: 40%;
+  margin-left: 46%;
   background: lightgray;
   margin-right: 20px;
 }
@@ -101,7 +101,6 @@
 .icons-list {
   display: flex;
   flex-direction: row;
-  gap: 13px;
   margin-left: 17px;
 }
 .message-btn {

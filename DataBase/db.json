@@ -99,18 +99,18 @@
       "USN": "1SJ21CS165",
       "profileImg": "https://drive.google.com/uc?export=view&id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
       "website": "https://sunilpersonalportfolio.netlify.app/",
-      "name": "Thrishan",
-      "email": "s60667843@gmail.com",
-      "password": "sunilinus",
+      "name": "Thrishan M Gowda",
+      "email": "thrishugowda2003@gmail.com",
+      "password": "tmg123",
       "resumes": [
         "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
         "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
       ],
       "socialContacts": {
-        "linkedIn": "https://www.linkedin.com/in/Sunil63603/",
-        "gitHub": "https://github.com/Sunil63603",
-        "mail": "s60667843@gmail.com",
-        "whatsapp": "https://wa.me/8197759383"
+        "linkedIn": "https://www.linkedin.com/in/thrishan-m-gowda-742632284/",
+        "gitHub": "https://github.com/Thrishangowda",
+        "mail": "thrishugowda2003@gmail.com",
+        "whatsapp": "https://wa.me/8310558268"
       },
       "skills": [
         "C",
@@ -124,14 +124,14 @@
         {
           "title": "Recipe Search Application",
           "videoLink": "",
-          "GitHub_Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
+          "GitHub_Repo": "https://github.com/Thrishangowda/forkify.git",
           "deployLink": " https://escr.netlify.app/"
         },
         {
-          "title": "Tour Planner/Tracker Application",
+          "title": "Eat-n-Split",
           "videoLink": "",
-          "GitHub_Repo": "https://github.com/Sunil63603/WorldWise.git",
-          "deployLink": "https://sunil-worldwise.netlify.app/"
+          "GitHub_Repo": "https://github.com/Thrishangowda/Eat-n-split.git",
+          "deployLink": ""
         },
         {
           "title": "COHORT(Project HRD)",
@@ -140,7 +140,7 @@
           "deployLink": ""
         }
       ],
-      "phoneNumber": "8197759383",
+      "phoneNumber": "8310558268",
       "companiesAppliedTo": [
         "Contriver",
         "NTT Data",
@@ -153,7 +153,7 @@
       "conversationsWithHR": [
         {
           "sender": "HR",
-          "content": "Hello Sunil, please update your portfolio.",
+          "content": "Hello tmg, please update your portfolio.",
           "timestamp": "2024-11-24T10:00:00Z"
         },
         {
@@ -163,7 +163,7 @@
         },
         {
           "sender": "HR",
-          "content": "Great!Sunny Let me know once it's done.",
+          "content": "Great!tmg Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
         }
       ],
