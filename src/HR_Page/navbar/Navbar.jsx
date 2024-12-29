@@ -72,6 +72,4 @@ const Navbar = () => {
   );
 };
 
-//❌include TMG's profiles search bar into this👆 Navbar
-
 export default Navbar;
