@@ -490,6 +490,22 @@
       "eligibility": "CSE student who loves black oil stains on his face and base",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "0.35 CTC"
+    },
+    {
+      "id": "46d5",
+      "companyName": "usman",
+      "jobDescription": "jk",
+      "eligibility": "jk",
+      "applyLink": "https://usmaaportfolio.netlify.app/",
+      "additionalDetails": "jkkk"
+    },
+    {
+      "id": "9260",
+      "companyName": "usman",
+      "jobDescription": "sds",
+      "eligibility": "ss",
+      "applyLink": "s",
+      "additionalDetails": "s"
     }
   ],
   "GroupMessages": [
@@ -541,13 +557,6 @@
       "text": "Sunil is testing this messaging feature on 12th december at 13:12pm",
       "date": "12/12/2024",
       "time": "01:12 PM"
-    },
-    {
-      "id": "56ef",
-      "sender": "HR",
-      "text": "ghghhjj",
-      "date": "12/12/2024",
-      "time": "02:32 PM"
     },
     {
       "id": "645e",
