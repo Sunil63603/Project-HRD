@@ -1,79 +1,107 @@
 /* General Styles */
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #f4f4f4;
+  background: linear-gradient(135deg, #f4f8fc, #e9f1fa);
   color: #333;
+  overflow-x: hidden;
 }
 
 .landing-page {
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Header - Website Name */
+/* Header Section */
 .header {
-  background-color: #2b3d63;
-  padding: 30px 0;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  padding: 20px 0;
+  text-align: center;
 }
 
-.website-name {
-  font-size: 48px;
+.logo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-text {
+  font-size: 3rem;
   font-weight: bold;
-  letter-spacing: 2px;
-  color: #fff;
+  color: white;
   margin: 0;
 }
 
-/* Button Section */
-.button-container {
-  display: flex;
-  justify-content: space-around; /* Aligns buttons side-by-side */
-  margin-top: 50px; /* Adjust as needed */
+.tagline {
+  font-size: 1.2rem;
+  color: #dfefff;
+  margin-top: 8px;
 }
 
-.login-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  border-radius: 5px;
-  background-color: #4caf50; /* Change color as needed */
+/* Hero Section */
+.hero-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: #2b3d63;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-button {
+  padding: 12px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #ff7eb3, #ff758c);
   color: white;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.login-button:hover {
-  background-color: #45a049; /* Change color on hover */
+.hero-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* About Section */
-.about-section {
-  margin: 50px 0;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.about-section h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #2b3d63;
-}
-
-.about-section p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #555;
+.hero-button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Section */
 .footer {
-  margin-top: 50px;
-  padding: 20px 0;
+  text-align: center;
+  padding: 15px 0;
   background-color: #2b3d63;
   color: white;
-  font-size: 14px;
+  font-size: 0.9rem;
 }

@@ -5,6 +5,7 @@
   height: 100vh;
   max-width: 600px;
   margin: 0 auto;
+  margin-top: 1rem;
   background-color: #f5f5f5;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -19,35 +20,6 @@
   text-align: center;
   font-size: 1.2rem;
   font-weight: bold;
-}
-
-.contact-icons {
-  display: flex;
-  justify-content: center;
-  margin: 10px 0;
-}
-
-.icon {
-  margin: 0 10px;
-  font-size: 24px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.icon:hover {
-  color: #007bff; /* Change color on hover */
-}
-
-.phone-icon {
-  color: #25d366; /* WhatsApp green */
-}
-
-.mail-icon {
-  color: #ea4335; /* Gmail red */
-}
-
-.whatsapp-icon {
-  color: #25d366; /* WhatsApp green */
 }
 
 /* Messages container */
@@ -69,15 +41,15 @@
   position: relative;
 }
 
-/* HR messages */
-.hr-message {
+/* student messages */
+.students-message {
   background-color: #e9f5ff;
   align-self: flex-start;
   color: #333;
 }
 
-/* Student messages */
-.student-message {
+/* HR messages */
+.HRs-message {
   background-color: #007bff;
   align-self: flex-end;
   color: white;

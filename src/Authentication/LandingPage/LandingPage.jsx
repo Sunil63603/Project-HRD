@@ -1,55 +1,51 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; //Used to display the login form along with information(info on whether student/HR button was clicked)
-import "./LandingPage.css"; //Write all styling related to this 'LandingPage' component in this css file.
+import { useNavigate } from "react-router-dom";
+import "./LandingPage.css";
 
 const LandingPage = () => {
-  const navigate = useNavigate(); // Initialize navigate function.
+  const navigate = useNavigate();
 
-  const HRLoginClick = (role) => {
-    //here write logic to change route and display '/login' page along with the info about button clicked .
-    navigate(`/login?role=${role}`); // Replace current path with '/login' path.
-  };
-
-  const StudentLoginClick = (role) => {
-    //here write logic to change route and display '/login' page.
-    navigate(`/login?role=${role}`); // Replace current path with '/login' path
+  const handleLoginClick = (role) => {
+    navigate(`/login?role=${role}`);
   };
 
   return (
     <div className="landing-page">
-      {/* Website Name */}
+      {/* Header Section */}
       <header className="header">
-        <h1 className="website-name">C O H O R T</h1>
+        <div className="logo-container">
+          <h1 className="logo-text">C O H O R T</h1>
+          <p className="tagline">Connecting Talent with Opportunities</p>
+        </div>
       </header>
 
-      {/* Login Buttons */}
-      <div className="button-container">
-        <button
-          className="login-button"
-          onClick={() => HRLoginClick("registeredHRs")}
-        >
-          HR Login
-        </button>
-        <button
-          className="login-button"
-          onClick={() => StudentLoginClick("registeredStuds")}
-        >
-          Student Login
-        </button>
-      </div>
-
-      {/* About Section */}
-      <section className="about-section">
-        <h2>About Cohort</h2>
-        <p>
-          Welcome to Cohort, a platform designed to connect job seekers and
-          employers seamlessly. Whether you're a student showcasing your skills
-          or an HR professional searching for talent, Cohort makes the process
-          efficient and effective.
-        </p>
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <h2 className="hero-title">Empowering Careers</h2>
+          <p className="hero-description">
+            Discover your potential with Cohort. Whether you're an HR looking
+            for exceptional talent or a student ready to launch your career, we
+            bring the world of opportunities to you.
+          </p>
+          <div className="button-container">
+            <button
+              className="hero-button"
+              onClick={() => handleLoginClick("registeredHRs")}
+            >
+              HR Login
+            </button>
+            <button
+              className="hero-button"
+              onClick={() => handleLoginClick("registeredStuds")}
+            >
+              Student Login
+            </button>
+          </div>
+        </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer Section */}
       <footer className="footer">
         <p>&copy; 2024 Cohort. All rights reserved.</p>
       </footer>

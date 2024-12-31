@@ -18,7 +18,7 @@ const CreateJobPosting = () => {
   // this is the state which will store the jobDescription which is updated in the form and the method to set the companyname.
   const [jobDescription, setJobDescription] = useState("");
   // the is the state which will store the eligibility criteria which is updated in the form and the method to set the companyname.
-  const [eligibility, setEligibility] = useState([]);
+  const [eligibility, setEligibility] = useState();
   // this state will store the apply link which is updated in the form and the method to set the companyname.
   const [applyLink, setApplyLink] = useState("");
 
@@ -61,7 +61,7 @@ const CreateJobPosting = () => {
       //  this is to make the form empty after submisstion, so that for the good user experience.
       setCompanyName("");
       setJobDescription("");
-      setEligibility([]);
+      setEligibility();
       setApplyLink("");
       setadditionalDetails("");
 

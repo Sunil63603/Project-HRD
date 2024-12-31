@@ -46,6 +46,15 @@
   transition: background-color 0.3s ease, transform 0.3s ease; /* Apply smooth transition */
 }
 
+.navbar-item.active .navbar-link {
+  background-color: #3c434b; /* Neutral dark highlight color */
+  color: #ffffff; /* White text */
+  border-radius: 8px; /* Softer rounded corners */
+  padding: 10px 15px; /* Comfortable padding */
+  font-weight: bold; /* Makes the text stand out */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for a floating effect */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
 .navbar-link:hover {
   background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
   transform: scale(1.05); /* Slight zoom on hover */
