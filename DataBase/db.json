@@ -490,22 +490,6 @@
       "eligibility": "CSE student who loves black oil stains on his face and base",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "0.35 CTC"
-    },
-    {
-      "id": "46d5",
-      "companyName": "usman",
-      "jobDescription": "jk",
-      "eligibility": "jk",
-      "applyLink": "https://usmaaportfolio.netlify.app/",
-      "additionalDetails": "jkkk"
-    },
-    {
-      "id": "9260",
-      "companyName": "usman",
-      "jobDescription": "sds",
-      "eligibility": "ss",
-      "applyLink": "s",
-      "additionalDetails": "s"
     }
   ],
   "GroupMessages": [
@@ -573,60 +557,11 @@
       "time": "02:35 PM"
     },
     {
-      "id": "9040",
-      "sender": "HR",
-      "text": "sunny",
-      "date": "12/12/2024",
-      "time": "02:36 PM"
-    },
-    {
       "id": "fb07",
       "sender": "HR",
       "text": "usman pasha",
       "date": "12/12/2024",
       "time": "02:41 PM"
-    },
-    {
-      "id": "1c86",
-      "sender": "HR",
-      "text": "hello MF , messaging on 22nd dec 2024 (sunday)",
-      "date": "12/22/2024",
-      "time": "06:56 PM"
-    },
-    {
-      "id": "1022",
-      "sender": "HR",
-      "text": "how are you",
-      "date": "12/22/2024",
-      "time": "06:56 PM"
-    },
-    {
-      "id": "c929",
-      "sender": "HR",
-      "text": "valid message",
-      "date": "12/22/2024",
-      "time": "07:15 PM"
-    },
-    {
-      "id": "eec0",
-      "sender": "HR",
-      "text": "message sent at 23-12-2024 ",
-      "date": "12/23/2024",
-      "time": "04:34 PM"
-    },
-    {
-      "id": "b059",
-      "sender": "HR",
-      "text": "hi",
-      "date": "12/23/2024",
-      "time": "04:34 PM"
-    },
-    {
-      "id": "bd78",
-      "sender": "HR",
-      "text": "hello MF",
-      "date": "12/23/2024",
-      "time": "04:53 PM"
     }
   ]
 }
