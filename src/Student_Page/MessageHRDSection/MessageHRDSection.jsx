@@ -5,8 +5,12 @@ import { FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import "./MessageHRDSection.css"; //Add your styling for messageHRD.
 import { useState, useEffect } from "react";
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
-
+import { FaPhoneAlt } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 import { useGlobalContext } from "../../context/GlobalContext";
+// import { FaArrowUp } from "react-icons/fa";
+// import { FiArrowUp } from "react-icons/fi";
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 const MessageHRDSection = () => {
   const { pollingInterval } = useGlobalContext();
@@ -140,7 +144,8 @@ const MessageHRDSection = () => {
         </a>
 
         <a href="tel:+91 8197759383" target="_blank" rel="noopener noreferrer">
-          <FaPhone className="icon phone-icon" />
+          {/* <FaPhone className="icon phone-icon" /> */}
+          <FaPhoneAlt className="icon phone-icon" />
         </a>
 
         <a
@@ -148,10 +153,11 @@ const MessageHRDSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaEnvelope className="icon mail-icon" />
+          <SiGmail className="icon mail-icon" />
+
         </a>
       </div>
-
+    <hr />
       <div className="messages-container">
         {conversations.map((msg, index) => (
           <div
@@ -171,14 +177,17 @@ const MessageHRDSection = () => {
       <div className="message-input-container">
         <input
           type="text"
-          placeholder="Type your message..."
+          placeholder="message..."
           value={newConversation}
           onChange={(e) => setNewConversation(e.target.value)}
           className="message-input"
         />
-        <button onClick={handleSendMessage} className="send-button">
-          Send
-        </button>
+       <button onClick={handleSendMessage} className="send-button">
+  <div className="arrow-icon">
+    <i className="fa-solid fa-arrow-up icons"id="arrow">^</i>
+  </div>
+</button>
+
       </div>
     </div>
   );

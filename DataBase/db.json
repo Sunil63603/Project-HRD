@@ -18,7 +18,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -74,6 +81,11 @@
           "sender": "student",
           "content": "ok sir , Tq",
           "timestamp": "2024-12-28T13:08:16.943Z"
+        },
+        {
+          "sender": "student",
+          "content": "hi",
+          "timestamp": "2025-01-02T03:32:42.384Z"
         }
       ],
       "id": "154"
@@ -95,7 +107,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -162,7 +181,14 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -229,7 +255,14 @@
         "mail": "vv9077022@gmail.com",
         "whatsapp": "https://wa.me/9686814470"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -308,7 +341,10 @@
   "friendConversations": [
     {
       "id": "1",
-      "participants": ["1SJ21CS154", "1SJ21CS166"],
+      "participants": [
+        "1SJ21CS154",
+        "1SJ21CS166"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -364,7 +400,10 @@
     },
     {
       "id": "2",
-      "participants": ["1SJ21CS165", "1SJ21CS180"],
+      "participants": [
+        "1SJ21CS165",
+        "1SJ21CS180"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS165",
@@ -380,7 +419,10 @@
     },
     {
       "id": "1733656081722",
-      "participants": ["1SJ21CS154", "1SJ21CS180"],
+      "participants": [
+        "1SJ21CS154",
+        "1SJ21CS180"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -401,7 +443,10 @@
     },
     {
       "id": "1734969900623",
-      "participants": ["1SJ21CS154", "1SJ21CS165"],
+      "participants": [
+        "1SJ21CS154",
+        "1SJ21CS165"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -535,13 +580,6 @@
       "text": "how are you",
       "date": "12/22/2024",
       "time": "06:56 PM"
-    },
-    {
-      "id": "c929",
-      "sender": "HR",
-      "text": "valid message",
-      "date": "12/22/2024",
-      "time": "07:15 PM"
     },
     {
       "id": "eec0",
