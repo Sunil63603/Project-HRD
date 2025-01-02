@@ -74,6 +74,21 @@
           "sender": "student",
           "content": "ok sir , Tq",
           "timestamp": "2024-12-28T13:08:16.943Z"
+        },
+        {
+          "sender": "HR",
+          "content": "hi",
+          "timestamp": "2024-12-29T11:03:53.582Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Hi My Name is ShashiKumar NV",
+          "timestamp": "2024-12-29T11:17:12.735Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Which company do you want next ? i will get them",
+          "timestamp": "2024-12-29T11:22:09.244Z"
         }
       ],
       "id": "154"
@@ -86,7 +101,7 @@
       "email": "thrishugowda2003@gmail.com",
       "password": "tmg123",
       "resumes": [
-        "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
+        "https://drive.google.com/file/d/1DoRiONb_i-q6bCiMZVuOO1TC-mrQXz2G/view?usp=sharing",
         "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
       ],
       "socialContacts": {
@@ -427,6 +442,22 @@
       "eligibility": "CSE student who loves black oil stains on his face and base",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "0.35 CTC"
+    },
+    {
+      "id": "46d5",
+      "companyName": "usman",
+      "jobDescription": "jk",
+      "eligibility": "jk",
+      "applyLink": "https://usmaaportfolio.netlify.app/",
+      "additionalDetails": "jkkk"
+    },
+    {
+      "id": "9260",
+      "companyName": "usman",
+      "jobDescription": "sds",
+      "eligibility": "ss",
+      "applyLink": "s",
+      "additionalDetails": "s"
     }
   ],
   "GroupMessages": [
@@ -480,13 +511,6 @@
       "time": "01:12 PM"
     },
     {
-      "id": "56ef",
-      "sender": "HR",
-      "text": "ghghhjj",
-      "date": "12/12/2024",
-      "time": "02:32 PM"
-    },
-    {
       "id": "645e",
       "sender": "HR",
       "text": "hsjsjs",
@@ -499,13 +523,6 @@
       "text": "hshdjjfret45t3y64545fhcyy",
       "date": "12/12/2024",
       "time": "02:35 PM"
-    },
-    {
-      "id": "9040",
-      "sender": "HR",
-      "text": "sunny",
-      "date": "12/12/2024",
-      "time": "02:36 PM"
     },
     {
       "id": "fb07",
@@ -541,20 +558,6 @@
       "text": "message sent at 23-12-2024 ",
       "date": "12/23/2024",
       "time": "04:34 PM"
-    },
-    {
-      "id": "b059",
-      "sender": "HR",
-      "text": "hi",
-      "date": "12/23/2024",
-      "time": "04:34 PM"
-    },
-    {
-      "id": "bd78",
-      "sender": "HR",
-      "text": "hello MF",
-      "date": "12/23/2024",
-      "time": "04:53 PM"
     }
   ]
 }

@@ -1,78 +1,71 @@
-//this component is rendered when user clicks on messageHRD button which is present in the topFixedBar.
-
 import React from "react";
-import { FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
-import "./MessageHRDSection.css"; //Add your styling for messageHRD.
+import "./MessageStudent.css";
+
 import { useState, useEffect } from "react";
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 
+import { FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+
 import { useGlobalContext } from "../../context/GlobalContext";
 
-const MessageHRDSection = () => {
+import { useLocation } from "react-router-dom";
+
+function MessageStudent() {
   const { pollingInterval } = useGlobalContext();
 
-  //❌i should get USN of the student from 'URL'(ie.as search params or anything like that)
-  //may be like this (/student/:id=1SJ21CS154)
-  const studentUSN = "1SJ21CS154"; // this variable is only for testing purpose
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  //get studentUSN dynamically from search bar
+  const studentUSN = "1SJ21CS154"; //queryParams.get('studentUSN');
+
   const [conversations, setConversations] = useState([]);
   const [newConversation, setNewConversation] = useState("");
 
-  //here write logic to find index of student(1SJ21CS151) inside registeredStuds[].
-  //then use that index to fetch conversations of current student
-  const getConversationsByUSN = async (studentUSN) => {
+  useEffect(() => {
+    fetchConversationsWithStudent(); //fetch messages initially.
+
+    const intervalId = setInterval(
+      fetchConversationsWithStudent,
+      pollingInterval
+    ); //for every 'pollingInterval' seconds , conversations are being fetched.
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [studentUSN]); //empty dependency[] ensures that this runs only on initial render,but setInterval() is resposible for calling fetch() again and again
+
+  const fetchConversationsWithStudent = async () => {
     try {
-      // Fetch the registeredStuds array from the mock API
       const response = await fetch("http://localhost:3000/registeredStuds");
-      const students = await response.json();
+      if (!response.ok) {
+        throw new Error("Failed to fetch registered students array");
+      }
 
-      // Find the student by USN
-      const student = students.find((stud) => stud.USN === studentUSN);
+      const data = await response.json(); //students[]
+      const student = data.find((student) => student.USN === studentUSN);
 
-      // If the student exists, return their conversations
       if (student) {
-        return student.conversationsWithHR;
-      } else {
-        console.error("Student not found with USN:", studentUSN);
-        return [];
+        setConversations(student.conversationsWithHR);
       }
     } catch (error) {
-      console.error("Error fetching conversations:", error);
-      return [];
+      console.error("Error fetching student messages:", error);
     }
   };
 
-  // fetch conversations by USN only when the component mounts.
-  useEffect(() => {
-    // Fetch messages initially
-    getConversationsByUSN(studentUSN).then((conversations) => {
-      setConversations(conversations);
-    });
-
-    // Start polling
-    const intervalId = setInterval(() => {
-      getConversationsByUSN(studentUSN).then((conversations) => {
-        setConversations(conversations);
-      });
-    }, pollingInterval); // Fetch jobs every 'x' seconds
-
-    // Cleanup interval on component unmount
-    return () => clearInterval(intervalId);
-  }, [studentUSN]);
-
-  // Handle sending a new message
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (newConversation.trim() === "") {
       PopUpToast.warning("Please enter a valid message!");
       return;
     }
 
     const newConversationObject = {
-      sender: "student",
+      sender: "HR",
       content: newConversation,
       timestamp: new Date().toISOString(),
     };
 
-    // Update locally
+    //update locally
     setConversations((prevMessages) => [
       ...prevMessages,
       newConversationObject,
@@ -88,11 +81,11 @@ const MessageHRDSection = () => {
     newConversationObject
   ) => {
     try {
-      // Fetch the entire registeredStuds array
+      //fetch the entire registeredStuds[]
       const response = await fetch("http://localhost:3000/registeredStuds");
       const students = await response.json();
 
-      // Find the student by USN
+      //find the student by USN
       const student = students.find((student) => student.USN === studentUSN);
 
       if (!student) {
@@ -100,7 +93,7 @@ const MessageHRDSection = () => {
         return;
       }
 
-      //update the conversationswithHR array for specific student
+      //update the conversationsWithHR array for specific student
       const updatedStudent = {
         ...student,
         conversationsWithHR: [
@@ -109,18 +102,17 @@ const MessageHRDSection = () => {
         ],
       };
 
-      // Update the entire registeredStuds array in db.json
+      //update the entire registeredStuds array in db.json
       await fetch(`http://localhost:3000/registeredStuds/${student.id}`, {
-        method: "PUT", // Replace the entire array
+        method: "PUT", //replace the entire array
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(updatedStudent),
       });
 
-      // Success Toast Notificaion
-      PopUpToast.success("Message Sent Successsully!");
-      console.log("Messages updated successfully.");
+      //success toast notification
+      PopUpToast.success("Message Sent Successfully!");
     } catch (error) {
       console.error("Error updating messages:", error);
     }
@@ -128,7 +120,7 @@ const MessageHRDSection = () => {
 
   return (
     <div className="chat-container">
-      <div className="chat-header">Message HRD</div>
+      <div className="chat-header">Message with {studentUSN}</div>
       <div className="contact-icons">
         <a
           href="https://wa.me/8197759383"
@@ -150,21 +142,24 @@ const MessageHRDSection = () => {
           <FaEnvelope className="icon mail-icon" />
         </a>
       </div>
-
       <div className="messages-container">
-        {conversations.map((msg, index) => (
-          <div
-            key={index}
-            className={`message ${
-              msg.sender === "HR" ? "hr-message" : "student-message"
-            }`}
-          >
-            <p>{msg.content}</p>
-            <span className="timestamp">
-              {new Date(msg.timestamp).toLocaleTimeString()}
-            </span>
-          </div>
-        ))}
+        {conversations.length > 0 ? (
+          conversations.map((msg, index) => (
+            <div
+              key={index}
+              className={`message ${
+                msg.sender === "HR" ? "HRs-message" : "students-message"
+              }`}
+            >
+              <p>{msg.content}</p>
+              <span className="timestamp">
+                {new Date(msg.timestamp).toLocaleTimeString()}
+              </span>
+            </div>
+          ))
+        ) : (
+          <p>No messages found.</p>
+        )}
       </div>
 
       <div className="message-input-container">
@@ -174,13 +169,13 @@ const MessageHRDSection = () => {
           value={newConversation}
           onChange={(e) => setNewConversation(e.target.value)}
           className="message-input"
-        />
+        ></input>
         <button onClick={handleSendMessage} className="send-button">
           Send
         </button>
       </div>
     </div>
   );
-};
+}
 
-export default MessageHRDSection;
+export default MessageStudent;

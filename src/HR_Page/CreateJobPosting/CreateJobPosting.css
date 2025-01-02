@@ -58,3 +58,12 @@ textarea {
   background-color: #005580; /* Darker shade on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
 }
+
+.astirc-symbol {
+  color: red;
+}
+
+.combination-of-comname-astres {
+  display: flex;
+  gap: 4px;
+}

@@ -18,7 +18,7 @@ const CreateJobPosting = () => {
   // this is the state which will store the jobDescription which is updated in the form and the method to set the companyname.
   const [jobDescription, setJobDescription] = useState("");
   // the is the state which will store the eligibility criteria which is updated in the form and the method to set the companyname.
-  const [eligibility, setEligibility] = useState("");
+  const [eligibility, setEligibility] = useState();
   // this state will store the apply link which is updated in the form and the method to set the companyname.
   const [applyLink, setApplyLink] = useState("");
 
@@ -61,7 +61,7 @@ const CreateJobPosting = () => {
       //  this is to make the form empty after submisstion, so that for the good user experience.
       setCompanyName("");
       setJobDescription("");
-      setEligibility("");
+      setEligibility();
       setApplyLink("");
       setadditionalDetails("");
 
@@ -94,7 +94,11 @@ const CreateJobPosting = () => {
     >
       <h2>Create Job Posting</h2>
       <div className="form-group">
-        <label htmlFor="companyName">Company Name</label>
+        <div className="combination-of-comname-astres">
+          <label htmlFor="companyName">Company Name</label>
+          <span className="astirc-symbol"> *</span>
+        </div>
+
         <input
           type="text"
           id="companyName"
@@ -106,7 +110,10 @@ const CreateJobPosting = () => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="jobDescription">Job Description</label>
+        <div className="combination-of-comname-astres">
+          <label htmlFor="jobDescription">Job Description</label>
+          <span className="astirc-symbol"> *</span>
+        </div>
         <textarea
           id="jobDescription"
           value={jobDescription}
@@ -115,7 +122,10 @@ const CreateJobPosting = () => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="eligibility">Eligibility</label>
+        <div className="combination-of-comname-astres">
+          <label htmlFor="eligibility">Eligibility</label>
+          <span className="astirc-symbol"> *</span>
+        </div>
         <textarea
           id="eligibility"
           value={eligibility}
@@ -124,7 +134,10 @@ const CreateJobPosting = () => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="applyLink">Apply Link</label>
+        <div className="combination-of-comname-astres">
+          <label htmlFor="applyLink">Apply Link</label>
+          <span className="astirc-symbol"> *</span>
+        </div>
         <input
           type="url"
           id="applyLink"
@@ -134,12 +147,11 @@ const CreateJobPosting = () => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="additionalDetails">Additional Details</label>
+        <label htmlFor="additionalDetails">Additional Details (Optional)</label>
         <textarea
           id="additionalDetails"
           value={additionalDetails}
           onChange={(e) => setadditionalDetails(e.target.value)}
-          required
         />
       </div>
       <button

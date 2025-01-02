@@ -1,6 +1,9 @@
 import React from "react";
 import "./IndividualProfile.css";
-import Photo from "../../../Assets/Images/photo.jpg";
+
+import { useNavigate } from "react-router-dom"; //used to navigate to the chat page when message button is clicked
+
+import tmgPhoto from "../../../Assets/Images/tmgPhoto.jpg";
 import gmail from "../../../Assets/Images/gmail.png";
 import linkedin from "../../../Assets/Images/Linkedin.png";
 import whatsapp from "../../../Assets/Images/whatsapp img.png";
@@ -13,18 +16,25 @@ import { CloudUpload } from "react-bootstrap-icons"; // Uploading resume icon.
 //this is the component ie,displayed at the left side of the container.
 
 const IndividualProfile = ({ selectedStudent }) => {
+  const navigate = useNavigate();
+
   //whats app functionality
   const handleWhatsAppClick = (number) => {
-    window.open(`https://wa.me/${number}`, "_blank");
+    let num = Number(number);
+    window.open(`https://wa.me/${num}`, "_blank");
   };
 
   //gmail functionality
-  const handleEmailClick = (email) => {
-    window.location.href = `mailto:${email}`;
+  const handleEmailClick = (email, subject = "", body = "") => {
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoLink, "_self"); // Opens in the same tab
   };
-
   //linkedin functionality
   const handleLinkedInClick = (profileUrl) => {
+    console.log(profileUrl);
+
     window.open(profileUrl, "_blank");
   };
 
@@ -38,30 +48,30 @@ const IndividualProfile = ({ selectedStudent }) => {
       {/* refer UpdateSection.css for the 'component-name' */}
       <div className="name-usn-photo">
         <div className="photo">
-          <img src={Photo} alt="Profile" className="Profile-image" />
+          <img src={tmgPhoto} alt="Profile" className="Profile-image" />
         </div>
         {/*❌change profile image in future*/}
         {/* refer ProfileSection.css for these styles*/}
         <div className="name-usn">
-          <label for="name" className="label-info">
+          <label htmlFor="name" className="label-info">
             Name :
           </label>
           <h2 id="name" className="name">
             {selectedStudent.name}
           </h2>
-          <label for="usn" className="label-info">
+          <label htmlFor="usn" className="label-info">
             USN :
           </label>
           <h2 id="usn" className="usn">
             {selectedStudent.USN}
           </h2>
-          <label for="resume-box" className="label-info">
+          <label htmlFor="resume-box" className="label-info">
             Resume:
           </label>
           <li className="resume-box" id="resume-box">
             <FileEarmarkPdf className="resume-icons" /> {/* File icon */}
             <a
-              href="/pdfs/resume1.pdf"
+              href={selectedStudent.resumes[0]}
               // ❌change this href in future
               target="_blank"
               rel="noopener noreferrer"
@@ -84,14 +94,23 @@ const IndividualProfile = ({ selectedStudent }) => {
         <img
           src={linkedin}
           className="icon"
-          onClick={() => handleLinkedInClick(profile.linkedinProfile)}
+          onClick={() =>
+            handleLinkedInClick(selectedStudent.socialContacts.linkedIn)
+          }
         ></img>
         <img
           src={whatsapp}
           className="icon"
-          onClick={() => handleWhatsAppClick(9980482825)}
+          onClick={() => handleWhatsAppClick(selectedStudent.phoneNumber)}
         ></img>
-        <button className="message-bttn">Message</button>
+        <button
+          className="message-btn"
+          onClick={() => {
+            navigate("messageStudent");
+          }}
+        >
+          Message
+        </button>
       </div>
     </div>
   );
