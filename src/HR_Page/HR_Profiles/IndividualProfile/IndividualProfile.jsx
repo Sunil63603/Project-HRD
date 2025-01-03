@@ -99,10 +99,10 @@ const IndividualProfile = ({ selectedStudent }) => {
         <button
           className="message-btn"
           onClick={() => {
-            navigate("messageStudent");
+            navigate(`messageStudent?studentUSN=${selectedStudent.USN}`);
           }}
         >
-          Message
+          Message Student
         </button>
       </div>
     </div>
