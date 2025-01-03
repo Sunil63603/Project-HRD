@@ -83,7 +83,7 @@
           "timestamp": "2024-12-28T13:08:16.943Z"
         },
         {
-          "sender": "HR",
+          "sender": "student",
           "content": "hi",
           "timestamp": "2024-12-29T11:03:53.582Z"
         },
@@ -96,6 +96,16 @@
           "sender": "HR",
           "content": "Which company do you want next ? i will get them",
           "timestamp": "2024-12-29T11:22:09.244Z"
+        },
+        {
+          "sender": "HR",
+          "content": "hi",
+          "timestamp": "2025-01-02T14:30:19.105Z"
+        },
+        {
+          "sender": "HR",
+          "content": "tmg testing",
+          "timestamp": "2025-01-02T14:30:35.121Z"
         }
       ],
       "id": "154"
@@ -108,7 +118,7 @@
       "email": "thrishugowda2003@gmail.com",
       "password": "tmg123",
       "resumes": [
-        "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
+        "https://drive.google.com/file/d/1DoRiONb_i-q6bCiMZVuOO1TC-mrQXz2G/view?usp=sharing",
         "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
       ],
       "socialContacts": {
@@ -250,20 +260,20 @@
     },
     {
       "USN": "1SJ21CS180",
-      "profileImg": "https://drive.google.com/uc?id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth",
-      "website": "https://sunilpersonalportfolio.netlify.app/",
+      "profileImg": "https://drive.google.com/drive/u/0/home",
+      "website": "https://vikas-personal-portfolio.netlify.app/",
       "name": "Vikas",
-      "email": "s60667843@gmail.com",
-      "password": "sunilinus",
+      "email": "vv9077022@gmail.com",
+      "password": "Viki@123",
       "resumes": [
-        "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
-        "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
+        "https://drive.google.com/file/d/157CzKYhGcNVaTv3Zc_PD_noEFG3yGzfM/view?usp=drive_link",
+        "https://drive.google.com/file/d/157CzKYhGcNVaTv3Zc_PD_noEFG3yGzfM/view?usp=drive_link"
       ],
       "socialContacts": {
-        "linkedIn": "https://www.linkedin.com/in/Sunil63603/",
-        "gitHub": "https://github.com/Sunil63603",
-        "mail": "s60667843@gmail.com",
-        "whatsapp": "https://wa.me/8197759383"
+        "linkedIn": "https://www.linkedin.com/in/vikas-v-9a4108286/",
+        "gitHub": "https://github.com/vikas-1sj21cs180",
+        "mail": "vv9077022@gmail.com",
+        "whatsapp": "https://wa.me/9686814470"
       },
       "skills": [
         "C",
@@ -277,14 +287,14 @@
         {
           "title": "Recipe Search Application",
           "videoLink": "",
-          "GitHub_Repo": "https://github.com/Sunil63603/ESCR-forkify.git",
+          "GitHub_Repo": "https://github.com/vikas-1sj21cs180/recipe-search.git",
           "deployLink": " https://escr.netlify.app/"
         },
         {
-          "title": "Tour Planner/Tracker Application",
+          "title": "News-Talk Application",
           "videoLink": "",
-          "GitHub_Repo": "https://github.com/Sunil63603/WorldWise.git",
-          "deployLink": "https://sunil-worldwise.netlify.app/"
+          "GitHub_Repo": "https://github.com/vikas-1sj21cs180/react-news.git",
+          "deployLink": ""
         },
         {
           "title": "COHORT(Project HRD)",
@@ -293,7 +303,7 @@
           "deployLink": ""
         }
       ],
-      "phoneNumber": "8197759383",
+      "phoneNumber": "9686814470",
       "companiesAppliedTo": [
         "Contriver",
         "NTT Data",
@@ -306,7 +316,7 @@
       "conversationsWithHR": [
         {
           "sender": "HR",
-          "content": "Hello Sunil, please update your portfolio.",
+          "content": "Hello Vikas, please update your portfolio.",
           "timestamp": "2024-11-24T10:00:00Z"
         },
         {
@@ -316,8 +326,13 @@
         },
         {
           "sender": "HR",
-          "content": "Great!Sunny Let me know once it's done.",
+          "content": "Great!viki Let me know once it's done.",
           "timestamp": "2024-11-24T10:10:00Z"
+        },
+        {
+          "sender": "HR",
+          "content": "hello vikas , i am HR sunil",
+          "timestamp": "2025-01-03T14:51:23.385Z"
         }
       ],
       "id": "180"
@@ -468,14 +483,6 @@
   ],
   "jobs": [
     {
-      "id": "7f3d",
-      "companyName": "Tech Mahindra Singh Dhoni",
-      "jobDescription": "On the way",
-      "eligibility": "No one is eligible",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Swimming Pool Campus"
-    },
-    {
       "id": "4765",
       "companyName": "DeltaX on 23-12-2024",
       "jobDescription": "3 job roles . Product Analyst and Digital Marketing\n",
@@ -490,22 +497,6 @@
       "eligibility": "CSE student who loves black oil stains on his face and base",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "0.35 CTC"
-    },
-    {
-      "id": "46d5",
-      "companyName": "usman",
-      "jobDescription": "jk",
-      "eligibility": "jk",
-      "applyLink": "https://usmaaportfolio.netlify.app/",
-      "additionalDetails": "jkkk"
-    },
-    {
-      "id": "9260",
-      "companyName": "usman",
-      "jobDescription": "sds",
-      "eligibility": "ss",
-      "applyLink": "s",
-      "additionalDetails": "s"
     }
   ],
   "GroupMessages": [
@@ -573,13 +564,6 @@
       "time": "02:35 PM"
     },
     {
-      "id": "9040",
-      "sender": "HR",
-      "text": "sunny",
-      "date": "12/12/2024",
-      "time": "02:36 PM"
-    },
-    {
       "id": "fb07",
       "sender": "HR",
       "text": "usman pasha",
@@ -601,32 +585,11 @@
       "time": "06:56 PM"
     },
     {
-      "id": "c929",
-      "sender": "HR",
-      "text": "valid message",
-      "date": "12/22/2024",
-      "time": "07:15 PM"
-    },
-    {
       "id": "eec0",
       "sender": "HR",
       "text": "message sent at 23-12-2024 ",
       "date": "12/23/2024",
       "time": "04:34 PM"
-    },
-    {
-      "id": "b059",
-      "sender": "HR",
-      "text": "hi",
-      "date": "12/23/2024",
-      "time": "04:34 PM"
-    },
-    {
-      "id": "bd78",
-      "sender": "HR",
-      "text": "hello MF",
-      "date": "12/23/2024",
-      "time": "04:53 PM"
     }
   ]
 }

@@ -20,16 +20,21 @@ const IndividualProfile = ({ selectedStudent }) => {
 
   //whats app functionality
   const handleWhatsAppClick = (number) => {
-    window.open(`https://wa.me/${number}`, "_blank");
+    let num = Number(number);
+    window.open(`https://wa.me/${num}`, "_blank");
   };
 
   //gmail functionality
-  const handleEmailClick = (email) => {
-    window.location.href = `mailto:${email}`;
+  const handleEmailClick = (email, subject = "", body = "") => {
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoLink, "_self"); // Opens in the same tab
   };
-
   //linkedin functionality
   const handleLinkedInClick = (profileUrl) => {
+    console.log(profileUrl);
+
     window.open(profileUrl, "_blank");
   };
 
@@ -66,7 +71,7 @@ const IndividualProfile = ({ selectedStudent }) => {
           <li className="resume-box" id="resume-box">
             <FileEarmarkPdf className="resume-icons" /> {/* File icon */}
             <a
-              href="/pdfs/resume1.pdf"
+              href={selectedStudent.resumes[0]}
               // ❌change this href in future
               target="_blank"
               rel="noopener noreferrer"
@@ -89,20 +94,22 @@ const IndividualProfile = ({ selectedStudent }) => {
         <img
           src={linkedin}
           className="icon"
-          onClick={() => handleLinkedInClick(profile.linkedinProfile)}
+          onClick={() =>
+            handleLinkedInClick(selectedStudent.socialContacts.linkedIn)
+          }
         ></img>
         <img
           src={whatsapp}
           className="icon"
-          onClick={() => handleWhatsAppClick(9980482825)}
+          onClick={() => handleWhatsAppClick(selectedStudent.phoneNumber)}
         ></img>
         <button
           className="message-btn"
           onClick={() => {
-            navigate("messageStudent");
+            navigate(`messageStudent?studentUSN=${selectedStudent.USN}`);
           }}
         >
-          Message
+          Message Student
         </button>
       </div>
     </div>

@@ -2,7 +2,7 @@
 .chat-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 59vh;
   max-width: 600px;
   margin: 0 auto;
   background-color: #f5f5f5;
@@ -20,13 +20,31 @@
   font-size: 1.2rem;
   font-weight: bold;
 }
+.up-arrow-icon {
+  font-size: 1.5rem; /* Adjust size */
+  color: white;   /* ChatGPT green shade */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.up-arrow-icon:hover {
+  transform: scale(1.2); /* Slight zoom on hover */
+}
+
 
 .contact-icons {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin: 10px 0;
 }
-
+.contact-icons a{ 
+ border-radius: 20px; 
+ font-size: 30px;
+ /* background-color: wheat;  */
+ }
+hr{
+  color: #0056b3;
+}
 .icon {
   margin: 0 10px;
   font-size: 24px;
@@ -81,6 +99,40 @@
   background-color: #007bff;
   align-self: flex-end;
   color: white;
+}
+.send-button {
+  background-color: #10a37f; /* ChatGPT green */
+  border: none;
+  border-radius: 50%; /* Circular button */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.send-button:hover {
+  background-color: #0d8f6b; /* Darker green on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.arrow-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons {
+  color: white; /* Icon color */
+  font-size: 20px; /* Icon size */
+  transition: transform 0.2s ease;
+}
+
+.send-button:hover .icons {
+  transform: translateY(-2px); /* Subtle arrow movement on hover */
 }
 
 /* Timestamp */
