@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"; //used to navigate to the chat p
 
 import tmgPhoto from "../../../Assets/Images/tmgPhoto.jpg";
 import gmail from "../../../Assets/Images/gmail.png";
-import linkedin from "../../../Assets/Images/Linkedin.png";
+import linkedin from "../../../Assets/Images/linkedin.png";
 import whatsapp from "../../../Assets/Images/whatsapp img.png";
 
 import { BoxArrowUpRight } from "react-bootstrap-icons"; //this is used to indicate that portfolio website is a link
