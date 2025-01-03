@@ -466,32 +466,7 @@
       ]
     }
   ],
-  "jobs": [
-    {
-      "id": "7f3d",
-      "companyName": "Tech Mahindra Singh Dhoni",
-      "jobDescription": "On the way",
-      "eligibility": "No one is eligible",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Swimming Pool Campus"
-    },
-    {
-      "id": "4765",
-      "companyName": "DeltaX on 23-12-2024",
-      "jobDescription": "3 job roles . Product Analyst and Digital Marketing\n",
-      "eligibility": "Candidates with atleast one backlog are eligible",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "N/A"
-    },
-    {
-      "id": "67c0",
-      "companyName": "Garage and Mechanic Services Pvt Ltd ",
-      "jobDescription": "should be able to repair all kinds of vehicles(ie.1,2,3,4 wheelers and so on)",
-      "eligibility": "CSE student who loves black oil stains on his face and base",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "0.35 CTC"
-    }
-  ],
+  "jobs": [],
   "GroupMessages": [
     {
       "id": "4026",

@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import "./CreateJobPosting.css"; // Import the CSS file
 
 //PopUpToastContext is used to notify student when HR creates a JOB posting
-import { usePopUpToast } from "../../context/PopUpToastContext";
+import { usePopUpToastContext } from "../../context/PopUpToastContext";
 
 // import Required for 3rd party Toast Notifications
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 
 const CreateJobPosting = () => {
-  const { handleJobAlert } = usePopUpToast();
+  const { handleJobAlert } = usePopUpToastContext();
 
   //State management
   // [variable , method to set the variable]
@@ -41,6 +41,7 @@ const CreateJobPosting = () => {
         eligibility,
         applyLink,
         additionalDetails,
+        timestamp: new Date().toISOString(), // Adds a timestamp in ISO format
       };
       // this is the fetch method to make changes in the DB / .json file
       // the fetch function makes the http request such as the POST, GET, PUT, DELETE

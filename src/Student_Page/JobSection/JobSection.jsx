@@ -4,13 +4,11 @@ import { useState, useEffect } from "react";
 import "./JobSection.css"; //Add your styling for Jobs.
 
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
-import { usePopUpToast } from "../../context/PopUpToastContext";
 import { useGlobalContext } from "../../context/GlobalContext";
 
 const JobSection = () => {
   const [jobs, setJobs] = useState([]);
 
-  const { newJobAlert, handleJobAlert } = usePopUpToast();
   const { pollingInterval } = useGlobalContext();
 
   // Fetch job postings from JSON server.
@@ -40,9 +38,6 @@ const JobSection = () => {
         // if new jobs are added then the new jobs are added in the state Jobs.
         setJobs(sortedJobs);
       }
-
-      //❌❌This logic is not working❌❌
-      if (newJobAlert === true) PopUpToast.success("New Job Alert");
     } catch (error) {
       // Handle's the error.
       console.error("Error fetching jobs:", error);

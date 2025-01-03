@@ -6,6 +6,9 @@ import React, { useEffect, useState } from "react";
 import JobCard from "./JobCard/JobCard";
 import "./CompaniesList.css"; // Import the CSS file for standard styling
 
+// importing the PopUpToast component to show the toast message when the job is deleted.
+import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
+
 const CompaniesList = () => {
   // the Previous jobs which are present in the .json file that is fetched and stored in the jobs(state) and then that are used to display in the UI..
   const [jobs, setJobs] = useState([]);
@@ -67,6 +70,7 @@ const CompaniesList = () => {
       const updatedJobs = jobs.filter((job) => job.id !== id);
       setJobs(updatedJobs);
       setData(updatedJobs);
+      PopUpToast.success("Job Deleted Successfully");
     } catch (error) {
       console.error("Error deleting job:", error);
     }
