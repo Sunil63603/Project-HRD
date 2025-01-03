@@ -3,9 +3,12 @@ import React, { createContext, useState, useContext } from "react";
 
 //create the context
 const PopUpToastContext = createContext();
+import { useGlobalContext } from "../context/GlobalContext";
 
 //create a provider component
 export const PopUpToastProvider = ({ children }) => {
+  const { pollingInterval } = useGlobalContext();
+
   const [newJobAlert, setNewJobAlert] = useState(false);
   //becomes true when HR posts a new JOB.
   // ❌Once student gets notified , i think student should make it false,else notification keeps coming❌
@@ -18,7 +21,7 @@ export const PopUpToastProvider = ({ children }) => {
     setTimeout(() => {
       setNewJobAlert(false);
       console.log(newJobAlert);
-    }, 10000);
+    }, pollingInterval);
   };
 
   return (
