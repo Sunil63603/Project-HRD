@@ -15,11 +15,10 @@ export const PopUpToastProvider = ({ children }) => {
     setNewJobAlert(true);
     console.log(newJobAlert);
 
-    // Reset the alert after 5 seconds
     setTimeout(() => {
       setNewJobAlert(false);
       console.log(newJobAlert);
-    }, 10000); // 5000 ms = 5 seconds
+    }, 10000);
   };
 
   return (
