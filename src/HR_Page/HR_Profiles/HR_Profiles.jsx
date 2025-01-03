@@ -69,35 +69,37 @@ const Profiles = () => {
       {error && <p className="error">{error}</p>}
 
       {/* Displaying the students */}
-      <div className="srollingProfiles">
-        <div className="student-list">
-          {filteredStudents.length > 0 ? (
-            filteredStudents.map((student) => (
-              <div
-                key={student.USN}
-                className={`student-card ${
-                  selectedStudent.USN === student.USN ? "active" : ""
-                } `}
-                onClick={() => handleClickToMessage(student)}
-              >
-                <p>
-                  <strong>USN:</strong> {student.USN}
-                </p>
-                <p>
-                  <strong>Name:</strong> {student.name}
-                </p>
-              </div>
-            ))
-          ) : (
-            <p>No students match your search.</p>
-          )}
+      <div className="profiles-content">
+        <div className="srollingProfiles">
+          <div className="student-list">
+            {filteredStudents.length > 0 ? (
+              filteredStudents.map((student) => (
+                <div
+                  key={student.USN}
+                  className={`student-card ${
+                    selectedStudent.USN === student.USN ? "active" : ""
+                  } `}
+                  onClick={() => handleClickToMessage(student)}
+                >
+                  <p>
+                    <strong>USN:</strong> {student.USN}
+                  </p>
+                  <p>
+                    <strong>Name:</strong> {student.name}
+                  </p>
+                </div>
+              ))
+            ) : (
+              <p>No students match your search.</p>
+            )}
+          </div>
         </div>
-      </div>
 
-      {/* show student profile */}
-      {showStudentProfile && (
-        <IndividualProfile selectedStudent={selectedStudent} />
-      )}
+        {/* show student profile */}
+        {showStudentProfile && (
+          <IndividualProfile selectedStudent={selectedStudent} />
+        )}
+      </div>
     </div>
   );
 };

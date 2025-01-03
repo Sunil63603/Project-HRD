@@ -18,14 +18,7 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -85,7 +78,27 @@
         {
           "sender": "student",
           "content": "hi",
-          "timestamp": "2025-01-02T03:32:42.384Z"
+          "timestamp": "2024-12-29T11:03:53.582Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Hi My Name is ShashiKumar NV",
+          "timestamp": "2024-12-29T11:17:12.735Z"
+        },
+        {
+          "sender": "HR",
+          "content": "Which company do you want next ? i will get them",
+          "timestamp": "2024-12-29T11:22:09.244Z"
+        },
+        {
+          "sender": "HR",
+          "content": "hi",
+          "timestamp": "2025-01-02T14:30:19.105Z"
+        },
+        {
+          "sender": "HR",
+          "content": "tmg testing",
+          "timestamp": "2025-01-02T14:30:35.121Z"
         }
       ],
       "id": "154"
@@ -98,7 +111,7 @@
       "email": "thrishugowda2003@gmail.com",
       "password": "tmg123",
       "resumes": [
-        "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
+        "https://drive.google.com/file/d/1DoRiONb_i-q6bCiMZVuOO1TC-mrQXz2G/view?usp=sharing",
         "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
       ],
       "socialContacts": {
@@ -107,14 +120,7 @@
         "mail": "thrishugowda2003@gmail.com",
         "whatsapp": "https://wa.me/8310558268"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -181,14 +187,7 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -255,14 +254,7 @@
         "mail": "vv9077022@gmail.com",
         "whatsapp": "https://wa.me/9686814470"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -341,10 +333,7 @@
   "friendConversations": [
     {
       "id": "1",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS166"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS166"],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -400,10 +389,7 @@
     },
     {
       "id": "2",
-      "participants": [
-        "1SJ21CS165",
-        "1SJ21CS180"
-      ],
+      "participants": ["1SJ21CS165", "1SJ21CS180"],
       "messages": [
         {
           "sender": "1SJ21CS165",
@@ -419,10 +405,7 @@
     },
     {
       "id": "1733656081722",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS180"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS180"],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -443,10 +426,7 @@
     },
     {
       "id": "1734969900623",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS165"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS165"],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -457,14 +437,6 @@
     }
   ],
   "jobs": [
-    {
-      "id": "7f3d",
-      "companyName": "Tech Mahindra Singh Dhoni",
-      "jobDescription": "On the way",
-      "eligibility": "No one is eligible",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Swimming Pool Campus"
-    },
     {
       "id": "4765",
       "companyName": "DeltaX on 23-12-2024",
@@ -547,13 +519,6 @@
       "time": "02:35 PM"
     },
     {
-      "id": "9040",
-      "sender": "HR",
-      "text": "sunny",
-      "date": "12/12/2024",
-      "time": "02:36 PM"
-    },
-    {
       "id": "fb07",
       "sender": "HR",
       "text": "usman pasha",
@@ -580,20 +545,6 @@
       "text": "message sent at 23-12-2024 ",
       "date": "12/23/2024",
       "time": "04:34 PM"
-    },
-    {
-      "id": "b059",
-      "sender": "HR",
-      "text": "hi",
-      "date": "12/23/2024",
-      "time": "04:34 PM"
-    },
-    {
-      "id": "bd78",
-      "sender": "HR",
-      "text": "hello MF",
-      "date": "12/23/2024",
-      "time": "04:53 PM"
     }
   ]
 }

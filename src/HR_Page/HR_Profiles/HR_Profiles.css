@@ -1,26 +1,31 @@
 .srollingProfiles {
-  height: 421px;
+  width: 50%;
+  height: 100%;
   overflow-y: scroll;
-  width: 598px;
+  padding: 10px;
 }
 /* Styling for the search bar and header */
 
 .headerProfile {
   display: flex;
-  position: -webkit-sticky;
-  top: 0;
+  position: fixed; /* Use sticky positioning */
+  top: 69px;
+  border-radius: 10px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   padding: 20px;
   border-bottom: 2px solid #ff85b2;
   width: 100%;
+  background-color: white; /* Ensure the header has a background color */
+  z-index: 1;
 }
 
 .logo-container h1 {
   font-size: 2.5rem;
   color: #ff007f;
   font-weight: bold;
+  /* margin-left: -531px; */
 }
 
 /* Search container styling */
@@ -54,8 +59,8 @@
 
 /* Student list styling */
 .ScrollBar {
-  height: 425px;
   overflow-y: scroll;
+  height: 100vh;
 }
 .student-list {
   display: flex;
@@ -63,7 +68,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .student-card {
@@ -105,6 +110,19 @@
   margin-bottom: 20px;
 }
 
+.profiles-content {
+  margin-top: 100px;
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.profiles-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh; /* Ensure it takes the full height of the viewport */
+}
 /* body {
   font-family: Arial, sans-serif;
   margin: 0;
