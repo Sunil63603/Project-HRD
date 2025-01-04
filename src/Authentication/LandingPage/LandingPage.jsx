@@ -13,7 +13,7 @@ const LandingPage = () => {
     <div className="landing-page">
       {/* Header Section */}
       <header className="header">
-        <div className="logo-container">
+        <div className="logo">
           <h1 className="logo-text">C O H O R T</h1>
           <p className="tagline">Connecting Talent with Opportunities</p>
         </div>

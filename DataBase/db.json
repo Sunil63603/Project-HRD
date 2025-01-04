@@ -18,14 +18,7 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -96,6 +89,16 @@
           "sender": "HR",
           "content": "Which company do you want next ? i will get them",
           "timestamp": "2024-12-29T11:22:09.244Z"
+        },
+        {
+          "sender": "HR",
+          "content": "hi",
+          "timestamp": "2025-01-02T14:30:19.105Z"
+        },
+        {
+          "sender": "HR",
+          "content": "tmg testing",
+          "timestamp": "2025-01-02T14:30:35.121Z"
         }
       ],
       "id": "154"
@@ -108,7 +111,7 @@
       "email": "thrishugowda2003@gmail.com",
       "password": "tmg123",
       "resumes": [
-        "https://drive.google.com/file/d/1Xp5hXHVkhXoV_isWUkMYIMAhr52HHEn7/view?usp=sharing",
+        "https://drive.google.com/file/d/1DoRiONb_i-q6bCiMZVuOO1TC-mrQXz2G/view?usp=sharing",
         "https://drive.google.com/file/d/1VeSq-tixaKgA4ykXBLT5zGtZsjm5kO4R/view?usp=sharing"
       ],
       "socialContacts": {
@@ -117,14 +120,7 @@
         "mail": "thrishugowda2003@gmail.com",
         "whatsapp": "https://wa.me/8310558268"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -191,14 +187,7 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -265,14 +254,7 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -351,10 +333,7 @@
   "friendConversations": [
     {
       "id": "1",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS166"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS166"],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -410,10 +389,7 @@
     },
     {
       "id": "2",
-      "participants": [
-        "1SJ21CS165",
-        "1SJ21CS180"
-      ],
+      "participants": ["1SJ21CS165", "1SJ21CS180"],
       "messages": [
         {
           "sender": "1SJ21CS165",
@@ -429,10 +405,7 @@
     },
     {
       "id": "1733656081722",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS180"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS180"],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -453,10 +426,7 @@
     },
     {
       "id": "1734969900623",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS165"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS165"],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -467,14 +437,6 @@
     }
   ],
   "jobs": [
-    {
-      "id": "7f3d",
-      "companyName": "Tech Mahindra Singh Dhoni",
-      "jobDescription": "On the way",
-      "eligibility": "No one is eligible",
-      "applyLink": "https://sunilpersonalportfolio.netlify.app",
-      "additionalDetails": "Swimming Pool Campus"
-    },
     {
       "id": "4765",
       "companyName": "DeltaX on 23-12-2024",
@@ -562,6 +524,34 @@
       "text": "usman pasha",
       "date": "12/12/2024",
       "time": "02:41 PM"
+    },
+    {
+      "id": "1c86",
+      "sender": "HR",
+      "text": "hello MF , messaging on 22nd dec 2024 (sunday)",
+      "date": "12/22/2024",
+      "time": "06:56 PM"
+    },
+    {
+      "id": "1022",
+      "sender": "HR",
+      "text": "how are you",
+      "date": "12/22/2024",
+      "time": "06:56 PM"
+    },
+    {
+      "id": "c929",
+      "sender": "HR",
+      "text": "valid message",
+      "date": "12/22/2024",
+      "time": "07:15 PM"
+    },
+    {
+      "id": "eec0",
+      "sender": "HR",
+      "text": "message sent at 23-12-2024 ",
+      "date": "12/23/2024",
+      "time": "04:34 PM"
     }
   ]
 }
