@@ -79,7 +79,7 @@ body {
   font-size: 1rem;
   font-weight: 600;
   border-radius: 30px;
-  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+  background: linear-gradient(90deg, #208b12, #b4f404);
   color: white;
   border: none;
   cursor: pointer;
@@ -89,11 +89,12 @@ body {
 
 .hero-button:hover {
   transform: scale(1.05);
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 6px 20px rgba(17, 223, 24, 0.15);
 }
 
 .hero-button:active {
   transform: scale(0.95);
+  transition: 4s;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
 

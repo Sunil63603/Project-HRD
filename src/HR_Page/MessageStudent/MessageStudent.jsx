@@ -16,8 +16,7 @@ function MessageStudent() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
-  //get studentUSN dynamically from search bar
-  const studentUSN = "1SJ21CS154"; //queryParams.get('studentUSN');
+  const studentUSN = queryParams.get("studentUSN");
 
   const [conversations, setConversations] = useState([]);
   const [newConversation, setNewConversation] = useState("");
