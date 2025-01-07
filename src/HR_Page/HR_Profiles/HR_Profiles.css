@@ -81,6 +81,12 @@
   height: 67px;
 }
 
+.student-card.active {
+  background-color: aqua;
+  color: white;
+  border-color: blueviolet;
+}
+
 .student-card:hover {
   transform: translateY(-5px);
 }

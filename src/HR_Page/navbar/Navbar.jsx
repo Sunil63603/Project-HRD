@@ -54,11 +54,22 @@ const Navbar = () => {
             Messages
           </Link>
         </li>
+        <li
+          className={`navbar-item ${
+            activeLink === "/hr/profile-container" ? "active" : ""
+          }`}
+        >
+          <Link
+            to="/hr/profile-container"
+            className="navbar-link"
+            onClick={() => setActiveLink("/hr/profile-container")}
+          >
+            Profiles
+          </Link>
+        </li>
       </ul>
     </nav>
   );
 };
-
-//❌include TMG's profiles search bar into this👆 Navbar
 
 export default Navbar;

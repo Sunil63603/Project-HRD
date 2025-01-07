@@ -133,7 +133,6 @@ const MessageHRDSection = () => {
   return (
     <div className="chat-container">
       <div className="chat-header">Message HRD</div>
-
       <div className="contact-icons">
         <a
           href="https://wa.me/8197759383"

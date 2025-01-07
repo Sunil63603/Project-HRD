@@ -24,6 +24,7 @@ import MessageContainer from "./HR_Page/messages/MessagingContainer/MessagingCon
 //search functionality is in navbar(ie.usman component)
 import Profiles from "./HR_Page/HR_Profiles/HR_Profiles";
 import IndividualProfile from "./HR_Page/HR_Profiles/IndividualProfile/IndividualProfile";
+import MessageStudent from "./HR_Page/MessageStudent/MessageStudent";
 
 //sunil components
 import TopFixedBar from "./Student_Page/TopFixedBar/TopFixedBar";
@@ -73,6 +74,10 @@ function App() {
                     <Route
                       path="profile-container/IndividualProfile"
                       element={<IndividualProfile />}
+                    ></Route>
+                    <Route
+                      path="profile-container/messageStudent"
+                      element={<MessageStudent />}
                     ></Route>
                   </Route>
 

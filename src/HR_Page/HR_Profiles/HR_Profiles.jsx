@@ -38,6 +38,7 @@ const Profiles = () => {
   // console.log(selectedStudent);
 
   let navigate = useNavigate();
+
   const handleClickToMessage = (student) => {
     setSelectedStudent(student);
     setShowStudentProfile(true);
@@ -71,10 +72,12 @@ const Profiles = () => {
       <div className="srollingProfiles">
         <div className="student-list">
           {filteredStudents.length > 0 ? (
-            filteredStudents.map((student, index) => (
+            filteredStudents.map((student) => (
               <div
-                key={index}
-                className="student-card"
+                key={student.USN}
+                className={`student-card ${
+                  selectedStudent.USN === student.USN ? "active" : ""
+                } `}
                 onClick={() => handleClickToMessage(student)}
               >
                 <p>

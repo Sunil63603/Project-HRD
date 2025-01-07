@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom"; //to display either HR_Page or S
 import "./LoginForm.css"; //write styling related to this component in this .css file itself.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-
+import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
+               
 //searchParams is used to indicate whether HR Login button / student Login button was clicked.
 //in simple words to know , who clicked the Login button.
 import { useSearchParams } from "react-router-dom";
@@ -55,16 +56,20 @@ function LoginForm() {
         //If valid account, navigate to the respective page
         if (role === "registeredHRs") {
           navigate(`/hr/create-job`); //if HR Login is successful , then display HR_Page.
-        } //registeredStuds.
+          PopUpToast.success("HR Login successfull");//pop-up at right top alert message
+        } 
         else {
           navigate(`/student/groupMessages`); //if Student Login is successful , then display Student_Page.
-        }
+          PopUpToast.success("student login successfull");//pop-up at right top alert message
+        }//registeredStuds.
       } else {
         setIsValidAccount(false); //making this false , will indicate 'invalid credentials in UI'
+        PopUpToast.warning("Fill the required fields");
       }
     } catch (error) {
       console.error("Error verifying user:", error);
       alert("Error: Unable to verify user");
+      PopUpToast.error("please enter valid credentials");
     }
   };
 
@@ -101,7 +106,8 @@ function LoginForm() {
               onChange={(e) => setPassword(e.target.value)}
               style={{ paddingRight: "40px" }}
             />
-            <span
+              </div>
+            {/* <span
               onClick={togglePasswordVisibility}
               style={{
                 position: "absolute",
@@ -109,11 +115,10 @@ function LoginForm() {
                 top: "50%",
                 transform: "translateY(-50%)",
                 cursor: "pointer",
-              }}
-            >
-              <FontAwesomeIcon icon={isPasswordVisible ? faEye : faEyeSlash} />
-            </span>
-          </div>
+              }} */}
+            {/* > */}
+              {/* <FontAwesomeIcon icon={isPasswordVisible ? faEye : faEyeSlash} /> */}
+            {/* </span> */}
 
           {!isValidAccount && (
             <p className="invalid-message">
