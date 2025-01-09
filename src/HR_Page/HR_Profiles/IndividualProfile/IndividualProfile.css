@@ -6,19 +6,18 @@
   align-items: center;
   margin-top: -422px;
   margin-left: 46%;
-  background: lightgray;
   margin-right: 20px; */
-  height: 431px;
-  justify-content: center;
-  align-items: center;
-  margin-top: -422px;
-  margin-left: 46%;
+  width: 60%;
   background: lightgray;
-  margin-right: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0px 20px;
+  height: 400px;
+  padding: 10px;
+  overflow-y: auto;
 }
 
 .Profile-name {
-  margin-top: -116px;
   display: flex;
   justify-content: center;
 }

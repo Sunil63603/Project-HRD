@@ -40,7 +40,6 @@ function GroupMessages() {
       .then((data) => {
         setNotifications(data);
         // Log notifications to console
-        console.log("Fetched Notifications:", data);
         //❌clear this line once the notifications are successfully displayed on the screen.
       })
       .catch((error) => {
