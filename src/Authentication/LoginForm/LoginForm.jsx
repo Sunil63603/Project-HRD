@@ -86,15 +86,14 @@ function LoginForm() {
           <div style={{ position: "relative" }}>
             <input
               type={isPasswordVisible ? "text" : "password"}
+              // type="input"
               required
-              className={`login-input ${
-                !isValidAccount ? "invalid-input" : ""
-              }`
-            }
+              className={`login-input ${!isValidAccount ? "invalid-input" : ""}`}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               style={{ paddingRight: "40px" }}
             />
+            {/* Replaced FontAwesomeIcon with plain text for toggling visibility */}
             <span
               onClick={togglePasswordVisibility}
               style={{
@@ -103,9 +102,10 @@ function LoginForm() {
                 top: "50%",
                 transform: "translateY(-50%)",
                 cursor: "pointer",
+                fontSize: "1.2rem",
               }}
             >
-              <FontAwesomeIcon icon={isPasswordVisible ? faEye : faEyeSlash} />
+              {isPasswordVisible ? "🙈" : "👁️"}
             </span>
           </div>
 

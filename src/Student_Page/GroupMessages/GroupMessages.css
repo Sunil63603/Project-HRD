@@ -1,22 +1,30 @@
 /* Right Section Styles */
 .update-section {
   flex: 2; /* Normal width when ProfileSection is visible */
-  padding: 20px;
+  padding: 2px;
   width: 1150px;
-  border-radius: 20px;
-  background-color: #f1ebeb; /* Light grey background for the right section */
+  border-radius: 30px;
+  background-color: #6dacf0; /* Clean white background for the right section */
   overflow-y: auto; /* Enable scrolling if content overflows */
-  max-height: 100vh; /* Optional: Control the height */
-  border-left: 1px solid #ddd; /* Adds a subtle border to separate from other sections */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect*/
+  /* max-height: 100vh; Optional: Control the height */
+  border-left: 1px solid #e0e0e0; /* Subtle border for section separation */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
 }
-
+.update-section .component-name{
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  /* text-decoration: underline; */
+  text-transform: capitalize;
+  color: white;
+}
 .update-section.full-width {
   flex: 1; /* Full width when ProfileSection is hidden */
   width: 83rem;
   padding: 2rem;
-  margin: 10rem;
-  margin-top: 8rem;
+  margin-left: 100px;
+  margin-top: 4rem;
   height: 70vh;
   overflow-y: scroll; /* Enable scrolling if content overflows */
 }
@@ -26,22 +34,29 @@
 }
 
 .update-section::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar for Webkit */
+  width: 8px; /* Visible scrollbar with slim width */
+  background-color: #f5f5f5;
+}
+
+.update-section::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0; /* Scrollbar thumb color */
+  border-radius: 4px;
 }
 
 /* Heading Styles */
 .component-name {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 2rem; /* Slightly larger for prominence */
+  font-weight: 700;
   margin-bottom: 20px;
-  color: #333;
+  color: #333333;
   text-align: center;
+  text-transform: uppercase; /* Professional uppercase styling */
+  letter-spacing: 1px;
 }
 
-/* css related to displaying notifications in UpdateSection*/
-/* Container for the notifications list */
+/* Notifications List */
 .notifications-list {
-  list-style-type: none; /* Remove default list styling */
+  list-style-type: none;
   padding: 0;
   margin: 0;
   display: flex;
@@ -49,61 +64,73 @@
   gap: 15px; /* Space between notifications */
 }
 
-/* Individual notification item */
+/* Individual Notification */
 .notification-item {
-  background-color: #bec1d2; /* Soft background color */
-  border-radius: 10px; /* Rounded corners */
-  padding: 0.01rem; /* Inner padding */
-  box-shadow: 0 2px 8px rgba(175, 216, 239, 0.1); /* Subtle shadow */
-  position: relative; /* For child elements alignment */
+  background-color: #f8f9fc; /* Light grey background */
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover effect for each notification */
 .notification-item:hover {
-  background-color: #ccced7;
   transform: translateY(-2px); /* Slight lift on hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Notification message text styling */
-.notification-item p {
+/* Message Text */
+.notification-item p.display-message {
   margin: 0;
   font-weight: 500;
-  font-size: 1.5rem;
-  color: #312d2d;
-  line-height: 1.5;
+  font-size: 1.1rem;
+  color: #444444;
+  line-height: 1.6;
 }
 
-/* Styling for date and timestamp */
+/* Timestamp */
 .notification-item .timeStamp {
   font-size: 0.85rem;
-  color: #393838;
-  margin-top: 8px;
-  text-align: right; /* Align timestamp to the right */
+  color: #6c757d;
+  margin-top: 10px;
+  text-align: right;
 }
 
-/* Button for expanding/collapsing message */
+/* Show More/Less Button */
 .show-more-btn {
   background: none;
   border: none;
-  color: #0026ff;
+  color: #007bff; /* Bootstrap primary blue */
   cursor: pointer;
-  font-size: 1.9rem;
-  padding: 5px 0;
+  font-size: 0.9rem;
   margin-top: 8px;
   text-align: left;
   transition: color 0.2s;
 }
 
 .show-more-btn:hover {
-  color: #0056b3;
+  color: #0056b3; /* Darker blue for hover */
 }
 
-/* Divider styling between notifications */
+/* Divider */
 .divider {
   border: none;
-  border-top: 1px solid #e0e0e0; /* Subtle divider line */
+  border-top: 1px solid #e9ecef;
   margin-top: 15px;
+}
+
+/* Notification Hover Effect */
+.notification-item:hover {
+  background-color: #ffffff;
+}
+
+/* Scrollbar for Notifications */
+.notifications-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.notifications-list::-webkit-scrollbar-thumb {
+  background-color: #a6a6a6;
+  border-radius: 10px;
 }

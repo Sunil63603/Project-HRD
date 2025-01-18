@@ -11,6 +11,15 @@
   border-left: 1px solid #ddd; /* Adds a subtle border to separate from other sections */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect*/
 }
+.all-profiles .component-name{
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  /* text-decoration: underline; */
+  text-transform: capitalize;
+  color: rgb(0, 0, 0);
+}
 
 .all-profiles.full-width {
   flex: 1; /* Full width when ProfileSection is hidden */
@@ -30,7 +39,7 @@
 
 .student-card {
   background-color: #ffffff;
-  border: 1px solid #ff85b2;
+  border: 1px solid #1183c5;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
@@ -44,6 +53,7 @@
 
 .student-card:hover {
   transform: translateY(-5px);
+  cursor: pointer;
 }
 
 .student-card p {

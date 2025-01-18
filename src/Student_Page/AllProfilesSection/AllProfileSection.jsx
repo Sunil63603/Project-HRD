@@ -44,7 +44,7 @@ const AllProfileSection = () => {
 
   return (
     <div className="all-profiles">
-      <h2 className="component-name">All Profiles</h2>
+      <h2 className="component-name" >All Profiles</h2>
 
       {/* Displaying the students */}
       <div className="student-list">

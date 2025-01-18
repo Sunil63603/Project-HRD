@@ -26,14 +26,6 @@
         "JavaScript",
         "ReactJS"
       ],
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -114,6 +106,16 @@
           "sender": "HR",
           "content": "tmg testing",
           "timestamp": "2025-01-02T14:30:35.121Z"
+        },
+        {
+          "sender": "student",
+          "content": "hi happy sankranti",
+          "timestamp": "2025-01-18T10:45:11.161Z"
+        },
+        {
+          "sender": "student",
+          "content": "sir",
+          "timestamp": "2025-01-18T10:45:59.861Z"
         }
       ],
       "id": "154"
@@ -135,14 +137,6 @@
         "mail": "thrishugowda2003@gmail.com",
         "whatsapp": "https://wa.me/8310558268"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
       "skills": [
         "C",
         "Java",
@@ -225,14 +219,6 @@
         "JavaScript",
         "ReactJS"
       ],
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -299,14 +285,6 @@
         "mail": "vv9077022@gmail.com",
         "whatsapp": "https://wa.me/9686814470"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
       "skills": [
         "C",
         "Java",
@@ -402,10 +380,6 @@
         "1SJ21CS154",
         "1SJ21CS166"
       ],
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS166"
-      ],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -465,10 +439,6 @@
         "1SJ21CS165",
         "1SJ21CS180"
       ],
-      "participants": [
-        "1SJ21CS165",
-        "1SJ21CS180"
-      ],
       "messages": [
         {
           "sender": "1SJ21CS165",
@@ -484,10 +454,6 @@
     },
     {
       "id": "1733656081722",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS180"
-      ],
       "participants": [
         "1SJ21CS154",
         "1SJ21CS180"
@@ -512,10 +478,6 @@
     },
     {
       "id": "1734969900623",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS165"
-      ],
       "participants": [
         "1SJ21CS154",
         "1SJ21CS165"
@@ -545,6 +507,15 @@
       "eligibility": "CSE student who loves black oil stains on his face and base",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "0.35 CTC"
+    },
+    {
+      "id": "e19e",
+      "companyName": "Mutual funds",
+      "jobDescription": "SIP",
+      "eligibility": "minimum 1000 rupees",
+      "applyLink": "vikas-personal-portfolio.com",
+      "additionalDetails": "",
+      "timestamp": "2025-01-18T10:02:12.809Z"
     }
   ],
   "GroupMessages": [

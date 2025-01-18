@@ -1,22 +1,31 @@
+/* Universal Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa; /* Light background */
+}
+
+/* Navbar Styling */
 .topFixedBar {
   display: flex;
   position: sticky;
   top: 0;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px; /* Adjusted for better spacing */
-  background-color: #007bff; /* Vibrant blue */
+  padding: 15px 30px; /* Spacious padding for better layout */
+  background-color: #007bff; /* Primary blue */
   color: #ffffff; /* White text for contrast */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   border-radius: 6px;
   z-index: 1000;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
+/* Left Section: Profile and Title */
 .topFixedBar-left {
   display: flex;
   align-items: center;
-  gap: 20px; /* Space between icon and project name */
+  gap: 20px; /* Space between profile icon and project name */
 }
 
 .profile-icon {
@@ -25,20 +34,21 @@
   border-radius: 50%;
   border: 2px solid #ffffff; /* White border */
   cursor: pointer;
-  transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .profile-icon:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
-  border-color: #ffc107; /* Highlight border on hover */
+  transform: scale(1.1);
+  border-color: #ffc107; /* Yellow highlight on hover */
 }
 
 .project-name {
   margin: 0;
-  font-size: 1.8rem; /* Larger font for project name */
+  font-size: 1.8rem; /* Prominent font size */
   font-weight: bold;
 }
 
+/* Center Section: Search Bar */
 .topSearchBar {
   width: 40%;
   padding: 10px 15px;
@@ -52,57 +62,61 @@
 
 .topSearchBar:focus {
   border: 1px solid #ffffff; /* White border for focus */
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* Subtle white glow */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* Glow effect */
 }
 
 .topSearchBar::placeholder {
-  color: #e5e5e5; /* Soft grey for placeholder */
+  color: #7b7575; /* Subtle placeholder color */
   opacity: 0.8;
 }
 
+/* Right Section: Buttons */
 .topFixedBar-right {
   display: flex;
   align-items: center;
-  gap: 20px; /* Even spacing between buttons */
+  gap: 20px; /* Space between buttons */
 }
 
 .topFixedBar-right button {
-  background-color: #007bff;
+  background-color: #007bff; /* Neutral dark background */
   color: #ffffff;
   border: none;
   padding: 10px 15px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 8px; /* Subtle rounded corners */
+  border-radius: 8px; /* Rounded corners */
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .topFixedBar-right button:hover {
-  background-color: #00ffff; /* Lighter blue on hover */
-  transform: scale(1.05); /* Slight zoom on hover */
+  background-color: #1d2124; /* Aqua hover effect */
+  transform: scale(1.05); /* Slight zoom */
 }
 
 .topFixedBar-right button.active {
-  background-color: #1d2124; /* Neutral dark color */
+  background-color: #1d2124; /* Neutral dark background for active button */
   color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for active button */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for active state */
 }
-
+.topSearchBar ::placeholder {
+  color: hsl(0, 88%, 3%); /* Subtle placeholder color */
+  opacity: 0.8;
+}
 .jobs-btn {
-  background-color: #28a745 !important; /* Vibrant green for jobs button */
+  background-color: #1d2124; 
   color: #ffffff;
-  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5); /* Subtle green glow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* box-shadow: 0 0 10px rgba(192, 210, 196, 0.5);  */
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
 }
 
 .jobs-btn:hover {
-  box-shadow: 0 0 20px rgba(40, 167, 69, 0.7), 0 0 30px rgba(94, 215, 122, 0.4);
+  box-shadow: 0 0 20px rgba(175, 180, 177, 0.7), 0 0 30px rgba(94, 215, 122, 0.4); /* Enhanced hover effect */
   transform: scale(1.05);
 }
 
 .log-out-btn {
-  background-color: #fa051d; /* Bootstrap danger red */
+  background-color: #fa051d; /* Vibrant red */
   color: #ffffff;
   padding: 10px 20px;
   font-size: 1rem;
@@ -112,6 +126,7 @@
 }
 
 .log-out-btn:hover {
-  background-color: #ffffff; /* Lighter red on hover */
+  background-color: #ffffff;
+  color: #fa051d; /* Red text on hover */
   transform: scale(1.05);
 }
