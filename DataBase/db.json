@@ -99,6 +99,16 @@
           "sender": "HR",
           "content": "tmg testing",
           "timestamp": "2025-01-02T14:30:35.121Z"
+        },
+        {
+          "sender": "student",
+          "content": "hi happy sankranti",
+          "timestamp": "2025-01-18T10:45:11.161Z"
+        },
+        {
+          "sender": "student",
+          "content": "sir",
+          "timestamp": "2025-01-18T10:45:59.861Z"
         }
       ],
       "id": "154"
@@ -245,8 +255,8 @@
       "email": "vv9077022@gmail.com",
       "password": "Viki@123",
       "resumes": [
-        "https://drive.google.com/file/d/157CzKYhGcNVaTv3Zc_PD_noEFG3yGzfM/view?usp=drive_link",
-        "https://drive.google.com/file/d/157CzKYhGcNVaTv3Zc_PD_noEFG3yGzfM/view?usp=drive_link"
+        "https://drive.google.com/file/d/157CzKYhGcNVaTv3Zc_PD_noEFG3yGzfM/view?usp=sharing",
+        "https://drive.google.com/file/d/157CzKYhGcNVaTv3Zc_PD_noEFG3yGzfM/view?usp=sharing"
       ],
       "socialContacts": {
         "linkedIn": "https://www.linkedin.com/in/vikas-v-9a4108286/",
@@ -457,6 +467,15 @@
       "eligibility": "CSE student who loves black oil stains on his face and base",
       "applyLink": "https://sunilpersonalportfolio.netlify.app",
       "additionalDetails": "0.35 CTC"
+    },
+    {
+      "id": "e19e",
+      "companyName": "Mutual funds",
+      "jobDescription": "SIP",
+      "eligibility": "minimum 1000 rupees",
+      "applyLink": "vikas-personal-portfolio.com",
+      "additionalDetails": "",
+      "timestamp": "2025-01-18T10:02:12.809Z"
     }
   ],
   "GroupMessages": [

@@ -176,7 +176,7 @@ const MessageHRDSection = () => {
       <div className="message-input-container">
         <input
           type="text"
-          placeholder="message..."
+          placeholder="Message HRD"
           value={newConversation}
           onChange={(e) => setNewConversation(e.target.value)}
           className="message-input"

@@ -1,134 +1,132 @@
-.topFixedBar {
-  /* position: fixed; */
-  /* Fixes the topFixedbar to the top even while scrolling */
-  top: 0;
-  left: 0;
-  width: 100%; /* Makes the topFixedBar span the full width */
-  background-color: #d0c9c9; /* topFixedBar background color */
-  color: #4d64cd;
-  padding: 10px 20px;
-  margin-bottom: 60px;
-  display: flex;
-  justify-content: space-between; /* Adjusts items within the topFixedBar*/
-  align-items: center;
-  /* this z-index should be greater than any z-index value so,that topFixedBar will stay on top of all.*/
-  z-index: 1000; /* Ensures the topFixedBar stays on top of other content */
-
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for the topFixedBar */
-  box-sizing: border-box;
+/* Universal Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa; /* Light background */
 }
 
-/* Left Side: Profile Icon and Project Name */
+/* Navbar Styling */
+.topFixedBar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px; /* Spacious padding for better layout */
+  background-color: #007bff; /* Primary blue */
+  color: #ffffff; /* White text for contrast */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  border-radius: 6px;
+  z-index: 1000;
+  margin-bottom: 20px;
+}
+
+/* Left Section: Profile and Title */
 .topFixedBar-left {
   display: flex;
   align-items: center;
-  padding: 1%;
+  gap: 20px; /* Space between profile icon and project name */
 }
 
 .profile-icon {
   width: 40px;
   height: 40px;
-  border-radius: 50%; /* Make the icon round */
-  margin-right: 30px;
+  border-radius: 50%;
+  border: 2px solid #ffffff; /* White border */
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+  border-color: #ffc107; /* Yellow highlight on hover */
 }
 
 .project-name {
   margin: 0;
+  font-size: 1.8rem; /* Prominent font size */
+  font-weight: bold;
 }
 
-/* search bar at the center of the topFixedBar */
+/* Center Section: Search Bar */
 .topSearchBar {
   width: 40%;
-  padding: 1% 1%; /* Increased padding for better spacing */
-  font-size: 1.2rem; /* Using `rem` units for better accessibility */
+  padding: 10px 15px;
+  font-size: 1.1rem;
   border-radius: 25px;
-  border: 1px solid #ccc; /* Subtle border to mimic modern search bars */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  border: 1px solid #cccccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   outline: none;
-  transition: box-shadow 0.3s ease, border 0.3s ease; /* Smooth transition for interactions */
+  transition: box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .topSearchBar:focus {
-  border: 1px solid #007bff; /* Change border color on focus */
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Enhanced shadow effect on focus */
-}
-
-.topSearchBar:active {
-  outline: none; /* Remove outline on active state */
+  border: 1px solid #ffffff; /* White border for focus */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* Glow effect */
 }
 
 .topSearchBar::placeholder {
-  color: #888; /* Light grey color for placeholder text */
-  opacity: 0.8; /* Adjust opacity for a subtle placeholder text */
+  color: #7b7575; /* Subtle placeholder color */
+  opacity: 0.8;
 }
 
-/* Right Side: Buttons */
+/* Right Section: Buttons */
 .topFixedBar-right {
   display: flex;
   align-items: center;
+  gap: 20px; /* Space between buttons */
 }
 
 .topFixedBar-right button {
-  background-color: #4d64cd;
-  font-weight: bold;
-  color: white;
+  background-color: #007bff; /* Neutral dark background */
+  color: #ffffff;
   border: none;
-  padding: 20px 25px;
-  margin-left: 25px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .topFixedBar-right button:hover {
-  background-color: #7c8bca;
+  background-color: #1d2124; /* Aqua hover effect */
+  transform: scale(1.05); /* Slight zoom */
 }
 
 .topFixedBar-right button.active {
-  background-color: #0f1011; /* Highlight color */
-  color: white;
-  border: 1px solid #1d1e1f;
+  background-color: #1d2124; /* Neutral dark background for active button */
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for active state */
 }
-
-/* css code to highlight the 'jobs' button to grab student's attention*/
+.topSearchBar ::placeholder {
+  color: hsl(0, 88%, 3%); /* Subtle placeholder color */
+  opacity: 0.8;
+}
 .jobs-btn {
-  background-color: #1eb942 !important; /* Vibrant green color */
-  color: white;
-  font-size: 1rem;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5); /* Initial glow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-  outline: none;
+  background-color: #1d2124; 
+  color: #ffffff;
+  /* box-shadow: 0 0 10px rgba(192, 210, 196, 0.5);  */
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
 }
 
-/* Hover effect to increase the glow */
 .jobs-btn:hover {
-  box-shadow: 0 0 20px rgba(94, 215, 122, 0.7), 0 0 30px rgba(40, 167, 69, 0.4);
-  transform: scale(1.05); /* Slightly increases size on hover */
+  box-shadow: 0 0 20px rgba(175, 180, 177, 0.7), 0 0 30px rgba(94, 215, 122, 0.4); /* Enhanced hover effect */
+  transform: scale(1.05);
 }
 
-/* Animation for a pulsing glow effect */
-@keyframes pulseGlow {
-  0%,
-  100% {
-    box-shadow: 0 0 10px rgba(30, 205, 71, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(35, 192, 71, 0.8);
-  }
-}
-
-.jobs-btn:focus,
-.jobs-btn:active {
-  animation: pulseGlow 1.5s infinite; /* Pulsing glow animation on focus or active state */
-  outline: none;
-}
-
-/* css properties related to log-out button */
 .log-out-btn {
-  background-color: rgb(255, 5, 5) !important;
+  background-color: #fa051d; /* Vibrant red */
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.log-out-btn:hover {
+  background-color: #ffffff;
+  color: #fa051d; /* Red text on hover */
+  transform: scale(1.05);
 }
