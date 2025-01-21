@@ -18,14 +18,7 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -127,14 +120,7 @@
         "mail": "thrishugowda2003@gmail.com",
         "whatsapp": "https://wa.me/8310558268"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -201,14 +187,7 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -275,14 +254,7 @@
         "mail": "vv9077022@gmail.com",
         "whatsapp": "https://wa.me/9686814470"
       },
-      "skills": [
-        "C",
-        "Java",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "ReactJS"
-      ],
+      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -366,10 +338,7 @@
   "friendConversations": [
     {
       "id": "1",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS166"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS166"],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -425,10 +394,7 @@
     },
     {
       "id": "2",
-      "participants": [
-        "1SJ21CS165",
-        "1SJ21CS180"
-      ],
+      "participants": ["1SJ21CS165", "1SJ21CS180"],
       "messages": [
         {
           "sender": "1SJ21CS165",
@@ -444,10 +410,7 @@
     },
     {
       "id": "1733656081722",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS180"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS180"],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -468,10 +431,7 @@
     },
     {
       "id": "1734969900623",
-      "participants": [
-        "1SJ21CS154",
-        "1SJ21CS165"
-      ],
+      "participants": ["1SJ21CS154", "1SJ21CS165"],
       "messages": [
         {
           "sender": "1SJ21CS154",
