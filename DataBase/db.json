@@ -18,7 +18,14 @@
         "mail": "s60667843@gmail.com",
         "whatsapp": "https://wa.me/8197759383"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -130,7 +137,14 @@
         "mail": "thrishugowda2003@gmail.com",
         "whatsapp": "https://wa.me/8310558268"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -197,7 +211,14 @@
         "mail": "pashau293@gmail.com",
         "whatsapp": "https://wa.me/9742782575"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -264,7 +285,14 @@
         "mail": "vv9077022@gmail.com",
         "whatsapp": "https://wa.me/9686814470"
       },
-      "skills": ["C", "Java", "HTML5", "CSS3", "JavaScript", "ReactJS"],
+      "skills": [
+        "C",
+        "Java",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ReactJS"
+      ],
       "Projects": [
         {
           "title": "Recipe Search Application",
@@ -348,7 +376,10 @@
   "friendConversations": [
     {
       "id": "1",
-      "participants": ["1SJ21CS154", "1SJ21CS166"],
+      "participants": [
+        "1SJ21CS154",
+        "1SJ21CS166"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -404,7 +435,10 @@
     },
     {
       "id": "2",
-      "participants": ["1SJ21CS165", "1SJ21CS180"],
+      "participants": [
+        "1SJ21CS165",
+        "1SJ21CS180"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS165",
@@ -420,7 +454,10 @@
     },
     {
       "id": "1733656081722",
-      "participants": ["1SJ21CS154", "1SJ21CS180"],
+      "participants": [
+        "1SJ21CS154",
+        "1SJ21CS180"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -441,7 +478,10 @@
     },
     {
       "id": "1734969900623",
-      "participants": ["1SJ21CS154", "1SJ21CS165"],
+      "participants": [
+        "1SJ21CS154",
+        "1SJ21CS165"
+      ],
       "messages": [
         {
           "sender": "1SJ21CS154",
@@ -476,6 +516,24 @@
       "applyLink": "vikas-personal-portfolio.com",
       "additionalDetails": "",
       "timestamp": "2025-01-18T10:02:12.809Z"
+    },
+    {
+      "id": "e758",
+      "companyName": "q",
+      "jobDescription": "jkg",
+      "eligibility": "jk",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
+      "additionalDetails": "hjg huit uituiotuio tuio tuiot utuiotuio tuiot uiot",
+      "timestamp": "2025-01-27T12:20:18.579Z"
+    },
+    {
+      "id": "9c47",
+      "companyName": "q",
+      "jobDescription": "jkg",
+      "eligibility": "jk",
+      "applyLink": "https://forms.gle/Vpmp8TXrt5ou3vMR6https:",
+      "additionalDetails": "hjg huit uituiotuio tuio tuiot utuiotuio tuiot uiot",
+      "timestamp": "2025-01-27T12:20:47.459Z"
     }
   ],
   "GroupMessages": [
@@ -536,13 +594,6 @@
       "time": "02:34 PM"
     },
     {
-      "id": "caf2",
-      "sender": "HR",
-      "text": "hshdjjfret45t3y64545fhcyy",
-      "date": "12/12/2024",
-      "time": "02:35 PM"
-    },
-    {
       "id": "fb07",
       "sender": "HR",
       "text": "usman pasha",
@@ -562,6 +613,20 @@
       "text": "message sent at 23-12-2024 ",
       "date": "12/23/2024",
       "time": "04:34 PM"
+    },
+    {
+      "id": "ad25",
+      "sender": "HR",
+      "text": "Hi By usman",
+      "date": "27/1/2025",
+      "time": "02:18 pm"
+    },
+    {
+      "id": "8fa9",
+      "sender": "HR",
+      "text": "csdsdf",
+      "date": "28/1/2025",
+      "time": "09:52 pm"
     }
   ]
 }

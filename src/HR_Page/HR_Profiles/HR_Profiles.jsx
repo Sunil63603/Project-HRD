@@ -12,14 +12,35 @@ const Profiles = () => {
   const [showStudentProfile, setShowStudentProfile] = useState(false);
 
   // Fetching students from db.json using fetch
+  // useEffect(() => {
+  //   const fetchStudents = async () => {
+  //     try {
+  //       const response = await fetch("http://localhost:3000/registeredStuds");
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch");
+  //       }
+  //       const data = await response.json();
+  //       setStudents(data);
+  //     } catch (err) {
+  //       setError("Error fetching students data");
+  //       console.error("Error fetching students:", err);
+  //     }
+  //   };
+
+  //   fetchStudents();
+  // }, []);
+
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await fetch("http://localhost:3000/registeredStuds");
+        const response = await fetch(
+          "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch");
         }
-        const data = await response.json();
+        const jsonData = await response.json();
+        const data = jsonData.record.registeredStuds || []; // Access 'registeredStuds'
         setStudents(data);
       } catch (err) {
         setError("Error fetching students data");
@@ -37,12 +58,12 @@ const Profiles = () => {
 
   // console.log(selectedStudent);
 
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
   const handleClickToMessage = (student) => {
     setSelectedStudent(student);
     setShowStudentProfile(true);
-    console.log(selectedStudent);
+    // console.log(selectedStudent);
 
     // navigate("/IndividualProfile");
   };

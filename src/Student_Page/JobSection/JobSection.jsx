@@ -14,32 +14,58 @@ const JobSection = () => {
   // Fetch job postings from JSON server.
   const fetchJobs = async () => {
     // Fetch job postings from the server.
-    try {
-      //the response is the variable that will be having the object which is stored in the .json file...
-      const response = await fetch("http://localhost:3000/jobs", {
-        // GET method will fetch the data which is present in .json file
-        method: "GET",
-        // the data will be in .json form.
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+    // try {
+    //   //the response is the variable that will be having the object which is stored in the .json file...
+    //   const response = await fetch("http://localhost:3000/jobs", {
+    //     // GET method will fetch the data which is present in .json file
+    //     method: "GET",
+    //     // the data will be in .json form.
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   });
 
-      // the data which is fetched it will be in the form of the string..
-      // the data which is in the form of the string that is converted into the json form to get the data and then it can be used in the UI, bcz we cannot use the string easily.
+    //   // the data which is fetched it will be in the form of the string..
+    //   // the data which is in the form of the string that is converted into the json form to get the data and then it can be used in the UI, bcz we cannot use the string easily.
+    //   const data = await response.json();
+
+    //   // Sort by id in descending order
+    //   // tyo show the data in the form that the latest one  should be first then the older one....usus
+    //   const sortedJobs = data.reverse();
+
+    //   if (JSON.stringify(sortedJobs) !== JSON.stringify(jobs)) {
+    //     // set the Jobs.
+    //     // if new jobs are added then the new jobs are added in the state Jobs.
+    //     setJobs(sortedJobs);
+    //   }
+    // } catch (error) {
+    //   // Handle's the error.
+    //   console.error("Error fetching jobs:", error);
+    // }
+
+    try {
+      const response = await fetch(
+        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch jobs data");
+      }
+
       const data = await response.json();
 
+      // Extract jobs array from JSONBin response
+      const jobsData = data.record.jobs || [];
+
+      // console.log(data);
+
       // Sort by id in descending order
-      // tyo show the data in the form that the latest one  should be first then the older one....usus
-      const sortedJobs = data.reverse();
+      const sortedJobs = jobsData.reverse();
 
       if (JSON.stringify(sortedJobs) !== JSON.stringify(jobs)) {
-        // set the Jobs.
-        // if new jobs are added then the new jobs are added in the state Jobs.
         setJobs(sortedJobs);
       }
     } catch (error) {
-      // Handle's the error.
       console.error("Error fetching jobs:", error);
     }
   };

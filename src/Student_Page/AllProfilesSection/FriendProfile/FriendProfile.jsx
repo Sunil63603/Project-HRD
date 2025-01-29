@@ -17,14 +17,37 @@ function FriendProfile() {
   const friendUSN = queryParams.get("frndUSN");
 
   //call this function , inside useEffect.
-  const getStudentObj = () => {
-    return fetch(`http://localhost:3000/registeredStuds`)
-      .then((response) => response.json())
-      .then((students) => students.find((friend) => friend.USN === friendUSN))
-      .catch((error) => {
-        console.error(error);
-        return null;
-      });
+  // const getStudentObj = () => {
+  //   return fetch(`http://localhost:3000/registeredStuds`)
+  //     .then((response) => response.json())
+  //     .then((students) => students.find((friend) => friend.USN === friendUSN))
+  //     .catch((error) => {
+  //       console.error(error);
+  //       return null;
+  //     });
+  // };
+
+  const getStudentObj = async () => {
+    try {
+      const response = await fetch(
+        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch student data");
+      }
+
+      const data = await response.json();
+
+      // Extract students array from JSONBin response
+      const students = data.record.registeredStuds || [];
+
+      // Find the student by USN
+      return students.find((friend) => friend.USN === friendUSN) || null;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
   };
 
   useEffect(() => {

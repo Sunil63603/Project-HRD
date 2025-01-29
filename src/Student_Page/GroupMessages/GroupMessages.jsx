@@ -16,21 +16,40 @@ function GroupMessages() {
     }));
   };
 
-  const fetchNotifications = () => {
-    fetch("http://localhost:3000/GroupMessages")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setNotifications(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching notifications:", error);
-        clearInterval(intervalIdRef.current);
-      });
+  // const fetchNotifications = () => {
+  //   fetch("http://localhost:3000/GroupMessages")
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setNotifications(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching notifications:", error);
+  //       clearInterval(intervalIdRef.current);
+  //     });
+  // };
+
+  const fetchNotifications = async () => {
+    try {
+      const response = await fetch(
+        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+      );
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response.json();
+      const notifications = data.record.GroupMessages || [];
+      setNotifications(notifications);
+    } catch (error) {
+      console.error("Error fetching notifications:", error);
+      clearInterval(intervalIdRef.current);
+    }
   };
 
   useEffect(() => {

@@ -18,23 +18,80 @@ const CreateJobPosting = () => {
   // this is the state which will store the jobDescription which is updated in the form and the method to set the companyname.
   const [jobDescription, setJobDescription] = useState("");
   // the is the state which will store the eligibility criteria which is updated in the form and the method to set the companyname.
-  const [eligibility, setEligibility] = useState();
+  const [eligibility, setEligibility] = useState("");
   // this state will store the apply link which is updated in the form and the method to set the companyname.
   const [applyLink, setApplyLink] = useState("");
 
   const [additionalDetails, setadditionalDetails] = useState("");
 
   //  when the form is submited this method will be called.
+  // const handleSubmit = async () => {
+  //   // try catch block.
+  //   try {
+  //     if (companyName === "" || jobDescription === "" || applyLink === "") {
+  //       PopUpToast.warning("Fill the required fields");
+  //       return;
+  //     }
+
+  //     // Submit data to the JSON server at /jobs endpoint
+  //     // if the input is filled by the HR, the text is uploded to the respentive states and then we will store the one object (formData) and then stored in the DB/json Server file.
+  //     const formData = {
+  //       companyName,
+  //       jobDescription,
+  //       eligibility,
+  //       applyLink,
+  //       additionalDetails,
+  //       timestamp: new Date().toISOString(), // Adds a timestamp in ISO format
+  //     };
+  //     // this is the fetch method to make changes in the DB / .json file
+  //     // the fetch function makes the http request such as the POST, GET, PUT, DELETE
+  //     // the fetch function sends the request to the end point http://localhost:3000/jobs
+  //     // await is to pause the function untill the fetch request is completed (asyncronously).
+  //     await fetch("http://localhost:3000/jobs", {
+  //       // POST method is to store in the DB/in the jsonServer
+  //       // POST request is to send the new data to the server in this case jobs
+  //       method: "POST",
+  //       // additional detail send with the data helping server understand what kind of data is being sent to the server. and tell that the data is sent in the json format.
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       // the formData into the json String form.
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     //  this is to make the form empty after submisstion, so that for the good user experience.
+  //     setCompanyName("");
+  //     setJobDescription("");
+  //     setEligibility("");
+  //     setApplyLink("");
+  //     setadditionalDetails("");
+
+  //     // Toast PopUp or alert message
+  //     PopUpToast.success("Job posted successfully!");
+
+  //     //❌❌This logic is not working❌❌
+  //     handleJobAlert(); //this is used to notify student.
+  //     //this function call will set 'newJobAlert' to true in PopUpToastContext
+  //   } catch (error) {
+  //     // Handle any errors
+  //     // console.error("Error posting data:", error);
+
+  //     // Toast PopUp or alert message
+  //     PopUpToast.warning(
+  //       "There was an error submitting the form! Please check your server."
+  //     );
+  //   }
+  // };
+
+  // When the form is submitted this method will be called.
   const handleSubmit = async () => {
-    // try catch block.
     try {
       if (companyName === "" || jobDescription === "" || applyLink === "") {
         PopUpToast.warning("Fill the required fields");
         return;
       }
 
-      // Submit data to the JSON server at /jobs endpoint
-      // if the input is filled by the HR, the text is uploded to the respentive states and then we will store the one object (formData) and then stored in the DB/json Server file.
+      // Prepare the new job data
       const formData = {
         companyName,
         jobDescription,
@@ -43,40 +100,67 @@ const CreateJobPosting = () => {
         additionalDetails,
         timestamp: new Date().toISOString(), // Adds a timestamp in ISO format
       };
-      // this is the fetch method to make changes in the DB / .json file
-      // the fetch function makes the http request such as the POST, GET, PUT, DELETE
-      // the fetch function sends the request to the end point http://localhost:3000/jobs
-      // await is to pause the function untill the fetch request is completed (asyncronously).
-      await fetch("http://localhost:3000/jobs", {
-        // POST method is to store in the DB/in the jsonServer
-        // POST request is to send the new data to the server in this case jobs
-        method: "POST",
-        // additional detail send with the data helping server understand what kind of data is being sent to the server. and tell that the data is sent in the json format.
-        headers: {
-          "Content-Type": "application/json",
-        },
-        // the formData into the json String form.
-        body: JSON.stringify(formData),
-      });
 
-      //  this is to make the form empty after submisstion, so that for the good user experience.
+      // Fetch the existing data from JSONBin
+      const response = await fetch(
+        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      // Parse the existing data
+      const jsonData = await response.json();
+      const currentData = jsonData.record || {};
+
+      // Update the jobs array
+      const updatedJobs = currentData.jobs || []; // Access the existing jobs array
+      updatedJobs.push(formData); // Add the new job
+
+      // Create the updated data object
+      const updatedData = {
+        ...currentData, // Keep other properties intact
+        jobs: updatedJobs, // Update only the jobs array
+      };
+
+      // Update JSONBin with the updated data
+      const updateResponse = await fetch(
+        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedData), // Send the updated data
+        }
+      );
+
+      if (!updateResponse.ok) {
+        throw new Error(`Error updating data: ${updateResponse.status}`);
+      }
+
+      // Clear the form fields after successful submission
       setCompanyName("");
       setJobDescription("");
-      setEligibility();
+      setEligibility("");
       setApplyLink("");
       setadditionalDetails("");
 
-      // Toast PopUp or alert message
+      // Show a success toast message
       PopUpToast.success("Job posted successfully!");
 
-      //❌❌This logic is not working❌❌
-      handleJobAlert(); //this is used to notify student.
-      //this function call will set 'newJobAlert' to true in PopUpToastContext
+      // Notify students
+      handleJobAlert();
     } catch (error) {
-      // Handle any errors
-      // console.error("Error posting data:", error);
-
-      // Toast PopUp or alert message
+      // Handle errors
+      console.error("Error posting data:", error);
       PopUpToast.warning(
         "There was an error submitting the form! Please check your server."
       );
@@ -87,8 +171,8 @@ const CreateJobPosting = () => {
     <form
       className="job-posting-form"
       onKeyDown={(e) => {
-        // e.preventDefault();
         if (e.key === "Enter") {
+          e.preventDefault();
           handleSubmit();
         }
       }}
@@ -158,6 +242,7 @@ const CreateJobPosting = () => {
       <button
         className="submit-button"
         onClick={(e) => {
+          e.preventDefault();
           handleSubmit();
         }}
       >

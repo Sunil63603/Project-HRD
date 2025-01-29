@@ -33,11 +33,18 @@ function LoginForm() {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/${role}`);
+      // Replace with the JSONBin API endpoint and your API key
+      const response = await fetch(
+        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest`
+      );
+
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      const validAccounts = await response.json();
+
+      const data = await response.json();
+      const validAccounts = data.record[role]; // Access the role-specific accounts
+
       const account = validAccounts.find(
         (validAccount) =>
           validAccount.email === email && validAccount.password === password
@@ -48,7 +55,7 @@ function LoginForm() {
           navigate(`/hr/create-job`);
           PopUpToast.success("HR Login successful");
         } else {
-          navigate(`/student/jobs`);
+          navigate(`/student/groupMessages`);
           PopUpToast.success("Student Login successful");
         }
       } else {
@@ -88,7 +95,9 @@ function LoginForm() {
               type={isPasswordVisible ? "text" : "password"}
               // type="input"
               required
-              className={`login-input ${!isValidAccount ? "invalid-input" : ""}`}
+              className={`login-input ${
+                !isValidAccount ? "invalid-input" : ""
+              }`}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               style={{ paddingRight: "40px" }}

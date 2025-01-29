@@ -13,14 +13,34 @@ const ProfileSection = () => {
   const studentUSN = "1SJ21CS154";
 
   //call this function , inside useEffect.
-  const getStudentObj = () => {
-    return fetch(`http://localhost:3000/registeredStuds`)
-      .then((response) => response.json())
-      .then((students) => students.find((stud) => stud.USN === studentUSN))
-      .catch((error) => {
-        console.error(error);
-        return null;
-      });
+  // const getStudentObj = () => {
+  //   return fetch(`http://localhost:3000/registeredStuds`)
+  //     .then((response) => response.json())
+  //     .then((students) => students.find((stud) => stud.USN === studentUSN))
+  //     .catch((error) => {
+  //       console.error(error);
+  //       return null;
+  //     });
+  // };
+
+  const getStudentObj = async () => {
+    try {
+      const response = await fetch(
+        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch student data");
+      }
+
+      const data = await response.json();
+      const students = data.record.registeredStuds || [];
+
+      return students.find((stud) => stud.USN === studentUSN) || null;
+    } catch (error) {
+      console.error("Error fetching student data:", error);
+      return null;
+    }
   };
 
   useEffect(() => {

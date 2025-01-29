@@ -10,7 +10,13 @@ import { SiGmail } from "react-icons/si";
 import { useGlobalContext } from "../../context/GlobalContext";
 // import { FaArrowUp } from "react-icons/fa";
 // import { FiArrowUp } from "react-icons/fi";
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>;
 
 const MessageHRDSection = () => {
   const { pollingInterval } = useGlobalContext();
@@ -24,21 +30,44 @@ const MessageHRDSection = () => {
   //here write logic to find index of student(1SJ21CS151) inside registeredStuds[].
   //then use that index to fetch conversations of current student
   const getConversationsByUSN = async (studentUSN) => {
+    // try {
+    //   // Fetch the registeredStuds array from the mock API
+    //   const response = await fetch("http://localhost:3000/registeredStuds");
+    //   const students = await response.json();
+
+    //   // Find the student by USN
+    //   const student = students.find((stud) => stud.USN === studentUSN);
+
+    //   // If the student exists, return their conversations
+    //   if (student) {
+    //     return student.conversationsWithHR;
+    //   } else {
+    //     console.error("Student not found with USN:", studentUSN);
+    //     return [];
+    //   }
+    // } catch (error) {
+    //   console.error("Error fetching conversations:", error);
+    //   return [];
+    // }
+
     try {
-      // Fetch the registeredStuds array from the mock API
-      const response = await fetch("http://localhost:3000/registeredStuds");
-      const students = await response.json();
+      // Fetch the registered students from JSONBin
+      const response = await fetch(
+        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
+
+      const data = await response.json();
+      const students = data.record.registeredStuds || []; // Extract students array
 
       // Find the student by USN
       const student = students.find((stud) => stud.USN === studentUSN);
 
       // If the student exists, return their conversations
-      if (student) {
-        return student.conversationsWithHR;
-      } else {
-        console.error("Student not found with USN:", studentUSN);
-        return [];
-      }
+      return student ? student.conversationsWithHR : [];
     } catch (error) {
       console.error("Error fetching conversations:", error);
       return [];
@@ -91,39 +120,86 @@ const MessageHRDSection = () => {
     studentUSN,
     newConversationObject
   ) => {
+    // try {
+    //   // Fetch the entire registeredStuds array
+    //   const response = await fetch("http://localhost:3000/registeredStuds");
+    //   const students = await response.json();
+
+    //   // Find the student by USN
+    //   const student = students.find((student) => student.USN === studentUSN);
+
+    //   if (!student) {
+    //     console.error("Student not found");
+    //     return;
+    //   }
+
+    //   //update the conversationswithHR array for specific student
+    //   const updatedStudent = {
+    //     ...student,
+    //     conversationsWithHR: [
+    //       ...student.conversationsWithHR,
+    //       newConversationObject,
+    //     ],
+    //   };
+
+    //   // Update the entire registeredStuds array in db.json
+    //   await fetch(`http://localhost:3000/registeredStuds/${student.id}`, {
+    //     method: "PUT", // Replace the entire array
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(updatedStudent),
+    //   });
+
+    //   // Success Toast Notificaion
+    //   PopUpToast.success("Message Sent Successsully!");
+    //   console.log("Messages updated successfully.");
+    // } catch (error) {
+    //   console.error("Error updating messages:", error);
+    // }
+
     try {
-      // Fetch the entire registeredStuds array
-      const response = await fetch("http://localhost:3000/registeredStuds");
-      const students = await response.json();
+      // Fetch the entire JSONBin object
+      const response = await fetch(
+        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
+
+      const data = await response.json();
+      const registeredStuds = data.record.registeredStuds || [];
 
       // Find the student by USN
-      const student = students.find((student) => student.USN === studentUSN);
+      const studentIndex = registeredStuds.findIndex(
+        (student) => student.USN === studentUSN
+      );
 
-      if (!student) {
+      if (studentIndex === -1) {
         console.error("Student not found");
         return;
       }
 
-      //update the conversationswithHR array for specific student
-      const updatedStudent = {
-        ...student,
-        conversationsWithHR: [
-          ...student.conversationsWithHR,
-          newConversationObject,
-        ],
-      };
+      // Update only the conversationsWithHR array of the specific student
+      registeredStuds[studentIndex].conversationsWithHR.push(
+        newConversationObject
+      );
 
-      // Update the entire registeredStuds array in db.json
-      await fetch(`http://localhost:3000/registeredStuds/${student.id}`, {
-        method: "PUT", // Replace the entire array
+      // Update JSONBin with only the modified data
+      await fetch("https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9", {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(updatedStudent),
+        body: JSON.stringify({
+          ...data.record, // Spread the rest of the properties
+          registeredStuds, // Update only the registeredStuds array
+        }),
       });
 
-      // Success Toast Notificaion
-      PopUpToast.success("Message Sent Successsully!");
+      // Success Toast Notification
+      PopUpToast.success("Message Sent Successfully!");
       console.log("Messages updated successfully.");
     } catch (error) {
       console.error("Error updating messages:", error);
@@ -153,10 +229,9 @@ const MessageHRDSection = () => {
           rel="noopener noreferrer"
         >
           <SiGmail className="icon mail-icon" />
-
         </a>
       </div>
-    <hr />
+      <hr />
       <div className="messages-container">
         {conversations.map((msg, index) => (
           <div
@@ -181,12 +256,13 @@ const MessageHRDSection = () => {
           onChange={(e) => setNewConversation(e.target.value)}
           className="message-input"
         />
-       <button onClick={handleSendMessage} className="send-button">
-  <div className="arrow-icon">
-    <i className="fa-solid fa-arrow-up icons"id="arrow">^</i>
-  </div>
-</button>
-
+        <button onClick={handleSendMessage} className="send-button">
+          <div className="arrow-icon">
+            <i className="fa-solid fa-arrow-up icons" id="arrow">
+              ^
+            </i>
+          </div>
+        </button>
       </div>
     </div>
   );

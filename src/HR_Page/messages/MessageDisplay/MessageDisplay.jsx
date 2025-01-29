@@ -10,15 +10,38 @@ const MessageDisplay = ({ messages, fetchMessages }) => {
     setActiveDropdown((prev) => (prev === index ? null : index)); // Toggle dropdown for the selected message
   };
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (idtext) => {
     // console.log("Delete clicked for message:", id);
 
     // Implement delete functionality
+    // try {
+    //   const response = await fetch(
+    //     `http://localhost:3000/GroupMessages/${id}`,
+    //     {
+    //       method: "DELETE",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //     }
+    //   );
+
+    //   if (!response.ok) {
+    //     throw new Error(`HTTP error! status: ${response.status}`);
+    //   }
+    //   PopUpToast.success("Message Successfully Deleted!");
+    //   // console.log("DELETED");
+    //   fetchMessages(); // Fetch updated messages after deletion
+    // } catch (error) {
+    //   console.error();
+    //   PopUpToast.error(error);
+    // }
+
     try {
+      // Step 1: Fetch the current GroupMessages object from JSONBin
       const response = await fetch(
-        `http://localhost:3000/GroupMessages/${id}`,
+        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest`,
         {
-          method: "DELETE",
+          method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
@@ -26,14 +49,44 @@ const MessageDisplay = ({ messages, fetchMessages }) => {
       );
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`Error fetching data: ${response.status}`);
       }
+
+      const data = await response.json(); // Get the full data from JSONBin
+      const currentMessages = data.record.GroupMessages || []; // Extract the messages array
+
+      // Step 2: Remove the message with the specified ID
+      const updatedMessages = currentMessages.filter(
+        (message) => message.text !== idtext
+      );
+
+      // Step 3: Create an updated GroupMessages object
+      const updatedData = {
+        ...data.record, // Keep other properties intact
+        GroupMessages: updatedMessages, // Update only the messages array
+      };
+
+      // Step 4: Update JSONBin with the modified GroupMessages object
+      const updateResponse = await fetch(
+        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedData),
+        }
+      );
+
+      if (!updateResponse.ok) {
+        throw new Error(`Error updating data: ${updateResponse.status}`);
+      }
+
       PopUpToast.success("Message Successfully Deleted!");
-      // console.log("DELETED");
       fetchMessages(); // Fetch updated messages after deletion
     } catch (error) {
-      console.error();
-      PopUpToast.error(error);
+      console.error("Error deleting message:", error);
+      PopUpToast.error("Failed to delete the message. Please try again!");
     }
   };
 
@@ -58,7 +111,7 @@ const MessageDisplay = ({ messages, fetchMessages }) => {
             <div className="dropdown-menu">
               <button
                 className="dropdown-item"
-                onClick={() => handleDelete(message.id)}
+                onClick={() => handleDelete(message.text)}
               >
                 Delete
               </button>
