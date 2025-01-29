@@ -14,13 +14,33 @@ const AllProfileSection = () => {
   // Fetching students from db.json using fetch
   useEffect(() => {
     const fetchStudents = async () => {
+      // try {
+      //   const response = await fetch("http://localhost:3000/registeredStuds");
+      //   if (!response.ok) {
+      //     throw new Error("Failed to fetch");
+      //   }
+      //   const data = await response.json();
+      //   setStudents(data);
+      // } catch (err) {
+      //   setError("Error fetching students data");
+      //   console.error("Error fetching students:", err);
+      // }
+
       try {
-        const response = await fetch("http://localhost:3000/registeredStuds");
+        const response = await fetch(
+          "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+        );
+
         if (!response.ok) {
-          throw new Error("Failed to fetch");
+          throw new Error("Failed to fetch students data");
         }
+
         const data = await response.json();
-        setStudents(data);
+
+        // Extract students array from JSONBin response
+        const studentsData = data.record.registeredStuds || [];
+
+        setStudents(studentsData);
       } catch (err) {
         setError("Error fetching students data");
         console.error("Error fetching students:", err);
@@ -44,7 +64,7 @@ const AllProfileSection = () => {
 
   return (
     <div className="all-profiles">
-      <h2 className="component-name" >All Profiles</h2>
+      <h2 className="component-name">All Profiles</h2>
 
       {/* Displaying the students */}
       <div className="student-list">

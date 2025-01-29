@@ -35,16 +35,48 @@ function MessageStudent() {
   }, [studentUSN]); //empty dependency[] ensures that this runs only on initial render,but setInterval() is resposible for calling fetch() again and again
 
   const fetchConversationsWithStudent = async () => {
+    // try {
+    //   const response = await fetch("http://localhost:3000/registeredStuds");
+    //   if (!response.ok) {
+    //     throw new Error("Failed to fetch registered students array");
+    //   }
+
+    //   const data = await response.json(); //students[]
+    //   const student = data.find((student) => student.USN === studentUSN);
+
+    //   if (student) {
+    //     setConversations(student.conversationsWithHR);
+    //   }
+    // } catch (error) {
+    //   console.error("Error fetching student messages:", error);
+    // }
+
     try {
-      const response = await fetch("http://localhost:3000/registeredStuds");
+      // Fetch the JSONBin data
+      const response = await fetch(
+        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
       if (!response.ok) {
         throw new Error("Failed to fetch registered students array");
       }
 
-      const data = await response.json(); //students[]
-      const student = data.find((student) => student.USN === studentUSN);
+      const data = await response.json(); // Entire JSONBin record
+      const registeredStudents = data.record.registeredStuds || []; // Extract the `registeredStuds` array
+
+      // Find the student by their USN
+      const student = registeredStudents.find(
+        (student) => student.USN === studentUSN
+      );
 
       if (student) {
+        // If student is found, update conversations state
         setConversations(student.conversationsWithHR);
       }
     } catch (error) {
@@ -80,40 +112,60 @@ function MessageStudent() {
     newConversationObject
   ) => {
     try {
-      //fetch the entire registeredStuds[]
-      const response = await fetch("http://localhost:3000/registeredStuds");
-      const students = await response.json();
+      // Fetch the entire JSONBin data
+      const response = await fetch(
+        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-      //find the student by USN
-      const student = students.find((student) => student.USN === studentUSN);
+      if (!response.ok) {
+        throw new Error("Failed to fetch registered students array");
+      }
+
+      const data = await response.json(); // Get the entire JSONBin record
+      const registeredStudents = data.record.registeredStuds || []; // Extract `registeredStuds` array
+
+      // Find the student by USN
+      const student = registeredStudents.find(
+        (student) => student.USN === studentUSN
+      );
 
       if (!student) {
         console.error("Student not found");
         return;
       }
 
-      //update the conversationsWithHR array for specific student
-      const updatedStudent = {
-        ...student,
-        conversationsWithHR: [
-          ...student.conversationsWithHR,
-          newConversationObject,
-        ],
-      };
+      // Add the new conversation directly to the student's `conversationsWithHR` array
+      student.conversationsWithHR.push(newConversationObject);
 
-      //update the entire registeredStuds array in db.json
-      await fetch(`http://localhost:3000/registeredStuds/${student.id}`, {
-        method: "PUT", //replace the entire array
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedStudent),
-      });
+      // Update only the `registeredStuds` property in the JSONBin
+      const updateResponse = await fetch(
+        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...data.record, // Preserve other properties in the JSONBin
+          }),
+        }
+      );
 
-      //success toast notification
+      if (!updateResponse.ok) {
+        throw new Error("Failed to update the student's conversation");
+      }
+
+      // Success toast notification
       PopUpToast.success("Message Sent Successfully!");
     } catch (error) {
       console.error("Error updating messages:", error);
+      PopUpToast.error("Failed to update the conversation!");
     }
   };
 

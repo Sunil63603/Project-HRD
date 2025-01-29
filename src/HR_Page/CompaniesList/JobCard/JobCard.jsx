@@ -11,7 +11,7 @@ const JobCard = ({ job, onDelete }) => {
   };
 
   return (
-    <div className="job-card">
+    <div className="job-card" key={job.companyName}>
       <h4>{job.companyName}</h4>
       <p>
         <strong>Job Title : {job.jobDescription}</strong>
@@ -34,7 +34,10 @@ const JobCard = ({ job, onDelete }) => {
         )}
       </p>
 
-      <button className="delete-button" onClick={() => onDelete(job.id)}>
+      <button
+        className="delete-button"
+        onClick={() => onDelete(job.companyName)}
+      >
         Delete
       </button>
     </div>

@@ -27,7 +27,7 @@ const MessageFriend = () => {
   //these two variables👇are used for testing purposes only . Later these two USNs will come from URL.
   const studentUSN = "1SJ21CS154"; //USN of current student profile.
   const friendUSN = queryParams.get("frndUSN"); // USN of friend . Conversations of current student and friend with these USNs should be rendered on screen.
-  console.log(friendUSN);
+  // console.log(friendUSN);
 
   //'conversations' store previous conversations , 'newConversation' will store new message entered by current student before pushing it to db.json
   const [conversations, setConversations] = useState([]); //array of previous messages
@@ -45,21 +45,115 @@ const MessageFriend = () => {
     };
   }, []); //dependency array ensures that this function is called only on initial render , 'but' setInterval will ensure that for every 'x' number of seconds , conversations are being fetched
 
+  // const fetchConversationsWithFriend = async () => {
+  //   try {
+  //     const response = await fetch("http://localhost:3000/friendConversations"); //conversations are fetched from this endpoint.
+  //     if (!response.ok) {
+  //       throw new Error("Failed to fetch messages");
+  //     }
+
+  //     const data = await response.json();
+  //     const filteredConversations = data.filter(
+  //       (conversation) =>
+  //         conversation.participants.includes(studentUSN) &&
+  //         conversation.participants.includes(friendUSN)
+  //     );
+
+  //     setConversations(filteredConversations[0].messages);
+  //   } catch (error) {
+  //     console.error("Error fetching messages:", error);
+  //   }
+  // };
+
+  // const handleSendMessage = async () => {
+  //   try {
+  //     if (newConversation.trim() === "") {
+  //       PopUpToast.warning("Please enter a valid message!");
+  //       return;
+  //     }
+
+  //     const response = await fetch("http://localhost:3000/friendConversations");
+  //     const friendConversations = await response.json();
+
+  //     // Step 2: Find the conversation between the two participants
+  //     const existingConversation = friendConversations.find(
+  //       (conversation) =>
+  //         conversation.participants.includes(studentUSN) &&
+  //         conversation.participants.includes(friendUSN)
+  //     );
+
+  //     const newMessage = {
+  //       sender: studentUSN,
+  //       content: newConversation,
+  //       timestamp: new Date().toISOString(),
+  //     };
+
+  //     if (existingConversation) {
+  //       // Step 3: If conversation exists, update the messages array
+  //       const updatedConversation = {
+  //         ...existingConversation,
+  //         messages: [...existingConversation.messages, newMessage], // Append new message
+  //       };
+
+  //       // Step 4: Update the specific conversation in the database
+  //       await fetch(
+  //         `http://localhost:3000/friendConversations/${existingConversation.id}`,
+  //         {
+  //           method: "PUT",
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //           body: JSON.stringify(updatedConversation),
+  //         }
+  //       );
+
+  //       console.log("Message added to existing conversation.");
+  //       PopUpToast.success("Message sent successfully");
+  //     } else {
+  //       // Step 5: If conversation does not exist, create a new one
+  //       const newConversation = {
+  //         id: Date.now(), // Generate a unique ID
+  //         participants: [studentUSN, friendUSN],
+  //         messages: [newMessage], // Initialize with the new message
+  //       };
+
+  //       // Step 6: Add the new conversation to the database
+  //       await fetch("http://localhost:3000/friendConversations", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(newConversation),
+  //       });
+
+  //       console.log("New conversation created.");
+  //     }
+  //     setNewConversation("");
+  //   } catch (error) {
+  //     console.error("Error sending message:", error);
+  //   }
+  // };
+
   const fetchConversationsWithFriend = async () => {
     try {
-      const response = await fetch("http://localhost:3000/friendConversations"); //conversations are fetched from this endpoint.
+      const response = await fetch(
+        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch messages");
       }
 
       const data = await response.json();
-      const filteredConversations = data.filter(
+      const friendConversations = data.record.friendConversations || [];
+
+      // Filter the conversation between student and friend
+      const filteredConversations = friendConversations.filter(
         (conversation) =>
           conversation.participants.includes(studentUSN) &&
           conversation.participants.includes(friendUSN)
       );
 
-      setConversations(filteredConversations[0].messages);
+      setConversations(filteredConversations[0]?.messages || []);
     } catch (error) {
       console.error("Error fetching messages:", error);
     }
@@ -72,10 +166,13 @@ const MessageFriend = () => {
         return;
       }
 
-      const response = await fetch("http://localhost:3000/friendConversations");
-      const friendConversations = await response.json();
+      const response = await fetch(
+        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+      );
+      const data = await response.json();
+      const friendConversations = data.record.friendConversations || [];
 
-      // Step 2: Find the conversation between the two participants
+      // Find the conversation between the two participants
       const existingConversation = friendConversations.find(
         (conversation) =>
           conversation.participants.includes(studentUSN) &&
@@ -89,46 +186,51 @@ const MessageFriend = () => {
       };
 
       if (existingConversation) {
-        // Step 3: If conversation exists, update the messages array
-        const updatedConversation = {
-          ...existingConversation,
-          messages: [...existingConversation.messages, newMessage], // Append new message
-        };
+        // If conversation exists, update the messages array
+        existingConversation.messages = [
+          ...existingConversation.messages,
+          newMessage,
+        ];
 
-        // Step 4: Update the specific conversation in the database
-        await fetch(
-          `http://localhost:3000/friendConversations/${existingConversation.id}`,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(updatedConversation),
-          }
-        );
+        // Update the specific conversation in the database without affecting other properties
+        await fetch(`https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...data.record,
+            friendConversations: friendConversations, // Only update friendConversations
+          }),
+        });
 
         console.log("Message added to existing conversation.");
         PopUpToast.success("Message sent successfully");
       } else {
-        // Step 5: If conversation does not exist, create a new one
-        const newConversation = {
+        // If conversation does not exist, create a new one
+        const newConversationObj = {
           id: Date.now(), // Generate a unique ID
           participants: [studentUSN, friendUSN],
           messages: [newMessage], // Initialize with the new message
         };
 
-        // Step 6: Add the new conversation to the database
-        await fetch("http://localhost:3000/friendConversations", {
-          method: "POST",
+        // Add the new conversation to the database
+        await fetch("https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9", {
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(newConversation),
+          body: JSON.stringify({
+            ...data.record,
+            friendConversations: [...friendConversations, newConversationObj], // Add new conversation
+          }),
         });
 
         console.log("New conversation created.");
       }
-      setNewConversation("");
+
+      setNewConversation(""); // Reset the input field
+      fetchConversationsWithFriend();
     } catch (error) {
       console.error("Error sending message:", error);
     }
