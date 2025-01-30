@@ -12,6 +12,12 @@ const Navbar = () => {
     setActiveLink(location.pathName);
   }, [location.pathName]);
 
+  const handleLogout = () => {
+    // localStorage.removeItem("authToken"); // Remove auth token
+    // sessionStorage.removeItem("authToken"); // If using session storage
+    window.location.href = "/"; // Redirect to login page
+  };
+
   return (
     <nav className="navbar">
       <ul className="navbar-list">
@@ -67,6 +73,9 @@ const Navbar = () => {
             Profiles
           </Link>
         </li>
+        <button className="logout-btn" onClick={handleLogout}>
+          Log out
+        </button>
       </ul>
     </nav>
   );
