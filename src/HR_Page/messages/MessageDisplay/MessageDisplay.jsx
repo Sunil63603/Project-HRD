@@ -1,16 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MessageDisplay.css";
 
 import PopUpToast from "../../../Global Components/PopUpToast/PopUpToast";
+import { useGlobalContext } from "../../../context/GlobalContext";
 
-const MessageDisplay = ({ messages, fetchMessages }) => {
+const MessageDisplay = () => {
+  const [messages, setMessages] = useState([]);
+  const { pollingInterval } = useGlobalContext();
+
   const [activeDropdown, setActiveDropdown] = useState(null); // Track which message's dropdown is active
 
   const toggleDropdown = (index) => {
     setActiveDropdown((prev) => (prev === index ? null : index)); // Toggle dropdown for the selected message
   };
 
-  const handleDelete = async (idtext) => {
+  const fetchMessages = async () => {
+    try {
+      const response = await fetch(
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/GroupMessages.json`,
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      let groupMessagesArray = [];
+      if (data !== null) {
+        //if there are no jobs , then data is empty.
+        //convert the fetched data into array of jobs
+        groupMessagesArray = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key],
+        }));
+      }
+
+      setMessages(groupMessagesArray);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    console.log(id);
     // console.log("Delete clicked for message:", id);
 
     // Implement delete functionality
@@ -37,58 +74,36 @@ const MessageDisplay = ({ messages, fetchMessages }) => {
     // }
 
     try {
-      // Step 1: Fetch the current GroupMessages object from JSONBin
       const response = await fetch(
-        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest`,
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/GroupMessages/${id}.json`,
         {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
         }
       );
 
       if (!response.ok) {
-        throw new Error(`Error fetching data: ${response.status}`);
-      }
-
-      const data = await response.json(); // Get the full data from JSONBin
-      const currentMessages = data.record.GroupMessages || []; // Extract the messages array
-
-      // Step 2: Remove the message with the specified ID
-      const updatedMessages = currentMessages.filter(
-        (message) => message.text !== idtext
-      );
-
-      // Step 3: Create an updated GroupMessages object
-      const updatedData = {
-        ...data.record, // Keep other properties intact
-        GroupMessages: updatedMessages, // Update only the messages array
-      };
-
-      // Step 4: Update JSONBin with the modified GroupMessages object
-      const updateResponse = await fetch(
-        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedData),
-        }
-      );
-
-      if (!updateResponse.ok) {
-        throw new Error(`Error updating data: ${updateResponse.status}`);
+        throw new Error(`HTTP error! status: ${response})`);
       }
 
       PopUpToast.success("Message Successfully Deleted!");
-      fetchMessages(); // Fetch updated messages after deletion
+      fetchMessages();
+      //updated messages will be fetched because of polling interval so , dont worry .
     } catch (error) {
       console.error("Error deleting message:", error);
       PopUpToast.error("Failed to delete the message. Please try again!");
     }
   };
+
+  useEffect(() => {
+    fetchMessages(); //initial fetch
+
+    const intervalId = setInterval(() => {
+      fetchMessages();
+    }, pollingInterval);
+
+    return () => clearInterval(intervalId); //clear interval on component unmount.
+  }, []); //fetch Messages as soon as this component mounts and keep fetching it for latest messages.
 
   return (
     <div className="message-display">
@@ -111,7 +126,7 @@ const MessageDisplay = ({ messages, fetchMessages }) => {
             <div className="dropdown-menu">
               <button
                 className="dropdown-item"
-                onClick={() => handleDelete(message.text)}
+                onClick={() => handleDelete(message.id)}
               >
                 Delete
               </button>

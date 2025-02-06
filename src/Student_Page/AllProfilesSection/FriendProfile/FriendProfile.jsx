@@ -30,20 +30,16 @@ function FriendProfile() {
   const getStudentObj = async () => {
     try {
       const response = await fetch(
-        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy=%22USN%22&equalTo=%22${friendUSN}%22`
       );
 
       if (!response.ok) {
-        throw new Error("Failed to fetch student data");
+        throw new Error("Failed to fetch friend data");
       }
 
-      const data = await response.json();
+      const studentData = await response.json();
 
-      // Extract students array from JSONBin response
-      const students = data.record.registeredStuds || [];
-
-      // Find the student by USN
-      return students.find((friend) => friend.USN === friendUSN) || null;
+      return Object.values(studentData)[0];
     } catch (error) {
       console.error(error);
       return null;

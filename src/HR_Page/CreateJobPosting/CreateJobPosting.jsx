@@ -101,49 +101,21 @@ const CreateJobPosting = () => {
         timestamp: new Date().toISOString(), // Adds a timestamp in ISO format
       };
 
-      // Fetch the existing data from JSONBin
       const response = await fetch(
-        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest",
+        "https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/jobs.json",
         {
-          method: "GET",
+          method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
+          body: JSON.stringify(formData),
         }
       );
+
+      const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      // Parse the existing data
-      const jsonData = await response.json();
-      const currentData = jsonData.record || {};
-
-      // Update the jobs array
-      const updatedJobs = currentData.jobs || []; // Access the existing jobs array
-      updatedJobs.push(formData); // Add the new job
-
-      // Create the updated data object
-      const updatedData = {
-        ...currentData, // Keep other properties intact
-        jobs: updatedJobs, // Update only the jobs array
-      };
-
-      // Update JSONBin with the updated data
-      const updateResponse = await fetch(
-        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9",
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedData), // Send the updated data
-        }
-      );
-
-      if (!updateResponse.ok) {
-        throw new Error(`Error updating data: ${updateResponse.status}`);
+        throw new Error("Failed to add new job");
       }
 
       // Clear the form fields after successful submission

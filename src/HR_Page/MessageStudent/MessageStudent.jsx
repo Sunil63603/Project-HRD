@@ -54,12 +54,9 @@ function MessageStudent() {
     try {
       // Fetch the JSONBin data
       const response = await fetch(
-        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest`,
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json`,
         {
           method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
         }
       );
 
@@ -68,7 +65,7 @@ function MessageStudent() {
       }
 
       const data = await response.json(); // Entire JSONBin record
-      const registeredStudents = data.record.registeredStuds || []; // Extract the `registeredStuds` array
+      const registeredStudents = data || []; // Extract the `registeredStuds` array
 
       // Find the student by their USN
       const student = registeredStudents.find(
@@ -103,65 +100,58 @@ function MessageStudent() {
     ]);
     setNewConversation("");
 
-    updateConversationsByUSN(studentUSN, newConversationObject);
+    updateConversationsByUSN(studentUSN, newConversationObject); //calling this function to update the google firebase.
   };
 
-  //logic to update db.json with new message entered by student
+  //logic to update google firebase with new message entered by student
   const updateConversationsByUSN = async (
     studentUSN,
     newConversationObject
   ) => {
     try {
-      // Fetch the entire JSONBin data
+      // Fetch all registered students
       const response = await fetch(
-        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest`,
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy=%22USN%22&equalTo=%22${studentUSN}%22`,
         {
           method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
         }
       );
 
       if (!response.ok) {
-        throw new Error("Failed to fetch registered students array");
+        throw new Error("Failed to fetch student data");
       }
 
-      const data = await response.json(); // Get the entire JSONBin record
-      const registeredStudents = data.record.registeredStuds || []; // Extract `registeredStuds` array
+      const data = await response.json();
 
-      // Find the student by USN
-      const student = registeredStudents.find(
-        (student) => student.USN === studentUSN
-      );
-
-      if (!student) {
+      if (Object.keys(data).length === 0) {
         console.error("Student not found");
         return;
       }
 
-      // Add the new conversation directly to the student's `conversationsWithHR` array
-      student.conversationsWithHR.push(newConversationObject);
+      // Extract student ID (unique key in Firebase)
+      const studentId = Object.keys(data)[0];
+      const studentData = data[studentId];
 
-      // Update only the `registeredStuds` property in the JSONBin
+      // Ensure conversationsWithHR exists as an array
+      const updatedConversations = studentData.conversationsWithHR || [];
+      updatedConversations.push(newConversationObject);
+
+      // Update only the conversationsWithHR field
       const updateResponse = await fetch(
-        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9`,
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds/${studentId}/conversationsWithHR.json`,
         {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...data.record, // Preserve other properties in the JSONBin
-          }),
+          method: "PUT", // Overwrites only the conversationsWithHR field, keeping other data intact
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(updatedConversations),
         }
       );
 
       if (!updateResponse.ok) {
-        throw new Error("Failed to update the student's conversation");
+        throw new Error("Failed to update conversation");
       }
 
-      // Success toast notification
+      console.log("Conversation updated successfully!");
       PopUpToast.success("Message Sent Successfully!");
     } catch (error) {
       console.error("Error updating messages:", error);

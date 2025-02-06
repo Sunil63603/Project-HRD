@@ -5,7 +5,7 @@ const GlobalContext = createContext();
 
 //create a provider component
 export const GlobalProvider = ({ children }) => {
-  const pollingInterval = 10000000000000; //store polling interval value and make it accessible to entire project.
+  const pollingInterval = 1000; //store polling interval value and make it accessible to entire project.
 
   return (
     <GlobalContext.Provider value={{ pollingInterval }}>

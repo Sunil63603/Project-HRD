@@ -53,7 +53,7 @@ const MessageHRDSection = () => {
     try {
       // Fetch the registered students from JSONBin
       const response = await fetch(
-        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy="USN"&equalTo="${studentUSN}"`
       );
 
       if (!response.ok) {
@@ -61,13 +61,9 @@ const MessageHRDSection = () => {
       }
 
       const data = await response.json();
-      const students = data.record.registeredStuds || []; // Extract students array
+      const studentObj = Object.values(data)[0] || {}; // Extract students array
 
-      // Find the student by USN
-      const student = students.find((stud) => stud.USN === studentUSN);
-
-      // If the student exists, return their conversations
-      return student ? student.conversationsWithHR : [];
+      return studentObj.conversationsWithHR;
     } catch (error) {
       console.error("Error fetching conversations:", error);
       return [];
@@ -161,7 +157,7 @@ const MessageHRDSection = () => {
     try {
       // Fetch the entire JSONBin object
       const response = await fetch(
-        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy="USN"&equalTo="${studentUSN}"`
       );
 
       if (!response.ok) {
@@ -169,34 +165,31 @@ const MessageHRDSection = () => {
       }
 
       const data = await response.json();
-      const registeredStuds = data.record.registeredStuds || [];
+      // Extract the unique key of the student
+      const studentKey = Object.keys(data)[0];
+      const studentObj = data[studentKey];
 
-      // Find the student by USN
-      const studentIndex = registeredStuds.findIndex(
-        (student) => student.USN === studentUSN
-      );
-
-      if (studentIndex === -1) {
-        console.error("Student not found");
-        return;
+      // Ensure conversationsWithHR exists as an array
+      if (!studentObj.conversationsWithHR) {
+        studentObj.conversationsWithHR = [];
       }
 
-      // Update only the conversationsWithHR array of the specific student
-      registeredStuds[studentIndex].conversationsWithHR.push(
-        newConversationObject
-      );
+      // Add new conversation
+      studentObj.conversationsWithHR.push(newConversationObject);
 
-      // Update JSONBin with only the modified data
-      await fetch("https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...data.record, // Spread the rest of the properties
-          registeredStuds, // Update only the registeredStuds array
-        }),
-      });
+      // ✅ Use PATCH to update only this student’s `conversationsWithHR`
+      await fetch(
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds/${studentKey}.json`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            conversationsWithHR: studentObj.conversationsWithHR,
+          }),
+        }
+      );
 
       // Success Toast Notification
       PopUpToast.success("Message Sent Successfully!");

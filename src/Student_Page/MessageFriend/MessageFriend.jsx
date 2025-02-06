@@ -137,14 +137,15 @@ const MessageFriend = () => {
   const fetchConversationsWithFriend = async () => {
     try {
       const response = await fetch(
-        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/friendConversations.json`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch messages");
       }
 
-      const data = await response.json();
-      const friendConversations = data.record.friendConversations || [];
+      let data = await response.json();
+      data = Object.values(data);
+      const friendConversations = data || [];
 
       // Filter the conversation between student and friend
       const filteredConversations = friendConversations.filter(
@@ -167,17 +168,21 @@ const MessageFriend = () => {
       }
 
       const response = await fetch(
-        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/friendConversations.json`
       );
-      const data = await response.json();
-      const friendConversations = data.record.friendConversations || [];
 
-      // Find the conversation between the two participants
-      const existingConversation = friendConversations.find(
-        (conversation) =>
-          conversation.participants.includes(studentUSN) &&
-          conversation.participants.includes(friendUSN)
-      );
+      if (!response.ok) throw new Error("Failed to fetch conversations");
+
+      let data = await response.json();
+      data = Object.entries(data || {}); // Convert object to array of key-value pairs
+
+      // Find the conversation key where both participants exist
+      const [conversationKey, existingConversation] =
+        data.find(
+          ([_, conversation]) =>
+            conversation.participants.includes(studentUSN) &&
+            conversation.participants.includes(friendUSN)
+        ) || [];
 
       const newMessage = {
         sender: studentUSN,
@@ -185,46 +190,39 @@ const MessageFriend = () => {
         timestamp: new Date().toISOString(),
       };
 
-      if (existingConversation) {
-        // If conversation exists, update the messages array
-        existingConversation.messages = [
-          ...existingConversation.messages,
-          newMessage,
-        ];
+      if (conversationKey) {
+        // Append new message to the conversation's messages array
+        existingConversation.messages.push(newMessage);
 
-        // Update the specific conversation in the database without affecting other properties
-        await fetch(`https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...data.record,
-            friendConversations: friendConversations, // Only update friendConversations
-          }),
-        });
+        // ✅ PATCH request to update only this conversation
+        await fetch(
+          `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/friendConversations/${conversationKey}.json`,
+          {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ messages: existingConversation.messages }),
+          }
+        );
 
         console.log("Message added to existing conversation.");
         PopUpToast.success("Message sent successfully");
       } else {
-        // If conversation does not exist, create a new one
         const newConversationObj = {
-          id: Date.now(), // Generate a unique ID
           participants: [studentUSN, friendUSN],
-          messages: [newMessage], // Initialize with the new message
+          messages: [newMessage],
         };
 
-        // Add the new conversation to the database
-        await fetch("https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9", {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...data.record,
-            friendConversations: [...friendConversations, newConversationObj], // Add new conversation
-          }),
-        });
+        // ✅ Use POST to create a new conversation in Firebase
+        await fetch(
+          `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/friendConversations.json`,
+          {
+            method: "POST", // ✅ Use POST to let Firebase generate a unique key
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newConversationObj),
+          }
+        );
 
         console.log("New conversation created.");
       }

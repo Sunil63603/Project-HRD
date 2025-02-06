@@ -27,7 +27,7 @@ const MessagingContainer = () => {
 
     try {
       const response = await fetch(
-        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest`,
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/GroupMessages.json`,
         {
           method: "GET",
           headers: {
@@ -41,7 +41,7 @@ const MessagingContainer = () => {
       }
 
       const data = await response.json(); // Fetch the data from JSONBin
-      const messages = data.record.GroupMessages || []; // Extract messages
+      const messages = data || []; // Extract messages
       setMessages(messages); // Set messages in the state
     } catch (error) {
       console.error("Error fetching messages:", error);
@@ -71,12 +71,13 @@ const MessagingContainer = () => {
     try {
       // Step 1: Fetch the current GroupMessages object
       const response = await fetch(
-        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest `,
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/GroupMessages.json`,
         {
-          method: "GET",
+          method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
+          body: JSON.stringify(message),
         }
       );
 
@@ -84,35 +85,7 @@ const MessagingContainer = () => {
         throw new Error(`Error fetching data: ${response.status}`);
       }
 
-      const data = await response.json(); // Get the full data
-      const currentMessages = data.record.GroupMessages || []; // Extract current messages
-
-      // Step 2: Add the new message to the existing messages
-      const updatedMessages = [...currentMessages, message];
-
-      const updatedData = {
-        ...data.record, // Keep other properties intact
-        GroupMessages: updatedMessages, // Update only the messages array
-      };
-
-      // Step 3: Update JSONBin with the modified GroupMessages object
-      const updateResponse = await fetch(
-        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedData),
-        }
-      );
-
-      if (!updateResponse.ok) {
-        throw new Error(`Error updating data: ${updateResponse.status}`);
-      }
-
-      // Update the state and show a success notification
-      setMessages(updatedMessages); // Update the state with the new messages
+      fetchMessages(); //calling this function , so that latest message will be displayed
       PopUpToast.success("Message Sent Successfully!");
     } catch (error) {
       console.error("Error posting message:", error);
@@ -148,7 +121,7 @@ const MessagingContainer = () => {
 
   return (
     <div className="messaging-container">
-      <MessageDisplay messages={messages} fetchMessages={fetchMessages} />
+      <MessageDisplay />
       <MessageInput onSend={handleSendMessage} />
     </div>
   );
