@@ -28,7 +28,7 @@ const AllProfileSection = () => {
 
       try {
         const response = await fetch(
-          "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+          `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json`
         );
 
         if (!response.ok) {
@@ -38,7 +38,7 @@ const AllProfileSection = () => {
         const data = await response.json();
 
         // Extract students array from JSONBin response
-        const studentsData = data.record.registeredStuds || [];
+        const studentsData = data || [];
 
         setStudents(studentsData);
       } catch (err) {

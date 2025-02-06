@@ -36,15 +36,16 @@ function GroupMessages() {
   const fetchNotifications = async () => {
     try {
       const response = await fetch(
-        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/GroupMessages.json`
       );
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
-      const data = await response.json();
-      const notifications = data.record.GroupMessages || [];
+      let data = await response.json();
+      data = Object.values(data);
+      const notifications = data || [];
       setNotifications(notifications);
     } catch (error) {
       console.error("Error fetching notifications:", error);
@@ -63,7 +64,7 @@ function GroupMessages() {
     <div className="update-section full-width">
       <h2 className="component-name">Group Messages</h2>
       <ul className="notifications-list">
-        {notifications.map((notification) => {
+        {notifications.map((notification, index) => {
           const isExpanded = expandedNotifications[notification.id];
           const shouldTruncate = notification.text.length > 70 && !isExpanded;
           const displayMessage = shouldTruncate
@@ -71,7 +72,7 @@ function GroupMessages() {
             : notification.text;
 
           return (
-            <li key={notification.id} className="notification-item">
+            <li key={index} className="notification-item">
               <p className="display-message">{displayMessage}</p>
               <p className="timeStamp">
                 {notification.date} | {notification.time}
@@ -81,7 +82,7 @@ function GroupMessages() {
                   className="show-more-btn"
                   onClick={() => toggleExpand(notification.id)}
                 >
-                  {isExpanded ? "Show less..." : "Show more..."}
+                  {isExpanded ? "read less" : "...read more"}
                 </button>
               )}
               <hr className="divider" />

@@ -45,19 +45,18 @@ const JobSection = () => {
 
     try {
       const response = await fetch(
-        "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/jobs.json`
       );
 
       if (!response.ok) {
         throw new Error("Failed to fetch jobs data");
       }
 
-      const data = await response.json();
+      let data = await response.json();
+      data = Object.values(data);
 
       // Extract jobs array from JSONBin response
-      const jobsData = data.record.jobs || [];
-
-      // console.log(data);
+      const jobsData = data || [];
 
       // Sort by id in descending order
       const sortedJobs = jobsData.reverse();
@@ -88,8 +87,8 @@ const JobSection = () => {
     <div className="companies-list">
       <h2 className="component-name">Jobs/Oppurtunities</h2>
       <div className="job-list">
-        {jobs.map((job) => (
-          <div className="job-card" key={job.id}>
+        {jobs.map((job, index) => (
+          <div className="job-card" key={index}>
             <h4>{job.companyName}</h4>
             <p>
               <strong>Job Title : {job.jobDescription}</strong>

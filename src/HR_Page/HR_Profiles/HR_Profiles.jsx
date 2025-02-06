@@ -34,13 +34,13 @@ const Profiles = () => {
     const fetchStudents = async () => {
       try {
         const response = await fetch(
-          "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+          `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch");
         }
         const jsonData = await response.json();
-        const data = jsonData.record.registeredStuds || []; // Access 'registeredStuds'
+        const data = jsonData || []; // Access 'registeredStuds'
         setStudents(data);
       } catch (err) {
         setError("Error fetching students data");

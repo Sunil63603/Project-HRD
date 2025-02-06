@@ -35,15 +35,14 @@ function LoginForm() {
     try {
       // Replace with the JSONBin API endpoint and your API key
       const response = await fetch(
-        `https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest`
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/${role}.json`
       );
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
-      const data = await response.json();
-      const validAccounts = data.record[role]; // Access the role-specific accounts
+      const validAccounts = await response.json();
 
       const account = validAccounts.find(
         (validAccount) =>
