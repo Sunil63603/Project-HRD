@@ -26,6 +26,7 @@
   width: 111px;
   border-radius: 77px;
   margin-left: 64px;
+  object-fit: cover;
 }
 .photo {
   display: flex;

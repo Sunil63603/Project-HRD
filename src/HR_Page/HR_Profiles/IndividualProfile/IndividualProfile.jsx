@@ -3,10 +3,9 @@ import "./IndividualProfile.css";
 
 import { useNavigate } from "react-router-dom"; //used to navigate to the chat page when message button is clicked
 
-import tmgPhoto from "../../../Assets/Images/tmgPhoto.jpg";
-import gmail from "../../../Assets/Images/gmail.png";
-import linkedin from "../../../Assets/Images/linkedin.png";
-import whatsapp from "../../../Assets/Images/whatsapp img.png";
+import gmail from "../../../../public/Assets/Images/gmail.png";
+import linkedin from "../../../../public/Assets/Images/linkedin.png";
+import whatsapp from "../../../../public/Assets/Images/whatsapp img.png";
 
 import { BoxArrowUpRight } from "react-bootstrap-icons"; //this is used to indicate that portfolio website is a link
 import { FileEarmarkPdf, Download } from "react-bootstrap-icons"; // icon Indicating that resume is a pdf,and download icon
@@ -48,7 +47,11 @@ const IndividualProfile = ({ selectedStudent }) => {
       {/* refer UpdateSection.css for the 'component-name' */}
       <div className="name-usn-photo">
         <div className="photo">
-          <img src={tmgPhoto} alt="Profile" className="Profile-image" />
+          <img
+            src={`/Assets/Images/${selectedStudent.USN}.jpg`}
+            alt="Profile"
+            className="Profile-image"
+          />
         </div>
         {/*❌change profile image in future*/}
         {/* refer ProfileSection.css for these styles*/}
@@ -84,7 +87,6 @@ const IndividualProfile = ({ selectedStudent }) => {
         </div>
       </div>
       <p className="Contacts">Contacts:</p>
-
       <div className="icons-list">
         <img
           src={gmail}
