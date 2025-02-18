@@ -48,7 +48,7 @@ body {
   justify-content: center;
   text-align: center;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  background: linear-gradient(135deg, #f1edee, #e5e3e2);
 }
 
 .hero-content {
@@ -79,7 +79,7 @@ body {
   font-size: 1rem;
   font-weight: 600;
   border-radius: 30px;
-  background: linear-gradient(90deg, #e40ca3, #efb0eb);
+  background: linear-gradient(90deg, #5babe9, #078590);
   color: white;
   border: none;
   cursor: pointer;
@@ -102,7 +102,7 @@ body {
 .footer {
   text-align: center;
   padding: 15px 0;
-  background-color: #2b3d63;
+  background-color: #56abb8;
   color: white;
   font-size: 0.9rem;
 }

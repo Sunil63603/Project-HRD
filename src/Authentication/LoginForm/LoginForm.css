@@ -60,6 +60,14 @@
   border-color: #3b82f6;
 }
 
+.forgotPassword {
+  color: red;
+}
+
+.forgotPassword:hover {
+  cursor: pointer;
+}
+
 /* if the credentials are invalid. */
 .invalid-input {
   border: 2px solid red;

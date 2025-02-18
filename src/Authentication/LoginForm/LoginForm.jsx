@@ -94,6 +94,8 @@ function LoginForm() {
     }
   };
 
+  const handleForgotPassword = () => {};
+
   return (
     <div className="login-container">
       <h2 className="login-title">Login</h2>
@@ -134,7 +136,7 @@ function LoginForm() {
               style={{
                 position: "absolute",
                 right: "10px",
-                top: "50%",
+                top: "30%",
                 transform: "translateY(-50%)",
                 cursor: "pointer",
                 fontSize: "1.2rem",
@@ -142,6 +144,9 @@ function LoginForm() {
             >
               {isPasswordVisible ? "🙈" : "👁️"}
             </span>
+            <text className="forgotPassword" onClick={handleForgotPassword}>
+              Forgot Password
+            </text>
           </div>
 
           {!isValidAccount && (
