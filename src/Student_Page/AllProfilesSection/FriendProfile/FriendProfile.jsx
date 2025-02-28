@@ -161,11 +161,6 @@ function FriendProfile() {
                   <li key={index}>
                     <div className="project-item">
                       <h3>{Project.title}</h3>
-                      <video controls className="project-video">
-                        {/* ❌❌❌Even here try to use video from google drive/youtube❌❌❌ */}
-                        <source src={Project.videoLink} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
                       <div className="project-links">
                         <a
                           href={Project.GitHub_Repo}
