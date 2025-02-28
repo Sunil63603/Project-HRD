@@ -13,7 +13,7 @@ function FriendProfile() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
-  // ❌❌❌Based on this studentUSN , fetch details from 'db.json' and display details related to students.
+  // ❌❌❌Based on this studentUSN , fetch details and display details related to friend.
   const friendUSN = queryParams.get("frndUSN");
 
   //call this function , inside useEffect.
@@ -50,7 +50,7 @@ function FriendProfile() {
     getStudentObj()
       .then((student) => setStudentObj(student))
       .catch((error) => console.error(error));
-  }, [friendUSN]);
+  }, []);
 
   return (
     <>
@@ -161,11 +161,7 @@ function FriendProfile() {
                   <li key={index}>
                     <div className="project-item">
                       <h3>{Project.title}</h3>
-                      <video controls className="project-video">
-                        {/* ❌❌❌Even here try to use video from google drive/youtube❌❌❌ */}
-                        <source src={Project.videoLink} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
+
                       <div className="project-links">
                         <a
                           href={Project.GitHub_Repo}

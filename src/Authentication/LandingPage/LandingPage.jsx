@@ -14,7 +14,7 @@ const LandingPage = () => {
       {/* Header Section */}
       <header className="header">
         <div className="logo">
-          <h1 className="logo-text">C O H O R T</h1>
+          <h1 className="logo-text">HRD - COHORT</h1>
           <p className="tagline">Connecting Talent with Opportunities</p>
         </div>
       </header>
@@ -47,7 +47,7 @@ const LandingPage = () => {
 
       {/* Footer Section */}
       <footer className="footer">
-        <p>&copy; 2024 Cohort. All rights reserved.</p>
+        <p>&copy; 2025 Cohort. All rights reserved.</p>
       </footer>
     </div>
   );

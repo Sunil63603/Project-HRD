@@ -59,7 +59,7 @@ const AllProfileSection = () => {
 
   const handleViewProfile = (studentUSN) => {
     navigate(`/student/allprofiles/friendprofile?frndUSN=${studentUSN}`); //when student wants to message some friend
-    //studentUSN is stored as searchParam , so that based on usn , friendProfile can be rendered.
+    //friendUSN is stored as searchParam , so that based on usn , friendProfile can be rendered.
   };
 
   return (
@@ -74,7 +74,6 @@ const AllProfileSection = () => {
               key={index}
               className="student-card"
               onClick={() => handleViewProfile(student.USN)}
-              // onClick , open entire profile (not handling message)
             >
               <p>
                 <strong>USN:</strong> {student.USN}

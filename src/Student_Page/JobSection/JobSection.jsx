@@ -73,6 +73,7 @@ const JobSection = () => {
   useEffect(() => {
     //fetch jobs initially
     fetchJobs();
+    console.log("hi from JobSection");
 
     //polling mechanism
     const intervalId = setInterval(() => {

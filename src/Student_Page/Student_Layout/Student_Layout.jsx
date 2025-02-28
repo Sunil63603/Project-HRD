@@ -11,7 +11,7 @@ function Student_Layout() {
   const { pollingInterval } = useGlobalContext();
 
   //these two are used for alerting student about new job posting
-  const { newJobAlert } = usePopUpToastContext();
+  // const { newJobAlert } = usePopUpToastContext();
 
   // useEffect(() => {
   //   const lastFetchedTimeStamp = localStorage.getItem("lastFetchedTimestamp");
@@ -42,47 +42,47 @@ function Student_Layout() {
   //   return () => clearInterval(interval);
   // }, []);
 
-  useEffect(() => {
-    const lastFetchedTimeStamp = localStorage.getItem("lastFetchedTimestamp");
+  // useEffect(() => {
+  //   const lastFetchedTimeStamp = localStorage.getItem("lastFetchedTimestamp");
 
-    const interval = setInterval(async () => {
-      try {
-        console.log("Fetching job updates from JSONBin...");
+  //   const interval = setInterval(async () => {
+  //     try {
+  //       console.log("Fetching job updates from JSONBin...");
 
-        const response = await fetch(
-          "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
-        );
+  //       const response = await fetch(
+  //         "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+  //       );
 
-        if (!response.ok) {
-          throw new Error("Failed to fetch jobs");
-        }
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch jobs");
+  //       }
 
-        const data = await response.json();
-        const jobs = data.record.jobs || [];
+  //       const data = await response.json();
+  //       const jobs = data.record.jobs || [];
 
-        // Check if there's any job with a newer timestamp
-        const newJobs = jobs.filter(
-          (job) => new Date(job.timestamp) > new Date(lastFetchedTimeStamp)
-        );
+  //       // Check if there's any job with a newer timestamp
+  //       const newJobs = jobs.filter(
+  //         (job) => new Date(job.timestamp) > new Date(lastFetchedTimeStamp)
+  //       );
 
-        if (newJobs.length > 0) {
-          // Notify the student of a new job
-          toast("New job posted!", { type: "success" });
+  //       if (newJobs.length > 0) {
+  //         // Notify the student of a new job
+  //         toast("New job posted!", { type: "success" });
 
-          // Update the lastFetchedTimestamp in localStorage
-          localStorage.setItem(
-            "lastFetchedTimestamp",
-            newJobs[newJobs.length - 1].timestamp
-          );
-        }
-      } catch (error) {
-        console.error("Error fetching jobs:", error);
-      }
-    }, pollingInterval);
+  //         // Update the lastFetchedTimestamp in localStorage
+  //         localStorage.setItem(
+  //           "lastFetchedTimestamp",
+  //           newJobs[newJobs.length - 1].timestamp
+  //         );
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching jobs:", error);
+  //     }
+  //   }, pollingInterval);
 
-    // Clean up on component unmount
-    return () => clearInterval(interval);
-  }, []);
+  //   // Clean up on component unmount
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <>

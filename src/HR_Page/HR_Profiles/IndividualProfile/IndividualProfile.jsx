@@ -3,9 +3,9 @@ import "./IndividualProfile.css";
 
 import { useNavigate } from "react-router-dom"; //used to navigate to the chat page when message button is clicked
 
-import gmail from "../../../../public/Assets/Images/gmail.png";
-import linkedin from "../../../../public/Assets/Images/linkedin.png";
-import whatsapp from "../../../../public/Assets/Images/whatsapp img.png";
+import gmail from "/Assets/Images/gmail.png";
+import linkedin from "/Assets/Images/linkedin.png";
+import whatsapp from "/Assets/Images/whatsapp img.png";
 
 import { BoxArrowUpRight } from "react-bootstrap-icons"; //this is used to indicate that portfolio website is a link
 import { FileEarmarkPdf, Download } from "react-bootstrap-icons"; // icon Indicating that resume is a pdf,and download icon

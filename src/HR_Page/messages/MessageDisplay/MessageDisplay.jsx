@@ -16,6 +16,7 @@ const MessageDisplay = () => {
 
   const fetchMessages = async () => {
     try {
+      console.log("Hi from fetchMessages function");
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/GroupMessages.json`,
         {
