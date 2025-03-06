@@ -25,7 +25,7 @@ const MessageFriend = () => {
   const queryParams = new URLSearchParams(location.search);
 
   //these two variables👇are used for testing purposes only . Later these two USNs will come from URL.
-  const studentUSN = "1SJ21CS154"; //USN of current student profile.
+  const studentUSN = localStorage.getItem("studentUSN"); //USN of current student profile.
   const friendUSN = queryParams.get("frndUSN"); // USN of friend . Conversations of current student and friend with these USNs should be rendered on screen.
   // console.log(friendUSN);
 

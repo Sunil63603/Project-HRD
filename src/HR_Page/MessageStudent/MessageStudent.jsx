@@ -21,6 +21,15 @@ function MessageStudent() {
   const [conversations, setConversations] = useState([]);
   const [newConversation, setNewConversation] = useState("");
 
+  //this state variable is used to track which message's dropdown is active.
+  //used for delete message functionality.
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  //this function is used to toggle the dropdown of messages when user clicks on message.
+  const toggleDropdown = (index) => {
+    setActiveDropdown((prev) => (prev === index ? null : index)); //toggle dropdown for the selected message.
+  };
+
   useEffect(() => {
     fetchConversationsWithStudent(); //fetch messages initially.
 
@@ -159,6 +168,37 @@ function MessageStudent() {
     }
   };
 
+  const handleDelete = async (id) => {
+    console.log(id);
+
+    try {
+      const response = await fetch(
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy=%22USN%22&equalTo=%22${studentUSN}%22`,
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch student data");
+      }
+
+      const data = await response.json();
+
+      if (Object.keys(data).length === 0) {
+        console.error("Student not found");
+        return;
+      }
+
+      //Extract student ID (unique key in FireBase)
+      const studentID = Object.keys(data)[0];
+      const studentData = data[studentId];
+
+      //Ensure conversationsWithHR exists as an array
+    } catch (e) {}
+  };
+
   return (
     <div className="chat-container">
       <div className="chat-header">Message with {studentUSN}</div>
@@ -191,11 +231,28 @@ function MessageStudent() {
               className={`message ${
                 msg.sender === "HR" ? "HRs-message" : "students-message"
               }`}
+              onMouseEnter={() => {
+                toggleDropdown(index);
+              }}
             >
               <p>{msg.content}</p>
               <span className="timestamp">
                 {new Date(msg.timestamp).toLocaleTimeString()}
               </span>
+
+              {/* DropDOwn for delete message functionality */}
+              {activeDropdown === index && (
+                <div className="dropdown-menu-HRstudent">
+                  <button
+                    className="dropdown-item"
+                    onClick={() => {
+                      handleDelete(msg.id);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              )}
             </div>
           ))
         ) : (
