@@ -85,7 +85,7 @@ function LoginForm() {
 
           localStorage.setItem("studentUSN", studentUSN);
 
-          navigate(`/student/profile`); //if student logs-in successfully,navigate to 'profile' page.
+          navigate(`/student/groupMessages`); //if student logs-in successfully,navigate to 'profile' page.
         }
       } //if the account is invalid.
       else {

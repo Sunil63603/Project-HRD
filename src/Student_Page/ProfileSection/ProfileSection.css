@@ -1,5 +1,5 @@
 .profile-section {
-  width: 60%;
+  width: 100%;
   background-color: #f4eeee;
   border-radius: 23px; /*Medium rounded corners*/
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect*/
@@ -43,13 +43,22 @@
 }
 
 .profile-image {
-  width: 20px;
-  height: 20px;
-  border-radius: 10%;
-  object-fit: contain;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  padding: 5rem;
+  display: flex;
+  margin-left: 35%;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 150px; /* Adjust as needed */
+  height: 150px;
+  border-radius: 50%; /* Makes it fully circular */
+  overflow: hidden; /* Ensures the image doesn't overflow */
+  background-color: #ddd; /* Fallback color if the image is missing */
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container */
+  border-radius: 50%; /* Ensures the image itself is round */
 }
 
 /* Container for student information */

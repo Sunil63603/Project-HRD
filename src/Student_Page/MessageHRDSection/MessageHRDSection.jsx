@@ -293,6 +293,9 @@ const MessageHRDSection = () => {
               onMouseEnter={() => {
                 toggleDropdown(index);
               }}
+              onMouseLeave={() => {
+                toggleDropdown(index);
+              }}
             >
               <p>{msg.content}</p>
               <span className="timestamp">

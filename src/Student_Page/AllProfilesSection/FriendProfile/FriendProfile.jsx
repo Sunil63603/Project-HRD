@@ -61,7 +61,9 @@ function FriendProfile() {
             {/* ❌actually it should be written in global css file(so move .component-name css to global css file)*/}
             <h2 className="component-name">Profile</h2>
             {/* refer UpdateSection.css for the 'component-name' */}
-            {/* <img src="" alt="Profile" className="profile-image" /> */}
+            <div className="profile-image">
+              <img src={`/Assets/Images/${friendUSN}.jpg`} alt="Profile" />
+            </div>
             {/* ❌❌❌❌How to display image using google drive image URL❌❌❌❌ */}
             {/* refer ProfileSection.css for these styles*/}
             <label className="info-label" htmlFor="student-name">
