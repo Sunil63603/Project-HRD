@@ -19,7 +19,13 @@
   width: 100%;
   font-size: 14px;
   line-height: 1.4;
+  overflow-wrap: break-word;
   word-wrap: break-word;
+}
+
+.message-bubble:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: backgrond-color 0.2s ease;
 }
 
 /* HR messages aligned to the right */
@@ -40,7 +46,7 @@
 .message-header {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 11px;
   color: #555;
   margin-bottom: 5px;
 }
@@ -51,12 +57,12 @@
 
 .message-date-time {
   color: #999;
-  font-size: 11px;
+  font-size: 10px;
 }
 
 /* Message text */
 .message-text {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
   color: #333;
   white-space: pre-wrap; /* Ensures line breaks are respected */
@@ -65,13 +71,14 @@
 /* Dropdown menu */
 .dropdown-menu {
   position: absolute; /* Positions dropdown relative to the message-bubble */
-  top: 100%; /* Positions below the message */
-  right: 10px; /* Aligns the dropdown to the right edge */
+  top: calc(100%+5px); /* Positions below the message */
+  right: 0; /* Aligns the dropdown to the right edge */
+  min-width: 120px;
   background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 10; /* Ensures it appears above other elements */
+  z-index: 100; /* Ensures it appears above other elements */
   display: flex;
   flex-direction: column;
   padding: 5px;
@@ -91,4 +98,11 @@
 .dropdown-item:hover {
   background-color: #f0f0f0;
   color: #000;
+}
+
+@media (max-width: 600px) {
+  .message-display {
+    padding: 20px;
+    max-height: 300px;
+  }
 }

@@ -20,6 +20,9 @@ body {
   width: 50%; /* Set width to 60% of the viewport */
 }
 .message-input {
+  max-width: 100%; /*Prevents overflow*/
+  overflow: hidden;
+  text-overflow: ellipsis;
   flex: 1;
   font-size: 16px; /* Input text size */
   background-color: #f8f9fa; /* Light gray background */
@@ -31,6 +34,13 @@ body {
   /* Ensures no border or outline at any time */
   border: none; /* No border */
   outline: none; /* No outline */
+}
+
+.message-input::placeholder {
+  /* medium gray for better contrast */
+  color: #888;
+  font-style: italic;
+  /* optional:adds a modern touch */
 }
 
 /* Optional: To ensure no outline appears when focused */
@@ -63,7 +73,7 @@ body {
 
 .send-button:active {
   background-color: #555555; /* Even darker shade on click */
-  transform: scale(0.95); /* Shrink effect when active */
+  transform: scale(0.98); /* Shrink effect when active */
 }
 
 .send-button .arrow {
@@ -73,4 +83,22 @@ body {
   padding: 3px;
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
+}
+
+@media (max-width: 768px) {
+  .message-input-container {
+    width: 90%;
+    bottom: 10px;
+    padding: 8px;
+  }
+
+  .message-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .send-button {
+    width: 35px;
+    height: 35px;
+  }
 }

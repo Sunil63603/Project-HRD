@@ -83,7 +83,11 @@ function MessageStudent() {
 
       if (student) {
         // If student is found, update conversations state
-        setConversations(student.conversationsWithHR);
+        setConversations(
+          student.conversationsWithHR?.length == 0
+            ? []
+            : student.conversationsWithHR
+        );
       }
     } catch (error) {
       console.error("Error fetching student messages:", error);
@@ -103,13 +107,15 @@ function MessageStudent() {
     };
 
     //update locally
-    setConversations((prevMessages) => [
-      ...prevMessages,
-      newConversationObject,
-    ]);
-    setNewConversation("");
+    // setConversations((prevMessages) => [
+    //   ...prevMessages,
+    //   newConversationObject,
+    // ]);
+    // setNewConversation("");
 
     updateConversationsByUSN(studentUSN, newConversationObject); //calling this function to update the google firebase.
+    setNewConversation("");
+    fetchConversationsWithStudent();
   };
 
   //logic to update google firebase with new message entered by student
@@ -148,11 +154,11 @@ function MessageStudent() {
 
       // Update only the conversationsWithHR field
       const updateResponse = await fetch(
-        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds/${studentId}/conversationsWithHR.json`,
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds/${studentId}.json`,
         {
-          method: "PUT", // Overwrites only the conversationsWithHR field, keeping other data intact
+          method: "PATCH", // Overwrites only the conversationsWithHR field, keeping other data intact
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(updatedConversations),
+          body: JSON.stringify({ conversationsWithHR: updatedConversations }),
         }
       );
 
@@ -162,16 +168,16 @@ function MessageStudent() {
 
       console.log("Conversation updated successfully!");
       PopUpToast.success("Message Sent Successfully!");
+      fetchConversationsWithStudent();
     } catch (error) {
       console.error("Error updating messages:", error);
       PopUpToast.error("Failed to update the conversation!");
     }
   };
 
-  const handleDelete = async (id) => {
-    console.log(id);
-
+  const handleDelete = async (index) => {
     try {
+      //step 1:get student data
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy=%22USN%22&equalTo=%22${studentUSN}%22`,
         {
@@ -179,24 +185,43 @@ function MessageStudent() {
           headers: { "Content-Type": "application/json" },
         }
       );
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch student data");
-      }
-
       const data = await response.json();
 
-      if (Object.keys(data).length === 0) {
-        console.error("Student not found");
-        return;
-      }
+      //step 2:Extract student key
+      const studentKey = Object.keys(data)[0]; //Firebase unique key
+      const studentData = data[studentKey];
 
-      //Extract student ID (unique key in FireBase)
-      const studentID = Object.keys(data)[0];
-      const studentData = data[studentId];
+      //step 3:Remove message at index
+      studentData.conversationsWithHR.splice(index, 1); //remove message.
+      //splice modifies original array(ie.deep copy). while slice creates shallow copy
 
-      //Ensure conversationsWithHR exists as an array
-    } catch (e) {}
+      //step 4:update database
+      await fetch(
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds/${studentKey}.json`,
+        {
+          method: "PATCH", //use PUT to overwrite array
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            conversationsWithHR:
+              studentData.conversationsWithHR.length == 0
+                ? []
+                : studentData.conversationsWithHR,
+          }), //ensures 'conversationWithHR'[].
+        }
+      );
+
+      PopUpToast.success("Message deleted successfully!");
+      setConversations(
+        studentData.conversationsWithHR.length == 0
+          ? []
+          : studentData.conversationsWithHR
+      ); //update local state
+
+      fetchConversationsWithStudent();
+    } catch (error) {
+      console.error("Error deleting message:", error);
+      PopUpToast.error("Failed to delete the message.Please try again!");
+    }
   };
 
   return (
@@ -224,7 +249,7 @@ function MessageStudent() {
         </a>
       </div>
       <div className="messages-container">
-        {conversations.length > 0 ? (
+        {conversations ? (
           conversations.map((msg, index) => (
             <div
               key={index}
@@ -246,7 +271,7 @@ function MessageStudent() {
                   <button
                     className="dropdown-item"
                     onClick={() => {
-                      handleDelete(msg.id);
+                      handleDelete(index);
                     }}
                   >
                     Delete

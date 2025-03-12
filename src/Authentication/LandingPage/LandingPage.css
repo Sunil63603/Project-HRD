@@ -28,14 +28,15 @@ body {
 }
 
 .logo-text {
-  font-size: 3rem;
+  /* use clmp to dynamically scale font-size */
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: bold;
   color: white;
   margin: 0;
 }
 
 .tagline {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   color: #dfefff;
   margin-top: 8px;
 }
@@ -47,12 +48,16 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 40px 20px;
+  padding: clamp(40px, 8vw, 100px) 5vw;
+  max-width: 1200px;
+  margin: 0 auto;
   background: linear-gradient(135deg, #f1edee, #e5e3e2);
 }
 
 .hero-content {
   max-width: 800px;
+  width: 90%;
+  /* 👆ensure it adapts */
 }
 
 .hero-title {
@@ -70,13 +75,14 @@ body {
 
 .button-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
 
 .hero-button {
-  padding: 12px 40px;
-  font-size: 1rem;
+  padding: 12px clamp(30px, 5vw, 50px);
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   font-weight: 600;
   border-radius: 30px;
   background: linear-gradient(90deg, #5babe9, #078590);
@@ -105,4 +111,17 @@ body {
   background-color: #56abb8;
   color: white;
   font-size: 0.9rem;
+}
+
+/* media-query */
+@media (min-width: 1600px) {
+  .hero-section {
+    max-width: 1400px;
+  }
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .hero-description {
+    font-size: 1.5rem;
+  }
 }

@@ -63,8 +63,8 @@ h2 {
   align-items: center; /* Centers icon and text vertically */
   background-color: #0073b1; /* LinkedIn's primary blue color */
   color: #fff; /* White text for contrast */
-  padding: 10px 20px; /* Adds padding for a larger, clickable area */
-  font-size: 1rem; /* Adjusts font size */
+  padding: clamp(8px, 1.5vw, 12px) clamp(16px, 2vw, 20px); /* Adds padding for a larger, clickable area */
+  font-size: clamp(0.9rem, 1.2vw, 1rem); /* Adjusts font size */
   font-weight: 600; /* Slightly bold for emphasis */
   border: none; /* Removes default border */
   border-radius: 25px; /* Rounded corners for a modern look */
@@ -85,5 +85,19 @@ h2 {
       auto-fill,
       minmax(100%, 1fr)
     ); /* Stack cards on small screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  .job-list {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    max-width: 1400px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-card {
+    padding: 12px;
   }
 }

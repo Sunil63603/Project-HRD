@@ -15,7 +15,7 @@ const LandingPage = () => {
       <header className="header">
         <div className="logo">
           <h1 className="logo-text">HRD - COHORT</h1>
-          <p className="tagline">Connecting Talent with Opportunities</p>
+          <p className="tagline">Built for SJCIT-HR Department</p>
         </div>
       </header>
 
@@ -24,9 +24,9 @@ const LandingPage = () => {
         <div className="hero-content">
           <h2 className="hero-title">Empowering Careers</h2>
           <p className="hero-description">
-            Discover your potential with Cohort. Whether you're an HR looking
-            for exceptional talent or a student ready to launch your career, we
-            bring the world of opportunities to you.
+            Discover your potential with Cohort. Whether you're an HR or a
+            student ready to launch your career, we bring the world of
+            opportunities to you.
           </p>
           <div className="button-container">
             <button

@@ -33,6 +33,15 @@ const MessageFriend = () => {
   const [conversations, setConversations] = useState([]); //array of previous messages
   const [newConversation, setNewConversation] = useState(""); //string of new message
 
+  //this state variable is used to track which message's dropdown is active.
+  //used for delete message functionality.
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  //this function is used to toggle the dropdown of messages when user clicks on message.
+  const toggleDropdown = (index) => {
+    setActiveDropdown((prev) => (prev === index ? null : index)); //toggle dropdown for the selected message.
+  };
+
   useEffect(() => {
     fetchConversationsWithFriend(); //fetch messages initially
 
@@ -147,6 +156,8 @@ const MessageFriend = () => {
       data = Object.values(data);
       const friendConversations = data || [];
 
+      console.log(friendConversations);
+
       // Filter the conversation between student and friend
       const filteredConversations = friendConversations.filter(
         (conversation) =>
@@ -177,7 +188,7 @@ const MessageFriend = () => {
       data = Object.entries(data || {}); // Convert object to array of key-value pairs
 
       // Find the conversation key where both participants exist
-      const [conversationKey, existingConversation] =
+      let [conversationKey, existingConversation] =
         data.find(
           ([_, conversation]) =>
             conversation.participants.includes(studentUSN) &&
@@ -192,6 +203,11 @@ const MessageFriend = () => {
 
       if (conversationKey) {
         // Append new message to the conversation's messages array
+        existingConversation = existingConversation.messages
+          ? existingConversation
+          : { ...existingConversation, messages: [] }; //if there are no messages,between these two friends , then messages[] in DB is deleted.
+        //which causes lots of problems.
+
         existingConversation.messages.push(newMessage);
 
         // ✅ PATCH request to update only this conversation
@@ -234,6 +250,81 @@ const MessageFriend = () => {
     }
   };
 
+  const handleDelete = async (index) => {
+    try {
+      //step 1:fetch all friend Conversations
+      const response = await fetch(`
+        https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/friendConversations.json`);
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch conversations");
+      }
+
+      let friendConversations = await response.json(); //'data' is object containing all friend conversations.
+      // friendConversations = Object.values(friendConversations); //this 'data' is array containing all friend conversations.
+      //'data' should be in the form of array to use .filter() method
+
+      // const friendConversations = data;
+      // console.log(friendConversations);
+
+      //filter the conversation between student and friend.
+      // const filteredConversations = friendConversations.filter(
+      //   (conversation) =>
+      //     conversation.participants.includes(studentUSN) &&
+      //     conversation.participants.includes(friendUSN)
+      // );
+
+      // const id = filteredConversations[0].id; //get the id of the conversation
+
+      // const conversationKey = Object.keys(data).find(
+      //   (key) => data[key].id === id
+      // ); //get the firebase key of the conversation.
+
+      //step 2:Find the conversation key where both participants match.
+      const conversationKey = Object.keys(friendConversations).find((key) => {
+        const conversation = friendConversations[key]; //Get the conversation object.
+        return (
+          conversation.participants.includes(studentUSN) &&
+          conversation.participants.includes(friendUSN)
+        );
+      });
+
+      if (!conversationKey) {
+        console.error("COnversation not found");
+        return;
+      }
+
+      //step 3:get messages[] from the conversation.
+      let updatedMessages = friendConversations[conversationKey].messages || [];
+
+      //step 4:remove the message at the given index
+      updatedMessages.splice(index, 1); //remove message at 'index'
+
+      console.log(updatedMessages);
+
+      //if there are no messages,then messages[] will be completely deleted.
+      //this creates problem while sending message , because there will be no array.
+
+      //step 5:update messages[] in firebase using PUT.
+      await fetch(
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/friendConversations/${conversationKey}.json`,
+        {
+          method: "PATCH", //use PUT to overwrite array
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            messages: updatedMessages.length == 0 ? [] : updatedMessages,
+          }), //ensures 'messages' always exists.
+        }
+      );
+
+      PopUpToast.success("Message deleted successfully!");
+      setConversations(updatedMessages); //update local state
+    } catch (error) {
+      console.error("Error deleting messages:", error);
+      PopUpToast.error("Failed to delete the message.Please try again!");
+    }
+  };
+
   return (
     <div className="chat-container">
       <div className="chat-header">Message with {friendUSN}</div>
@@ -244,11 +335,28 @@ const MessageFriend = () => {
             className={`message ${
               msg.sender === friendUSN ? "friend-message" : "student-message"
             }`}
+            onMouseEnter={() => {
+              toggleDropdown(index);
+            }}
           >
             <p>{msg.content}</p>
             <span className="timestamp">
               {new Date(msg.timestamp).toLocaleTimeString()}
             </span>
+
+            {/* Dropdown for delete message functionality */}
+            {activeDropdown === index && (
+              <div className="dropdown-menu-friend">
+                <button
+                  className="dropdown-item"
+                  onClick={() => {
+                    handleDelete(index);
+                  }}
+                >
+                  Delete
+                </button>
+              </div>
+            )}
           </div>
         ))}
       </div>

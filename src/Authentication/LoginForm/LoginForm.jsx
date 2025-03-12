@@ -86,7 +86,6 @@ function LoginForm() {
           localStorage.setItem("studentUSN", studentUSN);
 
           navigate(`/student/profile`); //if student logs-in successfully,navigate to 'profile' page.
-          PopUpToast.success("Student Login successful");
         }
       } //if the account is invalid.
       else {

@@ -35,8 +35,8 @@ button {
   display: inline-flex;
   align-items: center; /* Aligns icon and text vertically */
   justify-content: center; /* Centers content */
-  padding: 12px 20px; /* Balanced padding */
-  font-size: 0.9rem; /* Standardized text size */
+  padding: clamp(10px, 1.5vw, 14px) clamp(16px, 2vw, 20px); /* Balanced padding */
+  font-size: clamp(0.9rem, 1.2vw, 1rem); /* Standardized text size */
   font-weight: 600; /* Medium bold text for readability */
   border-radius: 25px; /* Consistent rounded corners */
   border: none; /* Clean button style */
@@ -90,10 +90,33 @@ button {
   font-size: large;
 }
 
+.showMore:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 h4 {
   padding: 10px;
 }
 
 p {
   padding: 10px;
+}
+
+@media (max-width: 60px) {
+  .job-card {
+    padding: 12px;
+  }
+
+  .job-card-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+@media (min-width: 1200px) {
+  .job-card {
+    max-width: 600px;
+    margin: auto;
+  }
 }

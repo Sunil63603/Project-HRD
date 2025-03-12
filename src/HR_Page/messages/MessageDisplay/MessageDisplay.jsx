@@ -82,9 +82,10 @@ const MessageDisplay = () => {
           headers: { "Content-Type": "application/json" },
         }
       );
+      //even if all the messages are deleted , FireBase will not delete GroupMessages,because 'GroupMessages' is direct child of root.
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response})`);
+        throw new Error(`HTTP error! status: ${response}`);
       }
 
       PopUpToast.success("Message Successfully Deleted!");
