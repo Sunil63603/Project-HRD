@@ -1,4 +1,7 @@
-/* this css is of no use */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
 }

@@ -195,6 +195,8 @@ const MessageFriend = () => {
             conversation.participants.includes(friendUSN)
         ) || [];
 
+      console.log(studentUSN, friendUSN);
+
       const newMessage = {
         sender: studentUSN,
         content: newConversation,
