@@ -8,6 +8,7 @@
 /* Centering the Container */
 .login-container {
   display: flex;
+  padding: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -18,7 +19,7 @@
 }
 
 .login-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   color: #333;
   margin-bottom: 20px;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
@@ -46,6 +47,12 @@
   width: 100%;
 }
 
+.login-input,
+.login-button {
+  padding: clamp(10px, 1.5vw, 14px);
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+}
+
 .login-input {
   padding: 10px;
   border: 1px solid #ddd;
@@ -58,6 +65,14 @@
 
 .login-input:focus {
   border-color: #3b82f6;
+}
+
+.forgotPassword {
+  color: red;
+}
+
+.forgotPassword:hover {
+  cursor: pointer;
 }
 
 /* if the credentials are invalid. */
@@ -158,4 +173,25 @@
 
 .links-container h6:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 1200px) {
+  .login-container {
+    max-width: 50%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1600px) {
+  .login-form {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .links-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 }

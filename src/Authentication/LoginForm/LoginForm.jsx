@@ -18,6 +18,7 @@ import "./LoginForm.css";
 //this file contains all the CSS related to the LoginForm.jsx
 
 function LoginForm() {
+  //i should have stored 'role' using localStorage.
   //these below two lines are used to get the role/designation of the user who is trying to login.
   const [searchParams] = useSearchParams();
   const role = searchParams.get("role");
@@ -80,8 +81,11 @@ function LoginForm() {
           PopUpToast.success("HR Login successful");
         } else {
           const studentUSN = account.USN;
-          navigate(`/student/profile?studentUSN=${studentUSN}`); //if student logs-in successfully,navigate to 'groupMessages' page.
-          PopUpToast.success("Student Login successful");
+          //Here store student USN in local storage . And Usn is cleared when student clicks on 'logout'.
+
+          localStorage.setItem("studentUSN", studentUSN);
+
+          navigate(`/student/groupMessages`); //if student logs-in successfully,navigate to 'profile' page.
         }
       } //if the account is invalid.
       else {
@@ -93,6 +97,8 @@ function LoginForm() {
       PopUpToast.error("Error: Unable to verify user");
     }
   };
+
+  const handleForgotPassword = () => {};
 
   return (
     <div className="login-container">
@@ -134,7 +140,7 @@ function LoginForm() {
               style={{
                 position: "absolute",
                 right: "10px",
-                top: "50%",
+                top: "30%",
                 transform: "translateY(-50%)",
                 cursor: "pointer",
                 fontSize: "1.2rem",
@@ -142,6 +148,9 @@ function LoginForm() {
             >
               {isPasswordVisible ? "🙈" : "👁️"}
             </span>
+            <text className="forgotPassword" onClick={handleForgotPassword}>
+              Forgot Password
+            </text>
           </div>
 
           {!isValidAccount && (

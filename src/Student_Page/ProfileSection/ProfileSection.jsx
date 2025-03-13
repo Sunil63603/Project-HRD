@@ -1,7 +1,6 @@
 import React from "react";
 import "./ProfileSection.css";
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
 
 import { BoxArrowUpRight } from "react-bootstrap-icons"; //this is used to indicate that portfolio website is a link
 import { FileEarmarkPdf, Download } from "react-bootstrap-icons"; // icon Indicating that resume is a pdf,and download icon
@@ -9,10 +8,9 @@ import { FileEarmarkPdf, Download } from "react-bootstrap-icons"; // icon Indica
 //this is the component ie,displayed at the left side of the container.
 const ProfileSection = () => {
   const [studentObj, setStudentObj] = useState();
-  const [searchParams] = useSearchParams();
 
-  // ❌❌❌Based on this studentUSN , fetch details from 'db.json' and display details related to students.
-  const studentUSN = searchParams.get("studentUSN");
+  // ❌❌❌Based on this studentUSN , fetch details and display details related to students.
+  const studentUSN = localStorage.getItem("studentUSN");
 
   //call this function , inside useEffect.
   // const getStudentObj = () => {
@@ -48,7 +46,7 @@ const ProfileSection = () => {
     getStudentObj()
       .then((student) => setStudentObj(student))
       .catch((error) => console.error(error));
-  }, [studentUSN]);
+  }, []);
 
   return (
     <>
@@ -59,12 +57,10 @@ const ProfileSection = () => {
             {/* ❌actually it should be written in global css file(so move .component-name css to global css file)*/}
             <h2 className="component-name">Profile</h2>
             {/* refer UpdateSection.css for the 'component-name' */}
-            {/*             
-            <img
-              src="https://drive.google.com/thumbnail?id=1OKWuCoF7X7lNiNPdGEQ1QmbAWZJGTrth"
-              alt="Profile"
-              className="profile-image"
-            /> */}
+
+            <div className="profile-image">
+              <img src={`/Assets/Images/${studentUSN}.jpg`} alt="Profile" />
+            </div>
             {/* ❌❌❌❌How to display image using google drive image URL❌❌❌❌ */}
 
             {/* refer ProfileSection.css for these styles*/}

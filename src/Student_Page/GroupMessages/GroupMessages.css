@@ -1,16 +1,17 @@
 /* Right Section Styles */
 .update-section {
   flex: 2; /* Normal width when ProfileSection is visible */
-  padding: 2px;
-  width: 1150px;
-  border-radius: 30px;
+  padding: 10px;
+  width: 70%;
+  max-width: 1150px;
+  border-radius: 20px;
   background-color: #6dacf0; /* Clean white background for the right section */
   overflow-y: auto; /* Enable scrolling if content overflows */
   /* max-height: 100vh; Optional: Control the height */
   border-left: 1px solid #e0e0e0; /* Subtle border for section separation */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
 }
-.update-section .component-name{
+.update-section .component-name {
   font-size: 40px;
   font-style: italic;
   font-weight: 500;
@@ -21,12 +22,13 @@
 }
 .update-section.full-width {
   flex: 1; /* Full width when ProfileSection is hidden */
-  width: 83rem;
+  width: 90%;
   padding: 2rem;
-  margin-left: 100px;
-  margin-top: 4rem;
-  height: 70vh;
-  overflow-y: scroll; /* Enable scrolling if content overflows */
+  margin: 2rem auto;
+  /* margin-left: 100px;
+  margin-top: 4rem; */
+  height: 85vh;
+  overflow-y: auto; /* Enable scrolling if content overflows */
 }
 
 .update-section {
@@ -78,6 +80,8 @@
 .notification-item:hover {
   transform: translateY(-2px); /* Slight lift on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  color: #333;
 }
 
 /* Message Text */
@@ -85,8 +89,13 @@
   margin: 0;
   font-weight: 500;
   font-size: 1.1rem;
-  color: #444444;
+  color: #444;
   line-height: 1.6;
+  transition: color 0.2s ease-in-out;
+}
+
+.notification-item:hover p.display-message {
+  color: #000;
 }
 
 /* Timestamp */
@@ -103,14 +112,20 @@
   border: none;
   color: #007bff; /* Bootstrap primary blue */
   cursor: pointer;
-  font-size: 0.9rem;
-  margin-top: 8px;
-  text-align: left;
-  transition: color 0.2s;
+  font-size: 1rem;
+  padding: 5px 10px;
+  display: block;
+  width: fit-content;
+  /* margin-top: 8px;
+  text-align: left; */
+  transition: color 0.2s, background 0.2s;
 }
 
-.show-more-btn:hover {
+.show-more-btn:hover,
+.show-more-btn:focus {
   color: #0056b3; /* Darker blue for hover */
+  background: rgba(0, 123, 255, 0.1);
+  border-radius: 5px;
 }
 
 /* Divider */
@@ -133,4 +148,26 @@
 .notifications-list::-webkit-scrollbar-thumb {
   background-color: #a6a6a6;
   border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .update-section {
+    width: 95%;
+    flex: 1;
+    padding: 10px;
+  }
+
+  .update-section.full-width {
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .notifications-list {
+    gap: 10px;
+  }
+
+  .notifications-item {
+    padding: 10px;
+  }
 }

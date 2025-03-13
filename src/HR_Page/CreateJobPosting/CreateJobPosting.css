@@ -29,6 +29,8 @@ input[type="text"],
 input[type="url"],
 textarea {
   width: 100%; /* Full width */
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  padding: clamp(8px, 1.5vw, 12px);
   padding: 10px; /* Padding inside input fields */
   border: 1px solid #ccc; /* Light border */
   border-radius: 4px; /* Slightly rounded corners */
@@ -44,8 +46,8 @@ textarea {
   align-items: center; /* Centers icon and text vertically */
   background-color: #0073b1; /* LinkedIn's primary blue color */
   color: #fff; /* White text for contrast */
-  padding: 10px 20px; /* Adds padding for a larger, clickable area */
-  font-size: 1rem; /* Adjusts font size */
+  padding: clamp(10px, 2vw, 14px) clamp(20px, 3vw, 24px); /* Adds padding for a larger, clickable area */
+  font-size: clamp(1rem, 1.3vw, 1.2rem); /* Adjusts font size */
   font-weight: 600; /* Slightly bold for emphasis */
   border: none; /* Removes default border */
   border-radius: 25px; /* Rounded corners for a modern look */
@@ -66,4 +68,22 @@ textarea {
 .combination-of-comname-astres {
   display: flex;
   gap: 4px;
+}
+
+@media (min-width: 1200px) {
+  .job-posting-form {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .job-posting-form {
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .combination-of-comname-astres {
+    flex-direction: column;
+  }
 }

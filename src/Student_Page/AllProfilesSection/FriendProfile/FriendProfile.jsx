@@ -13,7 +13,7 @@ function FriendProfile() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
-  // ❌❌❌Based on this studentUSN , fetch details from 'db.json' and display details related to students.
+  // ❌❌❌Based on this studentUSN , fetch details and display details related to friend.
   const friendUSN = queryParams.get("frndUSN");
 
   //call this function , inside useEffect.
@@ -50,7 +50,7 @@ function FriendProfile() {
     getStudentObj()
       .then((student) => setStudentObj(student))
       .catch((error) => console.error(error));
-  }, [friendUSN]);
+  }, []);
 
   return (
     <>
@@ -61,7 +61,9 @@ function FriendProfile() {
             {/* ❌actually it should be written in global css file(so move .component-name css to global css file)*/}
             <h2 className="component-name">Profile</h2>
             {/* refer UpdateSection.css for the 'component-name' */}
-            <img src="" alt="Profile" className="profile-image" />
+            <div className="profile-image">
+              <img src={`/Assets/Images/${friendUSN}.jpg`} alt="Profile" />
+            </div>
             {/* ❌❌❌❌How to display image using google drive image URL❌❌❌❌ */}
             {/* refer ProfileSection.css for these styles*/}
             <label className="info-label" htmlFor="student-name">
@@ -161,6 +163,7 @@ function FriendProfile() {
                   <li key={index}>
                     <div className="project-item">
                       <h3>{Project.title}</h3>
+
                       <div className="project-links">
                         <a
                           href={Project.GitHub_Repo}
