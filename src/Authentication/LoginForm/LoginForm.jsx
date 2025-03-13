@@ -101,8 +101,8 @@ function LoginForm() {
   const handleForgotPassword = () => {};
 
   return (
-    <div className="login-container">
-      <h2 className="login-title">Login</h2>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <h2 className="text-2xl font-bold mb-6">Login</h2>
       <form
         onKeyDown={(e) => {
           if (e.key === "Enter") {
@@ -110,25 +110,34 @@ function LoginForm() {
             handleSubmit();
           }
         }}
+        className="w-full max-w-sm bg-white p-8 rounded-lg shadow-md"
       >
-        <div className="login-form">
-          <label className="login-label">Email*:</label>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Email*:
+          </label>
           <input
             type="email"
             required
-            className={`login-input ${!isValidAccount ? "invalid-input" : ""}`}
+            className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+              !isValidAccount ? "border-red-500" : ""
+            }`}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+        </div>
 
-          <label className="login-label">Password*:</label>
-          <div style={{ position: "relative" }}>
+        <div className="mb-6">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Password*:
+          </label>
+          <div className="relative">
             <input
               type={isPasswordVisible ? "text" : "password"}
               // type="input"
               required
-              className={`login-input ${
-                !isValidAccount ? "invalid-input" : ""
+              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                !isValidAccount ? "border-red-500" : ""
               }`}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -137,37 +146,35 @@ function LoginForm() {
             {/* Replaced FontAwesomeIcon with plain text for toggling visibility */}
             <span
               onClick={togglePasswordVisibility}
-              style={{
-                position: "absolute",
-                right: "10px",
-                top: "30%",
-                transform: "translateY(-50%)",
-                cursor: "pointer",
-                fontSize: "1.2rem",
-              }}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-xl"
             >
               {isPasswordVisible ? "🙈" : "👁️"}
             </span>
-            <text className="forgotPassword" onClick={handleForgotPassword}>
+            <text
+              className="text-blue-500 hover:text-blue-700 cursor-pointer mt-2 block"
+              onClick={handleForgotPassword}
+            >
               Forgot Password
             </text>
           </div>
 
           {!isValidAccount && (
-            <p className="invalid-message">
+            <p className="text-red-500 text-xs italic mb-4">
               Invalid credentials. Please try again.
             </p>
           )}
 
-          <button
-            className="login-button"
-            onClick={(e) => {
-              e.preventDefault();
-              handleSubmit();
-            }}
-          >
-            Submit
-          </button>
+          <div className="flex items-center justify-between">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline"
+              onClick={(e) => {
+                e.preventDefault();
+                handleSubmit();
+              }}
+            >
+              Submit
+            </button>
+          </div>
         </div>
       </form>
     </div>
