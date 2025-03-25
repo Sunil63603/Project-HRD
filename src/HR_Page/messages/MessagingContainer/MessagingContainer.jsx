@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./MessagingContainer.css";
+// import "./MessagingContainer.css";
 
 import MessageDisplay from "../MessageDisplay/MessageDisplay";
 import MessageInput from "../MessageInput/MessageInput";
@@ -120,7 +120,7 @@ const MessagingContainer = () => {
   }, []);
 
   return (
-    <div className="messaging-container">
+    <div className="flex flex-col max-w-[70%] max-h-[90%] mx-auto mt-2 p-4 bg-white rounded-lg shadow-lg overflow-y-auto breakwords">
       <MessageDisplay />
       <MessageInput onSend={handleSendMessage} />
     </div>

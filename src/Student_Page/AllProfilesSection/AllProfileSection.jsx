@@ -63,22 +63,24 @@ const AllProfileSection = () => {
   };
 
   return (
-    <div className="all-profiles">
-      <h2 className="component-name">All Profiles</h2>
+    <div className="flex-2 p-5 m-60 mt-12 bg-gray-200 rounded-2xl w-[1150px] h-[70vh] overflow-y-scroll border-1 border-gray-300 shadow-lg">
+      <h2 className="text-4xl italic font-medium mb-4 capitalize text-black flex items-center justify-center">
+        All Profiles
+      </h2>
 
       {/* Displaying the students */}
-      <div className="student-list">
+      <div className="flex flex-col justify-center items-center gap-5">
         {filteredStudents.length > 0 ? (
           filteredStudents.map((student, index) => (
             <div
               key={index}
-              className="student-card"
+              className="bg-white border border-blue-600 rounded-lg flex justify-between flex-row p-4 w-[530px] text-center shadow-md transition-transform duration-300 ease-in-out hover:transform hover:translate-y-[-5px] hovercursor-pointer"
               onClick={() => handleViewProfile(student.USN)}
             >
-              <p>
+              <p className="my-2.5 text-lg text-gray-800">
                 <strong>USN:</strong> {student.USN}
               </p>
-              <p>
+              <p className="my-2.5 text-lg text-gray-800">
                 <strong>Name:</strong> {student.name}
               </p>
             </div>

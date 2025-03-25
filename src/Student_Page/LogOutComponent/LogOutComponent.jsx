@@ -11,12 +11,12 @@ const LogOutComponent = () => {
 
   return (
     <>
-      <div className="overlay">
-        <div className="log-out-container">
+      <div className="fixed inset-0 w-full h-full bg-[rgba(30,30,30,0.5)] flex justify-center items-center z-[1000]">
+        <div className="bg-white p-5 rounded-lg shadow-md text-center">
           <h2>Are you sure you want to log out?</h2>
-          <div className="log-out-actions">
+          <div className="mt-4 flex justify-around">
             <button
-              className="log-out-btn"
+              className="bg-red-600 text-white border-none p-2.5 px-5 rounded cursor-pointer transition-colors duration-300 ease-in-out hover:bg-red-800"
               onClick={() => {
                 navigate("/"); //redirect to login page
                 hideLogOutContainer(); //Hide the container
@@ -24,7 +24,10 @@ const LogOutComponent = () => {
             >
               Yes
             </button>
-            <button className="cancel-btn" onClick={hideLogOutContainer}>
+            <button
+              className="bg-green-400 text-black border-none p-2.5 px-5 rounded cursor-pointer transition-colors duration-300 ease-in-out hover:bg-green-500"
+              onClick={hideLogOutContainer}
+            >
               No
             </button>
           </div>

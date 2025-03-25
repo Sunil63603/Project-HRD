@@ -23,6 +23,9 @@ function LoginForm() {
   const [searchParams] = useSearchParams();
   const role = searchParams.get("role");
 
+  //State variables in this file are local(not shared within any other component).So,Zustand is not necessary in this case.
+  //when you implement proper authentication,then you need these variables throughout the application.So,Zustand is used in that case
+  //Basically just move these variables into global store.
   //these below two lines are used to store the email and password entered by user.
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -101,8 +104,8 @@ function LoginForm() {
   const handleForgotPassword = () => {};
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h2 className="text-2xl font-bold mb-6">Login</h2>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-300 to-blue-300 font-sans text-gray-900">
+      <h2 className="text-4xl mb-5 text-gray-900 shadow-md">Login</h2>
       <form
         onKeyDown={(e) => {
           if (e.key === "Enter") {
@@ -110,35 +113,32 @@ function LoginForm() {
             handleSubmit();
           }
         }}
-        className="w-full max-w-sm bg-white p-8 rounded-lg shadow-md"
       >
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            Email*:
-          </label>
+        <div className="bg-white p-10 rounded-2xl shadow-lg flex flex-col items-center w-[400px] h-[350px]">
+          <label className="text-sm mb-1 text-gray-600 w-full">Email*:</label>
           <input
             type="email"
             required
-            className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-              !isValidAccount ? "border-red-500" : ""
-            }`}
+            className={`w-full p-2 border ${
+              !isValidAccount ? "border-red-500 bg-red-100" : "border-gray-300"
+            } rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500`}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </div>
 
-        <div className="mb-6">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label className="text-sm mt-4 mb-1 text-gray-600 w-full">
             Password*:
           </label>
-          <div className="relative">
+          <div className="relative w-full">
             <input
               type={isPasswordVisible ? "text" : "password"}
               // type="input"
               required
-              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                !isValidAccount ? "border-red-500" : ""
-              }`}
+              className={`w-full p-2 border ${
+                !isValidAccount
+                  ? "border-red-500 bg-red-100"
+                  : "border-gray-300"
+              } rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10`}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               style={{ paddingRight: "40px" }}
@@ -146,12 +146,12 @@ function LoginForm() {
             {/* Replaced FontAwesomeIcon with plain text for toggling visibility */}
             <span
               onClick={togglePasswordVisibility}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-xl"
+              className="absolute right-3 top-1.5 transform-translate-y-1/2 cursor-pointer text-xl"
             >
               {isPasswordVisible ? "🙈" : "👁️"}
             </span>
             <text
-              className="text-blue-500 hover:text-blue-700 cursor-pointer mt-2 block"
+              className="text-red-500 hover:text-blue-700 cursor-pointer mt-2 block"
               onClick={handleForgotPassword}
             >
               Forgot Password
@@ -159,22 +159,20 @@ function LoginForm() {
           </div>
 
           {!isValidAccount && (
-            <p className="text-red-500 text-xs italic mb-4">
+            <p className="text-red-500 text-md mt-2">
               Invalid credentials. Please try again.
             </p>
           )}
 
-          <div className="flex items-center justify-between">
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline"
-              onClick={(e) => {
-                e.preventDefault();
-                handleSubmit();
-              }}
-            >
-              Submit
-            </button>
-          </div>
+          <button
+            className="w-full mt-5 bg-blue-500 text-white p-3 rounded-full transition-transform hover:translate-y-[-2px] hover:bg-blue-700 shadow-md"
+            onClick={(e) => {
+              e.preventDefault();
+              handleSubmit();
+            }}
+          >
+            Submit
+          </button>
         </div>
       </form>
     </div>

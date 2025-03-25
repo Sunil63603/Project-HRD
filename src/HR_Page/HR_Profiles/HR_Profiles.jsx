@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./HR_Profiles.css";
+// import "./HR_Profiles.css";
 import { useNavigate } from "react-router";
 import IndividualProfile from "./IndividualProfile/IndividualProfile";
 
@@ -10,25 +10,6 @@ const Profiles = () => {
 
   const [selectedStudent, setSelectedStudent] = useState({});
   const [showStudentProfile, setShowStudentProfile] = useState(false);
-
-  // Fetching students from db.json using fetch
-  // useEffect(() => {
-  //   const fetchStudents = async () => {
-  //     try {
-  //       const response = await fetch("http://localhost:3000/registeredStuds");
-  //       if (!response.ok) {
-  //         throw new Error("Failed to fetch");
-  //       }
-  //       const data = await response.json();
-  //       setStudents(data);
-  //     } catch (err) {
-  //       setError("Error fetching students data");
-  //       console.error("Error fetching students:", err);
-  //     }
-  //   };
-
-  //   fetchStudents();
-  // }, []);
 
   useEffect(() => {
     const fetchStudents = async () => {
@@ -69,17 +50,17 @@ const Profiles = () => {
   };
 
   return (
-    <div className="profiles-container">
-      <header className="headerProfile">
-        <div className="logo-container">
+    <div className="flex flex-col w-full h-screen">
+      <header className="fixed top-30 w-full flex justify-between items-center p-5 border-b-2 border-pink-400 bg-white z-10">
+        <div className="text-4xl font-bold text-blue-600">
           <h1>Profiles</h1>
         </div>
         {/* Search Bar */}
-        <div className="search-container">
+        <div className="flex items-center">
           <input
             type="text"
             placeholder="Search by USN..."
-            className="search-box"
+            className="p-2 text-base border border-pink-400 rounded-md"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)} // Update search term dynamically
           />
@@ -87,31 +68,35 @@ const Profiles = () => {
       </header>
 
       {/* Error Message */}
-      {error && <p className="error">{error}</p>}
+      {error && <p className="text-red-500 text-center mt-20">{error}</p>}
 
       {/* Displaying the students */}
-      <div className="profiles-content">
-        <div className="srollingProfiles">
-          <div className="student-list">
+      <div className="flex w-full mt-24">
+        <div className="w-2/5 h-full overflow-y-auto p-14">
+          <div className="flex flex-col space-y-5">
             {filteredStudents.length > 0 ? (
               filteredStudents.map((student) => (
                 <div
                   key={student.USN}
-                  className={`student-card ${
-                    selectedStudent.USN === student.USN ? "active" : ""
-                  } `}
+                  className={`p-4 w-[530px] h-[77px] bg-white border border-blue-400 rounded-lg shadow-md text-center transition-transform duration-300 ${
+                    selectedStudent.USN === student.USN
+                      ? "!bg-blue-100 text-black border-violet-500"
+                      : ""
+                  } hover:translate-y-[-5px] cursor-pointer `}
                   onClick={() => handleClickToMessage(student)}
                 >
-                  <p>
+                  <p className="text-lg">
                     <strong>USN:</strong> {student.USN}
                   </p>
-                  <p>
+                  <p className="text-lg">
                     <strong>Name:</strong> {student.name}
                   </p>
                 </div>
               ))
             ) : (
-              <p>No students match your search.</p>
+              <p className="text-center text-gray-600">
+                No students match your search.
+              </p>
             )}
           </div>
         </div>
@@ -126,122 +111,3 @@ const Profiles = () => {
 };
 
 export default Profiles;
-
-// import React, { useState } from "react";
-// import "./HR_Profiles.css";
-
-// const profiles = [
-//   {
-//     usn: "1SJ21CS150",
-//     name: "John Doe",
-//     photo: "https://via.placeholder.com/100",
-//     contact: "#",
-//     whatsapp: "#",
-//     linkedin: "#",
-//   },
-//   {
-//     usn: "1SJ21CS151",
-//     name: "Jane Doe",
-//     photo: "https://via.placeholder.com/100",
-//     contact: "#",
-//     whatsapp: "#",
-//     linkedin: "#",
-//   },
-//   {
-//     usn: "1SJ21CS180",
-//     name: "Viki",
-//     photo: "https://via.placeholder.com/100",
-//     contact: "#",
-//     whatsapp: "#",
-//     linkedin: "#",
-//   },
-//   {
-//     usn: "1SJ21CS150",
-//     name: "John Doe",
-//     photo: "https://via.placeholder.com/100",
-//     contact: "#",
-//     whatsapp: "#",
-//     linkedin: "#",
-//   },
-//   {
-//     usn: "1SJ21CS150",
-//     name: "John Doe",
-//     photo: "https://via.placeholder.com/100",
-//     contact: "#",
-//     whatsapp: "#",
-//     linkedin: "#",
-//   },
-//   {
-//     usn: "1SJ21CS150",
-//     name: "John Doe",
-//     photo: "https://via.placeholder.com/100",
-//     contact: "#",
-//     whatsapp: "#",
-//     linkedin: "#",
-//   },
-//   // Add more profiles as needed
-// ];
-
-// function App() {
-//   const [selectedProfile, setSelectedProfile] = useState(null);
-
-//   return (
-//     <div className="container">
-//       <div className="profile-list">
-//         <h2>Profiles</h2>
-//         {profiles.map((profile, index) => (
-//           <div
-//             key={index}
-//             className="profile-card"
-//             onClick={() => setSelectedProfile(profile)}
-//           >
-//             <p>USN: {profile.usn}</p>
-//             <p>Name: {profile.name}</p>
-//           </div>
-//         ))}
-//       </div>
-//       <div className="profile-details">
-//         {selectedProfile ? (
-//           <div className="details-box">
-//             <img
-//               src={selectedProfile.photo}
-//               alt="Profile"
-//               className="profile-photo"
-//             />
-//             <div className="profile-info">
-//               <p>USN: {selectedProfile.usn}</p>
-//               <p>Name: {selectedProfile.name}</p>
-//               <div className="profile-icons">
-//                 <a
-//                   href={selectedProfile.contact}
-//                   target="_blank"
-//                   rel="noreferrer"
-//                 >
-//                   <i className="fas fa-phone"></i>
-//                 </a>
-//                 <a
-//                   href={selectedProfile.whatsapp}
-//                   target="_blank"
-//                   rel="noreferrer"
-//                 >
-//                   <i className="fab fa-whatsapp"></i>
-//                 </a>
-//                 <a
-//                   href={selectedProfile.linkedin}
-//                   target="_blank"
-//                   rel="noreferrer"
-//                 >
-//                   <i className="fab fa-linkedin"></i>
-//                 </a>
-//               </div>
-//             </div>
-//           </div>
-//         ) : (
-//           <p>Select a profile to view details</p>
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default App;

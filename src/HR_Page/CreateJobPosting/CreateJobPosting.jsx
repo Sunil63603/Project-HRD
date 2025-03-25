@@ -1,6 +1,6 @@
 // importing react to use the components based architecture and needed to interpret JSX and in React 17 not needed.
 import React, { useState } from "react";
-import "./CreateJobPosting.css"; // Import the CSS file
+// import "./CreateJobPosting.css"; // Import the CSS file
 
 //PopUpToastContext is used to notify student when HR creates a JOB posting
 import { usePopUpToastContext } from "../../context/PopUpToastContext";
@@ -141,7 +141,7 @@ const CreateJobPosting = () => {
 
   return (
     <form
-      className="job-posting-form"
+      className="w-full max-w-xl mx-auto my-6 p-6 bg-gray-100 border border-gray-300 rounded-2xl shadow-md"
       onKeyDown={(e) => {
         if (e.key === "Enter") {
           e.preventDefault();
@@ -149,11 +149,15 @@ const CreateJobPosting = () => {
         }
       }}
     >
-      <h2>Create Job Posting</h2>
-      <div className="form-group">
-        <div className="combination-of-comname-astres">
-          <label htmlFor="companyName">Company Name</label>
-          <span className="astirc-symbol"> *</span>
+      <h2 className="text-center text-2xl font-semibold mb-6">
+        Create Job Posting
+      </h2>
+      <div className="mb-4">
+        <div className="flex gap-1 items-center">
+          <label htmlFor="companyName" className="font-medium">
+            Company Name
+          </label>
+          <span className="text-red-500"> *</span>
         </div>
 
         <input
@@ -164,36 +168,43 @@ const CreateJobPosting = () => {
             setCompanyName(e.target.value);
           }}
           required
+          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-400"
         />
       </div>
-      <div className="form-group">
-        <div className="combination-of-comname-astres">
+      <div className="mb-4">
+        <div className="flex gap-1 items-center">
           <label htmlFor="jobDescription">Job Description</label>
-          <span className="astirc-symbol"> *</span>
+          <span className="text-red-500"> *</span>
         </div>
         <textarea
           id="jobDescription"
           value={jobDescription}
           onChange={(e) => setJobDescription(e.target.value)}
           required
+          className="w-full p-3 border border-gray-300 rounded-md  resize-y focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
       </div>
-      <div className="form-group">
-        <div className="combination-of-comname-astres">
-          <label htmlFor="eligibility">Eligibility</label>
-          <span className="astirc-symbol"> *</span>
+      <div className="mb-4">
+        <div className="flex gap-1 items-center">
+          <label htmlFor="eligibility" className="font-medium">
+            Eligibility
+          </label>
+          <span className="text-red-500"> *</span>
         </div>
         <textarea
           id="eligibility"
           value={eligibility}
           onChange={(e) => setEligibility(e.target.value)}
           required
+          className="w-full p-3 border border-gray-300 rounded-md resize-y focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
       </div>
-      <div className="form-group">
-        <div className="combination-of-comname-astres">
-          <label htmlFor="applyLink">Apply Link</label>
-          <span className="astirc-symbol"> *</span>
+      <div className="mb-4">
+        <div className="flex gap-1 items-center">
+          <label htmlFor="applyLink" className="font-medium">
+            Apply Link
+          </label>
+          <span className="text-red-500"> *</span>
         </div>
         <input
           type="url"
@@ -201,18 +212,22 @@ const CreateJobPosting = () => {
           value={applyLink}
           onChange={(e) => setApplyLink(e.target.value)}
           required
+          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-400"
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="additionalDetails">Additional Details (Optional)</label>
+      <div className="mb-4">
+        <label htmlFor="additionalDetails" className="font-medium">
+          Additional Details (Optional)
+        </label>
         <textarea
           id="additionalDetails"
           value={additionalDetails}
           onChange={(e) => setadditionalDetails(e.target.value)}
+          className="w-full p-3 border border-gray-300 rounded-md resize-y focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
       </div>
       <button
-        className="submit-button"
+        className="w-full flex items-center justify-center bg-blue-600 text-white font-semibold py-3 rounded-full shadow-md transition hover:bg-blue-700"
         onClick={(e) => {
           e.preventDefault();
           handleSubmit();

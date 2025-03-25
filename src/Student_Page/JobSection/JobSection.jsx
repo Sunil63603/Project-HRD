@@ -4,12 +4,22 @@ import { useState, useEffect } from "react";
 import "./JobSection.css"; //Add your styling for Jobs.
 
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
-import { useGlobalContext } from "../../context/GlobalContext";
+
+import useCohortStore from "../../store/cohortStore";
+// import { useGlobalContext } from "../../context/GlobalContext";
 
 const JobSection = () => {
   const [jobs, setJobs] = useState([]);
 
-  const { pollingInterval } = useGlobalContext();
+  //state for displaying full text or truncated text
+  const [showFullText, setShowFullText] = useState(false);
+
+  const toggleShowMore = () => {
+    setShowFullText(!showFullText);
+  };
+
+  const pollingInterval = useCohortStore((state) => state.pollingInterval);
+  // const { pollingInterval } = useGlobalContext();
 
   // Fetch job postings from JSON server.
   const fetchJobs = async () => {
@@ -85,11 +95,14 @@ const JobSection = () => {
   }, [jobs]);
 
   return (
-    <div className="companies-list">
-      <h2 className="component-name">Jobs/Oppurtunities</h2>
-      <div className="job-list">
+    <div className="flex-1 w-full p-5 bg-gray-200 rounded-2xl overflow-y-auto h-[80vh] max-h-screen border-1 border-gray-300 shadow-md">
+      <h2 className="component-name">Jobs/Opportunities</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {jobs.map((job, index) => (
-          <div className="job-card" key={index}>
+          <div
+            className="flex flex-col justify-center items-center w-[350px] h-[250px] border border-gray-300 rounded-2xl p-1 bg-gray-100 shadow-sm transition-transform duration-200 hover:transform hover:translate-y-[-5px]"
+            key={index}
+          >
             <h4>{job.companyName}</h4>
             <p>
               <strong>Job Title : {job.jobDescription}</strong>
@@ -98,11 +111,28 @@ const JobSection = () => {
               <strong>Eligibility : {job.eligibility}</strong>
             </p>
 
-            <p>
-              <strong>Additional Details : </strong> {job.additionalDetails}
+            <p className="mb-2 break-words whitespace-pre-wrap w-full overflow-hidden">
+              <strong>Additional Details : </strong>
+              {showFullText
+                ? job.additionalDetails
+                : job.additionalDetails.length > 20
+                ? `${job.additionalDetails.substring(0, 10)}`
+                : job.additionalDetails}
+              {job.additionalDetails.length > 20 && (
+                <a
+                  className="text-blue-600 font-semibold cursor-pointer inline-block"
+                  onClick={toggleShowMore}
+                >
+                  {showFullText ? "Read Less..." : "...Read More"}
+                </a>
+              )}
             </p>
 
-            <a className="apply-button" href={job.applyLink} target="_blank">
+            <a
+              className="bg-green-500 text-white border-none p-2.5 px-5 rounded-full cursor-pointer transition-colors duration-200 hover:bg-green-600"
+              href={job.applyLink}
+              target="_blank"
+            >
               Apply
             </a>
 

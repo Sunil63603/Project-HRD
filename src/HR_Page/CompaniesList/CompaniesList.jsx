@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from "react";
 // importing the component JobCard that us used in this componenet.
 import JobCard from "./JobCard/JobCard";
-import "./CompaniesList.css"; // Import the CSS file for standard styling
+// import "./CompaniesList.css"; // Import the CSS file for standard styling
 
 // importing the PopUpToast component to show the toast message when the job is deleted.
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
@@ -223,9 +223,9 @@ const CompaniesList = () => {
   //here no need to use setInterval because , when HR posts a job and if he visits 'companies' component to ensure latest job is posted , then it will be updated . because visiting this components triggers component mount.
 
   return (
-    <div className="companies-list">
-      <h2>Companies</h2>
-      <div className="job-list">
+    <div className="px-5 py-6 max-w-6xl mx-auto">
+      <h2 className="mt-2 mb-5 text-2xl font-semibold">Companies</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {jobs.map((job) => (
           // imported component below.
           <JobCard

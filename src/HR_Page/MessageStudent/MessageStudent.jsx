@@ -6,12 +6,14 @@ import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 
 import { FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
-import { useGlobalContext } from "../../context/GlobalContext";
+import useCohortStore from "../../store/cohortStore";
+// import { useGlobalContext } from "../../context/GlobalContext";
 
 import { useLocation } from "react-router-dom";
 
 function MessageStudent() {
-  const { pollingInterval } = useGlobalContext();
+  const pollingInterval = useCohortStore((state) => state.pollingInterval);
+  // const { pollingInterval } = useGlobalContext();
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -225,8 +227,12 @@ function MessageStudent() {
   };
 
   return (
-    <div className="chat-container">
-      <div className="chat-header">Message with {studentUSN}</div>
+    <div className="flex flex-col h-[74vh] max-w-[600px] mx-auto mt-4 bg-gray-100 rounded-lg shadow-md overflow-hidden">
+      <div className="p-4 bg-blue-500 text-white text-center text-lg font-bold">
+        Message with {studentUSN}
+      </div>
+
+      {/* tailwind utility classes to this 'contact-icons' class */}
       <div className="contact-icons">
         <a
           href="https://wa.me/8197759383"
@@ -248,13 +254,15 @@ function MessageStudent() {
           <FaEnvelope className="icon mail-icon" />
         </a>
       </div>
-      <div className="messages-container">
+      <div className="flex-1 p-5 overflow-y-auto flex flex-col gap-2">
         {conversations ? (
           conversations.map((msg, index) => (
             <div
               key={index}
-              className={`message ${
-                msg.sender === "HR" ? "HRs-message" : "students-message"
+              className={`p-3 rounded-2xl max-w-[70%] break-words relative ${
+                msg.sender === "HR"
+                  ? "bg-blue-500 self-end text-white"
+                  : "bg-blue-100 self-start text-gray-800"
               }`}
               onMouseEnter={() => {
                 toggleDropdown(index);
@@ -264,7 +272,7 @@ function MessageStudent() {
               }}
             >
               <p>{msg.content}</p>
-              <span className="timestamp">
+              <span className="text-xs text-black mt-1 text-right">
                 {new Date(msg.timestamp).toLocaleTimeString()}
               </span>
 
@@ -288,15 +296,18 @@ function MessageStudent() {
         )}
       </div>
 
-      <div className="message-input-container">
+      <div className="flex p-2 bg-white border-t border-gray-300">
         <input
           type="text"
           placeholder="Type your message..."
           value={newConversation}
           onChange={(e) => setNewConversation(e.target.value)}
-          className="message-input"
+          className="flex-1 p-2 border border-gray-300 rounded-full outline-none text-base"
         ></input>
-        <button onClick={handleSendMessage} className="send-button">
+        <button
+          onClick={handleSendMessage}
+          className="px-4 py-2 ml-2 bg-blue-500 text-white rounded-full cursor-pointer transition duration-300 hover:bg-blue-700"
+        >
           Send
         </button>
       </div>

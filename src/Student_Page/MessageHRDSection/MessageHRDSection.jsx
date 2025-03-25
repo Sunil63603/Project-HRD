@@ -5,9 +5,14 @@ import { FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import "./MessageHRDSection.css"; //Add your styling for messageHRD.
 import { useState, useEffect } from "react";
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
+
 import { FaPhoneAlt } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import { useGlobalContext } from "../../context/GlobalContext";
+import { IoMdSend } from "react-icons/io";
+
+import useCohortStore from "../../store/cohortStore";
+// import { useGlobalContext } from "../../context/GlobalContext";
+
 // import { FaArrowUp } from "react-icons/fa";
 // import { FiArrowUp } from "react-icons/fi";
 <link
@@ -19,7 +24,8 @@ import { useGlobalContext } from "../../context/GlobalContext";
 />;
 
 const MessageHRDSection = () => {
-  const { pollingInterval } = useGlobalContext();
+  const pollingInterval = useCohortStore((state) => state.pollingInterval);
+  // const { pollingInterval } = useGlobalContext();
 
   //❌i should get USN of the student from 'URL'(ie.as search params or anything like that)
   //may be like this (/student/:id=1SJ21CS154)
@@ -257,20 +263,23 @@ const MessageHRDSection = () => {
   };
 
   return (
-    <div className="chat-container">
-      <div className="chat-header">Message HRD</div>
-      <div className="contact-icons">
+    <div className="flex flex-col h-[70vh] max-w-[750px] mx-auto bg-gray-100 rounded-lg shadow-md overflow-hidden">
+      <div className="p-4 bg-blue-500 text-white text-center text-lg font-bold">
+        Message HRD
+      </div>
+      <div className="flex justify-around my-2.5">
         <a
           href="https://wa.me/8197759383"
           target="_blank"
           rel="noopener noreferrer"
+          className="rounded-full text-2xl"
         >
-          <FaWhatsapp className="icon whatsapp-icon" />
+          <FaWhatsapp className="mx-2.5 text-xl cursor-pointer transition-colors duration-300 hover:text-blue-500 text-green-500" />
         </a>
 
         <a href="tel:+91 8197759383" target="_blank" rel="noopener noreferrer">
           {/* <FaPhone className="icon phone-icon" /> */}
-          <FaPhoneAlt className="icon phone-icon" />
+          <FaPhoneAlt className="mx-2.5 text-xl cursor-pointer transition-colors duration-300 hover:text-blue-500 text-green-500" />
         </a>
 
         <a
@@ -278,17 +287,19 @@ const MessageHRDSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <SiGmail className="icon mail-icon" />
+          <SiGmail className="mx-2.5 text-xl cursor-pointer transition-colors duration-300 text-red-500" />
         </a>
       </div>
       <hr />
-      <div className="messages-container">
+      <div className="flex-1 p-5 overflow-y-auto flex flex-col gap-2.5">
         {!conversations.length == 0 ? (
           conversations.map((msg, index) => (
             <div
               key={index}
-              className={`message ${
-                msg.sender === "HR" ? "hr-message" : "student-message"
+              className={`p-2.5 pr-3.5 rounded-2xl max-w-[70%] break-words relative ${
+                msg.sender === "HR"
+                  ? "bg-blue-100 self-start text-gray-800"
+                  : "bg-blue-500 self-end text-white"
               }`}
               onMouseEnter={() => {
                 toggleDropdown(index);
@@ -298,7 +309,7 @@ const MessageHRDSection = () => {
               }}
             >
               <p>{msg.content}</p>
-              <span className="timestamp">
+              <span className="text-xs text-gray-900 mt-1.5 text-right">
                 {new Date(msg.timestamp).toLocaleTimeString()}
               </span>
 
@@ -328,12 +339,18 @@ const MessageHRDSection = () => {
           placeholder="Message HRD"
           value={newConversation}
           onChange={(e) => setNewConversation(e.target.value)}
-          className="message-input"
+          className="flex-1 p-2.5 border border-gray-300 rounded-full outline-none text-base"
         />
-        <button onClick={handleSendMessage} className="send-button">
-          <div className="arrow-icon">
-            <i className="fa-solid fa-arrow-up icons" id="arrow">
-              ^
+        <button
+          onClick={handleSendMessage}
+          className="bg-blue-200 border-none m-2 rounded-full w-12 h-12 flex items-center justify-center cursor-pointer shadow-md transition-colors duration-200 ease-in-out hover:bg-blue-700 transform scale-110"
+        >
+          <div className="text-xl text-blue cursor-pointer transition-transform duration-200 ease-in-out hover:transform hover:scale-110">
+            <i
+              className="fa-solid fa-arrow-up flex items-center justify-center text-blue text-lg transition-transform duration-200 ease-in-out"
+              id="arrow"
+            >
+              <IoMdSend />
             </i>
           </div>
         </button>

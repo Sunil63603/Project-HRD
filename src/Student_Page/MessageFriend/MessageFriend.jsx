@@ -11,12 +11,14 @@ import { useState, useEffect } from "react";
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 //popUpToast is used to indicate when message is sent successfully.
 
-import { useGlobalContext } from "../../context/GlobalContext";
+import useCohortStore from "../../store/cohortStore";
+// import { useGlobalContext } from "../../context/GlobalContext";
 
 import { useLocation } from "react-router-dom";
 
 const MessageFriend = () => {
-  const { pollingInterval } = useGlobalContext();
+  const pollingInterval = useCohortStore((state) => state.pollingInterval);
+  // const { pollingInterval } = useGlobalContext();
 
   //❌❌❌i should get USN of both current student and Friend from 'URL'(ie.as search params or anything like that).
   //may be something like this (/student/1SJ21CS154/friendProfile/:id=1SJ21CS166).
@@ -328,14 +330,18 @@ const MessageFriend = () => {
   };
 
   return (
-    <div className="chat-container">
-      <div className="chat-header">Message with {friendUSN}</div>
-      <div className="messages-container">
+    <div className="flex flex-col h-[80vh] max-w-[600px] mx-auto bg-gray-100 rounded-2xl shadow-md overflow-hidden">
+      <div className="p-4 bg-blue-500 text-white text-center text-lg font-bold">
+        Message with {friendUSN}
+      </div>
+      <div className="flex-1 p-5 overflow-y-auto flex flex-col gap-2.5">
         {conversations.map((msg, index) => (
           <div
             key={index}
-            className={`message ${
-              msg.sender === friendUSN ? "friend-message" : "student-message"
+            className={`p-2.5 pr-3.5 rounded-2xl max-w-[70%] break-words relative ${
+              msg.sender === friendUSN
+                ? "bg-blue-100 self-start text-gray-800"
+                : "bg-blue-500 self-end text-white"
             }`}
             onMouseEnter={() => {
               toggleDropdown(index);
@@ -345,15 +351,15 @@ const MessageFriend = () => {
             }}
           >
             <p>{msg.content}</p>
-            <span className="timestamp">
+            <span className="text-xs text-gray-900 mt-1.5 text-right">
               {new Date(msg.timestamp).toLocaleTimeString()}
             </span>
 
             {/* Dropdown for delete message functionality */}
             {activeDropdown === index && (
-              <div className="dropdown-menu-friend">
+              <div className="absolute right-0 mt-1 w-28 bg-white rounded-lg shadow-md z-10 p-2">
                 <button
-                  className="dropdown-item"
+                  className="block w-full text-center px-4 py-2 text-sm text-red-600 font-semibold bg-gray-50 hover:bg-red-100 rounded-md transition duration-200"
                   onClick={() => {
                     handleDelete(index);
                   }}
@@ -366,15 +372,18 @@ const MessageFriend = () => {
         ))}
       </div>
 
-      <div className="message-input-container">
+      <div className="flex p-2.5 bg-white border-t border-gray-300 rounded-2xl">
         <input
           type="text"
           placeholder="Type your message..."
           value={newConversation}
           onChange={(e) => setNewConversation(e.target.value)}
-          className="message-input"
+          className="flex-1 p-2.5 border border-gray-300 rounded-full outline-none text-base"
         />
-        <button onClick={handleSendMessage} className="send-button">
+        <button
+          onClick={handleSendMessage}
+          className="p-2.5 px-5 ml-2.5 bg-blue-500 text-white border-none rounded-full cursor-pointer transition-colors duration-300 ease-in-out hover:bg-blue-700"
+        >
           Send
         </button>
       </div>

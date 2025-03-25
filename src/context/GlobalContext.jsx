@@ -1,3 +1,4 @@
+//convert this file into Zustand format.
 import React, { createContext, useContext } from "react";
 
 //create the context
@@ -5,7 +6,7 @@ const GlobalContext = createContext();
 
 //create a provider component
 export const GlobalProvider = ({ children }) => {
-  const pollingInterval = 1000; //store polling interval value and make it accessible to entire project.
+  const pollingInterval = 100000000; //store polling interval value and make it accessible to entire project.
 
   return (
     <GlobalContext.Provider value={{ pollingInterval }}>
