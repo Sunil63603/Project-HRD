@@ -1,11 +1,12 @@
 {
-  "include": ["src"],
+  "include": ["src/**/*", "src/@types/vite-env.d.ts", "src/@types/images.d.ts"],
   "exclude": ["node_modules"],
   "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "es2017"],
     "jsx": "react-jsx",
     "strict": true,
     "moduleResolution": "node",
-    "target": "ES6",
+    "target": "es2017",
     "module": "ESNext",
     "allowSyntheticDefaultImports": true,
     /* Visit https://aka.ms/tsconfig to read more about this file */

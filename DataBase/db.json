@@ -325,23 +325,6 @@
       "name": "shashi kumar",
       "email": "shashi@gmail.com",
       "password": "123321",
-      "conversationsWithHR": [
-        {
-          "sender": "HR",
-          "content": "Hello John, please update your portfolio.",
-          "timestamp": "2024-11-24T10:00:00Z"
-        },
-        {
-          "sender": "student",
-          "content": "Sure, I will update it by today.",
-          "timestamp": "2024-11-24T10:05:00Z"
-        },
-        {
-          "sender": "HR",
-          "content": "Great! Let me know once it's done.",
-          "timestamp": "2024-11-24T10:10:00Z"
-        }
-      ],
       "id": "5faf"
     }
   ],
