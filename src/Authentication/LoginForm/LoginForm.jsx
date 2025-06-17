@@ -38,10 +38,10 @@ function LoginForm() {
   const navigate = useNavigate();
 
   //Reset email and password fields on component mount.
-  useEffect(() => {
-    setEmail("");
-    setPassword("");
-  }, []);
+  // useEffect(() => {
+  //   setEmail("");
+  //   setPassword("");
+  // }, []);
 
   //this function is called when user clicks on 'eye' icon/emoji
   const togglePasswordVisibility = () => {
