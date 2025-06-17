@@ -67,8 +67,12 @@ function LoginClientComp(): JSX.Element {
   //when you implement proper authentication,then you need these variables through out the application . So, zustand is used in that case.
   //Basically just move these variables into global store.
   //these below two lines are used to store the email and password entered by user.
-  const [email, setEmail] = useState<string>("SJCIT-HRD@gmail.com");
-  const [password, setPassword] = useState<string>("123321");
+  const [email, setEmail] = useState<string>(
+    role === "registeredHRs" ? "SJCIT-HRD@gmail.com" : "s60667843@gmail.com"
+  );
+  const [password, setPassword] = useState<string>(
+    role === "registeredHRs" ? "123321" : "sunilinus"
+  );
 
   //state variables to indicate status of password visibility and credentials validity.
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
@@ -78,10 +82,10 @@ function LoginClientComp(): JSX.Element {
   const router = useRouter();
 
   //reset email and password fields on component mount.
-  useEffect(() => {
-    setEmail("");
-    setPassword("");
-  }, []);
+  // useEffect(() => {
+  //   setEmail("");
+  //   setPassword("");
+  // }, []);
   //useEffect requires explicit typing incase of custom dependency array or returning a clean-up function.
 
   //this function is called when user clicks on 'eye' icon/emoji.
