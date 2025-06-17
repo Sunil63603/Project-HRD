@@ -23,10 +23,10 @@ function LoginForm() {
   const role = searchParams.get("role");
 
   //these below two lines are used to store the email and password entered by user.
-  const [email, setEmail] = useState<string>(
+  const [email, setEmail] = useState(
     role === "registeredHRs" ? "SJCIT-HRD@gmail.com" : "s60667843@gmail.com"
   );
-  const [password, setPassword] = useState<string>(
+  const [password, setPassword] = useState(
     role === "registeredHRs" ? "123321" : "sunilinus"
   );
 
