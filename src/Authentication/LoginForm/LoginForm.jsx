@@ -23,8 +23,12 @@ function LoginForm() {
   const role = searchParams.get("role");
 
   //these below two lines are used to store the email and password entered by user.
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState<string>(
+    role === "registeredHRs" ? "SJCIT-HRD@gmail.com" : "s60667843@gmail.com"
+  );
+  const [password, setPassword] = useState<string>(
+    role === "registeredHRs" ? "123321" : "sunilinus"
+  );
 
   //state variables to indicate status of password visibility and account validity.
   const [isPasswordVisible, setIsPasswordVisible] = useState(false); //false by default.
