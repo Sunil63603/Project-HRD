@@ -13,7 +13,7 @@ interface CohortStoreType {
 
 //step 1:create data.
 const cohortStore = (set: any): CohortStoreType => ({
-  pollingInterval: 100000000, //this is used in all fetching oprations
+  pollingInterval: 1000, //this is used in all fetching oprations
 });
 
 //step 2:create store using data from step 1.
