@@ -1,76 +1,193 @@
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /* Full height */
-}
+/* ========================================
+   MESSAGE INPUT CONTAINER
+======================================== */
 
-.message-input-container {
+.messaging-container .message-input-container {
+  position: static;
+
   display: flex;
   align-items: center;
-  padding: 10px; /* Padding for the container */
-  background-color: #f8f9fa; /* Light gray background similar to ChatGPT */
-  border-radius: 50px; /* Increase radius for a more rounded look */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Softer shadow */
-  position: fixed; /* Fix position at the bottom */
-  bottom: 20px; /* Spacing from the bottom */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Adjust position to center */
-  width: 50%; /* Set width to 60% of the viewport */
+  gap: 12px;
+
+  width: 100%;
+  margin: 0;
+  padding: 16px 20px;
+
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-radius: 0;
+
+  box-shadow: none;
+  transform: none;
 }
-.message-input {
+
+/* ========================================
+   MESSAGE INPUT
+======================================== */
+
+.messaging-container .message-input {
   flex: 1;
-  font-size: 16px; /* Input text size */
-  background-color: #f8f9fa; /* Light gray background */
-  padding: 10px; /* Padding for the input */
-  margin: 10px;
-  border-radius: 50px; /* Rounded corners for the input */
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+  min-width: 0;
+  width: 100%;
+  height: 44px;
 
-  /* Ensures no border or outline at any time */
-  border: none; /* No border */
-  outline: none; /* No outline */
+  margin: 0;
+  padding: 10px 16px;
+
+  background: #f8fafc;
+  color: #1e293b;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+
+  outline: none;
+  box-shadow: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-/* Optional: To ensure no outline appears when focused */
-.message-input:hover {
-  border: none; /* No border on focus */
-  outline: none; /* No outline on focus */
-}
-.message-input:focus {
-  border: none; /* No border on focus */
-  outline: none; /* No outline on focus */
+/* Placeholder */
+
+.messaging-container .message-input::placeholder {
+  color: #94a3b8;
 }
 
-.send-button {
-  width: 40px; /* Width of the button */
-  height: 40px; /* Height of the button */
-  background-color: #000000; /* Black background color */
-  border: none; /* No border */
-  border-radius: 50%; /* Makes the button circular */
+/* Hover */
+
+.messaging-container .message-input:hover {
+  border-color: #94a3b8;
+}
+
+/* Focus */
+
+.messaging-container .message-input:focus {
+  background: #ffffff;
+  border-color: #2563eb;
+  outline: none;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ========================================
+   SEND BUTTON
+======================================== */
+
+.messaging-container .send-button {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+
+  width: 44px;
+  height: 44px;
+
+  margin: 0;
+  padding: 0;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease; /* Smooth transition */
+  box-shadow: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.send-button:hover {
-  background-color: #333333; /* Darker shade on hover */
-  transform: scale(1.1); /* Slight zoom effect on hover */
+/* Hover */
+
+.messaging-container .send-button:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+
+  transform: none;
+  box-shadow: none;
 }
 
-.send-button:active {
-  background-color: #555555; /* Even darker shade on click */
-  transform: scale(0.95); /* Shrink effect when active */
+/* Active */
+
+.messaging-container .send-button:active {
+  background: #1e40af;
+  transform: none;
 }
 
-.send-button .arrow {
-  border: solid #f8f9fa;
-  border-width: 0 3px 3px 0;
+/* Focus */
+
+.messaging-container .send-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* Disabled */
+
+.messaging-container .send-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   SEND ARROW ICON
+======================================== */
+
+.messaging-container .send-button .arrow {
   display: inline-block;
-  padding: 3px;
+
+  width: 9px;
+  height: 9px;
+  padding: 0;
+
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
+
+  margin-top: 4px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .messaging-container .message-input-container {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .messaging-container .message-input {
+    height: 42px;
+  }
+
+  .messaging-container .send-button {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .messaging-container .message-input-container {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .messaging-container .message-input {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .messaging-container .send-button {
+    width: 42px;
+    height: 42px;
+  }
 }

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { usePopUpToastContext } from "../../context/PopUpToastContext";
-import { ToastContainer, toast } from "react-toastify"; // Import PopUpToast library
+import { toast } from "react-toastify"; // Import PopUpToast library
 import "react-toastify/dist/ReactToastify.css"; // Import library styles
 import { Outlet } from "react-router-dom";
 import TopFixedBar from "../TopFixedBar/TopFixedBar";
@@ -50,7 +50,7 @@ function Student_Layout() {
         console.log("Fetching job updates from JSONBin...");
 
         const response = await fetch(
-          "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest"
+          "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest",
         );
 
         if (!response.ok) {
@@ -62,7 +62,7 @@ function Student_Layout() {
 
         // Check if there's any job with a newer timestamp
         const newJobs = jobs.filter(
-          (job) => new Date(job.timestamp) > new Date(lastFetchedTimeStamp)
+          (job) => new Date(job.timestamp) > new Date(lastFetchedTimeStamp),
         );
 
         if (newJobs.length > 0) {
@@ -72,7 +72,7 @@ function Student_Layout() {
           // Update the lastFetchedTimestamp in localStorage
           localStorage.setItem(
             "lastFetchedTimestamp",
-            newJobs[newJobs.length - 1].timestamp
+            newJobs[newJobs.length - 1].timestamp,
           );
         }
       } catch (error) {
@@ -91,7 +91,6 @@ function Student_Layout() {
       <LogOutComponent></LogOutComponent>
       <Outlet className="outlet"></Outlet>
       {/* Irrespective of the component , student should be notified new job posting (so PopUpToast library) is used in global level */}
-      <ToastContainer position="top-right" autoClose={10000} />{" "}
       {/* Required to display the notification */}
     </>
   );

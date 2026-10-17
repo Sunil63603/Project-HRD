@@ -1,12 +1,236 @@
+/* ========================================
+   MESSAGING CONTAINER
+======================================== */
+
 .messaging-container {
   display: flex;
   flex-direction: column;
-  max-width: 45%;
-  max-height: 80%;
-  margin: 0 auto;
-  margin-top: 10px;
-  padding: 20px;
-  background-color: #ffffff;
+
+  width: 95%;
+  max-width: 760px;
+  height: 75vh;
+  min-height: 420px;
+
+  margin: 24px auto;
+  padding: 0;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+/* ========================================
+   MESSAGE DISPLAY AREA
+======================================== */
+
+.messaging-container .message-display {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+
+  min-height: 0;
+  max-height: none;
+
+  margin: 0;
+  padding: 24px;
+
+  background: #f8fafc;
+  border-radius: 0;
+  box-shadow: none;
+
+  overflow-y: auto;
+}
+
+/* ========================================
+   MESSAGE BUBBLES
+======================================== */
+
+.messaging-container .message-bubble {
+  width: auto;
+  max-width: 85%;
+  margin: 0;
+  padding: 12px 16px;
+
+  border-radius: 12px;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+}
+
+/* HR Messages */
+
+.messaging-container .hr-message {
+  align-self: flex-end;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border-bottom-right-radius: 4px;
+}
+
+.messaging-container .hr-message .message-text {
+  color: #ffffff;
+}
+
+.messaging-container .hr-message .message-header,
+.messaging-container .hr-message .message-date-time {
+  color: #dbeafe;
+}
+
+/* Student Messages */
+
+.messaging-container .student-message {
+  align-self: flex-start;
+
+  background: #ffffff;
+  color: #334155;
+
+  border: 1px solid #e2e8f0;
+  border-bottom-left-radius: 4px;
+}
+
+/* ========================================
+   MESSAGE INPUT AREA
+======================================== */
+
+.messaging-container .message-input-container {
+  position: static;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  margin: 0;
+  padding: 16px;
+
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-radius: 0;
+
+  box-shadow: none;
+  transform: none;
+}
+
+/* Input Field */
+
+.messaging-container .message-input {
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+
+  margin: 0;
+  padding: 10px 14px;
+
+  background: #f8fafc;
+  color: #1e293b;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  box-shadow: none;
+}
+
+.messaging-container .message-input:focus {
+  background: #ffffff;
+  border: 1px solid #2563eb;
+  outline: none;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Send Button */
+
+.messaging-container .send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  box-shadow: none;
+
+  transition: background-color 0.2s ease;
+}
+
+.messaging-container .send-button:hover {
+  background: #1d4ed8;
+  transform: none;
+}
+
+.messaging-container .send-button:active {
+  background: #1e40af;
+  transform: none;
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+.messaging-container .message-display::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messaging-container .message-display::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .messaging-container {
+    width: 95%;
+    height: 75vh;
+    margin: 16px auto;
+  }
+
+  .messaging-container .message-display {
+    padding: 16px;
+  }
+
+  .messaging-container .message-bubble {
+    max-width: 90%;
+  }
+
+  .messaging-container .message-input-container {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .messaging-container {
+    width: 100%;
+    min-height: 320px;
+    margin: 0;
+
+    border-radius: 0;
+  }
+
+  .messaging-container .message-display {
+    padding: 12px;
+  }
+
+  .messaging-container .message-input {
+    font-size: 16px;
+  }
 }

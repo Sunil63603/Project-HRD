@@ -1,27 +1,58 @@
-/* Global Styles */
+/* ========================================
+   GLOBAL THEME
+======================================== */
+
 :root {
-  --primary-color: #007aff; /* Inspired by Apple's blue */
-  --secondary-color: #ff4c60; /* Airbnb-style highlight */
-  --text-color: #333333; /* Dark text */
-  --text-muted-color: #6e6e6e; /* Muted text */
-  --background-color: #f8f8f8; /* Light background */
-  --border-color: #e0e0e0; /* Light border */
-  --font-family-sans: "Inter", "Helvetica", "Arial", sans-serif;
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary-color: #3b82f6;
+
+  --text-color: #1e293b;
+  --text-muted-color: #64748b;
+
+  --background-color: #f8fafc;
+  --surface-color: #ffffff;
+  --border-color: #e2e8f0;
+
+  --font-family-sans: "Inter", "Segoe UI", Arial, sans-serif;
+
+  --radius: 10px;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-html,
+/* ========================================
+   RESET
+======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+
   font-family: var(--font-family-sans);
   font-size: 16px;
+  line-height: 1.6;
+
   color: var(--text-color);
   background-color: var(--background-color);
-  scroll-behavior: smooth; /* Ensures smooth scrolling */
-  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
 }
 
-/* General Typography */
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
 h1,
 h2,
 h3,
@@ -29,20 +60,21 @@ h4,
 h5,
 h6 {
   margin: 0 0 1rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-color);
 }
 
 h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
   font-size: 2rem;
 }
 
-h3 {
+h2 {
   font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 p {
@@ -50,77 +82,113 @@ p {
   color: var(--text-muted-color);
 }
 
-/* Links */
+/* ========================================
+   LINKS
+======================================== */
+
 a {
   color: var(--primary-color);
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--secondary-color);
+  color: var(--primary-hover);
 }
 
-/* Buttons */
+/* ========================================
+   BUTTONS
+======================================== */
 
 button {
-  padding: 0.75rem 1.5rem;
+  padding: 10px 20px;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 8px;
+
   background-color: var(--primary-color);
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
+  color: white;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease;
 }
 
-button:hover {
-  background-color: var(--secondary-color);
+button:hover:not(:disabled) {
+  background-color: var(--primary-hover);
 }
 
 button:disabled {
-  background-color: var(--border-color);
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-/* Cards */
-.card {
-  background: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  margin: 1rem 0;
-  transition: box-shadow 0.2s ease-in-out;
-}
+/* ========================================
+   FORMS
+======================================== */
 
-.card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Forms */
 input,
 textarea,
 select {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  font-size: 1rem;
+  font-family: inherit;
+  font-size: 14px;
   color: var(--text-color);
-  background-color: #ffffff;
-  transition: border-color 0.2s ease-in-out;
+  max-width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+textarea,
+select {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--surface-color);
+
+  transition: border-color 0.2s ease;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--primary-color);
   outline: none;
+  border-color: var(--primary-color);
 }
 
-/* Grid System */
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* ========================================
+   CARDS
+======================================== */
+
+.card {
+  padding: 20px;
+  margin: 1rem 0;
+
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   LAYOUT
+======================================== */
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -138,60 +206,38 @@ select:focus {
   padding: 0.5rem;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #ffffff;
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
-.navbar a {
-  margin: 0 1rem;
-  font-weight: 500;
+::selection {
+  background-color: #dbeafe;
   color: var(--text-color);
 }
 
-.navbar a:hover {
-  color: var(--primary-color);
-}
+/* ========================================
+   RESPONSIVE
+======================================== */
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: var(--background-color);
-  color: var(--text-muted-color);
-  font-size: 0.875rem;
-}
-
-/* Animations */
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-
+@media (max-width: 768px) {
   body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-      "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
   }
 
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-      monospace;
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    width: 95%;
   }
 }

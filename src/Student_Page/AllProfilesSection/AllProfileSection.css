@@ -1,64 +1,242 @@
+/* ========================================
+   ALL PROFILES CONTAINER
+======================================== */
+
 .all-profiles {
-  flex: 2; /* Normal width when ProfileSection is visible */
-  padding: 20px;
-  margin: 15rem;
-  margin-top: 3rem;
-  background-color: #f1ebeb; /* Light grey background for the right section */
-  border-radius: 20px;
-  width: 1150px;
-  height: 70vh;
-  overflow-y: scroll; /* Enable scrolling if content overflows */
-  border-left: 1px solid #ddd; /* Adds a subtle border to separate from other sections */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect*/
+  width: 95%;
+  max-width: 1100px;
+  height: 75vh;
+  min-height: 400px;
+
+  margin: 24px auto;
+  padding: 32px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+
+  overflow-y: auto;
+  color: #1e293b;
 }
-.all-profiles .component-name{
-  font-size: 40px;
-  font-style: italic;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  /* text-decoration: underline; */
-  text-transform: capitalize;
-  color: rgb(0, 0, 0);
-}
+
+/* Full Width */
 
 .all-profiles.full-width {
-  flex: 1; /* Full width when ProfileSection is hidden */
-  width: 100%;
+  width: 95%;
+  max-width: 1100px;
+  flex: 1;
 }
 
-/* Student list styling */
-.student-list {
+/* ========================================
+   PAGE TITLE
+======================================== */
+
+.all-profiles .component-name {
+  margin: 0 0 28px;
+  padding-bottom: 16px;
+
+  color: #0f172a;
+  font-size: 1.75rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.3;
+
+  text-transform: none;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* ========================================
+   STUDENT LIST
+======================================== */
+
+.all-profiles .student-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 14px;
 
-  /* margin-top: 200px; */
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.student-card {
-  background-color: #ffffff;
-  border: 1px solid #1183c5;
-  border-radius: 8px;
+/* ========================================
+   STUDENT CARD
+======================================== */
+
+.all-profiles .student-card {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  padding: 15px;
-  width: 530px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
+  flex-wrap: wrap;
+  gap: 12px;
 
-.student-card:hover {
-  transform: translateY(-5px);
+  width: 100%;
+  min-height: 76px;
+  margin: 0;
+  padding: 18px 24px;
+
+  background: #ffffff;
+  color: #334155;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  text-align: left;
   cursor: pointer;
+
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.student-card p {
-  margin: 10px 0;
+/* ========================================
+   CARD HOVER
+======================================== */
 
-  font-size: 1.1rem;
-  color: #333;
+.all-profiles .student-card:hover {
+  background: #f8fafc;
+  border-color: #93c5fd;
+
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+
+  transform: none;
+}
+
+/* ========================================
+   STUDENT DETAILS
+======================================== */
+
+.all-profiles .student-card p {
+  flex: 1;
+  min-width: 180px;
+
+  margin: 0;
+  padding: 0;
+
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+}
+
+.all-profiles .student-card strong {
+  color: #334155;
+  font-weight: 600;
+}
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+
+.all-profiles .student-list > p {
+  margin: 0;
+  padding: 40px 16px;
+
+  color: #64748b;
+  font-size: 0.95rem;
+  text-align: center;
+
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+.all-profiles::-webkit-scrollbar {
+  width: 6px;
+}
+
+.all-profiles::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.all-profiles::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.all-profiles::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+  .all-profiles,
+  .all-profiles.full-width {
+    width: 95%;
+    height: auto;
+    min-height: 400px;
+
+    margin: 20px auto;
+    padding: 24px;
+  }
+
+  .all-profiles .component-name {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  .all-profiles .student-list {
+    gap: 12px;
+  }
+
+  .all-profiles .student-card {
+    padding: 16px 20px;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 480px) {
+  .all-profiles,
+  .all-profiles.full-width {
+    width: 95%;
+    margin: 16px auto;
+    padding: 20px 16px;
+
+    border-radius: 10px;
+  }
+
+  .all-profiles .component-name {
+    font-size: 1.4rem;
+  }
+
+  .all-profiles .student-card {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .all-profiles .student-card p {
+    flex: none;
+    min-width: 0;
+    width: 100%;
+
+    font-size: 0.875rem;
+  }
+
+  .all-profiles .student-list {
+    gap: 10px;
+  }
 }

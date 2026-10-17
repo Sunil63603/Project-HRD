@@ -1,98 +1,376 @@
-/* Main chat container */
+/* ========================================
+   CHAT CONTAINER
+======================================== */
+
 .chat-container {
   display: flex;
   flex-direction: column;
-  height: 74vh;
-  max-width: 600px;
-  margin: 0 auto;
-  margin-top: 1rem;
-  background-color: #f5f5f5;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  max-width: 700px;
+  height: 75vh;
+  min-height: 450px;
+  margin: 24px auto;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+
   overflow: hidden;
 }
 
-/* Header */
-.chat-header {
-  padding: 15px;
-  background-color: #007bff;
-  color: white;
-  text-align: center;
+/* ========================================
+   CHAT HEADER
+======================================== */
+
+.chat-container .chat-header {
+  padding: 18px 24px;
+
+  background: #ffffff;
+  color: #0f172a;
+
+  border-bottom: 1px solid #e2e8f0;
+
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
+  text-transform: none;
+
+  margin: 0;
 }
 
-/* Messages container */
-.messages-container {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
+/* ========================================
+   CONTACT ICONS
+======================================== */
+
+.chat-container .contact-icons {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  margin: 0;
+  padding: 14px;
+
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.chat-container .contact-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.chat-container .contact-icons a:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.chat-container .contact-icons .icon {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.chat-container .whatsapp-icon {
+  color: #16a34a;
+}
+
+.chat-container .phone-icon {
+  color: #2563eb;
+}
+
+.chat-container .mail-icon {
+  color: #dc2626;
+}
+
+/* ========================================
+   MESSAGES CONTAINER
+======================================== */
+
+.chat-container .messages-container {
+  display: flex;
+  flex: 1;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
+
+  min-height: 0;
+  padding: 24px;
+
+  background: #f8fafc;
+  overflow-y: auto;
 }
 
-/* Individual message styles */
-.message {
-  padding: 10px 15px;
-  border-radius: 15px;
-  max-width: 70%;
-  word-wrap: break-word;
+/* Scrollbar */
+
+.chat-container .messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-container .messages-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* ========================================
+   MESSAGE BUBBLES
+======================================== */
+
+.chat-container .message {
   position: relative;
+
+  max-width: 75%;
+  padding: 12px 16px;
+
+  border-radius: 12px;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+  box-shadow: none;
 }
 
-/* student messages */
-.students-message {
-  background-color: #e9f5ff;
+.chat-container .message p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: pre-wrap;
+}
+
+/* ========================================
+   STUDENT MESSAGES
+======================================== */
+
+.chat-container .students-message {
   align-self: flex-start;
-  color: #333;
+
+  background: #ffffff;
+  color: #334155;
+
+  border: 1px solid #e2e8f0;
+  border-bottom-left-radius: 4px;
 }
 
-/* HR messages */
-.HRs-message {
-  background-color: #007bff;
+/* ========================================
+   HR MESSAGES
+======================================== */
+
+.chat-container .HRs-message {
   align-self: flex-end;
-  color: white;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border: 1px solid #2563eb;
+  border-bottom-right-radius: 4px;
 }
 
-/* Timestamp */
-.timestamp {
-  font-size: 0.8rem;
-  color: #0d0d0d;
-  margin-top: 5px;
+/* ========================================
+   MESSAGE TIMESTAMP
+======================================== */
+
+.chat-container .timestamp {
+  display: block;
+  margin-top: 6px;
+
+  font-size: 0.7rem;
+  font-weight: 400;
   text-align: right;
 }
 
-/* Message input container */
-.message-input-container {
+.chat-container .students-message .timestamp {
+  color: #94a3b8;
+}
+
+.chat-container .HRs-message .timestamp {
+  color: #dbeafe;
+}
+
+/* ========================================
+   MESSAGE INPUT CONTAINER
+======================================== */
+
+.chat-container .message-input-container {
+  position: static;
   display: flex;
-  padding: 10px;
-  background-color: #fff;
-  border-top: 1px solid #ddd;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  padding: 16px 20px;
+  margin: 0;
+
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-radius: 0;
+
+  box-shadow: none;
+  transform: none;
 }
 
-/* Message input field */
-.message-input {
+/* ========================================
+   MESSAGE INPUT
+======================================== */
+
+.chat-container .message-input {
   flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+
+  margin: 0;
+  padding: 10px 16px;
+
+  background: #f8fafc;
+  color: #1e293b;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+
   outline: none;
-  font-size: 1rem;
+  box-shadow: none;
+
+  transition: border-color 0.2s ease;
 }
 
-/* Send button */
-.send-button {
-  padding: 10px 20px;
-  margin-left: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 20px;
+.chat-container .message-input:focus {
+  background: #ffffff;
+  border: 1px solid #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.chat-container .message-input::placeholder {
+  color: #94a3b8;
+}
+
+/* ========================================
+   SEND BUTTON
+======================================== */
+
+.chat-container .send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: auto;
+  height: 44px;
+
+  margin: 0;
+  padding: 10px 24px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: none;
+
+  transition: background-color 0.2s ease;
 }
 
-.send-button:hover {
-  background-color: #0056b3;
+.chat-container .send-button:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+
+  transform: none;
+  box-shadow: none;
+}
+
+.chat-container .send-button:active {
+  background: #1e40af;
+  transform: none;
+}
+
+.chat-container .send-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .chat-container {
+    width: 95%;
+    height: 75vh;
+    margin: 16px auto;
+  }
+
+  .chat-container .chat-header {
+    padding: 16px;
+    font-size: 1.1rem;
+  }
+
+  .chat-container .messages-container {
+    padding: 16px;
+  }
+
+  .chat-container .message {
+    max-width: 85%;
+  }
+
+  .chat-container .message-input-container {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-container {
+    width: 100%;
+    height: calc(100dvh - 100px);
+    min-height: 350px;
+    margin: 0;
+
+    border-radius: 0;
+  }
+
+  .chat-container .messages-container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .chat-container .message {
+    max-width: 90%;
+    padding: 10px 12px;
+  }
+
+  .chat-container .message-input {
+    font-size: 16px;
+  }
+
+  .chat-container .send-button {
+    padding: 10px 16px;
+  }
+
+  .chat-container .contact-icons {
+    padding: 10px;
+  }
 }

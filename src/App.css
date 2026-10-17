@@ -1,266 +1,256 @@
-/* this css is of no use */
-.App {
-  text-align: center;
-}
+/* ========================================
+   APP LAYOUT
+======================================== */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+#root {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f5f5f5;
-  padding: 20px;
-}
-
-.logo img {
-  width: 50px;
-  height: 50px;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-nav ul li {
-  margin-right: 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-}
-
-nav ul li button {
-  background-color: #ff6b6b;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-main {
-  text-align: center;
-  padding: 50px;
-}
-
-.search-bar input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  width: 300px;
-}
-
-/* App Container */
 .App {
-  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-/* Top Bar */
-.top-bar {
-  background-color: #6c2c82;
-  color: white;
+/* ========================================
+   LANDING PAGE
+======================================== */
+
+.landing-page {
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+/* Header */
+
+.landing-page .header {
+  height: auto;
+  display: block;
+  padding: 24px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
   text-align: center;
-  padding: 10px 0;
 }
 
-/* Navbar */
-/* Navbar */
-.navbar {
-  display: flex; /* Use flexbox for alignment */
-  justify-content: center; /* Center the logo horizontally */
-  align-items: center; /* Center items vertically */
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar .logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-/* .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar .logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.navbar .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-}
-
-.navbar .nav-links li {
-  display: inline;
-}
-
-.navbar .nav-links li a {
-  text-decoration: none;
-  color: #000;
+.landing-page .logo-text {
+  color: var(--primary-color);
+  font-size: 2rem;
   font-weight: 700;
-} */
+  letter-spacing: 2px;
+}
 
-/* Header Section */
-.header {
-  /* background-image: url("your-image-path-here.jpg"); */
-  background-size: cover;
-  background-position: center;
-  color: white;
-  /* background-image: url("C:\Users\THRISHAN\Desktop\hrd\Images\sjcit.jpg"); */
-  height: 500px;
+.landing-page .tagline {
+  color: var(--text-muted-color);
+  font-size: 0.95rem;
+  margin: 8px 0 0;
+}
+
+/* Hero Section */
+
+.landing-page .hero-section {
+  background: var(--background-color);
+  padding: 60px 20px;
+}
+
+.landing-page .hero-content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.landing-page .hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.landing-page .hero-description {
+  font-size: 1.1rem;
+  color: var(--text-muted-color);
+  line-height: 1.8;
+}
+
+/* Buttons */
+
+.landing-page .button-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
 }
 
-.header-content {
-  background-color: black;
-  padding: 20px;
-  border-radius: 25px;
-
-  /* flex-direction: column; */
-}
-
-.header-content h1 {
-  font-size: 48px;
-}
-
-.header-content p {
-  font-size: 28px;
-  margin: 20px 0;
-  align-items: center;
-}
-
-.header-buttons {
-  margin-top: 20px;
-}
-
-.apply-btn,
-.readmore-btn {
-  background-color: #6c2c82;
-  color: white;
+.landing-page .hero-button {
+  padding: 12px 28px;
+  margin: 0;
+  background: var(--primary-color);
+  color: #ffffff;
   border: none;
-  padding: 10px 20px;
-  margin: 10px;
-  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: none;
+  transition: background-color 0.2s ease;
 }
 
-.readmore-btn {
-  background-color: #999;
+.landing-page .hero-button:hover {
+  background: var(--primary-hover);
+  transform: none;
+  box-shadow: none;
 }
 
-/* Info Sections */
-.info-section {
-  display: flex;
-  justify-content: space-around;
-  padding: 50px 0;
+.landing-page .hero-button:active {
+  transform: none;
+  transition: background-color 0.2s ease;
 }
 
-.info-box {
-  width: 30%;
-  height: 200px;
-  color: white;
-  display: flex;
+/* Footer */
+
+.landing-page .footer {
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted-color);
+}
+
+.landing-page .footer p {
+  margin: 0;
+  color: inherit;
+}
+
+/* ========================================
+   HR NAVIGATION
+======================================== */
+
+.navbar.navbar {
+  background: #ffffff;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0;
+  box-shadow: var(--shadow);
+}
+
+.navbar .navbar-list {
+  width: 100%;
   align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: bold;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.programs {
-  background-color: #4688f1;
+.navbar .navbar-link {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
 }
 
-.affordability {
-  background-color: #ff4742;
+.navbar .navbar-link:hover,
+.navbar .navbar-item.active .navbar-link {
+  background: #eff6ff;
+  color: var(--primary-color);
+  box-shadow: none;
+  transform: none;
 }
 
-.certification {
-  background-color: #ffa500;
+.navbar .logout-btn {
+  margin-left: auto;
+  background: #fff1f2;
+  color: #be123c;
+  border-radius: 8px;
 }
 
-/* Navbar Links */
-.nav-links {
-  display: flex; /* Align links in a row */
-  gap: 20px; /* Add space between the links */
-  list-style: none; /* Remove the dots (bullets) */
-  margin: 0; /* Reset margin */
-  padding: 0; /* Reset padding */
+.navbar .logout-btn:hover {
+  background: #ffe4e6;
 }
 
-.nav-links li {
-  display: inline-block; /* Display the list items inline */
+/* ========================================
+   STUDENT NAVIGATION
+======================================== */
+
+.topFixedBar.topFixedBar {
+  background: #ffffff;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0;
+  box-shadow: var(--shadow);
 }
 
-.nav-links a {
-  text-decoration: none; /* Remove underline */
-  color: white; /* Set text color */
-  font-weight: 500; /* Make font slightly bold */
+.topFixedBar .profile-icon {
+  color: var(--primary-color);
+  border-color: var(--border-color);
 }
 
-.nav-links a:hover {
-  color: #80dd6d; /* Change color on hover */
+.topFixedBar .topSearchBar {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: none;
 }
 
-/* latest code for content and topbar div */
-.content-with-topbar {
-  margin-top: 60px; /* Should match the height of TopFixedBar */
-  padding: 20px;
+.topFixedBar .topSearchBar:focus {
+  border-color: var(--primary-color);
+  box-shadow: none;
 }
 
-.content {
-  padding: 20px;
+.topFixedBar .topFixedBar-right button {
+  background: transparent;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.topFixedBar .topFixedBar-right button:hover,
+.topFixedBar .topFixedBar-right button.active {
+  background: #eff6ff;
+  color: var(--primary-color);
+  box-shadow: none;
+  transform: none;
+}
+
+.topFixedBar .topFixedBar-right .log-out-btn {
+  background: #fff1f2;
+  color: #be123c;
+}
+
+.topFixedBar .topFixedBar-right .log-out-btn:hover {
+  background: #ffe4e6;
+  color: #be123c;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .landing-page .header {
+    padding: 20px;
+  }
+
+  .landing-page .hero-section {
+    padding: 40px 16px;
+  }
+
+  .landing-page .hero-title {
+    font-size: 2rem;
+  }
+
+  .landing-page .hero-description {
+    font-size: 1rem;
+  }
+
+  .navbar.navbar,
+  .topFixedBar.topFixedBar {
+    padding: 12px 16px;
+  }
+
+  .navbar .navbar-list,
+  .topFixedBar.topFixedBar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .topFixedBar .topSearchBar {
+    width: 100%;
+  }
 }

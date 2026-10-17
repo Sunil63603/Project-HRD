@@ -2,12 +2,12 @@ import { StrictMode } from "react"; //strict mode is used to find potential erro
 import { createRoot } from "react-dom/client"; //on this root,react components are rendered.
 //index.html ---> main.jsx ---> App.jsx --->AppLayout.jsx
 import App from "./App.jsx";
-// import "./index.css";
+import "./index.css";
 
 const chatbotId = import.meta.env.CHATBOT_ID;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 );

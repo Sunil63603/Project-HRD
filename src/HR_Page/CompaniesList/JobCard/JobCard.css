@@ -1,99 +1,168 @@
-/* Latest CSS for row-wise job display */
-/* Ensures each job card is displayed in a single row with uniform spacing */
-.job-listing {
+/* ========================================
+   JOB CARD
+======================================== */
+
+.companies-list .job-card {
   display: flex;
-  flex-direction: column; /* Stack job cards vertically */
-  gap: 16px; /* Add space between rows */
-  padding: 16px; /* Adds padding around the container */
-  margin-top: 60px; /* Adjust based on your navbar height */
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  padding: 24px;
+  margin: 0;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.job-card {
-  max-width: 100%; /* Ensure the card occupies full row width */
-  width: 100%; /* Consistent width for all cards */
-  margin: 0 auto; /* Center alignment (optional) */
-  z-index: 1; /* Ensure it stays below navbar */
+.companies-list .job-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+  transform: none;
 }
 
-/* Existing CSS for job cards styling */
-.job-card {
-  box-sizing: border-box;
-  border: 1px solid #e0e0e0; /* Light gray for subtle borders */
-  border-radius: 12px; /* Slightly more rounded corners */
-  padding: 16px;
-  background-color: #ffffff; /* Pure white for a clean look */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Subtle shadow for elevation */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+/* ========================================
+   COMPANY NAME
+======================================== */
+
+.companies-list .job-card h4 {
+  margin: 0 0 18px;
+  padding: 0;
+
+  color: #0f172a;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
 }
 
-.job-card:hover {
-  transform: translateY(-4px); /* Lift effect */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+/* ========================================
+   JOB DETAILS
+======================================== */
+
+.companies-list .job-card p {
+  margin: 0 0 14px;
+  padding: 0;
+
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.7;
+
+  overflow-wrap: anywhere;
 }
 
-button {
-  display: inline-flex;
-  align-items: center; /* Aligns icon and text vertically */
-  justify-content: center; /* Centers content */
-  padding: 12px 20px; /* Balanced padding */
-  font-size: 0.9rem; /* Standardized text size */
-  font-weight: 600; /* Medium bold text for readability */
-  border-radius: 25px; /* Consistent rounded corners */
-  border: none; /* Clean button style */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, box-shadow 0.2s ease; /* Smooth transitions */
+.companies-list .job-card strong {
+  color: #334155;
+  font-weight: 500;
 }
 
-.apply-button {
-  background-color: #4caf50; /* Green to represent positivity */
-  color: #ffffff; /* White text for contrast */
-}
+/* ========================================
+   READ MORE / READ LESS
+======================================== */
 
-.apply-button:hover {
-  background-color: #45a049; /* Slightly darker green on hover */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12); /* Subtle hover shadow */
-}
+.companies-list .showMore {
+  display: inline-block;
+  margin-top: 6px;
 
-.delete-button {
-  background-color: #0073b1; /* LinkedIn's blue for familiarity */
-  color: #ffffff; /* White text for readability */
-}
+  color: #2563eb;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
 
-.delete-button:hover {
-  background-color: #005580; /* Darker blue for hover */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12); /* Subtle hover shadow */
-}
-
-.button-container {
-  display: flex;
-  gap: 12px; /* Equal spacing between buttons */
-  margin-top: 16px; /* Space above buttons */
-}
-
-.job-card-title {
-  font-size: 1.2rem; /* Larger title text */
-  font-weight: 700; /* Bold for emphasis */
-  color: #333333; /* Dark gray for readability */
-  margin-bottom: 8px; /* Space below title */
-}
-
-.job-card-description {
-  font-size: 0.9rem; /* Standard body text */
-  color: #666666; /* Medium gray for secondary text */
-  line-height: 1.5; /* Comfortable line spacing */
-}
-
-.showMore {
-  color: #0073b1;
   cursor: pointer;
-  display: block;
-  font-size: large;
+  transition: color 0.2s ease;
 }
 
-h4 {
-  padding: 10px;
+.companies-list .showMore:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
 }
 
-p {
-  padding: 10px;
+/* ========================================
+   DELETE BUTTON
+======================================== */
+
+.companies-list .job-card .delete-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+
+  min-height: 40px;
+  margin-top: auto;
+  padding: 10px 20px;
+
+  background: #fff1f2;
+  color: #be123c;
+
+  border: 1px solid #ffe4e6;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  box-shadow: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.companies-list .job-card .delete-button:hover {
+  background: #ffe4e6;
+  color: #9f1239;
+  border-color: #fecdd3;
+
+  transform: none;
+  box-shadow: none;
+}
+
+.companies-list .job-card .delete-button:active {
+  background: #fecdd3;
+}
+
+.companies-list .job-card .delete-button:focus-visible {
+  outline: 2px solid #e11d48;
+  outline-offset: 3px;
+}
+
+.companies-list .job-card .delete-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .companies-list .job-card {
+    padding: 20px;
+  }
+
+  .companies-list .job-card h4 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .companies-list .job-card {
+    padding: 20px 18px;
+  }
+
+  .companies-list .job-card h4 {
+    font-size: 1.05rem;
+  }
+
+  .companies-list .job-card p {
+    font-size: 0.875rem;
+  }
 }

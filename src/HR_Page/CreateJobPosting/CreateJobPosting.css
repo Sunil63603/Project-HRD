@@ -1,69 +1,239 @@
-/* JobPostingForm.css */
+/* ========================================
+   CREATE JOB POSTING FORM
+======================================== */
 
 .job-posting-form {
-  max-width: 600px; /* Maximum width for the form */
-  margin: 20px auto; /* Center the form */
-  padding: 20px; /* Padding inside the form */
-  background-color: #f9f9f9; /* Light background color */
-  border: 1px solid #ddd; /* Light border */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 90%;
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 36px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
 }
+
+/* ========================================
+   FORM TITLE
+======================================== */
 
 .job-posting-form h2 {
-  margin-bottom: 20px; /* Space below the title */
-  text-align: center; /* Center the title */
+  margin: 0 0 30px;
+  color: #0f172a;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
 }
 
-.form-group {
-  margin-bottom: 15px; /* Space between form groups */
+/* ========================================
+   FORM GROUPS
+======================================== */
+
+.job-posting-form .form-group {
+  margin-bottom: 22px;
 }
 
-label {
-  display: block; /* Make labels block elements */
-  margin-bottom: 5px; /* Space below labels */
-  font-weight: 300; /* Bold labels */
+/* ========================================
+   LABELS
+======================================== */
+
+.job-posting-form label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
-input[type="text"],
-input[type="url"],
-textarea {
-  width: 100%; /* Full width */
-  padding: 10px; /* Padding inside input fields */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 4px; /* Slightly rounded corners */
-  box-sizing: border-box; /* Include padding and border in total width */
-}
+/* Required Field */
 
-textarea {
-  resize: vertical; /* Allow vertical resizing only */
-}
-
-.submit-button {
-  display: inline-flex;
-  align-items: center; /* Centers icon and text vertically */
-  background-color: #0073b1; /* LinkedIn's primary blue color */
-  color: #fff; /* White text for contrast */
-  padding: 10px 20px; /* Adds padding for a larger, clickable area */
-  font-size: 1rem; /* Adjusts font size */
-  font-weight: 600; /* Slightly bold for emphasis */
-  border: none; /* Removes default border */
-  border-radius: 25px; /* Rounded corners for a modern look */
-  cursor: pointer; /* Pointer cursor on hover */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-}
-
-.submit-button:hover {
-  background-color: #005580; /* Darker shade on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
-}
-
-.astirc-symbol {
-  color: red;
-}
-
-.combination-of-comname-astres {
+.job-posting-form .combination-of-comname-astres {
   display: flex;
+  align-items: baseline;
   gap: 4px;
+  margin-bottom: 8px;
+}
+
+.job-posting-form .combination-of-comname-astres label {
+  margin-bottom: 0;
+}
+
+.job-posting-form .astirc-symbol {
+  color: #ef4444;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ========================================
+   INPUT FIELDS
+======================================== */
+
+.job-posting-form input[type="text"],
+.job-posting-form input[type="url"],
+.job-posting-form textarea {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+
+  background: #ffffff;
+  color: #1e293b;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  outline: none;
+  box-shadow: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Input Hover */
+
+.job-posting-form input:hover,
+.job-posting-form textarea:hover {
+  border-color: #94a3b8;
+}
+
+/* Input Focus */
+
+.job-posting-form input:focus,
+.job-posting-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Placeholder */
+
+.job-posting-form input::placeholder,
+.job-posting-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* ========================================
+   TEXTAREA
+======================================== */
+
+.job-posting-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.job-posting-form #jobDescription {
+  min-height: 150px;
+}
+
+.job-posting-form #additionalDetails {
+  min-height: 100px;
+}
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
+
+.job-posting-form .submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 46px;
+  margin-top: 12px;
+  padding: 12px 24px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  box-shadow: none;
+
+  transition: background-color 0.2s ease;
+}
+
+/* Button Hover */
+
+.job-posting-form .submit-button:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Button Active */
+
+.job-posting-form .submit-button:active {
+  background: #1e40af;
+  transform: none;
+}
+
+/* Button Focus */
+
+.job-posting-form .submit-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* Disabled Button */
+
+.job-posting-form .submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .job-posting-form {
+    width: 95%;
+    margin: 24px auto;
+    padding: 28px 24px;
+  }
+
+  .job-posting-form h2 {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+  }
+
+  .job-posting-form .form-group {
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-posting-form {
+    width: 95%;
+    margin: 16px auto;
+    padding: 24px 18px;
+    border-radius: 10px;
+  }
+
+  .job-posting-form h2 {
+    font-size: 1.3rem;
+  }
+
+  .job-posting-form input[type="text"],
+  .job-posting-form input[type="url"],
+  .job-posting-form textarea {
+    font-size: 16px;
+  }
+
+  .job-posting-form .submit-button {
+    width: 100%;
+  }
 }

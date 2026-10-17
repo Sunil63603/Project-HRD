@@ -1,186 +1,419 @@
-/* Main chat container */
-.chat-container {
+/* ========================================
+   MESSAGE HRD - CHAT CONTAINER
+======================================== */
+
+.chat-container:has(.arrow-icon) {
   display: flex;
   flex-direction: column;
-  height: 70vh;
-  max-width: 750px;
-  margin: 0 auto;
-  background-color: #f5f5f5;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  width: 95%;
+  max-width: 720px;
+  height: 75vh;
+  min-height: 400px;
+
+  margin: 24px auto;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
   overflow: hidden;
 }
-.chat-container .chat-header{
-  font-size: 40px;
-  font-style: italic;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  /* text-decoration: underline; */
-  text-transform: capitalize;
-  color: white;
-}
-/* Header */
-.chat-header {
-  padding: 15px;
-  background-color: #007bff;
-  color: white;
-  text-align: center;
+
+/* ========================================
+   CHAT HEADER
+======================================== */
+
+.chat-container:has(.arrow-icon) .chat-header {
+  margin: 0;
+  padding: 18px 24px;
+
+  background: #ffffff;
+  color: #0f172a;
+
+  border-bottom: 1px solid #e2e8f0;
+
   font-size: 1.2rem;
-  font-weight: bold;
-}
-.up-arrow-icon {
-  font-size: 1.5rem; /* Adjust size */
-  color: white;   /* ChatGPT green shade */
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
+  text-transform: none;
 }
 
-.up-arrow-icon:hover {
-  transform: scale(1.2); /* Slight zoom on hover */
-}
+/* ========================================
+   CONTACT ICONS
+======================================== */
 
-
-.contact-icons {
+.chat-container:has(.arrow-icon) .contact-icons {
   display: flex;
-  justify-content: space-around;
-  margin: 10px 0;
-}
-.contact-icons a{ 
- border-radius: 20px; 
- font-size: 30px;
- /* background-color: wheat;  */
- }
-hr{
-  color: #0056b3;
-}
-.icon {
-  margin: 0 10px;
-  font-size: 24px;
-  cursor: pointer;
-  transition: color 0.3s;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  margin: 0;
+  padding: 14px;
+
+  background: #f8fafc;
 }
 
-.icon:hover {
-  color: #007bff; /* Change color on hover */
-}
-
-.phone-icon {
-  color: #25d366; /* WhatsApp green */
-}
-
-.mail-icon {
-  color: #ea4335; /* Gmail red */
-}
-
-.whatsapp-icon {
-  color: #25d366; /* WhatsApp green */
-}
-
-/* Messages container */
-.messages-container {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
+.chat-container:has(.arrow-icon) .contact-icons a {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
-/* Individual message styles */
-.message {
-  padding: 10px 15px;
-  border-radius: 15px;
-  max-width: 70%;
-  word-wrap: break-word;
-  position: relative;
+.chat-container:has(.arrow-icon) .contact-icons a:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
 }
 
-/* HR messages */
-.hr-message {
-  background-color: #e9f5ff;
-  align-self: flex-start;
-  color: #333;
+.chat-container:has(.arrow-icon) .contact-icons .icon {
+  margin: 0;
+  font-size: 1.3rem;
+  transition: none;
 }
 
-/* Student messages */
-.student-message {
-  background-color: #007bff;
-  align-self: flex-end;
-  color: white;
+.chat-container:has(.arrow-icon) .whatsapp-icon {
+  color: #16a34a;
 }
-.send-button {
-  background-color: #10a37f; /* ChatGPT green */
+
+.chat-container:has(.arrow-icon) .phone-icon {
+  color: #2563eb;
+}
+
+.chat-container:has(.arrow-icon) .mail-icon {
+  color: #dc2626;
+}
+
+/* Divider */
+
+.chat-container:has(.arrow-icon) > hr {
+  width: 100%;
+  height: 1px;
+
+  margin: 0;
+  padding: 0;
+
+  background: #e2e8f0;
   border: none;
-  border-radius: 50%; /* Circular button */
-  width: 50px;
-  height: 50px;
+}
+
+/* ========================================
+   MESSAGES CONTAINER
+======================================== */
+
+.chat-container:has(.arrow-icon) .messages-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+
+  min-height: 0;
+  padding: 24px;
+
+  background: #f8fafc;
+  overflow-y: auto;
 }
 
-.send-button:hover {
-  background-color: #0d8f6b; /* Darker green on hover */
-  transform: scale(1.1); /* Slight zoom effect */
+/* ========================================
+   MESSAGE BUBBLES
+======================================== */
+
+.chat-container:has(.arrow-icon) .message {
+  position: relative;
+  width: fit-content;
+  max-width: 75%;
+
+  margin: 0;
+  padding: 12px 16px;
+
+  border-radius: 12px;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+  box-shadow: none;
 }
 
-.arrow-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Message Text */
+
+.chat-container:has(.arrow-icon) .message p {
+  margin: 0;
+
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
-.icons {
-  color: white; /* Icon color */
-  font-size: 20px; /* Icon size */
-  transition: transform 0.2s ease;
+/* ========================================
+   HR MESSAGES
+======================================== */
+
+.chat-container:has(.arrow-icon) .hr-message {
+  align-self: flex-start;
+
+  background: #ffffff;
+  color: #334155;
+
+  border: 1px solid #e2e8f0;
+  border-bottom-left-radius: 4px;
 }
 
-.send-button:hover .icons {
-  transform: translateY(-2px); /* Subtle arrow movement on hover */
+/* ========================================
+   STUDENT MESSAGES
+======================================== */
+
+.chat-container:has(.arrow-icon) .student-message {
+  align-self: flex-end;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border: 1px solid #2563eb;
+  border-bottom-right-radius: 4px;
 }
 
-/* Timestamp */
-.timestamp {
-  font-size: 0.8rem;
-  color: #0d0d0d;
-  margin-top: 5px;
+/* ========================================
+   TIMESTAMP
+======================================== */
+
+.chat-container:has(.arrow-icon) .timestamp {
+  display: block;
+  margin-top: 6px;
+
+  font-size: 0.7rem;
+  font-weight: 400;
   text-align: right;
 }
 
-/* Message input container */
-.message-input-container {
+.chat-container:has(.arrow-icon) .hr-message .timestamp {
+  color: #64748b;
+}
+
+.chat-container:has(.arrow-icon) .student-message .timestamp {
+  color: #dbeafe;
+}
+
+/* ========================================
+   MESSAGE INPUT CONTAINER
+======================================== */
+
+.chat-container:has(.arrow-icon) .message-input-container {
+  position: static;
+
   display: flex;
-  padding: 10px;
-  background-color: #fff;
-  border-top: 1px solid #ddd;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  margin: 0;
+  padding: 16px 20px;
+
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-radius: 0;
+
+  box-shadow: none;
+  transform: none;
 }
 
-/* Message input field */
-.message-input {
+/* ========================================
+   MESSAGE INPUT
+======================================== */
+
+.chat-container:has(.arrow-icon) .message-input {
   flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
+  min-width: 0;
+  width: 100%;
+  height: 44px;
+
+  margin: 0;
+  padding: 10px 16px;
+
+  background: #f8fafc;
+  color: #1e293b;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+
   outline: none;
-  font-size: 1rem;
+  box-shadow: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
-/* Send button */
-.send-button {
-  padding: 10px 20px;
-  margin-left: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 20px;
+/* Placeholder */
+
+.chat-container:has(.arrow-icon) .message-input::placeholder {
+  color: #94a3b8;
+}
+
+/* Focus */
+
+.chat-container:has(.arrow-icon) .message-input:focus {
+  background: #ffffff;
+  border-color: #2563eb;
+
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ========================================
+   SEND BUTTON
+======================================== */
+
+.chat-container:has(.arrow-icon) .send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 44px;
+  height: 44px;
+
+  margin: 0;
+  padding: 0;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: none;
+
+  transition: background-color 0.2s ease;
 }
 
-.send-button:hover {
-  background-color: #0056b3;
+/* Hover */
+
+.chat-container:has(.arrow-icon) .send-button:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+
+  transform: none;
+  box-shadow: none;
+}
+
+/* Active */
+
+.chat-container:has(.arrow-icon) .send-button:active {
+  background: #1e40af;
+  transform: none;
+}
+
+/* ========================================
+   SEND ARROW ICON
+======================================== */
+
+.chat-container:has(.arrow-icon) .arrow-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-container:has(.arrow-icon) .icons {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1;
+
+  transition: none;
+}
+
+.chat-container:has(.arrow-icon) .send-button:hover .icons {
+  transform: none;
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+.chat-container:has(.arrow-icon) .messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-container:has(.arrow-icon) .messages-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .chat-container:has(.arrow-icon) {
+    width: 95%;
+    margin: 16px auto;
+  }
+
+  .chat-container:has(.arrow-icon) .chat-header {
+    padding: 16px;
+    font-size: 1.1rem;
+  }
+
+  .chat-container:has(.arrow-icon) .messages-container {
+    padding: 16px;
+  }
+
+  .chat-container:has(.arrow-icon) .message {
+    max-width: 85%;
+  }
+
+  .chat-container:has(.arrow-icon) .message-input-container {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-container:has(.arrow-icon) {
+    width: 100%;
+    height: calc(100dvh - 100px);
+    min-height: 350px;
+    margin: 0;
+
+    border-radius: 0;
+  }
+
+  .chat-container:has(.arrow-icon) .messages-container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .chat-container:has(.arrow-icon) .message {
+    max-width: 90%;
+    padding: 10px 12px;
+  }
+
+  .chat-container:has(.arrow-icon) .message-input {
+    font-size: 16px;
+  }
+
+  .chat-container:has(.arrow-icon) .contact-icons {
+    padding: 10px;
+  }
 }

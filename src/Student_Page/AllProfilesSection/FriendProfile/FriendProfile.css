@@ -1,316 +1,574 @@
+/* ========================================
+   FRIEND PROFILE CONTAINER
+======================================== */
+
 .friend-profile-container {
-  width: 100%;
-  padding: 2%;
-  background-color: #f4eeee;
-  border-radius: 23px; /*Medium rounded corners*/
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect*/
-  box-sizing: border-box;
-  margin-right: 4%;
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  width: 95%;
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 24px;
+
+  background: #f8fafc;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
-.profile-left,
-.profile-right {
-  width: 48%; /* Adjust width to fit side-by-side with spacing */
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for individual containers */
+/* ========================================
+   PROFILE PANELS
+======================================== */
+
+.friend-profile-container .profile-left,
+.friend-profile-container .profile-right {
+  min-width: 0;
+  padding: 28px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
 }
 
-.profile-left {
-  text-align: left; /* Align text to the left */
+.friend-profile-container .profile-left {
+  flex: 1;
+  text-align: left;
 }
 
-.profile-right {
-  text-align: left; /* Align text to the left for consistency */
+.friend-profile-container .profile-right {
+  flex: 1;
+  text-align: left;
 }
 
-.component-name {
+/* ========================================
+   SECTION HEADINGS
+======================================== */
+
+.friend-profile-container .component-name {
+  margin: 0 0 28px;
+  padding-bottom: 14px;
+
+  color: #0f172a;
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 20px;
-  color: #333;
-  text-align: center;
-  position: relative;
+  text-align: left;
+
+  border-bottom: 1px solid #e2e8f0;
 }
 
-/* heading of the component ie.updates,jobs,profile..etc */
-/* ❌theres some problem in this , try to correct it */
-.component-name::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -8px;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 4px;
-  /* background-color: #3498db; */
-  background-color: #007bff;
-  border-radius: 2px;
-  transition: width 0.3s ease;
-  /*Short line under the heading*/
-  /* Thickness of the underline */
-  /* Accent color */
-  /* Slightly rounded edges */
-  /* Smooth transition for hover effect */
+.friend-profile-container .component-name::after {
+  display: none;
 }
 
-.component-name:hover::after {
-  width: 100%; /* Extends the underline on hover */
-}
+/* ========================================
+   PROFILE IMAGE
+======================================== */
 
-/* .profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+.friend-profile-container .profile-image {
+  display: block;
+
+  width: 110px;
+  height: 110px;
+  margin: 0 0 24px;
+
   object-fit: cover;
-  margin-bottom: 20px;
-} */
 
-/* Container for student information */
-.student-info {
-  margin-bottom: 20px;
+  background: #f1f5f9;
+  border: 3px solid #eff6ff;
+  border-radius: 50%;
 }
 
-/* Label Styles */
-.info-label {
-  display: block; /* Each label on a new line */
-  font-size: 0.85rem; /* Smaller font size for a label-like appearance */
-  color: #555; /* Subtle grey color */
-  margin-top: 25px;
-  margin-bottom: 1px; /* Space between the label and the element */
-  font-weight: 600; /* Slightly bold for emphasis */
-  text-transform: uppercase; /* Converts text to uppercase for a modern touch */
+/* Hide image until a valid source is provided */
+
+.friend-profile-container .profile-image[src=""] {
+  display: none;
 }
 
-/* Styles for the student's name */
-.student-name {
-  font-size: 1.5rem; /* Adjust size for emphasis */
-  font-weight: bold;
-  color: #2c3e50; /* Dark color for contrast */
-  margin: 5px 0 15px; /* Adds space around the element */
+/* ========================================
+   PROFILE INFORMATION
+======================================== */
+
+.friend-profile-container .student-info {
+  margin-bottom: 24px;
 }
 
-/* Styles for the USN */
-.student-usn {
+/* Labels */
+
+.friend-profile-container .info-label {
+  display: block;
+
+  margin: 22px 0 6px;
+
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Student Name */
+
+.friend-profile-container .student-name {
+  margin: 0 0 16px;
+
+  color: #0f172a;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+}
+
+/* Student USN */
+
+.friend-profile-container .student-usn {
+  margin: 0 0 16px;
+
+  color: #334155;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ========================================
+   PORTFOLIO LINK
+======================================== */
+
+.friend-profile-container #student-website {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin: 4px 0 16px;
+
+  color: #2563eb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.friend-profile-container #student-website:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.friend-profile-container .icon-style {
+  color: inherit;
+  font-size: 0.85rem;
+}
+
+/* ========================================
+   SKILLS SECTION
+======================================== */
+
+.friend-profile-container .profile-skills {
+  margin: 28px 0;
+}
+
+.friend-profile-container .profile-skills h2 {
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+
+  color: #0f172a;
   font-size: 1.2rem;
-  color: #2c3e50;
-  margin: 5px 0 15px;
+  font-weight: 600;
+
+  border-bottom: 1px solid #e2e8f0;
 }
 
-/* Styles for the website link */
-a#student-website {
-  color: #3498db; /* Bright blue color for links */
-  text-decoration: none; /* Removes underline */
-  font-size: 1.1rem;
-  margin: 5px 0;
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
-}
+/* Skills List */
 
-a#student-website:hover {
-  color: #1a73e8; /* Changes color on hover */
-}
+.friend-profile-container .skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 
-.icon-style {
-  font-size: 1rem; /* Adjust the size of the icon */
-  color: #3498db; /* Set the color */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  margin-right: 5px; /* Add some spacing */
-}
-
-.icon-style:hover {
-  color: #1a73e8; /* Change color on hover */
-}
-
-/* resumes container css properties */
-/* Container for resumes */
-.resumes-container {
-  margin-bottom: 20px;
-}
-
-/* List of resumes */
-.resumes-list {
-  list-style: none; /* Removes default bullet points */
+  margin: 0;
   padding: 0;
+
+  list-style: none;
+}
+
+/* Skill Badges */
+
+.friend-profile-container .skills-list li {
+  margin: 0;
+  padding: 7px 12px;
+
+  background: #eff6ff;
+  color: #1d4ed8;
+
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ========================================
+   RESUMES SECTION
+======================================== */
+
+.friend-profile-container .resumes-container {
+  margin: 12px 0 24px;
+}
+
+.friend-profile-container .resumes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* Resume Item */
+
+.friend-profile-container .resume-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+  margin: 0;
+  padding: 14px 16px;
+
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.friend-profile-container .resume-item:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+/* Resume Icons */
+
+.friend-profile-container .resume-icon {
+  flex-shrink: 0;
+  color: #dc2626;
+  font-size: 1.4rem;
+}
+
+.friend-profile-container .download-icon {
+  flex-shrink: 0;
+  color: #2563eb;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.friend-profile-container .upload-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+/* Resume Link */
+
+.friend-profile-container .resume-link {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+
+  color: #2563eb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  overflow-wrap: anywhere;
+}
+
+.friend-profile-container .resume-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* ========================================
+   CONTACT DETAILS
+======================================== */
+
+.friend-profile-container .contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin-top: 24px;
+  padding-top: 20px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.friend-profile-container .contact-details a {
+  display: inline-block;
+  margin: 0;
+
+  color: #2563eb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  overflow-wrap: anywhere;
+}
+
+.friend-profile-container .contact-details a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.friend-profile-container .contact-details .info-label {
+  margin-top: 12px;
+}
+
+/* ========================================
+   MESSAGE BUTTON
+======================================== */
+
+.friend-profile-container .message-friend {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+  margin-top: 28px;
+  padding: 12px 24px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  box-shadow: none;
+
+  transition: background-color 0.2s ease;
+}
+
+.friend-profile-container .message-friend:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+
+  transform: none;
+  box-shadow: none;
+}
+
+.friend-profile-container .message-friend:active {
+  background: #1e40af;
+}
+
+.friend-profile-container .message-friend:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* ========================================
+   PROJECTS SECTION
+======================================== */
+
+.friend-profile-container .profile-projects {
   margin: 0;
 }
 
-/* Individual resume item */
-.resume-item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc; /* Adds a border around each resume */
-  border-radius: 5px; /* Rounded corners */
-  background-color: #f9f9f9; /* Light background */
-  transition: box-shadow 0.3s ease;
-}
+.friend-profile-container .profile-projects h2 {
+  margin: 0 0 24px;
+  padding-bottom: 14px;
 
-.resume-item:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Adds shadow on hover */
-}
-
-/* Resume link */
-.resume-link {
-  margin-left: 10px;
-  color: #0073b1; /* LinkedIn's blue color */
-  text-decoration: none;
-  flex-grow: 1; /* Takes up the available space */
-}
-
-.resume-link:hover {
-  text-decoration: underline; /* Underline on hover */
-}
-
-/* Icons */
-.resume-icon {
-  color: #e74c3c; /* Red color for PDF icon */
+  color: #0f172a;
   font-size: 1.5rem;
-}
-
-.download-icon {
-  color: #0073b1;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-/* Icon inside the button */
-.upload-icon {
-  margin-right: 8px; /* Spacing between icon and text */
-  font-size: 1.2rem; /* Adjust icon size */
-}
-
-.contact-details a {
-  display: block;
-  margin: 5px 0;
-  color: blue;
-  text-decoration: none;
-}
-
-.message-friend {
-  margin-top: 2rem;
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1rem;
   font-weight: 600;
-  color: white;
-  background-color: #007bff; /* Primary blue color */
-  border: none;
-  border-radius: 25px; /* Rounded edges for a pill-like shape */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  border-bottom: 1px solid #e2e8f0;
 }
 
-.message-friend:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: translateY(-2px); /* Slight lift effect */
-}
+/* Projects List */
 
-.message-friend:active {
-  background-color: #003f8c; /* Even darker blue when clicked */
-  transform: translateY(0); /* Reset lift effect */
-}
-
-.message-friend:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Highlight outline */
-}
-
-/* latest CSS code for updated profile section */
-
-/* ProfileSection.css */
-
-.profile-section {
-  width: 80%; /* Increased width */
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.profile-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.profile-picture {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-.profile-name {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.profile-bio {
-  font-size: 1.2em;
-  color: #666;
-}
-
-.profile-projects,
-.profile-skills,
-.profile-achievements {
-  margin-bottom: 30px;
-}
-
-.profile-projects h2,
-.profile-skills h2,
-.profile-achievements h2 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 5px;
-}
-
-.project-item {
-  margin-bottom: 20px;
-}
-
-.project-video {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.project-links {
+.friend-profile-container .profile-projects ul {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* Project Card */
+
+.friend-profile-container .project-item {
+  margin: 0;
+  padding: 20px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.friend-profile-container .project-item:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.05);
+}
+
+.friend-profile-container .project-item h3 {
+  margin: 0 0 16px;
+
+  color: #0f172a;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   PROJECT LINKS
+======================================== */
+
+.friend-profile-container .project-links {
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
-.project-link-btn {
-  display: inline-block;
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: #fff;
+.friend-profile-container .project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 38px;
+  padding: 9px 16px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+
+  font-size: 0.85rem;
+  font-weight: 500;
   text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
-.project-link-btn:hover {
-  background-color: #0056b3;
+.friend-profile-container .project-link-btn:hover {
+  background: #dbeafe;
+  color: #1d4ed8;
 }
 
-.skills-list,
-.achievements-list {
-  list-style-type: disc;
+/* ========================================
+   ACHIEVEMENTS
+======================================== */
+
+.friend-profile-container .profile-achievements {
+  margin-bottom: 24px;
+}
+
+.friend-profile-container .profile-achievements h2 {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+
+  color: #0f172a;
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.friend-profile-container .achievements-list {
+  margin: 0;
   padding-left: 20px;
 }
 
-.skills-list li,
-.achievements-list li {
+.friend-profile-container .achievements-list li {
   margin-bottom: 10px;
-  font-size: 1.1em;
+
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .friend-profile-container {
+    flex-direction: column;
+    gap: 16px;
+
+    width: 95%;
+    margin: 20px auto;
+    padding: 16px;
+  }
+
+  .friend-profile-container .profile-left,
+  .friend-profile-container .profile-right {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .friend-profile-container .component-name,
+  .friend-profile-container .profile-projects h2 {
+    font-size: 1.35rem;
+  }
+
+  .friend-profile-container .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .friend-profile-container {
+    width: 100%;
+    margin: 12px auto;
+    padding: 12px;
+  }
+
+  .friend-profile-container .profile-left,
+  .friend-profile-container .profile-right {
+    padding: 20px 16px;
+  }
+
+  .friend-profile-container .student-name {
+    font-size: 1.25rem;
+  }
+
+  .friend-profile-container .project-item {
+    padding: 16px;
+  }
+
+  .friend-profile-container .project-links {
+    flex-direction: column;
+  }
+
+  .friend-profile-container .project-link-btn {
+    width: 100%;
+  }
+
+  .friend-profile-container .message-friend {
+    width: 100%;
+  }
 }

@@ -1,94 +1,267 @@
-.message-display {
-  padding: 35px;
-  max-height: 420px; /* Keeps the box fixed at 300px in height */
-  overflow-y: auto; /* Enables scrolling if content overflows */
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+/* ========================================
+   MESSAGE DISPLAY
+======================================== */
+
+.messaging-container .message-display {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  gap: 8px;
+  gap: 14px;
+
+  min-height: 0;
+  margin: 0;
+  padding: 24px;
+
+  background: #f8fafc;
+  border-radius: 0;
+  box-shadow: none;
+
+  overflow-y: auto;
 }
-/* Ensure message-bubble is positioned relative */
-.message-bubble {
-  position: relative; /* Allows the dropdown to position itself relative to this element */
-  padding: 10px;
-  margin-bottom: 8px;
+
+/* ========================================
+   MESSAGE BUBBLES
+======================================== */
+
+.messaging-container .message-bubble {
+  position: relative;
+
+  width: fit-content;
+  max-width: 85%;
+  margin: 0;
+  padding: 14px 18px;
+
   border-radius: 12px;
-  width: 100%;
-  font-size: 14px;
-  line-height: 1.4;
-  word-wrap: break-word;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+  cursor: pointer;
+
+  transition: box-shadow 0.2s ease;
 }
 
-/* HR messages aligned to the right */
-.hr-message {
-  background-color: #d0e1f9;
-  color: #2b5876;
-  align-self: flex-end; /* Aligns the HR message to the right */
+/* HR Messages */
+
+.messaging-container .hr-message {
+  align-self: flex-end;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border: 1px solid #2563eb;
+  border-bottom-right-radius: 4px;
 }
 
-/* Student messages aligned to the left */
-.student-message {
-  background-color: #f3d1d1;
-  color: #82204a;
-  align-self: flex-start; /* Aligns the student message to the left */
+.messaging-container .hr-message:hover {
+  box-shadow: 0 3px 12px rgba(37, 99, 235, 0.15);
 }
 
-/* Message header with sender name and date/time */
-.message-header {
+/* Student Messages */
+
+.messaging-container .student-message {
+  align-self: flex-start;
+
+  background: #ffffff;
+  color: #334155;
+
+  border: 1px solid #e2e8f0;
+  border-bottom-left-radius: 4px;
+}
+
+/* ========================================
+   MESSAGE HEADER
+======================================== */
+
+.messaging-container .message-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  font-size: 12px;
-  color: #555;
-  margin-bottom: 5px;
-}
+  flex-wrap: wrap;
+  gap: 8px;
 
-.sender-name {
-  font-weight: bold;
-}
+  margin-bottom: 8px;
 
-.message-date-time {
-  color: #999;
-  font-size: 11px;
-}
-
-/* Message text */
-.message-text {
-  font-size: 14px;
+  font-size: 0.75rem;
   line-height: 1.5;
-  color: #333;
-  white-space: pre-wrap; /* Ensures line breaks are respected */
 }
 
-/* Dropdown menu */
-.dropdown-menu {
-  position: absolute; /* Positions dropdown relative to the message-bubble */
-  top: 100%; /* Positions below the message */
-  right: 10px; /* Aligns the dropdown to the right edge */
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 10; /* Ensures it appears above other elements */
+/* Sender Name */
+
+.messaging-container .sender-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Date and Time */
+
+.messaging-container .message-date-time {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+/* HR Header Colors */
+
+.messaging-container .hr-message .message-header,
+.messaging-container .hr-message .message-date-time {
+  color: #dbeafe;
+}
+
+/* Student Header Colors */
+
+.messaging-container .student-message .message-header,
+.messaging-container .student-message .message-date-time {
+  color: #64748b;
+}
+
+/* ========================================
+   MESSAGE TEXT
+======================================== */
+
+.messaging-container .message-text {
+  margin: 0;
+
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.messaging-container .hr-message .message-text {
+  color: #ffffff;
+}
+
+.messaging-container .student-message .message-text {
+  color: #334155;
+}
+
+/* ========================================
+   DROPDOWN MENU
+======================================== */
+
+.messaging-container .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 100;
+
   display: flex;
   flex-direction: column;
-  padding: 5px;
+
+  min-width: 120px;
+  padding: 6px;
+  margin-top: 4px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
 }
 
-.dropdown-item {
-  background: none;
+/* ========================================
+   DROPDOWN ITEMS
+======================================== */
+
+.messaging-container .dropdown-item {
+  display: block;
+  width: 100%;
+
+  padding: 10px 14px;
+
+  background: transparent;
+  color: #334155;
+
   border: none;
-  padding: 8px 8px;
-  font-size: 14px;
-  color: #333;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
   text-align: left;
+
   cursor: pointer;
-  transition: background-color 0.2s ease;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
-.dropdown-item:hover {
-  background-color: #f0f0f0;
-  color: #000;
+/* Delete Action */
+
+.messaging-container .dropdown-item:hover {
+  background: #fff1f2;
+  color: #be123c;
+}
+
+.messaging-container .dropdown-item:active {
+  background: #ffe4e6;
+}
+
+.messaging-container .dropdown-item:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+.messaging-container .message-display::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messaging-container .message-display::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messaging-container .message-display::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.messaging-container .message-display::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .messaging-container .message-display {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .messaging-container .message-bubble {
+    max-width: 90%;
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .messaging-container .message-display {
+    padding: 12px;
+  }
+
+  .messaging-container .message-bubble {
+    max-width: 92%;
+    padding: 10px 12px;
+  }
+
+  .messaging-container .message-text {
+    font-size: 0.875rem;
+  }
+
+  .messaging-container .message-header {
+    gap: 4px;
+  }
+
+  .messaging-container .dropdown-menu {
+    min-width: 110px;
+  }
 }
