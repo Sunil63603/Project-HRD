@@ -1,1 +1,1 @@
-Live Demo: 👉https://project-hrd.vercel.app/👈
+Live Demo: https://project-hrd.vercel.app/
