@@ -7,10 +7,10 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 export default [
   { ignores: ['dist'] },
   {
-    files: ['**/*.{js,jsx}'],
+    files: ["backend/**/*.js"],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: globals.node,
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
