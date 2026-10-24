@@ -16,21 +16,13 @@ function FriendProfile() {
   // ❌❌❌Based on this studentUSN , fetch details from 'db.json' and display details related to students.
   const friendUSN = queryParams.get("frndUSN");
 
-  //call this function , inside useEffect.
-  // const getStudentObj = () => {
-  //   return fetch(`http://localhost:3000/registeredStuds`)
-  //     .then((response) => response.json())
-  //     .then((students) => students.find((friend) => friend.USN === friendUSN))
-  //     .catch((error) => {
-  //       console.error(error);
-  //       return null;
-  //     });
-  // };
-
   const getStudentObj = async () => {
     try {
       const response = await fetch(
-        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy=%22USN%22&equalTo=%22${friendUSN}%22`
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy=%22USN%22&equalTo=%22${friendUSN}%22`,
+        {
+          credentials: "include",
+        },
       );
 
       if (!response.ok) {

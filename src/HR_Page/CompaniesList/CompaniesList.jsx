@@ -15,7 +15,9 @@ const CompaniesList = () => {
 
   const fetchJobs = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs`, {
+        credentials: "include",
+      });
 
       if (!response.ok) throw new Error("Failed to fetch jobs");
 
@@ -38,6 +40,7 @@ const CompaniesList = () => {
         `${import.meta.env.VITE_API_URL}/api/jobs/${id}`,
         {
           method: "DELETE",
+          credentials: "include",
         },
       );
 

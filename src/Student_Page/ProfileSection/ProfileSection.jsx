@@ -14,22 +14,15 @@ const ProfileSection = () => {
   // ❌❌❌Based on this studentUSN , fetch details from 'db.json' and display details related to students.
   const studentUSN = searchParams.get("studentUSN");
 
-  //call this function , inside useEffect.
-  // const getStudentObj = () => {
-  //   return fetch(`http://localhost:3000/registeredStuds`)
-  //     .then((response) => response.json())
-  //     .then((students) => students.find((stud) => stud.USN === studentUSN))
-  //     .catch((error) => {
-  //       console.error(error);
-  //       return null;
-  //     });
-  // };
-
   const getStudentObj = async () => {
     try {
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy=%22USN%22&equalTo=%22${studentUSN}%22`,
-        { method: "GET", headers: { "Content-Type": "application/json" } }
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+        },
       );
 
       if (!response.ok) {
