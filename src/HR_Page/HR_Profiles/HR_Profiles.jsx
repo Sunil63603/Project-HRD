@@ -11,30 +11,14 @@ const Profiles = () => {
   const [selectedStudent, setSelectedStudent] = useState({});
   const [showStudentProfile, setShowStudentProfile] = useState(false);
 
-  // Fetching students from db.json using fetch
-  // useEffect(() => {
-  //   const fetchStudents = async () => {
-  //     try {
-  //       const response = await fetch("http://localhost:3000/registeredStuds");
-  //       if (!response.ok) {
-  //         throw new Error("Failed to fetch");
-  //       }
-  //       const data = await response.json();
-  //       setStudents(data);
-  //     } catch (err) {
-  //       setError("Error fetching students data");
-  //       console.error("Error fetching students:", err);
-  //     }
-  //   };
-
-  //   fetchStudents();
-  // }, []);
-
   useEffect(() => {
     const fetchStudents = async () => {
       try {
         const response = await fetch(
-          `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json`
+          `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json`,
+          {
+            credentials: "include",
+          },
         );
         if (!response.ok) {
           throw new Error("Failed to fetch");
@@ -53,7 +37,7 @@ const Profiles = () => {
 
   // Filter students based on the search term dynamically
   const filteredStudents = students.filter((student) =>
-    student.USN.toLowerCase().includes(searchTerm.toLowerCase())
+    student.USN.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   // console.log(selectedStudent);

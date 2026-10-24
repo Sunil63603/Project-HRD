@@ -30,30 +30,13 @@ const MessageHRDSection = () => {
   //here write logic to find index of student(1SJ21CS151) inside registeredStuds[].
   //then use that index to fetch conversations of current student
   const getConversationsByUSN = async (studentUSN) => {
-    // try {
-    //   // Fetch the registeredStuds array from the mock API
-    //   const response = await fetch("http://localhost:3000/registeredStuds");
-    //   const students = await response.json();
-
-    //   // Find the student by USN
-    //   const student = students.find((stud) => stud.USN === studentUSN);
-
-    //   // If the student exists, return their conversations
-    //   if (student) {
-    //     return student.conversationsWithHR;
-    //   } else {
-    //     console.error("Student not found with USN:", studentUSN);
-    //     return [];
-    //   }
-    // } catch (error) {
-    //   console.error("Error fetching conversations:", error);
-    //   return [];
-    // }
-
     try {
       // Fetch the registered students from JSONBin
       const response = await fetch(
-        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy="USN"&equalTo="${studentUSN}"`
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy="USN"&equalTo="${studentUSN}"`,
+        {
+          credentials: "include",
+        },
       );
 
       if (!response.ok) {
@@ -114,50 +97,15 @@ const MessageHRDSection = () => {
   //logic to update db.json with new message entered by student
   const updateConversationsByUSN = async (
     studentUSN,
-    newConversationObject
+    newConversationObject,
   ) => {
-    // try {
-    //   // Fetch the entire registeredStuds array
-    //   const response = await fetch("http://localhost:3000/registeredStuds");
-    //   const students = await response.json();
-
-    //   // Find the student by USN
-    //   const student = students.find((student) => student.USN === studentUSN);
-
-    //   if (!student) {
-    //     console.error("Student not found");
-    //     return;
-    //   }
-
-    //   //update the conversationswithHR array for specific student
-    //   const updatedStudent = {
-    //     ...student,
-    //     conversationsWithHR: [
-    //       ...student.conversationsWithHR,
-    //       newConversationObject,
-    //     ],
-    //   };
-
-    //   // Update the entire registeredStuds array in db.json
-    //   await fetch(`http://localhost:3000/registeredStuds/${student.id}`, {
-    //     method: "PUT", // Replace the entire array
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(updatedStudent),
-    //   });
-
-    //   // Success Toast Notificaion
-    //   PopUpToast.success("Message Sent Successsully!");
-    //   console.log("Messages updated successfully.");
-    // } catch (error) {
-    //   console.error("Error updating messages:", error);
-    // }
-
     try {
       // Fetch the entire JSONBin object
       const response = await fetch(
-        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy="USN"&equalTo="${studentUSN}"`
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy="USN"&equalTo="${studentUSN}"`,
+        {
+          credentials: "include",
+        },
       );
 
       if (!response.ok) {
@@ -188,7 +136,8 @@ const MessageHRDSection = () => {
           body: JSON.stringify({
             conversationsWithHR: studentObj.conversationsWithHR,
           }),
-        }
+          credentials: "include",
+        },
       );
 
       // Success Toast Notification

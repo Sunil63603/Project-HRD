@@ -16,27 +16,13 @@ function GroupMessages() {
     }));
   };
 
-  // const fetchNotifications = () => {
-  //   fetch("http://localhost:3000/GroupMessages")
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error("Network response was not ok");
-  //       }
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       setNotifications(data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching notifications:", error);
-  //       clearInterval(intervalIdRef.current);
-  //     });
-  // };
-
   const fetchNotifications = async () => {
     try {
       const response = await fetch(
-        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/GroupMessages.json`
+        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/GroupMessages.json`,
+        {
+          credentials: "include",
+        },
       );
 
       if (!response.ok) {
