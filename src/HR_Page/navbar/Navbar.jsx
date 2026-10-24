@@ -1,21 +1,29 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom"; // link is to navigate to the combonent which is described when the user clicks on it and the links/routes/path should be same as described in the App.js
-import "./Navbar.css"; // Import the CSS file which has the styling from this component
+import { Link, useLocation } from "react-router-dom";
+import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
+import { useLogOut } from "../../context/LogOutContext";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState("");
   const location = useLocation();
+
+  const { logout } = useLogOut();
+  const navigate = useNavigate();
 
   //set the active link based on the current path
   React.useEffect(() => {
     setActiveLink(location.pathName);
   }, [location.pathName]);
 
-  const handleLogout = () => {
-    // localStorage.removeItem("authToken"); // Remove auth token
-    // sessionStorage.removeItem("authToken"); // If using session storage
-    window.location.href = "/"; // Redirect to login page
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate("/");
+    } catch (error) {
+      alert("Logout failed");
+    }
   };
 
   return (
