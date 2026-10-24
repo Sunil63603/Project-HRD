@@ -1,13 +1,12 @@
-import React from "react";
 import { useLogOut } from "../../context/LogOutContext";
 import { useNavigate } from "react-router-dom";
 import "./LogOutComponent.css";
 
 const LogOutComponent = () => {
-  const { isLogOutContainerVisible, hideLogOutContainer } = useLogOut();
+  const { isLogOutContainerVisible, hideLogOutContainer, logout } = useLogOut();
   const navigate = useNavigate();
 
-  if (!isLogOutContainerVisible) return null; //Dont render if the variable is 'false'
+  if (!isLogOutContainerVisible) return null;
 
   return (
     <>
@@ -17,9 +16,13 @@ const LogOutComponent = () => {
           <div className="log-out-actions">
             <button
               className="log-out-btn"
-              onClick={() => {
-                navigate("/"); //redirect to login page
-                hideLogOutContainer(); //Hide the container
+              onClick={async () => {
+                try {
+                  await logout();
+                  navigate("/");
+                } catch (error) {
+                  alert("Logout failed");
+                }
               }}
             >
               Yes
