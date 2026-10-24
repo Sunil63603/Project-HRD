@@ -31,7 +31,6 @@ const MessageHRDSection = () => {
   //then use that index to fetch conversations of current student
   const getConversationsByUSN = async (studentUSN) => {
     try {
-      // Fetch the registered students from JSONBin
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy="USN"&equalTo="${studentUSN}"`,
         {
@@ -100,7 +99,6 @@ const MessageHRDSection = () => {
     newConversationObject,
   ) => {
     try {
-      // Fetch the entire JSONBin object
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy="USN"&equalTo="${studentUSN}"`,
         {

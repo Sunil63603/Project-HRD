@@ -36,7 +36,6 @@ function MessageStudent() {
 
   const fetchConversationsWithStudent = async () => {
     try {
-      // Fetch the JSONBin data
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json`,
         {
@@ -49,7 +48,7 @@ function MessageStudent() {
         throw new Error("Failed to fetch registered students array");
       }
 
-      const data = await response.json(); // Entire JSONBin record
+      const data = await response.json();
       const registeredStudents = data || []; // Extract the `registeredStuds` array
 
       // Find the student by their USN

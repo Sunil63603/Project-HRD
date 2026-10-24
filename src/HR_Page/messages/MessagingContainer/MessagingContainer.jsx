@@ -28,7 +28,7 @@ const MessagingContainer = () => {
         throw new Error(`Error fetching data: ${response.status}`);
       }
 
-      const data = await response.json(); // Fetch the data from JSONBin
+      const data = await response.json();
       const messages = data || []; // Extract messages
       setMessages(messages); // Set messages in the state
     } catch (error) {

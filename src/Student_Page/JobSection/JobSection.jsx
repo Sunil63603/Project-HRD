@@ -24,7 +24,6 @@ const JobSection = () => {
       let data = await response.json();
       data = Object.values(data);
 
-      // Extract jobs array from JSONBin response
       const jobsData = data || [];
 
       // Sort by id in descending order

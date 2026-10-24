@@ -22,6 +22,7 @@ function LoginForm() {
   //state variables to indicate status of password visibility and account validity.
   const [isPasswordVisible, setIsPasswordVisible] = useState(false); //false by default.
   const [isValidAccount, setIsValidAccount] = useState(true);
+  const [authLoading, setAuthLoading] = useState(false);
 
   //this is the variable which is used to navigate to HR and student interface from login page.
   const navigate = useNavigate();
@@ -37,6 +38,7 @@ function LoginForm() {
     }
 
     try {
+      setAuthLoading(true);
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api/auth/login`,
         {
@@ -68,6 +70,8 @@ function LoginForm() {
     } catch (error) {
       console.error(error);
       PopUpToast.error("Unable to login");
+    } finally {
+      setAuthLoading(false);
     }
   };
 
@@ -134,7 +138,7 @@ function LoginForm() {
               handleSubmit();
             }}
           >
-            Submit
+            {authLoading ? "Loading ..." : "Submit"}
           </button>
         </div>
       </form>

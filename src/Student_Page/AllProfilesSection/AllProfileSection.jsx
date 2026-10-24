@@ -28,7 +28,6 @@ const AllProfileSection = () => {
 
         const data = await response.json();
 
-        // Extract students array from JSONBin response
         const studentsData = data || [];
 
         setStudents(studentsData);

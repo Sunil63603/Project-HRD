@@ -18,8 +18,6 @@ function Student_Layout() {
 
     const interval = setInterval(async () => {
       try {
-        console.log("Fetching job updates from JSONBin...");
-
         const response = await fetch(
           "https://api.jsonbin.io/v3/b/6795e1b6ad19ca34f8f48af9/latest",
           {
