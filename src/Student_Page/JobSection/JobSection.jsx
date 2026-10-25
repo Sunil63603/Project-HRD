@@ -55,30 +55,34 @@ const JobSection = () => {
     <div className="companies-list">
       <h2 className="component-name">Jobs/Oppurtunities</h2>
       <div className="job-list">
-        {jobs.map((job, index) => (
-          <div className="job-card" key={index}>
-            <h4>{job.companyName}</h4>
-            <p>
-              <strong>Job Title : {job.jobDescription}</strong>
-            </p>
-            <p>
-              <strong>Eligibility : {job.eligibility}</strong>
-            </p>
+        {jobs.length === 0 ? (
+          <div>No Companies/Jobs</div>
+        ) : (
+          jobs.map((job, index) => (
+            <div className="job-card" key={index}>
+              <h4>{job.companyName}</h4>
+              <p>
+                <strong>Job Title : {job.jobDescription}</strong>
+              </p>
+              <p>
+                <strong>Eligibility : {job.eligibility}</strong>
+              </p>
 
-            <p>
-              <strong>Additional Details : </strong> {job.additionalDetails}
-            </p>
+              <p>
+                <strong>Additional Details : </strong> {job.additionalDetails}
+              </p>
 
-            <a className="apply-button" href={job.applyLink} target="_blank">
-              Apply
-            </a>
+              <a className="apply-button" href={job.applyLink} target="_blank">
+                Apply
+              </a>
 
-            {/* students should not be able to delete it. */}
-            {/* <button className="delete-button" onClick={() => onDelete(job.id)}>
+              {/* students should not be able to delete it. */}
+              {/* <button className="delete-button" onClick={() => onDelete(job.id)}>
               Delete
             </button> */}
-          </div>
-        ))}
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

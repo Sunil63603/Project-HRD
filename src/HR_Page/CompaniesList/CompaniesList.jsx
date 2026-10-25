@@ -65,14 +65,18 @@ const CompaniesList = () => {
     <div className="companies-list">
       <h2>Companies</h2>
       <div className="job-list">
-        {jobs.map((job) => (
-          // imported component below.
-          <JobCard
-            key={job.id}
-            job={job}
-            onDelete={() => handleDelete(job.id)}
-          />
-        ))}
+        {jobs.length === 0 ? (
+          <div>No Companies/Jobs</div>
+        ) : (
+          jobs.map((job) => (
+            // imported component below.
+            <JobCard
+              key={job.id}
+              job={job}
+              onDelete={() => handleDelete(job.id)}
+            />
+          ))
+        )}
       </div>
     </div>
   );

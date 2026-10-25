@@ -1,21 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 import { useLogOut } from "../../context/LogOutContext";
 
 const Navbar = () => {
-  const [activeLink, setActiveLink] = useState("");
-  const location = useLocation();
+  const [activeLink, setActiveLink] = useState("/hr/create-job");
 
   const { logout } = useLogOut();
   const navigate = useNavigate();
-
-  //set the active link based on the current path
-  React.useEffect(() => {
-    setActiveLink(location.pathName);
-  }, [location.pathName]);
 
   const handleLogout = async () => {
     try {
