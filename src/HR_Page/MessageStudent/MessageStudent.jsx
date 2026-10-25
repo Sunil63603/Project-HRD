@@ -40,7 +40,6 @@ function MessageStudent() {
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json`,
         {
           method: "GET",
-          credentials: "include",
         },
       );
 
@@ -99,7 +98,6 @@ function MessageStudent() {
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
-          credentials: "include",
         },
       );
 
@@ -129,7 +127,6 @@ function MessageStudent() {
           method: "PUT", // Overwrites only the conversationsWithHR field, keeping other data intact
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(updatedConversations),
-          credentials: "include",
         },
       );
 

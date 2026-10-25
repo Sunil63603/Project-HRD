@@ -20,7 +20,6 @@ const MessagingContainer = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          credentials: "include",
         },
       );
 
@@ -48,7 +47,6 @@ const MessagingContainer = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(message),
-          credentials: "include",
         },
       );
 

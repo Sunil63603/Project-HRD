@@ -21,7 +21,6 @@ const MessageDisplay = () => {
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
-          credentials: "include",
         },
       );
 
@@ -54,7 +53,6 @@ const MessageDisplay = () => {
         {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
-          credentials: "include",
         },
       );
 

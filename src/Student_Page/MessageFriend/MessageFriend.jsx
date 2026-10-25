@@ -49,9 +49,6 @@ const MessageFriend = () => {
     try {
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/friendConversations.json`,
-        {
-          credentials: "include",
-        },
       );
       if (!response.ok) {
         throw new Error("Failed to fetch messages");
@@ -83,9 +80,6 @@ const MessageFriend = () => {
 
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/friendConversations.json`,
-        {
-          credentials: "include",
-        },
       );
 
       if (!response.ok) throw new Error("Failed to fetch conversations");
@@ -118,7 +112,6 @@ const MessageFriend = () => {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ messages: existingConversation.messages }),
-            credentials: "include",
           },
         );
 
@@ -139,7 +132,6 @@ const MessageFriend = () => {
               "Content-Type": "application/json",
             },
             body: JSON.stringify(newConversationObj),
-            credentials: "include",
           },
         );
 

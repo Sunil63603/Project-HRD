@@ -20,9 +20,6 @@ function GroupMessages() {
     try {
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/GroupMessages.json`,
-        {
-          credentials: "include",
-        },
       );
 
       if (!response.ok) {

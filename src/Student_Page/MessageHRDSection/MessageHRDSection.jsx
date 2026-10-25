@@ -33,9 +33,6 @@ const MessageHRDSection = () => {
     try {
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy="USN"&equalTo="${studentUSN}"`,
-        {
-          credentials: "include",
-        },
       );
 
       if (!response.ok) {
@@ -101,9 +98,6 @@ const MessageHRDSection = () => {
     try {
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy="USN"&equalTo="${studentUSN}"`,
-        {
-          credentials: "include",
-        },
       );
 
       if (!response.ok) {
@@ -134,7 +128,6 @@ const MessageHRDSection = () => {
           body: JSON.stringify({
             conversationsWithHR: studentObj.conversationsWithHR,
           }),
-          credentials: "include",
         },
       );
 

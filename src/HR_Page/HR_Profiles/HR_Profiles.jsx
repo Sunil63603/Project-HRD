@@ -16,9 +16,6 @@ const Profiles = () => {
       try {
         const response = await fetch(
           `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json`,
-          {
-            credentials: "include",
-          },
         );
         if (!response.ok) {
           throw new Error("Failed to fetch");

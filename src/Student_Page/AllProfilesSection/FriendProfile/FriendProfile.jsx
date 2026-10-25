@@ -20,9 +20,6 @@ function FriendProfile() {
     try {
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy=%22USN%22&equalTo=%22${friendUSN}%22`,
-        {
-          credentials: "include",
-        },
       );
 
       if (!response.ok) {
