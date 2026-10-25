@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 import { PersonCircle } from "react-bootstrap-icons";
 
-const TopFixedBar = ({ user }) => {
+const TopFixedBar = ({ user, groupUnread }) => {
   const [activeButton, setActiveButton] = useState("profile"); //this state indicates button which was clicked.
 
   const { showLogOutContainer } = useLogOut(); //Accessing the context functions
@@ -83,6 +83,7 @@ const TopFixedBar = ({ user }) => {
           onClick={() => handleButtonClick("/student/groupMessages", "updates")}
         >
           Group-Messages
+          {groupUnread && <span className="group-message-dot" />}
         </button>
         <button
           className={`message-hrd-btn ${
