@@ -12,19 +12,6 @@ const MessagingContainer = () => {
 
   // Function to fetch messages from the JSON server
   const fetchMessages = async () => {
-    // try {
-    //   const response = await fetch("http://localhost:3000/GroupMessages", {
-    //     method: "GET",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   });
-    //   const data = await response.json();
-    //   setMessages(data); // Set the fetched messages to the state
-    // } catch (error) {
-    //   console.error("Error fetching messages:", error);
-    // }
-
     try {
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/GroupMessages.json`,
@@ -33,14 +20,14 @@ const MessagingContainer = () => {
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
       );
 
       if (!response.ok) {
         throw new Error(`Error fetching data: ${response.status}`);
       }
 
-      const data = await response.json(); // Fetch the data from JSONBin
+      const data = await response.json();
       const messages = data || []; // Extract messages
       setMessages(messages); // Set messages in the state
     } catch (error) {
@@ -50,24 +37,6 @@ const MessagingContainer = () => {
 
   // Function to post a new message to the JSON server
   const postMessage = async (message) => {
-    // try {
-    //   const response = await fetch("http://localhost:3000/GroupMessages", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(message),
-    //   });
-    //   const data = await response.json();
-    //   setMessages((prevMessages) => [...prevMessages, data]); // Add the new message to the state
-    //   // Success Toast Notificaion
-    //   PopUpToast.success("Message Sent Successsully!");
-    // } catch (error) {
-    //   console.error("Error posting message:", error);
-    //   // Error Toast Notificaion
-    //   PopUpToast.warning("There is some Error while sending Message!");
-    // }
-
     try {
       // Step 1: Fetch the current GroupMessages object
       const response = await fetch(
@@ -78,7 +47,7 @@ const MessagingContainer = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(message),
-        }
+        },
       );
 
       if (!response.ok) {

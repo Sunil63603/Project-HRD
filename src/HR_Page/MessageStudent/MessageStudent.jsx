@@ -26,7 +26,7 @@ function MessageStudent() {
 
     const intervalId = setInterval(
       fetchConversationsWithStudent,
-      pollingInterval
+      pollingInterval,
     ); //for every 'pollingInterval' seconds , conversations are being fetched.
 
     return () => {
@@ -35,41 +35,24 @@ function MessageStudent() {
   }, [studentUSN]); //empty dependency[] ensures that this runs only on initial render,but setInterval() is resposible for calling fetch() again and again
 
   const fetchConversationsWithStudent = async () => {
-    // try {
-    //   const response = await fetch("http://localhost:3000/registeredStuds");
-    //   if (!response.ok) {
-    //     throw new Error("Failed to fetch registered students array");
-    //   }
-
-    //   const data = await response.json(); //students[]
-    //   const student = data.find((student) => student.USN === studentUSN);
-
-    //   if (student) {
-    //     setConversations(student.conversationsWithHR);
-    //   }
-    // } catch (error) {
-    //   console.error("Error fetching student messages:", error);
-    // }
-
     try {
-      // Fetch the JSONBin data
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json`,
         {
           method: "GET",
-        }
+        },
       );
 
       if (!response.ok) {
         throw new Error("Failed to fetch registered students array");
       }
 
-      const data = await response.json(); // Entire JSONBin record
+      const data = await response.json();
       const registeredStudents = data || []; // Extract the `registeredStuds` array
 
       // Find the student by their USN
       const student = registeredStudents.find(
-        (student) => student.USN === studentUSN
+        (student) => student.USN === studentUSN,
       );
 
       if (student) {
@@ -106,7 +89,7 @@ function MessageStudent() {
   //logic to update google firebase with new message entered by student
   const updateConversationsByUSN = async (
     studentUSN,
-    newConversationObject
+    newConversationObject,
   ) => {
     try {
       // Fetch all registered students
@@ -115,7 +98,7 @@ function MessageStudent() {
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
 
       if (!response.ok) {
@@ -144,7 +127,7 @@ function MessageStudent() {
           method: "PUT", // Overwrites only the conversationsWithHR field, keeping other data intact
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(updatedConversations),
-        }
+        },
       );
 
       if (!updateResponse.ok) {

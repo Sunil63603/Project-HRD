@@ -21,7 +21,7 @@ const MessageDisplay = () => {
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
 
       if (!response.ok) {
@@ -47,39 +47,13 @@ const MessageDisplay = () => {
   };
 
   const handleDelete = async (id) => {
-    console.log(id);
-    // console.log("Delete clicked for message:", id);
-
-    // Implement delete functionality
-    // try {
-    //   const response = await fetch(
-    //     `http://localhost:3000/GroupMessages/${id}`,
-    //     {
-    //       method: "DELETE",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //     }
-    //   );
-
-    //   if (!response.ok) {
-    //     throw new Error(`HTTP error! status: ${response.status}`);
-    //   }
-    //   PopUpToast.success("Message Successfully Deleted!");
-    //   // console.log("DELETED");
-    //   fetchMessages(); // Fetch updated messages after deletion
-    // } catch (error) {
-    //   console.error();
-    //   PopUpToast.error(error);
-    // }
-
     try {
       const response = await fetch(
         `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/GroupMessages/${id}.json`,
         {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
 
       if (!response.ok) {
