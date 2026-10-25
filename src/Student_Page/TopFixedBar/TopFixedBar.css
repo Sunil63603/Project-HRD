@@ -369,3 +369,7 @@
   background: #ef4444;
   border-radius: 50%;
 }
+
+.topFixedBar .jobs-btn {
+  position: relative;
+}

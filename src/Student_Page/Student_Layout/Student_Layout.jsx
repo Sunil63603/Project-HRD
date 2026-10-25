@@ -11,6 +11,7 @@ import { useGlobalContext } from "../../context/GlobalContext";
 
 function Student_Layout() {
   const { user } = useLogOut();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (!user?.USN) return;
@@ -40,6 +41,11 @@ function Student_Layout() {
 
         if (lastSeen && latestTime > lastSeen) {
           toast.success("New job posted!");
+
+          if (pathname !== "/student/jobs") {
+            localStorage.setItem(`jobsUnread_${user.USN}`, "true");
+            setJobsUnread(true);
+          }
         }
 
         if (latestTime > lastSeen) {
@@ -55,10 +61,10 @@ function Student_Layout() {
     const interval = setInterval(checkNewJobs, 30000);
 
     return () => clearInterval(interval);
-  }, [user?.USN]);
+  }, [user?.USN, pathname]);
 
   const { pollingInterval } = useGlobalContext();
-  const { pathname } = useLocation();
+  const [jobsUnread, setJobsUnread] = useState(false);
   const [groupUnread, setGroupUnread] = useState(false);
 
   useEffect(() => {
@@ -133,9 +139,29 @@ function Student_Layout() {
     };
   }, [user?.USN, pathname, pollingInterval]);
 
+  useEffect(() => {
+    if (!user?.USN) {
+      setJobsUnread(false);
+      return;
+    }
+
+    const key = `jobsUnread_${user.USN}`;
+
+    if (pathname === "/student/jobs") {
+      localStorage.removeItem(key);
+      setJobsUnread(false);
+    } else {
+      setJobsUnread(localStorage.getItem(key) === "true");
+    }
+  }, [user?.USN, pathname]);
+
   return (
     <>
-      <TopFixedBar user={user} groupUnread={groupUnread}></TopFixedBar>
+      <TopFixedBar
+        user={user}
+        groupUnread={groupUnread}
+        jobsUnread={jobsUnread}
+      ></TopFixedBar>
       <LogOutComponent></LogOutComponent>
       <Outlet className="outlet"></Outlet>
     </>
