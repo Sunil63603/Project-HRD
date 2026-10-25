@@ -7,11 +7,10 @@ import "./TopFixedBar.css";
 //is used to display component , when user clicks on button
 import { useNavigate } from "react-router-dom";
 
-import { PersonCircle } from "react-bootstrap-icons"; // Import the profile icon
-//clicking in this 'PersonCircle' will toggle profile's visibility
+import { PersonCircle } from "react-bootstrap-icons";
 
-const TopFixedBar = () => {
-  const [activeButton, setActiveButton] = useState("updates"); //this state indicates button which was clicked.
+const TopFixedBar = ({ user }) => {
+  const [activeButton, setActiveButton] = useState("profile"); //this state indicates button which was clicked.
 
   const { showLogOutContainer } = useLogOut(); //Accessing the context functions
   const { searchTerm, setSearchTerm } = useContext(SearchContext);
@@ -36,7 +35,12 @@ const TopFixedBar = () => {
           className={`profile-icon ${
             activeButton === "profile" ? "active" : ""
           }`}
-          onClick={() => handleButtonClick("/student/profile", "profile")}
+          onClick={() =>
+            handleButtonClick(
+              `/student/profile?studentUSN=${user.USN}`,
+              "profile",
+            )
+          }
         />
         <h1 className="project-name">COHORT</h1>
       </div>

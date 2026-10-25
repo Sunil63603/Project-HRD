@@ -56,7 +56,7 @@ function Student_Layout() {
 
   return (
     <>
-      <TopFixedBar></TopFixedBar>
+      <TopFixedBar user={user}></TopFixedBar>
       <LogOutComponent></LogOutComponent>
       <Outlet className="outlet"></Outlet>
     </>
