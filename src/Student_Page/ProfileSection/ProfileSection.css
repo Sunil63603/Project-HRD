@@ -557,3 +557,70 @@
     width: 100%;
   }
 }
+
+/* ========================================
+   EDIT PROFILE
+======================================== */
+
+/* Input fields */
+.profile-section input,
+.profile-section textarea {
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  color: #0f172a;
+  font: inherit;
+}
+
+.profile-section input:focus,
+.profile-section textarea:focus {
+  outline: 2px solid #93c5fd;
+  outline-offset: 1px;
+}
+
+/* Override existing portfolio link styling */
+.profile-section input#student-website {
+  display: block;
+  color: #0f172a;
+}
+
+/* Edit / Save / Cancel / Project buttons */
+.profile-section button {
+  padding: 10px 16px;
+  margin: 8px 8px 12px 0;
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.profile-section button:hover:not(:disabled) {
+  background: #dbeafe;
+}
+
+/* Save button */
+.profile-section button[type="submit"] {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.profile-section button[type="submit"]:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+/* Disabled buttons */
+.profile-section button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Editable project cards */
+.profile-section .profile-projects > .project-item {
+  margin-bottom: 16px;
+}

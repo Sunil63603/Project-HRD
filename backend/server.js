@@ -248,6 +248,103 @@ app.post("/api/students/:usn/messages", requireAuth, async (req, res) => {
   }
 });
 
+// Update student profile
+app.put("/api/students/:usn", requireAuth, async (req, res) => {
+  // Students can edit only their own profile
+  if (req.user.role !== "registeredStuds" || req.user.USN !== req.params.usn) {
+    return res.sendStatus(403);
+  }
+
+  // Only these fields are editable
+  const allowedFields = [
+    "name",
+    "email",
+    "website",
+    "phoneNumber",
+    "skills",
+    "resumes",
+    "socialContacts",
+    "Projects",
+  ];
+
+  const updates = Object.fromEntries(
+    Object.entries(req.body || {}).filter(([key]) =>
+      allowedFields.includes(key),
+    ),
+  );
+
+  if (!Object.keys(updates).length) {
+    return res.status(400).json({ message: "No valid fields provided" });
+  }
+
+  // Basic field validation
+  const valid = Object.entries(updates).every(([key, value]) => {
+    if (["name", "email", "website", "phoneNumber"].includes(key))
+      return typeof value === "string";
+
+    if (["skills", "resumes"].includes(key))
+      return (
+        Array.isArray(value) && value.every((item) => typeof item === "string")
+      );
+
+    if (key === "socialContacts")
+      return (
+        value &&
+        typeof value === "object" &&
+        ["whatsapp", "linkedIn"].every(
+          (field) => typeof value[field] === "string",
+        )
+      );
+
+    if (key === "Projects")
+      return (
+        Array.isArray(value) &&
+        value.every(
+          (project) =>
+            project &&
+            ["title", "GitHub_Repo", "deployLink"].every(
+              (field) => typeof project[field] === "string",
+            ),
+        )
+      );
+
+    return false;
+  });
+
+  if (!valid || ("email" in updates && !updates.email.trim())) {
+    return res.status(400).json({ message: "Invalid profile data" });
+  }
+
+  try {
+    const studentId = new ObjectId(req.user.id);
+
+    // Prevent duplicate login emails
+    if (updates.email) {
+      const existing = await studentsCollection.findOne({
+        email: updates.email,
+        _id: { $ne: studentId },
+      });
+
+      if (existing) {
+        return res.status(409).json({ message: "Email already in use" });
+      }
+    }
+
+    const result = await studentsCollection.updateOne(
+      { _id: studentId, USN: req.params.usn },
+      { $set: updates },
+    );
+
+    if (!result.matchedCount) {
+      return res.status(404).json({ message: "Student not found" });
+    }
+
+    res.json({ message: "Profile updated successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to update profile", error });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
