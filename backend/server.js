@@ -156,6 +156,98 @@ app.post("/api/auth/login", async (req, res) => {
   }
 });
 
+const studentsCollection = client
+  .db("HRD-Database")
+  .collection("registeredStuds");
+
+// 1. Fetch all students
+app.get("/api/students", requireAuth, async (req, res) => {
+  try {
+    const students = await studentsCollection
+      .find({}, { projection: { password: 0, conversationsWithHR: 0 } })
+      .toArray();
+
+    res.json(students);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch students", error });
+  }
+});
+
+// 2. Fetch student by USN
+app.get("/api/students/:usn", requireAuth, async (req, res) => {
+  try {
+    const student = await studentsCollection.findOne(
+      { USN: req.params.usn },
+      { projection: { password: 0, conversationsWithHR: 0 } },
+    );
+
+    if (!student) {
+      return res.status(404).json({ message: "Student not found" });
+    }
+
+    res.json(student);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch student", error });
+  }
+});
+
+// Authorization shared by HR conversations
+const canAccessConversation = (req) =>
+  req.user.role === "registeredHRs" ||
+  (req.user.role === "registeredStuds" && req.user.USN === req.params.usn);
+
+// 3. Fetch HR conversations
+app.get("/api/students/:usn/messages", requireAuth, async (req, res) => {
+  if (!canAccessConversation(req)) {
+    return res.sendStatus(403);
+  }
+
+  try {
+    const student = await studentsCollection.findOne(
+      { USN: req.params.usn },
+      { projection: { conversationsWithHR: 1 } },
+    );
+
+    if (!student) return res.sendStatus(404);
+
+    res.json(student.conversationsWithHR || []);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch messages", error });
+  }
+});
+
+// 4. Send HR conversation message
+app.post("/api/students/:usn/messages", requireAuth, async (req, res) => {
+  if (!canAccessConversation(req)) {
+    return res.sendStatus(403);
+  }
+
+  const { content } = req.body;
+
+  if (typeof content !== "string" || !content.trim()) {
+    return res.status(400).json({ message: "Message required" });
+  }
+
+  const message = {
+    sender: req.user.role === "registeredHRs" ? "HR" : "student",
+    content: content.trim(),
+    timestamp: new Date().toISOString(),
+  };
+
+  try {
+    const result = await studentsCollection.updateOne(
+      { USN: req.params.usn },
+      { $push: { conversationsWithHR: message } },
+    );
+
+    if (!result.matchedCount) return res.sendStatus(404);
+
+    res.status(201).json(message);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to send message", error });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
