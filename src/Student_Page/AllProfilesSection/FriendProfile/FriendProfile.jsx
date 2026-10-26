@@ -1,7 +1,6 @@
 import "./FriendProfile.css";
 import { BoxArrowUpRight } from "react-bootstrap-icons"; //this is used to indicate that portfolio website is a link
 import { FileEarmarkPdf, Download } from "react-bootstrap-icons"; // icon Indicating that resume is a pdf,and download icon
-import { CloudUpload } from "react-bootstrap-icons"; // Uploading resume icon.
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -13,22 +12,18 @@ function FriendProfile() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
-  // ❌❌❌Based on this studentUSN , fetch details from 'db.json' and display details related to students.
   const friendUSN = queryParams.get("frndUSN");
 
   const getStudentObj = async () => {
     try {
       const response = await fetch(
-        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy=%22USN%22&equalTo=%22${friendUSN}%22`,
+        `${import.meta.env.VITE_API_URL}/api/students/${encodeURIComponent(friendUSN)}`,
+        { credentials: "include" },
       );
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch friend data");
-      }
+      if (!response.ok) throw new Error("Failed to fetch friend");
 
-      const studentData = await response.json();
-
-      return Object.values(studentData)[0];
+      return await response.json();
     } catch (error) {
       console.error(error);
       return null;
@@ -83,7 +78,7 @@ function FriendProfile() {
             <div className="profile-skills">
               <h2>Skills</h2>
               <ul className="skills-list">
-                {studentObj.skills.map((skill, index) => (
+                {(studentObj.skills || []).map((skill, index) => (
                   <li key={index}>{skill}</li>
                 ))}
               </ul>
@@ -95,7 +90,7 @@ function FriendProfile() {
             {/* container for resumes */}
             <div className="resumes-container">
               <ul className="resumes-list" id="resumes">
-                {studentObj.resumes.map((resumeLink, index) => (
+                {(studentObj.resumes || []).map((resumeLink, index) => (
                   <li className="resume-item" key={index}>
                     {" "}
                     {/* Use index or a unique value */}
@@ -114,19 +109,15 @@ function FriendProfile() {
               </ul>
             </div>
             <div className="contact-details">
-              <a href="mailto:s60667843@gmail.com">Email</a>
-              <a href="https://wa.me/8197759383">WhatsApp</a>
-              <a href="https://linkedin.com/in/sunil63603">LinkedIn</a>
+              <a href={`mailto:${studentObj.email}`}>Email</a>
 
-              <label className="info-label" htmlFor="student-mobile">
-                Mobile
-              </label>
-              <a
-                href="tel:+91 8197759383"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                +91 8197759383
+              <a href={studentObj.socialContacts?.whatsapp}>WhatsApp</a>
+
+              <a href={studentObj.socialContacts?.linkedIn}>LinkedIn</a>
+
+              <label className="info-label">Mobile</label>
+              <a href={`tel:${studentObj.phoneNumber}`}>
+                {studentObj.phoneNumber}
               </a>
             </div>
             <div>
@@ -146,7 +137,7 @@ function FriendProfile() {
             <div className="profile-projects">
               <h2>Projects</h2>
               <ul>
-                {studentObj.Projects.map((Project, index) => (
+                {(studentObj.Projects || []).map((Project, index) => (
                   <li key={index}>
                     <div className="project-item">
                       <h3>{Project.title}</h3>

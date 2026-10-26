@@ -1,15 +1,11 @@
-//this component is rendered when user clicks on messageHRD button which is present in the topFixedBar.
-
-import React from "react";
-import { FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import "./MessageHRDSection.css"; //Add your styling for messageHRD.
 import { useState, useEffect } from "react";
 import PopUpToast from "../../Global Components/PopUpToast/PopUpToast";
 import { FaPhoneAlt } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { useGlobalContext } from "../../context/GlobalContext";
-// import { FaArrowUp } from "react-icons/fa";
-// import { FiArrowUp } from "react-icons/fi";
+import { useLogOut } from "../../context/LogOutContext";
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -21,36 +17,30 @@ import { useGlobalContext } from "../../context/GlobalContext";
 const MessageHRDSection = () => {
   const { pollingInterval } = useGlobalContext();
 
-  //❌i should get USN of the student from 'URL'(ie.as search params or anything like that)
-  //may be like this (/student/:id=1SJ21CS154)
-  const studentUSN = "1SJ21CS154"; // this variable is only for testing purpose
+  const { user } = useLogOut();
+  const studentUSN = user?.USN;
   const [conversations, setConversations] = useState([]);
   const [newConversation, setNewConversation] = useState("");
 
-  //here write logic to find index of student(1SJ21CS151) inside registeredStuds[].
-  //then use that index to fetch conversations of current student
-  const getConversationsByUSN = async (studentUSN) => {
+  const getConversationsByUSN = async (usn) => {
     try {
       const response = await fetch(
-        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy="USN"&equalTo="${studentUSN}"`,
+        `${import.meta.env.VITE_API_URL}/api/students/${encodeURIComponent(usn)}/messages`,
+        { credentials: "include" },
       );
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
+      if (!response.ok) throw new Error("Failed to fetch messages");
 
-      const data = await response.json();
-      const studentObj = Object.values(data)[0] || {}; // Extract students array
-
-      return studentObj.conversationsWithHR;
+      return await response.json();
     } catch (error) {
-      console.error("Error fetching conversations:", error);
+      console.error(error);
       return [];
     }
   };
 
   // fetch conversations by USN only when the component mounts.
   useEffect(() => {
+    if (!studentUSN) return;
     // Fetch messages initially
     getConversationsByUSN(studentUSN).then((conversations) => {
       setConversations(conversations);
@@ -65,77 +55,37 @@ const MessageHRDSection = () => {
 
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
-  }, [studentUSN]);
+  }, [studentUSN, pollingInterval]);
 
-  // Handle sending a new message
-  const handleSendMessage = () => {
-    if (newConversation.trim() === "") {
+  const handleSendMessage = async () => {
+    const content = newConversation.trim();
+
+    if (!content) {
       PopUpToast.warning("Please enter a valid message!");
       return;
     }
 
-    const newConversationObject = {
-      sender: "student",
-      content: newConversation,
-      timestamp: new Date().toISOString(),
-    };
-
-    // Update locally
-    setConversations((prevMessages) => [
-      ...prevMessages,
-      newConversationObject,
-    ]);
-    setNewConversation("");
-
-    updateConversationsByUSN(studentUSN, newConversationObject);
-  };
-
-  //logic to update db.json with new message entered by student
-  const updateConversationsByUSN = async (
-    studentUSN,
-    newConversationObject,
-  ) => {
     try {
       const response = await fetch(
-        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json?orderBy="USN"&equalTo="${studentUSN}"`,
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-
-      const data = await response.json();
-      // Extract the unique key of the student
-      const studentKey = Object.keys(data)[0];
-      const studentObj = data[studentKey];
-
-      // Ensure conversationsWithHR exists as an array
-      if (!studentObj.conversationsWithHR) {
-        studentObj.conversationsWithHR = [];
-      }
-
-      // Add new conversation
-      studentObj.conversationsWithHR.push(newConversationObject);
-
-      // ✅ Use PATCH to update only this student’s `conversationsWithHR`
-      await fetch(
-        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds/${studentKey}.json`,
+        `${import.meta.env.VITE_API_URL}/api/students/${encodeURIComponent(studentUSN)}/messages`,
         {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            conversationsWithHR: studentObj.conversationsWithHR,
-          }),
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ content }),
         },
       );
 
-      // Success Toast Notification
+      if (!response.ok) throw new Error("Failed to send message");
+
+      const message = await response.json();
+
+      setConversations((prev) => [...prev, message]);
+      setNewConversation("");
       PopUpToast.success("Message Sent Successfully!");
-      console.log("Messages updated successfully.");
     } catch (error) {
-      console.error("Error updating messages:", error);
+      console.error(error);
+      PopUpToast.error("Failed to send message");
     }
   };
 
@@ -152,7 +102,6 @@ const MessageHRDSection = () => {
         </a>
 
         <a href="tel:+91 8197759383" target="_blank" rel="noopener noreferrer">
-          {/* <FaPhone className="icon phone-icon" /> */}
           <FaPhoneAlt className="icon phone-icon" />
         </a>
 

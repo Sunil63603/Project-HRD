@@ -1,4 +1,3 @@
-import React from "react";
 import "./MessageStudent.css";
 
 import { useState, useEffect } from "react";
@@ -22,68 +21,67 @@ function MessageStudent() {
   const [newConversation, setNewConversation] = useState("");
 
   useEffect(() => {
-    fetchConversationsWithStudent(); //fetch messages initially.
+    if (!studentUSN) return;
+
+    fetchConversationsWithStudent();
 
     const intervalId = setInterval(
       fetchConversationsWithStudent,
       pollingInterval,
-    ); //for every 'pollingInterval' seconds , conversations are being fetched.
+    );
 
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [studentUSN]); //empty dependency[] ensures that this runs only on initial render,but setInterval() is resposible for calling fetch() again and again
+    return () => clearInterval(intervalId);
+  }, [studentUSN, pollingInterval]);
 
   const fetchConversationsWithStudent = async () => {
+    if (!studentUSN) return;
+
     try {
       const response = await fetch(
-        `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json`,
-        {
-          method: "GET",
-        },
+        `${import.meta.env.VITE_API_URL}/api/students/${encodeURIComponent(studentUSN)}/messages`,
+        { credentials: "include" },
       );
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch registered students array");
-      }
+      if (!response.ok) throw new Error("Failed to fetch messages");
 
       const data = await response.json();
-      const registeredStudents = data || []; // Extract the `registeredStuds` array
-
-      // Find the student by their USN
-      const student = registeredStudents.find(
-        (student) => student.USN === studentUSN,
-      );
-
-      if (student) {
-        // If student is found, update conversations state
-        setConversations(student.conversationsWithHR);
-      }
+      setConversations(data);
     } catch (error) {
       console.error("Error fetching student messages:", error);
     }
   };
 
   const handleSendMessage = async () => {
-    if (newConversation.trim() === "") {
+    const content = newConversation.trim();
+
+    if (!content || !studentUSN) {
       PopUpToast.warning("Please enter a valid message!");
       return;
     }
 
-    const newConversationObject = {
-      sender: "HR",
-      content: newConversation,
-      timestamp: new Date().toISOString(),
-    };
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/students/${encodeURIComponent(studentUSN)}/messages`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ content }),
+        },
+      );
 
-    //update locally
-    setConversations((prevMessages) => [
-      ...prevMessages,
-      newConversationObject,
-    ]);
-    setNewConversation("");
+      if (!response.ok) throw new Error("Failed to send message");
 
-    updateConversationsByUSN(studentUSN, newConversationObject); //calling this function to update the google firebase.
+      const message = await response.json();
+
+      setConversations((prev) => [...prev, message]);
+      setNewConversation("");
+
+      PopUpToast.success("Message Sent Successfully!");
+    } catch (error) {
+      console.error(error);
+      PopUpToast.error("Failed to send message");
+    }
   };
 
   //logic to update google firebase with new message entered by student

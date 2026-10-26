@@ -1,6 +1,3 @@
-//this component is rendered when user clicks on AllProfiles button which is present in the topFixedBar.
-
-import React from "react";
 import "./AllProfileSection.css"; //Add your styling for AllProfiles.
 import { useContext, useEffect, useState } from "react";
 import { SearchContext } from "../../context/SearchContext";
@@ -11,23 +8,20 @@ const AllProfileSection = () => {
   const [error, setError] = useState(null);
   const { searchTerm } = useContext(SearchContext);
 
-  // Fetching students from db.json using fetch
   useEffect(() => {
     const fetchStudents = async () => {
       try {
         const response = await fetch(
-          `https://hrd-database-default-rtdb.asia-southeast1.firebasedatabase.app/registeredStuds.json`,
+          `${import.meta.env.VITE_API_URL}/api/students`,
+          { credentials: "include" },
         );
 
         if (!response.ok) {
-          throw new Error("Failed to fetch students data");
+          throw new Error("Failed to fetch students");
         }
 
         const data = await response.json();
-
-        const studentsData = data || [];
-
-        setStudents(studentsData);
+        setStudents(data);
       } catch (err) {
         setError("Error fetching students data");
         console.error("Error fetching students:", err);
